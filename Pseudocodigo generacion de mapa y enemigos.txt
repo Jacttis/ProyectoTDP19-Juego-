@@ -1,0 +1,9 @@
+		
+	gui genera interfaz
+	gui crea instancia de juego	
+	juego crea instancia de nivel
+	nivel genera enemigos con determinadas posiciones
+	para todos los enemigos generados
+		nivel envia mensaje a juego de agregarlos a la gui
+	
+	
