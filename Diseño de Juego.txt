@@ -1,0 +1,9 @@
+El juego sera un tower defense, ubicado horizontalmente, de forma que los enemigos iniciarán su reccorrido desde la parte derecha de la
+pantalla y se moverán hacia la izquierda en linea recta por uno de los 6 carriles horizontales que les corresponda, el objetivo sera
+defender el castillo ubicado a la izquierda del mapa, si un enemigo llega al castillo, el jugador pierde. Para defenderse el jugador
+debera comprar y ubicar aliados en el mapa (6 columnas) que dispararán hacia los enemigos.
+
+Habrá 3 niveles, y en cada uno habrán 3 oleadas de enemigos, de distintas dificultades (facil, intermedio y dificil), si
+el jugador logra superar los 3 niveles, ganará el juego.
+
+
