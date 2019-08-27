@@ -5,15 +5,19 @@
 		<item value="614" key="dialogWidth"/>
 		<list key="textEntries">
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
 			<item value="org.eclipse.ui.navigator.ProjectExplorer"/>
+			<item value="org.eclipse.jdt.ui.ProjectsView"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
 			<item value="pro"/>
+			<item value="projects"/>
 		</list>
 	</section>
 </section>
