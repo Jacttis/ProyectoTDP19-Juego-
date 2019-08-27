@@ -11270,7 +11270,37 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Hilo"
+					"name": "Hilo",
+					"ownedElements": [
+						{
+							"_type": "UMLAssociation",
+							"_id": "AAAAAAFs1Lx6BinQYZE=",
+							"_parent": {
+								"$ref": "AAAAAAFsq6jZJQfQJhY="
+							},
+							"end1": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFs1Lx6BinREh8=",
+								"_parent": {
+									"$ref": "AAAAAAFs1Lx6BinQYZE="
+								},
+								"reference": {
+									"$ref": "AAAAAAFsq6jZJQfQJhY="
+								}
+							},
+							"end2": {
+								"_type": "UMLAssociationEnd",
+								"_id": "AAAAAAFs1Lx6BinSzo4=",
+								"_parent": {
+									"$ref": "AAAAAAFs1Lx6BinQYZE="
+								},
+								"reference": {
+									"$ref": "AAAAAAFsq6jZJQfQJhY="
+								},
+								"aggregation": "shared"
+							}
+						}
+					]
 				},
 				{
 					"_type": "UMLClass",
