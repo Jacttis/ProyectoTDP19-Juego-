@@ -3,16 +3,16 @@ import java.awt.*;
 
 public abstract class Personaje extends Entidad {
 	
-	protected int vida,daño;
+	protected int vida,daï¿½o;
 	protected float velocidadAtaque;
 	protected String descripcion;
 	
 	protected Premio objetos [];
 	
-	public Personaje(Point pos,int vida,int daño,float velocidadAtaque,String descripcion,Inteligencia IA) {
+	public Personaje(Point pos,int vida,int daï¿½o,float velocidadAtaque,String descripcion,Inteligencia IA) {
 		super(pos,IA);
 		this.vida=vida;
-		this.daño=daño;
+		this.daï¿½o=daï¿½o;
 		this.velocidadAtaque=velocidadAtaque;
 		this.descripcion=descripcion;
 		
@@ -22,8 +22,8 @@ public abstract class Personaje extends Entidad {
 	public int getVida() {
 		return vida;
 	}
-	public int getDaño() {
-		return daño;
+	public int getDaï¿½o() {
+		return daï¿½o;
 	}
 	public float getVelocidadAtaque() {
 		return velocidadAtaque;
