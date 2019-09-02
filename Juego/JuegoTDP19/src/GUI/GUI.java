@@ -66,6 +66,10 @@ public class GUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1280, 720);
 		
+<<<<<<< HEAD
+		asd=new ImageIcon("C:\\Users\\crist\\Documents\\GitHub\\ProyectoTDP19\\Sprites\\GolemHieloGIF\\aaa.gif");
+=======
+>>>>>>> dca0d5c4725fffb65f7e26ff9f4526e17a7eaab9
 		
 		
 	
