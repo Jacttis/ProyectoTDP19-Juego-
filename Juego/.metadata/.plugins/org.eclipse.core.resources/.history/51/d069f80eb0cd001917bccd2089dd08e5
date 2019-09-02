@@ -1,0 +1,9 @@
+package Entidades;
+
+import java.awt.*;
+
+protected Point pos;
+
+public abstract class Entidad {
+
+}

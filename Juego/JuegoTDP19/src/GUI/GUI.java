@@ -66,7 +66,7 @@ public class GUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1280, 720);
 		
-		asd=new ImageIcon("C:\\Users\\crist\\Documents\\GitHub\\ProyectoTDP19\\Sprites\\GolemHieloGIF\\aaa.gif");
+		asd=new ImageIcon("Sprites\\Golems\\GolemHieloGIF\\aaa.gif");
 		
 		JLabel grafico= new JLabel(asd);
 		

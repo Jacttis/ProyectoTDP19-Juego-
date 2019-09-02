@@ -6,16 +6,16 @@ public abstract class Personaje extends Entidad {
 	protected int vida,daño;
 	protected float velocidadAtaque;
 	protected String descripcion;
-	protected Inteligencia IA;
+	
 	protected Premio objetos [];
 	
-	public Personaje(Point ubicacion,int vida,int daño,float velocidadAtaque,String descripcion,Inteligencia IA) {
-		super(ubicacion);
+	public Personaje(Point pos,int vida,int daño,float velocidadAtaque,String descripcion,Inteligencia IA) {
+		super(pos,IA);
 		this.vida=vida;
 		this.daño=daño;
 		this.velocidadAtaque=velocidadAtaque;
 		this.descripcion=descripcion;
-		this.IA=IA;
+		
 		
 	}
 	//Getters

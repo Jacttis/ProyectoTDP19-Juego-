@@ -1,0 +1,24 @@
+package Entidades;
+
+import java.awt.*;
+
+import javax.swing.Icon;
+
+
+
+
+public abstract class Entidad {
+
+	protected Point pos;
+	protected Inteligencia IA;
+	protected Icon [] imagen;
+	
+	public Entidad(Point pos, Inteligencia ia) {
+		IA=ia;
+		this.pos=pos;
+	}
+	
+	
+	
+	
+}
