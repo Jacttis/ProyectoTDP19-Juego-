@@ -25,6 +25,13 @@ public abstract class Entidad {
 	
 	}
 	
+	/**
+	 * Si todavia no se creo el grafico de la entidad, lo inicializa como un JLabel con imagen o GIF dentro
+	 * y luego lo posiciona segun corresponda utilizando la posicion del point, y establece el ancho y alto
+	 * segun los atributos width y height. 
+	 * 
+	 * @return JLabel con gif/imagen (grafico de la entidad)
+	 */
 	
 	public JLabel getGrafico(){
 		if(this.grafico == null){
@@ -35,6 +42,12 @@ public abstract class Entidad {
 		
 		return this.grafico;
 	}
+	
+	/**
+	 * Cambia la imagen/gif del grafico por otra almacenada en el arreglo de Icon
+	 * 
+	 * @param dir posicion del arreglo para elegir la imagen/gif para cambiar
+	 */
 	
 	public void cambiarGrafico(int dir) {
 		if(this.grafico!=null) {
@@ -49,15 +62,15 @@ public abstract class Entidad {
 	}
 	
 	/**
-	 * setter y getters de width y height
+	 * Setter de width y height
 	 */
 	
-	public void setWidth(int n) {
-		width=n;
+	public void setWidth(int Width) {
+		width=Width;
 	}
 	
-	public void setHeight(int n) {
-		height=n;
+	public void setHeight(int Height) {
+		height=Height;
 	}
 	
 }

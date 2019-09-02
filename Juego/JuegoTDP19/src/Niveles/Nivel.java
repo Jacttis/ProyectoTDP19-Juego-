@@ -11,8 +11,10 @@ public abstract class Nivel {
 	} 
 
 
-	//genera los enemigos
-
+	/**
+	 * Crea los enemigos correspondientes al nivel y los agrega al mapa
+	 * 
+	 */
 	public abstract void generarEnemigos();
 
 

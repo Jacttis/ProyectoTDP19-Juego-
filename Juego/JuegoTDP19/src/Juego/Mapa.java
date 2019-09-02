@@ -14,6 +14,7 @@ public class Mapa {
 	protected Nivel nivel;
 	protected GUI gui;
 	
+	
 	public Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
 		nivel=new NivelUno(this);
