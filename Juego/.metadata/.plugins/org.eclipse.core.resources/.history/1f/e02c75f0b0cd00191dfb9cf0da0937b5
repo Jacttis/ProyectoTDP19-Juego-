@@ -1,0 +1,11 @@
+package Entidades;
+import java.awt.*;
+
+class Enemigo extends Personaje{
+
+    protected  
+
+
+
+
+}
