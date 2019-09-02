@@ -30,3 +30,5 @@ Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
 *.txt
 *.ini
 *.json
+Juego/.DS_Store
+.DS_Store
