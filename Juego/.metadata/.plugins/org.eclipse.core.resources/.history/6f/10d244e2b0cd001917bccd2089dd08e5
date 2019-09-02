@@ -1,0 +1,21 @@
+package Entidades;
+
+import java.awt.*;
+
+
+
+
+public abstract class Entidad {
+
+	protected Point pos;
+	protected Inteligencia IA;
+	
+	public Entidad(Point pos, Inteligencia ia) {
+		IA=ia;
+		this.pos=pos;
+	}
+	
+	
+	
+	
+}
