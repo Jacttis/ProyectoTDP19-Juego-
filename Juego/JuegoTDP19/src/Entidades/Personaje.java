@@ -9,14 +9,12 @@ public abstract class Personaje extends Entidad {
 	protected Inteligencia IA;
 	protected Premio objetos [];
 	
-	public Personaje(Point ubicacion,int vida,int daño,float velocidadAtaque,String descripcion,Inteligencia IA) {
+	public Personaje(Point ubicacion,int vida,int daño,float velocidadAtaque,Inteligencia IA) {
 		super(ubicacion);
 		this.vida=vida;
 		this.daño=daño;
 		this.velocidadAtaque=velocidadAtaque;
-		this.descripcion=descripcion;
 		this.IA=IA;
-		
 	}
 	//Getters
 	public int getVida() {
