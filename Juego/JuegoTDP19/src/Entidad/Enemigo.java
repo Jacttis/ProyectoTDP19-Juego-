@@ -11,7 +11,15 @@ public abstract class Enemigo extends Personaje{
 	protected int velocidad;
 	protected int puntos;
 	protected int width=200,height=200;
-	
+	/**
+	 * Crea un personaje enemigo
+	 * @param pos 
+	 * @param vida 
+	 * @param damage 
+	 * @param velocidadAtaque
+	 * @param velocidad
+	 * @param puntos
+	 */
 	public Enemigo( Point pos,int vida,int damage, float velocidadAtaque,int velocidad,int puntos) {
 		super(pos,vida,damage,velocidadAtaque);
 		IA=new InteligenciaEnemigos(this);
@@ -19,12 +27,26 @@ public abstract class Enemigo extends Personaje{
 		this.puntos=puntos;
 		imagen=new ImageIcon [1];
 	}
-	/*
-	 * retorna una cantidad de oro segun enemigo
+	/**
+	 * Retorna una cantidad de oro segun enemigo
 	 */
 	protected abstract int getOro();
+	
+	//Getters triviales
+	
+	/**
+	 * Devuelve la cantidad de puntos del enemigo
+	 * @return Entero con la cantidad de puntos que da el enemigo
+	 */
 	protected  int getPuntos() {
 		return puntos;
+	}
+	/**
+	 * Devuelve la velocidad del enemigo
+	 * @return Entero con la velocidad del enemigo
+	 */
+	protected int getVelocidad() {
+		return velocidad;
 	}
 
 }
