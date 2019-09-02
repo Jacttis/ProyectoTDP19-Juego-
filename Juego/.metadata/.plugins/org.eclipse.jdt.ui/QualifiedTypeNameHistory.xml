@@ -5,4 +5,9 @@
 <fullyQualifiedTypeName name="Entidades.Entidad"/>
 <fullyQualifiedTypeName name="Inteligencia.Inteligencia"/>
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="Entidad.Entidad"/>
+<fullyQualifiedTypeName name="Juego.Mapa"/>
+<fullyQualifiedTypeName name="Niveles.Nivel"/>
+<fullyQualifiedTypeName name="GUI.GUI"/>
 </qualifiedTypeNameHistroy>
