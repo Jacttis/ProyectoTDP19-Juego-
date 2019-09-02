@@ -9,9 +9,9 @@ import Inteligencia.Inteligencia;
 
 public class EnemigoGolemHielo extends Enemigo {
 
-	public EnemigoGolemHielo(int velocidad,int puntos, Point pos,int vida,int damage, int width, int height,float velocidadAtaque,Inteligencia IA) {
+	public EnemigoGolemHielo(Point pos,int vida,int damage, int width, int height,float velocidadAtaque,Inteligencia IA,int velocidad,int puntos) {
 	
-		super(velocidad,puntos,pos,vida,damage,width,height,velocidadAtaque,IA);
+		super(pos,vida,damage,width,height,velocidadAtaque,IA,velocidad,puntos);
 		imagen [0]=new ImageIcon("Sprites\\GolemHieloGIF\\aaa.gif");
 		
 	

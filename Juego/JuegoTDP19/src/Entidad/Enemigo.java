@@ -10,16 +10,18 @@ public abstract class Enemigo extends Personaje{
 	protected int velocidad;
 	protected int puntos;
 	
-	public Enemigo(int velocidad,int puntos, Point pos,int vida,int damage, int width, int height,float velocidadAtaque,Inteligencia IA) {
+	public Enemigo( Point pos,int vida,int damage, int width, int height,float velocidadAtaque,Inteligencia IA,int velocidad,int puntos) {
 		super(pos,vida,damage,width,height,velocidadAtaque,IA);
 		this.velocidad=velocidad;
 		this.puntos=puntos;
-		
-		imagen=new ImageIcon [2];
-		
+		imagen=new ImageIcon [1];
 	}
-
+	/*
+	 * retorna una cantidad de oro segun enemigo
+	 */
 	protected abstract int getOro();
-	protected abstract int getPuntos();
+	protected  int getPuntos() {
+		return puntos;
+	}
 
 }
