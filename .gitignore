@@ -22,3 +22,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
+*.resources
+*.resources
+*.xmi
+Juego/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache
+Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+*.txt
+*.ini
+*.json
