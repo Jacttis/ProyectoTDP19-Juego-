@@ -12,7 +12,7 @@ import Inteligencia.Inteligencia;
 public abstract class Entidad {
 
 	protected Point pos;
-	protected int width,height;
+	protected int width=200,height=200;
 	protected Inteligencia IA;
 	protected Icon imagen[];
 	protected JLabel grafico;
@@ -69,6 +69,14 @@ public abstract class Entidad {
 	
 	public void setHeight(int Height) {
 		height=Height;
+	}
+	
+	public Point getPos() {
+		return pos;
+	}
+	
+	public void moverEntidad() {
+		IA.moverEntidad();
 	}
 	
 }

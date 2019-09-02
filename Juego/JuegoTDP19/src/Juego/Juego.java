@@ -9,17 +9,27 @@ public class Juego {
 	private Mapa mapa;
 	//private Jugador jugador;
 	
+	
+	/**
+	 * Inicializa el mapa y ejecuta el comando mover de este mismo
+	 *  
+	 * @param gui
+	 */
+	
 	public Juego(GUI gui) {
 		
-		mapa=new Mapa(this,gui);
-		this.gui=gui;
 		
-		mapa.mover();
+		this.gui=gui;
+		mapa=new Mapa(this,gui);
+		
+		
+		mapa.generar();
 		
 	}
 	
 	public void mover() {
 		
+		mapa.mover();
 		
 		
 	}

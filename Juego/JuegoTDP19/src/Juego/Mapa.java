@@ -15,6 +15,13 @@ public class Mapa {
 	protected GUI gui;
 	
 	
+	/**
+	 * Crea lista de entidades
+	 * Inicializa el nivel
+	 * @param juego 
+	 * @param gui pantalla prinpal del juego
+	 */
+	
 	public Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
 		nivel=new NivelUno(this);
@@ -22,13 +29,28 @@ public class Mapa {
 		entidades=new LinkedList<Entidad>();
 	}
 	
-	public void mover() {
+	
+	public void generar() {
 		nivel.generarEnemigos();
 	}
 	
-	public void agregarEntidad(Entidad e) {
-		gui.add(e.getGrafico());
-		entidades.add(e);
+	public void mover() {
+		for(Entidad e : entidades) {
+			e.moverEntidad();
+			
+		}
+	}
+	
+	/**
+	 * agregar una entidad al mapa y a la lista de entidades
+	 * 
+	 * @param entidadAAgregar entidad que se agregara al mapa
+	 */
+	
+	public void agregarEntidad(Entidad entidadAAgregar) {
+		
+		entidades.add(entidadAAgregar);
+		gui.add(entidadAAgregar.getGrafico());
 		
 	}
 	

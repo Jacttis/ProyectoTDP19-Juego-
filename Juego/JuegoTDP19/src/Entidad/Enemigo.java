@@ -10,7 +10,7 @@ public abstract class Enemigo extends Personaje{
 	
 	protected int velocidad;
 	protected int puntos;
-	protected int width=200,height=200;
+	
 	/**
 	 * Crea un personaje enemigo
 	 * @param pos 

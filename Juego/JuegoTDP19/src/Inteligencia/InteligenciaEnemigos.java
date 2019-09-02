@@ -10,8 +10,10 @@ public class InteligenciaEnemigos extends Inteligencia {
 	}
 
 	@Override
-	public void mover() {
-		// TODO Auto-generated method stub
+	public void moverEntidad() {
+		
+		entidad.getPos().setLocation(entidad.getPos().x+1, entidad.getPos().y);
+		entidad.cambiarGrafico(0);
 		
 	}
 }

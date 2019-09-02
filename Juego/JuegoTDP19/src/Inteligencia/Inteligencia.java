@@ -11,5 +11,5 @@ public abstract class Inteligencia {
 		
 	}
 	
-	public abstract void mover();
+	public abstract void moverEntidad();
 }

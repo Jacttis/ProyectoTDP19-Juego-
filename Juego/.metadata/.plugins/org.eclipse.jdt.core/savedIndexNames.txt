@@ -1,43 +1,20 @@
-<<<<<<< HEAD
 INDEX VERSION 1.130+C:\Users\crist\Documents\GitHub\ProyectoTDP19\Juego\.metadata\.plugins\org.eclipse.jdt.core
-3259128581.index
-2469393919.index
-2478807299.index
-3749953610.index
-3924432333.index
-4292287268.index
-1784213029.index
 2981354914.index
-1240120055.index
-1067094681.index
-1279913850.index
-3315403139.index
+3259128581.index
 277098456.index
-2604515582.index
-549687561.index
-2517282340.index
-1692395065.index
+2478807299.index
+3315403139.index
+3924432333.index
+3749953610.index
 4291119242.index
+1784213029.index
+549687561.index
+1240120055.index
+2517282340.index
 3872537624.index
-=======
-INDEX VERSION 1.131+C:\Users\Axel\Desktop\GitHub\ProyectoTDP19\Juego\.metadata\.plugins\org.eclipse.jdt.core
-2205290751.index
-715107097.index
-2686296187.index
-2624726496.index
-3745837425.index
-1296103107.index
+1692395065.index
+4292287268.index
+1279913850.index
+2469393919.index
+2604515582.index
 1067094681.index
-1713172528.index
-2828169528.index
-124558605.index
-3104340509.index
-2605561000.index
-3579902010.index
-2202167482.index
-1303184529.index
-2111512668.index
-177638979.index
-3032694404.index
-3421819425.index
->>>>>>> c7062e2d63480057b798eb9e647a6d70daf54f73
