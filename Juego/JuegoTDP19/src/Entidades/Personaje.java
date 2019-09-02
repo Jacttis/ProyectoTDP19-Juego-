@@ -1,18 +1,20 @@
 package Entidades;
 import java.awt.*;
 
+import Inteligencia.Inteligencia;
+
 public abstract class Personaje extends Entidad {
 	
-	protected int vida,daño;
+	protected int vida,damage;
 	protected float velocidadAtaque;
-	protected String descripcion;
-	protected Inteligencia IA;
+
+	
 	protected Premio objetos [];
 	
-	public Personaje(Point ubicacion,int vida,int daño,float velocidadAtaque,Inteligencia IA) {
-		super(ubicacion);
+	public Personaje(Point pos,int vida,int damage, int width, int height,float velocidadAtaque,Inteligencia IA) {
+		super(pos,width,height,IA);
 		this.vida=vida;
-		this.daño=daño;
+		this.damage=damage;
 		this.velocidadAtaque=velocidadAtaque;
 		this.IA=IA;
 	}
@@ -20,13 +22,11 @@ public abstract class Personaje extends Entidad {
 	public int getVida() {
 		return vida;
 	}
-	public int getDaño() {
-		return daño;
+	public int getDamage() {
+		return damage;
 	}
 	public float getVelocidadAtaque() {
 		return velocidadAtaque;
 	}
-	public Inteligencia getInteligencia() {
-		return IA;
-	}
+	
 }

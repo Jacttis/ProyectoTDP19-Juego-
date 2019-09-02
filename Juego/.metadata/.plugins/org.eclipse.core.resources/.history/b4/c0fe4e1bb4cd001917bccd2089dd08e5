@@ -1,0 +1,8 @@
+package Inteligencia;
+
+public class InteligenciaEnemigos extends Inteligencia {
+
+	public InteligenciaEnemigos(Enemigo e) {
+		super(e);
+	}
+}
