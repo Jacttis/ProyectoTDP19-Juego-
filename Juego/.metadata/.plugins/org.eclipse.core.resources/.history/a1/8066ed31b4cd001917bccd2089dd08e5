@@ -1,0 +1,14 @@
+package Inteligencia;
+
+public class InteligenciaEnemigos extends Inteligencia {
+
+	public InteligenciaEnemigos(Enemigos e) {
+		super(e);
+	}
+
+	@Override
+	public void mover() {
+		// TODO Auto-generated method stub
+		
+	}
+}

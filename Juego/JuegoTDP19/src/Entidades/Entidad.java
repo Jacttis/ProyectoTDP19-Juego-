@@ -4,6 +4,8 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import Inteligencia.Inteligencia;
+
 
 
 
@@ -40,6 +42,10 @@ public abstract class Entidad {
 			this.grafico.setBounds(this.pos.x,this.pos.y,width,height);
 			
 		}
+	}
+	
+	public Inteligencia getInteligencia() {
+		return IA;
 	}
 	
 	

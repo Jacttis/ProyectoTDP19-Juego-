@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;Entidades.Enemigos.java&apos; to &apos;Enemigo.java&apos;&#x0D;&#x0A;- Original project: &apos;JuegoTDP19&apos;&#x0D;&#x0A;- Original element: &apos;Entidades.Enemigos.java&apos;&#x0D;&#x0A;- Renamed element: &apos;Entidades.Enemigo.java&apos;" description="Rename compilation unit &apos;Enemigos.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;Entidades{Enemigos.java" name="Enemigo.java" references="false" stamp="1567449544398" version="1.0"/>
+</session>
