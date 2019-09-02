@@ -1,4 +1,4 @@
-package Entidades;
+package Entidad;
 import java.awt.*;
 
 import Inteligencia.Inteligencia;

@@ -30,3 +30,12 @@ Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
 *.txt
 *.ini
 *.json
+*.index
+*.resources
+*.xmi
+Juego/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache
+Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+*.txt
+*.xml
+*.xml
+*.ini
