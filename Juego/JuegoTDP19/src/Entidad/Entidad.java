@@ -20,8 +20,6 @@ public abstract class Entidad {
 	public Entidad(Point pos) {
 		
 		this.pos=pos;
-		this.width=width;
-		this.height=height;
 	
 	}
 	
