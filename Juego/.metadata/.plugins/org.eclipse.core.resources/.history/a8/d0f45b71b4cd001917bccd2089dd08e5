@@ -28,5 +28,7 @@ public abstract class Personaje extends Entidad {
 	public float getVelocidadAtaque() {
 		return velocidadAtaque;
 	}
-	
+	public Inteligencia getInteligencia() {
+		return IA;
+	}
 }

@@ -10,6 +10,4 @@ public abstract class Inteligencia {
 		entidad=e;
 		
 	}
-	
-	public abstract void mover();
 }

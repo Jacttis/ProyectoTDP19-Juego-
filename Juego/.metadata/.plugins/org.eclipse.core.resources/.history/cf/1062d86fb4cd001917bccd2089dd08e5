@@ -44,10 +44,6 @@ public abstract class Entidad {
 		}
 	}
 	
-	public Inteligencia getInteligencia() {
-		return IA;
-	}
-	
 	
 	
 }
