@@ -31,6 +31,8 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
+	
+	private JLabel asd;
 
 
 	
@@ -71,7 +73,9 @@ public class GUI extends JFrame {
 
 		
 		
-	
+		asd=new JLabel(new ImageIcon("C:\\Users\\crist\\Documents\\GitHub\\ProyectoTDP19\\Juego\\JuegoTDP19\\src\\Sprites\\Golems\\GolemHieloGIF\\aaa.gif"));
+		
+		asd.setBounds(300, 400, 200, 200);
 		
 		
 		contentPane = new JPanelConFondo();
@@ -80,6 +84,7 @@ public class GUI extends JFrame {
 		contentPane.setLayout(null);
 	
 		
+		contentPane.add(asd);
 		
 	
 		

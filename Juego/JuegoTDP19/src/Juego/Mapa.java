@@ -19,6 +19,7 @@ public class Mapa {
 		this.juego=juego;
 		nivel=new NivelUno(this);
 		this.gui=gui;
+		entidades=new LinkedList<Entidad>();
 	}
 	
 	public void mover() {
@@ -27,7 +28,7 @@ public class Mapa {
 	
 	public void agregarEntidad(Entidad e) {
 		gui.add(e.getGrafico());
-		//entidades.add(e);
+		entidades.add(e);
 		
 	}
 	

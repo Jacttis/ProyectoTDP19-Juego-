@@ -14,13 +14,13 @@ public class Juego {
 		mapa=new Mapa(this,gui);
 		this.gui=gui;
 		
-		
+		mapa.mover();
 		
 	}
 	
 	public void mover() {
 		
-		mapa.mover();
+		
 		
 	}
 	
