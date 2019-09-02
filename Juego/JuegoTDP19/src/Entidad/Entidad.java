@@ -17,8 +17,8 @@ public abstract class Entidad {
 	protected Icon imagen[];
 	protected JLabel grafico;
 	
-	public Entidad(Point pos, int width, int height, Inteligencia ia) {
-		IA=ia;
+	public Entidad(Point pos) {
+		
 		this.pos=pos;
 		this.width=width;
 		this.height=height;
@@ -48,6 +48,16 @@ public abstract class Entidad {
 		return IA;
 	}
 	
+	/**
+	 * setter y getters de width y height
+	 */
 	
+	public void setWidth(int n) {
+		width=n;
+	}
+	
+	public void setHeight(int n) {
+		height=n;
+	}
 	
 }

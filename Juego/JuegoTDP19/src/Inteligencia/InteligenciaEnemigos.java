@@ -1,6 +1,7 @@
 package Inteligencia;
 
-import Entidades.*;
+import Entidad.Entidad;
+
 
 public class InteligenciaEnemigos extends Inteligencia {
 

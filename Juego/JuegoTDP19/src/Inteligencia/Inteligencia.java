@@ -1,6 +1,6 @@
 package Inteligencia;
 
-import Entidades.Entidad;
+import Entidad.Entidad;
 
 public abstract class Inteligencia {
 

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="javax.swing.Icon"/>
 <fullyQualifiedTypeName name="Entidades.Entidad"/>
 <fullyQualifiedTypeName name="Inteligencia.Inteligencia"/>
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="Entidad.Entidad"/>
 <fullyQualifiedTypeName name="Juego.Mapa"/>
 <fullyQualifiedTypeName name="Niveles.Nivel"/>
 <fullyQualifiedTypeName name="GUI.GUI"/>
+<fullyQualifiedTypeName name="Niveles.NivelUno"/>
+<fullyQualifiedTypeName name="Inteligencia.InteligenciaEnemigos"/>
+<fullyQualifiedTypeName name="Entidad.Entidad"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="Entidad.EnemigoGolemHielo"/>
 </qualifiedTypeNameHistroy>

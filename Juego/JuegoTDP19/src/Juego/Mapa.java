@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import Entidad.Entidad;
 import GUI.GUI;
 import Niveles.Nivel;
+import Niveles.NivelUno;
 
 public class Mapa {
 
@@ -13,15 +14,20 @@ public class Mapa {
 	protected Nivel nivel;
 	protected GUI gui;
 	
-	public Mapa(Juego juego, Nivel nivel, GUI gui) {
+	public Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
-		this.nivel=nivel;
+		nivel=new NivelUno(this);
 		this.gui=gui;
 	}
 	
+	public void mover() {
+		nivel.generarEnemigos();
+	}
+	
 	public void agregarEntidad(Entidad e) {
-		entidades.add(e);
 		gui.add(e.getGrafico());
+		//entidades.add(e);
+		
 	}
 	
 }

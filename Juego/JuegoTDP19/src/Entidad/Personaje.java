@@ -9,11 +9,11 @@ public abstract class Personaje extends Entidad {
 	protected float velocidadAtaque;
 
 	
-	protected Premio objetos [];
+	//protected Premio objetos [];
 	
 
-	public Personaje(Point pos,int vida,int damage, int width, int height,float velocidadAtaque,Inteligencia IA) {
-		super(pos,width,height,IA);
+	public Personaje(Point pos,int vida,int damage,float velocidadAtaque) {
+		super(pos);
 		this.vida=vida;
 		this.damage=damage;
 		this.velocidadAtaque=velocidadAtaque;
