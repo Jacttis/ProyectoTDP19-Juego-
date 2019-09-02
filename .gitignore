@@ -22,6 +22,17 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
+<<<<<<< HEAD
+Juego/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+Juego/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+Juego/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+Juego/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
+Juego/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+Juego/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml
+Juego/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties
+Juego/.metadata/version.ini
+Juego/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+=======
 *.resources
 *.resources
 *.xmi
@@ -30,6 +41,7 @@ Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
 *.txt
 *.ini
 *.json
+<<<<<<< HEAD
 *.index
 *.resources
 *.xmi
@@ -39,3 +51,18 @@ Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
 *.xml
 *.xml
 *.ini
+=======
+Juego/.DS_Store
+.DS_Store
+>>>>>>> 9aec011c4c2f906886751874542d7d1aaab35750
+.DS_Store
+Juego/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+Juego/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+Juego/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache
+Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+Juego/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+Juego/.metadata/version.ini
+Juego/.recommenders/caches/identified-project-coordinates.json
+Juego/JuegoTDP19/src/Entidades/Enemigo.java
+Juego/JuegoTDP19/src/Entidades/Personaje.java
+>>>>>>> dff18ec4b33611af5e4fc2990008148583b9c656
