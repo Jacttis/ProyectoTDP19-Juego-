@@ -12,7 +12,7 @@ public class InteligenciaEnemigos extends Inteligencia {
 	@Override
 	public void moverEntidad() {
 		
-		entidad.getPos().setLocation(entidad.getPos().x+1, entidad.getPos().y);
+		entidad.getPos().setLocation(entidad.getPos().x-1, entidad.getPos().y);
 		entidad.cambiarGrafico(0);
 		
 	}

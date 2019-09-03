@@ -8,7 +8,7 @@ import Inteligencia.InteligenciaEnemigos;
 
 public abstract class Enemigo extends Personaje{
 	
-	protected int velocidad;
+	
 	protected int puntos;
 	
 	/**
@@ -21,7 +21,7 @@ public abstract class Enemigo extends Personaje{
 	 * @param puntos
 	 */
 	public Enemigo( Point pos,int vida,int damage, float velocidadAtaque,int velocidad,int puntos) {
-		super(pos,vida,damage,velocidadAtaque);
+		super(pos,vida,damage,velocidadAtaque,velocidad);
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
 		this.puntos=puntos;

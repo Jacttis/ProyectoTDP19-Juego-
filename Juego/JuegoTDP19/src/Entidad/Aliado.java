@@ -26,7 +26,7 @@ public class Aliado extends Personaje {
      * @param Descripcion
      */
     public Aliado(Point pos, int vida, int damage,float velocidadAtaque, String Descripcion) {
-        super(pos, vida, damage, velocidadAtaque);
+        super(pos, vida, damage, velocidadAtaque,0);
         IA=new InteligenciaEnemigos(this);
         imagen =new ImageIcon[2];
         descripcion=Descripcion;

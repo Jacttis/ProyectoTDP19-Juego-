@@ -65,7 +65,7 @@ public class GUI extends JFrame {
 		getContentPane().setLayout(null);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1280, 720);
+		setBounds(0, 0, 1980, 1040);
 		
 
 		
