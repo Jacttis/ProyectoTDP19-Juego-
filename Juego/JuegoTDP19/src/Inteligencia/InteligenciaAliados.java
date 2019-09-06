@@ -9,9 +9,9 @@ public class InteligenciaAliados extends Inteligencia {
 		super(e);
 	}
 
-	@Override
+
 	public void moverEntidad() {
-		// TODO Auto-generated method stub
+	
 		
 	}
 }

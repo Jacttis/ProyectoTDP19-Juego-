@@ -4,6 +4,7 @@
 package  Entidad;
 
 import Inteligencia.Inteligencia;
+import Inteligencia.InteligenciaAliados;
 import Inteligencia.InteligenciaEnemigos;
 
 import java.awt.*;
@@ -27,7 +28,7 @@ public class Aliado extends Personaje {
      */
     public Aliado(Point pos, int vida, int damage,float velocidadAtaque, String Descripcion) {
         super(pos, vida, damage, velocidadAtaque,0);
-        IA=new InteligenciaEnemigos(this);
+        IA=new InteligenciaAliados(this);
         imagen =new ImageIcon[2];
         descripcion=Descripcion;
 

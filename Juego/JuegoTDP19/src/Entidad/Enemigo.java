@@ -20,7 +20,7 @@ public abstract class Enemigo extends Personaje{
 	 * @param velocidad
 	 * @param puntos
 	 */
-	public Enemigo( Point pos,int vida,int damage, float velocidadAtaque,int velocidad,int puntos) {
+	public Enemigo( Point pos,int vida,int damage, float velocidadAtaque,double velocidad,int puntos) {
 		super(pos,vida,damage,velocidadAtaque,velocidad);
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
@@ -45,8 +45,6 @@ public abstract class Enemigo extends Personaje{
 	 * Devuelve la velocidad del enemigo
 	 * @return Entero con la velocidad del enemigo
 	 */
-	protected int getVelocidad() {
-		return velocidad;
-	}
+	
 
 }

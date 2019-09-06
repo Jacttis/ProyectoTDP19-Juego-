@@ -12,13 +12,13 @@ import Inteligencia.Inteligencia;
 public abstract class Entidad {
 
 	protected Point pos;
-	protected int width=87,height=120;
+	protected int width=140,height=159;
 	protected Inteligencia IA;
 	protected Icon imagen[];
 	protected JLabel grafico;
-	protected int velocidad;
+	protected double velocidad;
 	
-	public Entidad(Point pos,int velocidad) {
+	public Entidad(Point pos,double velocidad) {
 		
 		this.velocidad=velocidad;
 		this.pos=pos;
@@ -75,6 +75,9 @@ public abstract class Entidad {
 	
 	public Point getPos() {
 		return pos;
+	}
+	public double getVelocidad() {
+		return velocidad;
 	}
 	
 	public void moverEntidad() {

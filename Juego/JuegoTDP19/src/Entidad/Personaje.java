@@ -20,7 +20,7 @@ public abstract class Personaje extends Entidad {
 	 * @param velocidadAtaque
 	 */
 
-	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,int velocidad) {
+	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,double velocidad) {
 		super(pos,velocidad);
 		this.vida = vida;
 		this.damage = damage;
