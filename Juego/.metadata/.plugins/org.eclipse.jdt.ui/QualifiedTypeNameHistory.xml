@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="javax.swing.Icon"/>
 <fullyQualifiedTypeName name="Entidades.Entidad"/>
 <fullyQualifiedTypeName name="Inteligencia.Inteligencia"/>
-<fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="Juego.Mapa"/>
 <fullyQualifiedTypeName name="Niveles.Nivel"/>
@@ -11,6 +10,9 @@
 <fullyQualifiedTypeName name="Niveles.NivelUno"/>
 <fullyQualifiedTypeName name="Inteligencia.InteligenciaEnemigos"/>
 <fullyQualifiedTypeName name="Entidad.Entidad"/>
-<fullyQualifiedTypeName name="java.awt.Point"/>
 <fullyQualifiedTypeName name="Entidad.EnemigoGolemHielo"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="Inteligencia.InteligenciaDisparoAliado"/>
+<fullyQualifiedTypeName name="Entidad.DisparoArqueroHumano"/>
+<fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 </qualifiedTypeNameHistroy>

@@ -32,6 +32,7 @@ public class Mapa {
 	
 	public void generar() {
 		nivel.generarEnemigos();
+		nivel.generarAliados();
 	}
 	
 	public void mover() {

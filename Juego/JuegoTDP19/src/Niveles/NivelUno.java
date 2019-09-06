@@ -3,6 +3,7 @@ package Niveles;
 import java.awt.Point;
 
 import Entidad.ArqueroHumano;
+import Entidad.DisparoArqueroHumano;
 import Entidad.EnemigoGolemHielo;
 import Juego.Mapa;
 
@@ -21,13 +22,15 @@ public class NivelUno extends Nivel {
 		
 		mapa.agregarEntidad(new EnemigoGolemHielo(new Point(1800,410),10,10,10,1,10));
 		
-		mapa.agregarEntidad(new ArqueroHumano(new Point(300,400),10,10,10,"")); // aliado Prueba
+		//mapa.agregarEntidad(new ArqueroHumano(new Point(300,400),10,10,10,"")); // aliado Prueba
 	}
 	
 	public void generarAliados() {
 		
-		mapa.agregarEntidad(new ArqueroHumano(new Point(300,400),10,10,10,""));
-	
+		ArqueroHumano a1 = new ArqueroHumano(new Point(300,400),10,10,10,"");
+		mapa.agregarEntidad(a1);
+		
+		mapa.agregarEntidad(new DisparoArqueroHumano(a1.getPos(),15,a1));
 	
 	}
 }

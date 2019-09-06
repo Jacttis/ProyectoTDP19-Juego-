@@ -19,6 +19,7 @@ public class HiloTiempo extends Thread{
 				juego.mover();
 				
 				
+				
 				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

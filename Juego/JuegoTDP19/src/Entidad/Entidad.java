@@ -16,12 +16,14 @@ public abstract class Entidad {
 	protected Inteligencia IA;
 	protected Icon imagen[];
 	protected JLabel grafico;
-	protected double velocidad;
+	protected int velocidad;
+	protected int damage;
 	
-	public Entidad(Point pos,double velocidad) {
+	public Entidad(Point pos,int velocidad, int damage) {
 		
 		this.velocidad=velocidad;
 		this.pos=pos;
+		this.damage=damage;
 	
 	}
 	
@@ -76,12 +78,20 @@ public abstract class Entidad {
 	public Point getPos() {
 		return pos;
 	}
-	public double getVelocidad() {
+	public int getVelocidad() {
 		return velocidad;
 	}
 	
 	public void moverEntidad() {
 		IA.moverEntidad();
+	}
+	
+	public void setDamage(int nuevoDamage) {
+		damage=nuevoDamage;
+	}
+	
+	public int getDamage() {
+		return damage;
 	}
 	
 }
