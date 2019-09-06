@@ -55,4 +55,14 @@ public class Mapa {
 		
 	}
 	
+	public LinkedList<Entidad> getEntidades() {
+		return entidades;
+	}
+	
+	public void showEntidades() {
+		for(Entidad e :this.getEntidades()) {
+			System.out.println(e.getPos()+"\n");
+		}
+	}
+	
 }

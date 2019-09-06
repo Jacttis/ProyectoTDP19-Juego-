@@ -51,6 +51,7 @@ Juego/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
 *.xml
 *.xml
 *.ini
+*.prefs
 =======
 Juego/.DS_Store
 .DS_Store
@@ -162,3 +163,6 @@ Juego/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml
 Juego/.metadata/.plugins/org.eclipse.recommenders.news.impl/downloads/http%3A%2F%2Fwww.eclipse.org%2Frecommenders%2Ffeeds%2Fide.rss
 Juego/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml
 Juego/.metadata/version.ini
+Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
