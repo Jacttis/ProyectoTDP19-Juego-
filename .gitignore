@@ -19,6 +19,22 @@
 *.tar.gz
 *.rar
 
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
@@ -166,3 +182,7 @@ Juego/.metadata/version.ini
 Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
 Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+Juego/JuegoTDP19/.metadata/version.ini
+Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties
+Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+Juego/JuegoTDP19/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
