@@ -21,9 +21,5 @@ public class EnemigoGolemHielo extends Enemigo {
 		return 0;
 	}
 
-	@Override
-	protected int getPuntos() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 }
