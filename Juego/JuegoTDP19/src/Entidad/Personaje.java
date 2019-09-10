@@ -2,12 +2,14 @@ package Entidad;
 
 import java.awt.*;
 
+import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
 
 public abstract class Personaje extends Entidad {
 
 	protected int vida;
 	protected float velocidadAtaque;
+	
 
 	// protected Premio objetos [];
 
@@ -51,5 +53,7 @@ public abstract class Personaje extends Entidad {
 	public float getVelocidadAtaque() {
 		return velocidadAtaque;
 	}
+	
+	
 
 }

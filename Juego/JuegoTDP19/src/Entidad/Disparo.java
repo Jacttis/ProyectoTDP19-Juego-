@@ -8,9 +8,9 @@ public abstract class Disparo extends Entidad {
 
 	
 	
-	public Disparo(Point pos, int velocidad, Entidad disparador) {
+	public Disparo(Point pos, int velocidad, int damage) {
 		
-		super(pos,velocidad,disparador.getDamage());
+		super(pos,velocidad,damage);
 		
 		
 		imagen=new ImageIcon [1];

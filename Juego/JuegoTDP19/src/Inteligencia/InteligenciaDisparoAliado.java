@@ -9,7 +9,7 @@ public class InteligenciaDisparoAliado extends Inteligencia {
 		
 	}
 	
-	public void moverEntidad() {
+	public void actualizarEntidad() {
 		
 		entidad.getPos().x=entidad.getPos().x+entidad.getVelocidad();
 		entidad.cambiarGrafico(0);

@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="Entidades.Entidad"/>
 <fullyQualifiedTypeName name="Inteligencia.Inteligencia"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="Juego.Mapa"/>
 <fullyQualifiedTypeName name="Niveles.Nivel"/>
 <fullyQualifiedTypeName name="GUI.GUI"/>
 <fullyQualifiedTypeName name="Niveles.NivelUno"/>
@@ -15,4 +14,12 @@
 <fullyQualifiedTypeName name="Inteligencia.InteligenciaDisparoAliado"/>
 <fullyQualifiedTypeName name="Entidad.DisparoArqueroHumano"/>
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+<fullyQualifiedTypeName name="Entidad.Personaje"/>
+<fullyQualifiedTypeName name="FabricaDisparos.FabricaDisparoArqueroHumano"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="Entidad.Disparo"/>
+<fullyQualifiedTypeName name="Juego.Mapa"/>
+<fullyQualifiedTypeName name="Entidad.Aliado"/>
+<fullyQualifiedTypeName name="FabricaDisparos.FabricaDisparo"/>
+<fullyQualifiedTypeName name="FabricaDisparos.FabricaDisparoAliado"/>
 </qualifiedTypeNameHistroy>

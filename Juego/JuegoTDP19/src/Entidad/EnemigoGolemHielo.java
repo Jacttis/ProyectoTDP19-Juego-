@@ -17,7 +17,7 @@ public class EnemigoGolemHielo extends Enemigo {
 
 	@Override
 	protected int getOro() {
-		// TODO Auto-generated method stub
+	
 		return 0;
 	}
 

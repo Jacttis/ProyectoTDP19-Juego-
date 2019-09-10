@@ -8,12 +8,18 @@ import Inteligencia.InteligenciaAliados;
 import Inteligencia.InteligenciaEnemigos;
 
 import java.awt.*;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 
-public class Aliado extends Personaje {
+import FabricaDisparos.FabricaDisparo;
+
+public abstract class Aliado extends Personaje {
 
      protected String descripcion;
+     protected FabricaDisparo fabricaDisparos;
+     
+    
 
     /**
      * Crea un Personaje Aliado
@@ -26,11 +32,12 @@ public class Aliado extends Personaje {
      * @param IA
      * @param Descripcion
      */
-    public Aliado(Point pos, int vida, int damage,float velocidadAtaque, String Descripcion) {
+    public Aliado(Point pos, int vida, int damage,float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
         super(pos, vida, damage, velocidadAtaque,0);
         IA=new InteligenciaAliados(this);
         imagen =new ImageIcon[2];
         descripcion=Descripcion;
+        this.fabricaDisparos=fabricaDisparos;
 
     }
     /**
@@ -39,6 +46,29 @@ public class Aliado extends Personaje {
      */
     public String getDescripcion(){
         return descripcion;
+    }
+    
+    public abstract Disparo disparar();
+    
+    
+    /**
+     * actualiza la posicion de la entidad y
+     * si ocurre dependiendo del random, provoca que la entidad dispare
+     */
+    
+    public void actualizarEntidad() {
+    	IA.actualizarEntidad();
+    	
+    	Random r=new Random();
+		int n = r.nextInt(100);
+		
+		if(n==4) {
+			
+			System.out.println("Se agrego disparo");
+			fabricaDisparos.generarDisparo(this);
+		}
+   
+    	
     }
 
 

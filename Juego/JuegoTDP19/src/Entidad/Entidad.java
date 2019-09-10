@@ -19,6 +19,7 @@ public abstract class Entidad {
 	protected int velocidad;
 	protected int damage;
 	
+	
 	public Entidad(Point pos,int velocidad, int damage) {
 		
 		this.velocidad=velocidad;
@@ -82,8 +83,13 @@ public abstract class Entidad {
 		return velocidad;
 	}
 	
-	public void moverEntidad() {
-		IA.moverEntidad();
+	/**
+	 * Actualiza la posicion de la entidad 
+	 *
+	 */
+	
+	public void actualizarEntidad() {
+		IA.actualizarEntidad();
 	}
 	
 	public void setDamage(int nuevoDamage) {
@@ -93,5 +99,7 @@ public abstract class Entidad {
 	public int getDamage() {
 		return damage;
 	}
+	
+	
 	
 }
