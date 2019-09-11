@@ -1,5 +1,0 @@
-package Inteligencia;
-
-public class InteligenciaEnemigos extends Inteligencia {
-
-}
