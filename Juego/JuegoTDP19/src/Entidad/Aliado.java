@@ -18,6 +18,7 @@ public abstract class Aliado extends Personaje {
 
      protected String descripcion;
      protected FabricaDisparo fabricaDisparos;
+     protected boolean puedeDisparar;
      
     
 
@@ -38,6 +39,7 @@ public abstract class Aliado extends Personaje {
         imagen =new ImageIcon[2];
         descripcion=Descripcion;
         this.fabricaDisparos=fabricaDisparos;
+        puedeDisparar=true;
 
     }
     /**
@@ -59,17 +61,31 @@ public abstract class Aliado extends Personaje {
     public void actualizarEntidad() {
     	IA.actualizarEntidad();
     	
+    	/*
     	Random r=new Random();
 		int n = r.nextInt(100);
 		
 		if(n==4) {
 			
-			System.out.println("Se agrego disparo");
+			//System.out.println("Se agrego disparo");
 			fabricaDisparos.generarDisparo(this);
 		}
+		*/
+    	
+    	
+    	fabricaDisparos.generarDisparo(this);
    
     	
     }
 
+    
+    
+    public void setPuedeDisparar(boolean puede) {
+    	puedeDisparar=puede;
+    }
+    
+    public boolean puedeDisparar() {
+    	return puedeDisparar;
+    }
 
 }

@@ -1,5 +1,7 @@
 package GUI;
 
+import com.sun.glass.ui.Timer;
+
 import Juego.Juego;
 
 
@@ -9,6 +11,7 @@ public class HiloTiempo extends Thread{
 	
 	public HiloTiempo(Juego juego) {
 		this.juego=juego;
+		
 		
 	}
 	/**
@@ -32,5 +35,7 @@ public class HiloTiempo extends Thread{
 	public void terminate() {
 		fin=false;
 	}
+	
+
 
 }

@@ -8,7 +8,7 @@ import Juego.Mapa;
 public abstract class FabricaDisparo {
 
 	protected Mapa mapa;
-	
+	protected HiloPrueba hilo;
 	
 	public FabricaDisparo(Mapa mapa) {
 		this.mapa=mapa;

@@ -67,7 +67,7 @@ public class Mapa {
 	}
 	
 	/**
-	 * agrega una entidad a la lista de entidades A agregar para que despues se agregue
+	 * Agrega una entidad a la lista de entidades A agregar para que despues se agregue
 	 * a la lista de entidades en la funcion mover()
 	 * 
 	 * @param entidadAAgregar entidad que se agregara al mapa
@@ -91,7 +91,7 @@ public class Mapa {
 	}
 	
 	/**
-	 * retorna la fabrica de disparos de Aliados
+	 * Getter de la fabrica de disparos de Aliados
 	 * 
 	 * @return fabricaDisparos
 	 */

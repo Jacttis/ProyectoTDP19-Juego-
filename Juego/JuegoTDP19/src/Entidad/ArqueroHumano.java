@@ -26,7 +26,11 @@ public class ArqueroHumano extends Aliado {
 	
 	public Disparo disparar() {
 		
-		return new DisparoArqueroHumano(new Point(this.pos.x,this.pos.y+50),15,damage);
+		if(puedeDisparar)
+		
+			return new DisparoArqueroHumano(new Point(this.pos.x,this.pos.y+65),15,damage);
+		
+		else return null;
 	}
 	
 	
