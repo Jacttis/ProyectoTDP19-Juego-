@@ -6,6 +6,7 @@ import Entidad.ArqueroHumano;
 import Entidad.DisparoArqueroHumano;
 import Entidad.EnemigoGolemHielo;
 import Entidad.Entidad;
+import Entidad.MagoHielo;
 import Juego.Mapa;
 
 public class NivelUno extends Nivel {
@@ -46,6 +47,9 @@ public class NivelUno extends Nivel {
 																						sea la indicada */
 		
 		
+		
+		MagoHielo aliado2 = new MagoHielo(new Point(600,400),10,10,1500,"",mapa.getFabricaDisparos());
+		mapa.agregarEntidad(aliado2);
 	
 		
 		

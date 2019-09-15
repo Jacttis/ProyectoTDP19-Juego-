@@ -13,7 +13,8 @@ public class ArqueroHumano extends Aliado {
 	public ArqueroHumano(Point pos, int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
 		super(pos, vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
 		
-		
+		width=100;
+		height=120;
 		
 		imagen[0] = new ImageIcon("Sprites\\craftpix-392011-2d-fantasy-elf-free-sprite-sheets\\Archer1GIF\\aaaH.gif");
 	}
