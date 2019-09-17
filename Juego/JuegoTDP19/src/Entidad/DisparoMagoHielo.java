@@ -18,7 +18,7 @@ public class DisparoMagoHielo extends Disparo {
 		width=60;
 		height=60;
 		
-		imagen[0]=new ImageIcon("C:\\Users\\crist\\Documents\\GitHub\\ProyectoTDP19\\Juego\\JuegoTDP19\\src\\Sprites\\CharacterSprites\\GIFs\\DisparoMagoHielo.png");
+		imagen[0]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\DisparoMagoHielo.png");
 	
 		
 	}
