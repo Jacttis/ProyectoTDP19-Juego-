@@ -1,0 +1,16 @@
+
+*.xml
+*.iml
+*.jpg
+*.png
+*.gif
+*.unitypackage
+*.scml
+*.eps
+*.ai
+*.otf
+*.ttf
+*.psd
+Juego/JuegoTDP19/src/.idea/$PRODUCT_WORKSPACE_FILE$
+Juego/JuegoTDP19/out/.idea/$PRODUCT_WORKSPACE_FILE$
+Juego/JuegoTDP19/.idea/$PRODUCT_WORKSPACE_FILE$
