@@ -68,3 +68,9 @@ hs_err_pid*
 *.ai
 *.ttf
 *.eps
+Juego/JuegoTDP19/src/GUI/.classpath
+Juego/JuegoTDP19/src/GUI/.project
+Juego/JuegoTDP19/src/Juego/.classpath
+Juego/JuegoTDP19/src/Juego/.project
+Juego/JuegoTDP19/src/Niveles/.classpath
+Juego/JuegoTDP19/src/Niveles/.project
