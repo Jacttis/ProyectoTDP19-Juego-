@@ -19,7 +19,7 @@ public abstract class Aliado extends Personaje {
      protected String descripcion;
      protected FabricaDisparo fabricaDisparos;
      protected boolean puedeDisparar;
-     
+     protected int precio;
     
 
     /**
@@ -27,10 +27,9 @@ public abstract class Aliado extends Personaje {
      * @param pos
      * @param vida
      * @param damage
-     * @param width
-     * @param height
+
      * @param velocidadAtaque
-     * @param IA
+
      * @param Descripcion
      */
     public Aliado(Point pos, int vida, int damage,float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
@@ -87,5 +86,7 @@ public abstract class Aliado extends Personaje {
     public boolean puedeDisparar() {
     	return puedeDisparar;
     }
-
+    protected int getPrecio(){
+        return precio;
+    }
 }
