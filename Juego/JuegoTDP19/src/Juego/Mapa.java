@@ -4,13 +4,13 @@ import java.util.LinkedList;
 
 import Entidad.Entidad;
 import FabricaDisparos.FabricaDisparo;
-import FabricaDisparos.FabricaDisparoAliado;
 import GUI.GUI;
 import Niveles.Nivel;
 import Niveles.NivelUno;
 
 public class Mapa {
 
+	private static Mapa instance=null;
 	protected LinkedList<Entidad> entidades,entidadesAAgregar;
 	protected Juego juego;
 	protected Nivel nivel;
@@ -25,13 +25,19 @@ public class Mapa {
 	 * @param gui pantalla prinpal del juego
 	 */
 	
-	public Mapa(Juego juego, GUI gui) {
+	private Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
 		nivel=new NivelUno(this);
 		this.gui=gui;
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
-		fabricaDisparos=new FabricaDisparoAliado(this);
+		fabricaDisparos=FabricaDisparo.crearFabrica(this);
+	}
+	public  static Mapa crearMapa(Juego juego, GUI gui){
+		if(instance==null){
+			instance=new Mapa(juego,gui);
+		}
+		return instance;
 	}
 	
 	

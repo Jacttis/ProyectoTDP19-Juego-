@@ -5,7 +5,6 @@ import java.awt.Point;
 import javax.swing.ImageIcon;
 
 import FabricaDisparos.FabricaDisparo;
-import FabricaDisparos.FabricaDisparoAliado;
 
 
 public class ArqueroHumano extends Aliado {

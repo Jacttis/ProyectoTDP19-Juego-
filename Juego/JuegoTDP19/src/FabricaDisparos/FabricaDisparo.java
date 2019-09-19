@@ -5,16 +5,21 @@ import Entidad.Disparo;
 import Entidad.Personaje;
 import Juego.Mapa;
 
-public abstract class FabricaDisparo {
-
+public  class FabricaDisparo {
+	private static FabricaDisparo instance=null;
 	protected Mapa mapa;
 	protected HiloPrueba hilo;
 	
-	public FabricaDisparo(Mapa mapa) {
+	private FabricaDisparo(Mapa mapa) {
 		this.mapa=mapa;
 		
 	}
-	
+	public  static FabricaDisparo crearFabrica(Mapa mapa){
+		if(instance==null) {
+			instance=new FabricaDisparo(mapa);
+		}
+		return instance;
+	}
 	
 	/**
 	 * Hace que el aliado que pasa como parametro genere
@@ -24,8 +29,14 @@ public abstract class FabricaDisparo {
 	 * @param aliado
 	 */
 	
-	public abstract void generarDisparo(Aliado aliado);
-		
-		
-	
+	public  void generarDisparo(Aliado aliado){
+		Disparo disparo=aliado.disparar();
+		if(disparo!=null) {
+			mapa.agregarEntidad(disparo);
+			hilo=new HiloPrueba(aliado);
+			hilo.start();
+		}
+	}
+
+
 }

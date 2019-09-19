@@ -4,7 +4,7 @@ import GUI.GUI;
 
 public class Juego {
 
-	
+	private static Juego instance=null;
 	private GUI gui;
 	private Mapa mapa;
 	//private Jugador jugador;
@@ -16,17 +16,21 @@ public class Juego {
 	 * @param gui
 	 */
 	
-	public Juego(GUI gui) {
+	private Juego(GUI gui) {
 		
 		
 		this.gui=gui;
-		mapa=new Mapa(this,gui);
-		
-		
+		mapa=Mapa.crearMapa(this,gui);
 		mapa.generar();
 		
 	}
-	
+
+	public static Juego crearJuego(GUI gui){
+		if(instance==null) {
+			instance = new Juego(gui);
+		}
+		return instance;
+	}
 	public void mover() {
 		
 		mapa.mover();
