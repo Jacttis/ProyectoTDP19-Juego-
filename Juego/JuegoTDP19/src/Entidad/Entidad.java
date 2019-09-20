@@ -17,13 +17,14 @@ public abstract class Entidad {
 	protected Icon imagen[];
 	protected JLabel grafico;
 	protected int velocidad;
-
+	protected int damage;
 	
 	
-	public Entidad(Point pos,int velocidad) {
+	public Entidad(Point pos,int velocidad, int damage) {
 		
 		this.velocidad=velocidad;
 		this.pos=pos;
+		this.damage=damage;
 	
 	}
 	
@@ -91,7 +92,13 @@ public abstract class Entidad {
 		IA.actualizarEntidad();
 	}
 	
-
+	public void setDamage(int nuevoDamage) {
+		damage=nuevoDamage;
+	}
+	
+	public int getDamage() {
+		return damage;
+	}
 	
 	public void posicionar(Point pos){
 

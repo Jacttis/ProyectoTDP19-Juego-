@@ -2,18 +2,14 @@ package Entidad;
 
 import java.awt.*;
 
-public abstract class ObjetosPreciosos  extends Premio{
+public abstract class ObjetosPreciosos  extends Entidad{
 
     protected int precio;
-    public ObjetosPreciosos(Point pos, int damage,int precio,float duracion) {
-        super(pos, damage,duracion);
+    protected int vida;
+    public ObjetosPreciosos(Point pos, int damage,int precio,int vida) {
+        super(pos, 0, damage);
         this.precio=precio;
+        this.vida=vida;
+
     }
-
-
-
-
-
-
-
 }
