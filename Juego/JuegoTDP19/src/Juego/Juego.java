@@ -1,15 +1,20 @@
 package Juego;
 
 import GUI.GUI;
-import Tienda.PosicionadorDeAliado;
+
+import Tienda.*;
+
+import javax.rmi.CORBA.Tie;
 
 public class Juego {
 
 	private static Juego instance=null;
 	private GUI gui;
 	private Mapa mapa;
+	private Tienda tienda;
 
-	//private Jugador jugador;
+
+
 	
 	
 	/**
@@ -24,6 +29,10 @@ public class Juego {
 		this.gui=gui;
 		mapa=Mapa.crearMapa(this,gui);
 		mapa.generar();
+
+		tienda.crearTienda(new PosicionadorDeAliado(mapa));
+
+
 		
 	}
 

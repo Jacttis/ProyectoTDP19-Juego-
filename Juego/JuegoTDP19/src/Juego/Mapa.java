@@ -18,7 +18,6 @@ public class Mapa {
 	protected Nivel nivel;
 	protected GUI gui;
 	protected FabricaDisparo fabricaDisparos;
-	private PosicionadorDeAliado posicionadorDeAliados;
 	
 	
 	/**
@@ -35,7 +34,6 @@ public class Mapa {
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
 		fabricaDisparos=FabricaDisparo.crearFabrica(this);
-		posicionadorDeAliados=new PosicionadorDeAliado(this);
 	}
 	public  static Mapa crearMapa(Juego juego, GUI gui){
 		if(instance==null){
@@ -49,7 +47,7 @@ public class Mapa {
 		nivel.generarEnemigos();
 		nivel.generarAliados();
 
-		posicionadorDeAliados.posicionarAliado(new Point(170,305),new ArqueroHumano(10,10,1500,"",fabricaDisparos));
+
 	}
 	
 	
