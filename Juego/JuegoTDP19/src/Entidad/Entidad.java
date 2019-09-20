@@ -4,6 +4,11 @@ import java.awt.*;
 
 import javax.swing.*;
 
+<<<<<<< HEAD
+=======
+import Estados.Estado;
+import Estados.EstadoNulo;
+>>>>>>> parent of 56001f5... Estados
 import Inteligencia.Inteligencia;
 
 
