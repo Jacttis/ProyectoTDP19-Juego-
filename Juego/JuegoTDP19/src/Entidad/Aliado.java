@@ -32,8 +32,8 @@ public abstract class Aliado extends Personaje {
 
      * @param Descripcion
      */
-    public Aliado(Point pos, int vida, int damage,float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
-        super(pos, vida, damage, velocidadAtaque,0);
+    public Aliado(int vida, int damage,float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
+        super(new Point(0,0), vida, damage, velocidadAtaque,0);
         IA=new InteligenciaAliados(this);
         imagen =new ImageIcon[2];
         descripcion=Descripcion;
@@ -88,5 +88,10 @@ public abstract class Aliado extends Personaje {
     }
     protected int getPrecio(){
         return precio;
+    }
+
+    public void posicionar(Point posicionNueva){
+        this.pos=posicionNueva;
+        this.cambiarGrafico(0);
     }
 }

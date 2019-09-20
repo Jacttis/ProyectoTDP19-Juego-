@@ -100,6 +100,8 @@ public abstract class Entidad {
 		return damage;
 	}
 	
-	
+	public void posicionar(Point pos){
+
+	}
 	
 }

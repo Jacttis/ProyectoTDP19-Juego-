@@ -9,8 +9,8 @@ import FabricaDisparos.FabricaDisparo;
 
 public class ArqueroHumano extends Aliado {
 
-	public ArqueroHumano(Point pos, int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
-		super(pos, vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
+	public ArqueroHumano( int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
+		super(vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
 		
 		width=100;
 		height=120;

@@ -20,5 +20,11 @@ public class Tienda {
 		}
 		return instance;
 	}
+
+
+
+
+
+	
 	
 }

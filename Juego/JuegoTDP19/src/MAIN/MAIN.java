@@ -9,7 +9,7 @@ public class MAIN {
     public static void main(String[] args) {
 
         SplashL splashl = new SplashL();
-        splashl.cargarSplash();
+        //splashl.cargarSplash();
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {

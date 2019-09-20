@@ -1,12 +1,14 @@
 package Juego;
 
 import GUI.GUI;
+import Tienda.PosicionadorDeAliado;
 
 public class Juego {
 
 	private static Juego instance=null;
 	private GUI gui;
 	private Mapa mapa;
+
 	//private Jugador jugador;
 	
 	

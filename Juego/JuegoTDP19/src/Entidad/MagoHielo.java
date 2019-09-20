@@ -8,8 +8,8 @@ import FabricaDisparos.FabricaDisparo;
 
 public class MagoHielo extends Aliado {
 
-	public MagoHielo(Point pos, int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
-		super(pos, vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
+	public MagoHielo(int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
+		super(vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
 		
 		width=102;
 		height=120;

@@ -1,12 +1,14 @@
 package Juego;
 
+import java.awt.*;
 import java.util.LinkedList;
 
-import Entidad.Entidad;
+import Entidad.*;
 import FabricaDisparos.FabricaDisparo;
 import GUI.GUI;
 import Niveles.Nivel;
 import Niveles.NivelUno;
+import Tienda.PosicionadorDeAliado;
 
 public class Mapa {
 
@@ -16,6 +18,7 @@ public class Mapa {
 	protected Nivel nivel;
 	protected GUI gui;
 	protected FabricaDisparo fabricaDisparos;
+	private PosicionadorDeAliado posicionadorDeAliados;
 	
 	
 	/**
@@ -32,6 +35,7 @@ public class Mapa {
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
 		fabricaDisparos=FabricaDisparo.crearFabrica(this);
+		posicionadorDeAliados=new PosicionadorDeAliado(this);
 	}
 	public  static Mapa crearMapa(Juego juego, GUI gui){
 		if(instance==null){
@@ -44,6 +48,8 @@ public class Mapa {
 	public void generar() {
 		nivel.generarEnemigos();
 		nivel.generarAliados();
+
+		posicionadorDeAliados.posicionarAliado(new Point(170,305),new ArqueroHumano(10,10,1500,"",fabricaDisparos));
 	}
 	
 	
