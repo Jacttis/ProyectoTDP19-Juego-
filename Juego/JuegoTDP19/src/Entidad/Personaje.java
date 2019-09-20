@@ -9,7 +9,7 @@ public abstract class Personaje extends Entidad {
 
 	protected int vida;
 	protected float velocidadAtaque;
-	
+	protected int damage;
 
 	// protected Premio objetos [];
 
@@ -23,8 +23,9 @@ public abstract class Personaje extends Entidad {
 	 */
 
 	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,int velocidad) {
-		super(pos,velocidad,damage);
+		super(pos,velocidad);
 		this.vida = vida;
+		this.damage=damage;
 		
 		this.velocidadAtaque = velocidadAtaque;
 		
@@ -42,9 +43,12 @@ public abstract class Personaje extends Entidad {
 	 * 
 	 * @return Retorna el damage del personaje
 	 */
+	public void setDamage(int nuevoDamage) {
+		damage=nuevoDamage;
+	}
+
 	public int getDamage() {
 		return damage;
-
 	}
 	/**
 	 * 
