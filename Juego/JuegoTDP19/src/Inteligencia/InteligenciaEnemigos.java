@@ -5,7 +5,7 @@ import Entidad.Entidad;
 
 public class InteligenciaEnemigos extends Inteligencia {
 
-	public InteligenciaEnemigos(Aliado e) {
+	public InteligenciaEnemigos(Entidad e) {
 		super(e);
 	}
 

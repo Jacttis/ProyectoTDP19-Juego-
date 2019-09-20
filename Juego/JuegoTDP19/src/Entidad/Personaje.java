@@ -2,11 +2,6 @@ package Entidad;
 
 import java.awt.*;
 
-<<<<<<< HEAD
-=======
-import Estados.Estado;
-import Estados.Quieto;
->>>>>>> parent of 56001f5... Estados
 import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
 
@@ -58,13 +53,7 @@ public abstract class Personaje extends Entidad {
 	public float getVelocidadAtaque() {
 		return velocidadAtaque;
 	}
-<<<<<<< HEAD
 	
 	
-=======
-
-
-
->>>>>>> parent of 56001f5... Estados
 
 }
