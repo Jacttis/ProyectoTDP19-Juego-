@@ -15,7 +15,7 @@ public class DisparoArqueroHumano extends Disparo {
 		width=150;
 		height=50;
 		
-		imagen[0]=new ImageIcon("Sprites\\\\craftpix-392011-2d-fantasy-elf-free-sprite-sheets\\\\Arrow.png");
+		imagen[0]=new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Arrow.png");
 	
 		
 	}

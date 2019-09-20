@@ -14,7 +14,7 @@ public class MagoHielo extends Aliado {
 		width=102;
 		height=120;
 		
-		imagen[0] = new ImageIcon("Sprites\\CharacterSprites\\GIFs\\attackTRUE.gif");
+		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/attackTRUE.gif");
 	}
 
 	

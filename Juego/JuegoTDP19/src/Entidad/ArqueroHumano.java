@@ -15,7 +15,7 @@ public class ArqueroHumano extends Aliado {
 		width=100;
 		height=120;
 		
-		imagen[0] = new ImageIcon("Sprites\\craftpix-392011-2d-fantasy-elf-free-sprite-sheets\\Archer1GIF\\aaaH.gif");
+		imagen[0] = new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Archer1GIF/aaaH.gif");
 	}
 
 	
