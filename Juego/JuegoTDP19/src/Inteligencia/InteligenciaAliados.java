@@ -10,7 +10,7 @@ public class InteligenciaAliados extends Inteligencia {
 
 	
 	
-	public InteligenciaAliados(Aliado e) {
+	public InteligenciaAliados(Entidad e) {
 		super(e);
 		
 	}
