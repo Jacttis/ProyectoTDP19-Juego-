@@ -38,17 +38,16 @@ public class NivelUno extends Nivel {
 	 */
 	public void generarAliados() {
 		
-		ArqueroHumano aliado1 = new ArqueroHumano(new Point(300,400),10,10,1500,"",mapa.getFabricaDisparos()); //agrega un aliado
+		ArqueroHumano aliado1 = new ArqueroHumano(new Point(235  ,345),10,10,1500,"",mapa.getFabricaDisparos()); //agrega un aliado
 		mapa.agregarEntidad(aliado1);
 		
 		Point posicionAliado=aliado1.getPos(); //Consulta la posicion del aliado y se guarda
 		
-		posicionAliado.setLocation(aliado1.getPos().getX(), aliado1.getPos().getY()+90); /* Modifica los Valores de Y para que la posicion 
-																						sea la indicada */
+
+		ArqueroHumano aliado3 = new ArqueroHumano(new Point(490,255),10,10,1500,"",mapa.getFabricaDisparos());
+		mapa.agregarEntidad(aliado3);
 		
-		
-		
-		MagoHielo aliado2 = new MagoHielo(new Point(600,400),10,10,1500,"",mapa.getFabricaDisparos());
+		MagoHielo aliado2 = new MagoHielo(new Point(660,510),10,10,1500,"",mapa.getFabricaDisparos());
 		mapa.agregarEntidad(aliado2);
 	
 		

@@ -1,12 +1,11 @@
 package Splash;
 
-import javax.swing.JOptionPane;
-
-public class Main {
-
-    public static void main(String a[]) {
-
-        Splash ventana=new Splash();
+public class SplashL {
+    Splash ventana;
+    public SplashL(){
+       ventana =new Splash();
+    }
+    public  void cargarSplash(){
 
         ventana.setLocationRelativeTo(null);
         ventana.setVisible(true);
@@ -15,7 +14,7 @@ public class Main {
             try {
                 Thread.sleep(60);
                 if(i>0 && i<20) {
-                    ventana.textField.setText("Cargando Puntajes");
+                    ventana.textField.setText("Cargando Enemigo");
                 }
                 if(i>20 && i<40) {
                     ventana.textField.setText("Cargando Personajes");
@@ -32,7 +31,5 @@ public class Main {
             ventana.progressBar.setValue(i);
         }
         ventana.dispose();
-        JOptionPane.showMessageDialog(null, " El que lee es puto, comiste");
     }
-
 }

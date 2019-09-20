@@ -30,24 +30,6 @@ public class GUI extends JFrame {
 	private HiloTiempo tiempo;
 	
 
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-
-		cargarSplash();
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI frame = new GUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 	public GUI() {
 		addKeyListener(new KeyAdapter() {
 			@Override
@@ -64,25 +46,13 @@ public class GUI extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1980, 1040);
-		
 
-		
-
-		
-		
-		
-		
 		
 		contentPane = new JPanelConFondo();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		contentPane.setLayout(null);
-	
-		
-		
-		
-	
-		
+
 		setContentPane(contentPane);
 		 juego=Juego.crearJuego(this);
 		tiempo = new HiloTiempo(juego);
@@ -93,35 +63,4 @@ public class GUI extends JFrame {
 		
 		
 	}
-	
-	
-	
-	public static void cargarSplash(){
-		Splash ventana=new Splash();
-		ventana.setLocationRelativeTo(null);
-		ventana.setVisible(true);
-
-		for(int i=0;i<=100;i++) {
-			try {
-				Thread.sleep(60);
-				if(i>0 && i<20) {
-					ventana.textField.setText("Cargando Puntajes");
-				}
-				if(i>20 && i<40) {
-					ventana.textField.setText("Cargando Personajes");
-				}
-
-				if(i>40 && i<100) {
-					ventana.textField.setText("Cargando Tienda");
-				}
-
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			ventana.progressBar.setValue(i);
-		}
-		ventana.dispose();
-	}
-	
 }
