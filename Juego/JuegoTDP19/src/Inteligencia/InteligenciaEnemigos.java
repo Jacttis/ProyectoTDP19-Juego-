@@ -1,19 +1,20 @@
 package Inteligencia;
 
-import Entidad.Entidad;
+import Entidad.*;
 
 
 public class InteligenciaEnemigos extends Inteligencia {
 
-	public InteligenciaEnemigos(Entidad e) {
+	public InteligenciaEnemigos(Aliado e) {
 		super(e);
 	}
 
-	@Override
+
 	public void actualizarEntidad() {
-		
+
 		entidad.getPos().setLocation(entidad.getPos().x-entidad.getVelocidad(), entidad.getPos().y);
-		entidad.cambiarGrafico(0);
+
+
 		
 	}
 }

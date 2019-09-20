@@ -2,6 +2,8 @@ package Entidad;
 
 import java.awt.*;
 
+import Estados.Estado;
+import Estados.Quieto;
 import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
 
@@ -9,6 +11,7 @@ public abstract class Personaje extends Entidad {
 
 	protected int vida;
 	protected float velocidadAtaque;
+
 	
 
 	// protected Premio objetos [];
@@ -25,7 +28,6 @@ public abstract class Personaje extends Entidad {
 	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,int velocidad) {
 		super(pos,velocidad,damage);
 		this.vida = vida;
-		
 		this.velocidadAtaque = velocidadAtaque;
 		
 	}
@@ -53,7 +55,8 @@ public abstract class Personaje extends Entidad {
 	public float getVelocidadAtaque() {
 		return velocidadAtaque;
 	}
-	
-	
+
+
+
 
 }
