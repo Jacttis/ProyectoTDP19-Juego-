@@ -10,6 +10,6 @@ public class EstadoNulo extends Estado {
     }
 
     public void actuar() {
-
+        entidad.getInteligencia().actualizarEntidad();
     }
 }

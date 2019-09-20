@@ -2,6 +2,7 @@ package Entidad;
 
 import java.awt.*;
 
+import Estados.Atacando;
 import Estados.Estado;
 import Estados.Quieto;
 import FabricaDisparos.FabricaDisparo;
@@ -56,7 +57,11 @@ public abstract class Personaje extends Entidad {
 		return velocidadAtaque;
 	}
 
-
+	public void actualizarEntidad() {
+		if(pos.x<1150)
+			estado=new Atacando(this);
+		estado.actuar();
+	}
 
 
 }
