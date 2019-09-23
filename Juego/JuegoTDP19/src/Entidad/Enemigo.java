@@ -3,6 +3,7 @@ import java.awt.*;
 
 import javax.swing.ImageIcon;
 
+import Estados.Caminando;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaEnemigos;
 
@@ -25,7 +26,8 @@ public abstract class Enemigo extends Personaje{
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
 		this.puntos=puntos;
-		imagen=new ImageIcon [1];
+		imagen=new ImageIcon [2];
+		estado=new Caminando(this);
 	}
 	/**
 	 * Retorna una cantidad de oro segun enemigo
@@ -45,6 +47,7 @@ public abstract class Enemigo extends Personaje{
 	 * Devuelve la velocidad del enemigo
 	 * @return Entero con la velocidad del enemigo
 	 */
-	
+
+
 
 }

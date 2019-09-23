@@ -4,6 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import Estados.Atacando;
 import Estados.Estado;
 import Estados.EstadoNulo;
 import Inteligencia.Inteligencia;
@@ -93,9 +94,11 @@ public abstract class Entidad {
 	 */
 	
 	public void actualizarEntidad() {
-		IA.actualizarEntidad();
+		if(pos.x<1700)
+			estado=new Atacando(this);
+		estado.actuar();
 	}
-	
+
 	public void setDamage(int nuevoDamage) {
 		damage=nuevoDamage;
 	}
