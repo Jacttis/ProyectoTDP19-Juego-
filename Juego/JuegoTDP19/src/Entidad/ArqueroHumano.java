@@ -16,14 +16,7 @@ public class ArqueroHumano extends Aliado {
 		height=120;
 		
 		imagen[0] = new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Archer1GIF/aaaH.gif");
-<<<<<<< HEAD
 		imagen[1] = new ImageIcon("Sprites/Golems/GolemHieloGIF/AtacandoTRUE.gif");
-=======
-<<<<<<< HEAD
-=======
-		imagen[1] = new ImageIcon("")
->>>>>>> parent of 56001f5... Estados
->>>>>>> 6fea609c9f08d8afe21638926d0b89534e79d94f
 	}
 
 	

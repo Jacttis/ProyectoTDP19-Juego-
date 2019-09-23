@@ -4,15 +4,9 @@ import java.awt.*;
 
 import javax.swing.*;
 
-<<<<<<< HEAD
 import Estados.Atacando;
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6fea609c9f08d8afe21638926d0b89534e79d94f
 import Estados.Estado;
 import Estados.EstadoNulo;
->>>>>>> parent of 56001f5... Estados
 import Inteligencia.Inteligencia;
 
 
@@ -27,6 +21,7 @@ public abstract class Entidad {
 	protected JLabel grafico;
 	protected int velocidad;
 	protected int damage;
+	protected Estado estado;
 	
 	
 	public Entidad(Point pos,int velocidad, int damage) {
@@ -34,6 +29,7 @@ public abstract class Entidad {
 		this.velocidad=velocidad;
 		this.pos=pos;
 		this.damage=damage;
+		estado=new EstadoNulo(this);
 	
 	}
 	
@@ -113,6 +109,14 @@ public abstract class Entidad {
 	
 	public void posicionar(Point pos){
 
+	}
+
+	public Estado getEstado(){
+		return estado;
+	}
+
+	public void cambiarEstado(Estado nuevoEstado){
+		estado=nuevoEstado;
 	}
 	
 }
