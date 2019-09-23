@@ -1,6 +1,6 @@
 package Inteligencia;
 
-import Entidad.*;
+import Entidad.Entidad;
 
 
 public class InteligenciaEnemigos extends Inteligencia {
@@ -9,12 +9,11 @@ public class InteligenciaEnemigos extends Inteligencia {
 		super(e);
 	}
 
-
+	@Override
 	public void actualizarEntidad() {
-
+		
 		entidad.getPos().setLocation(entidad.getPos().x-entidad.getVelocidad(), entidad.getPos().y);
-
-
+		entidad.cambiarGrafico(0);
 		
 	}
 }
