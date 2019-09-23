@@ -94,8 +94,8 @@ public abstract class Entidad {
 	 */
 	
 	public void actualizarEntidad() {
-		if(pos.x<1700)
-			estado=new Atacando(this);
+        if(pos.x<1700)
+            estado=new Atacando(this);
 		estado.actuar();
 	}
 

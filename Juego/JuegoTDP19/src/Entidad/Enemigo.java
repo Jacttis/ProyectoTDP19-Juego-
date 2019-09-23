@@ -3,6 +3,7 @@ import java.awt.*;
 
 import javax.swing.ImageIcon;
 
+import Estados.Atacando;
 import Estados.Caminando;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaEnemigos;
@@ -49,5 +50,10 @@ public abstract class Enemigo extends Personaje{
 	 */
 
 
+	public void actualizarEntidad() {
+		if(pos.x<1700)
+			estado=new Atacando(this);
+		estado.actuar();
+	}
 
 }
