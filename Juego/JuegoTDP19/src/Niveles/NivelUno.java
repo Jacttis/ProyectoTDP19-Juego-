@@ -10,12 +10,24 @@ import Entidad.MagoHielo;
 import Juego.Mapa;
 
 public class NivelUno extends Nivel {
-
-	public NivelUno(Mapa mapa) {
+	private static NivelUno instance=null;
+	private NivelUno(Mapa mapa) {
 		super(mapa);
 	}
 
-	
+	public  static NivelUno getinstance(Mapa mapa){
+		if(instance==null){
+			instance=new NivelUno(mapa);
+		}
+		return instance;
+	}
+
+	public  static NivelUno getinstance(){
+	    if(instance==null){
+            System.out.println("NULL");
+        }
+		return instance;
+	}
 	/**
 	 * Genera los enemigos y utiliza agregarEntidad de mapa
 	 * para insertarlos en el mismo
@@ -24,10 +36,8 @@ public class NivelUno extends Nivel {
 	
 	public void generarEnemigos() {
 		mapa.agregarEntidad(new EnemigoGolemHielo(new Point(1800,600),10,10,10,1,10));
-		
-		mapa.agregarEntidad(new EnemigoGolemHielo(new Point(1800,490),10,10,10,1,10));
-		
-		mapa.agregarEntidad(new EnemigoGolemHielo(new Point(1800,380),10,10,10,1,10));
+
+
 	}
 	
 	

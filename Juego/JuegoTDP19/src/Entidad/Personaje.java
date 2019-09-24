@@ -57,13 +57,9 @@ public abstract class Personaje extends Entidad {
 		return velocidadAtaque;
 	}
 
-	public void actualizarEntidad(){
+	public void actualizarEntidad() {
 
 		this.checkearVida();
-
-
-		if(pos.x<1700)
-			estado=new Muerto(this);
 		estado.actuar();
 	}
 
@@ -85,6 +81,9 @@ public abstract class Personaje extends Entidad {
 		vida=n;
 	}
 
+	public void destruir(){
+		vida=0;
+	}
 
 
 }

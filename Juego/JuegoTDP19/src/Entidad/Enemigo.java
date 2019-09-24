@@ -41,7 +41,7 @@ public abstract class Enemigo extends Personaje{
 	 * Devuelve la cantidad de puntos del enemigo
 	 * @return Entero con la cantidad de puntos que da el enemigo
 	 */
-	protected  int getPuntos() {
+	public int getPuntos() {
 		return puntos;
 	}
 	/**

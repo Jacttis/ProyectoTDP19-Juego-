@@ -29,7 +29,7 @@ public class Mapa {
 	
 	private Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
-		nivel=new NivelUno(this);
+		nivel=NivelUno.getinstance(this);
 		this.gui=gui;
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();

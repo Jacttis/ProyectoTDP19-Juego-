@@ -1,10 +1,12 @@
 package Juego;
 
+import Entidad.Entidad;
 import GUI.GUI;
 
 import Tienda.*;
 
 import javax.rmi.CORBA.Tie;
+import java.util.LinkedList;
 
 public class Juego {
 
@@ -47,6 +49,10 @@ public class Juego {
 		mapa.mover();
 		
 		
+	}
+
+	public LinkedList<Entidad> getListaMapa(){
+		return mapa.getEntidades();
 	}
 	
 	

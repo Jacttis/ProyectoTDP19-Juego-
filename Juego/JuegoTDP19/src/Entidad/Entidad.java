@@ -118,6 +118,12 @@ public abstract class Entidad {
 		return serEliminado;
 	}
 
+	public void destruir(){
 
+	}
+
+	public int getPuntos(){
+		return 0;
+	}
 	
 }
