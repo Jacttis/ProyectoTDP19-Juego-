@@ -13,7 +13,7 @@ import Tienda.PosicionadorDeAliado;
 public class Mapa {
 
 	private static Mapa instance=null;
-	protected LinkedList<Entidad> entidades,entidadesAAgregar;
+	protected LinkedList<Entidad> entidades,entidadesAAgregar,entidadesAEliminar;
 	protected Juego juego;
 	protected Nivel nivel;
 	protected GUI gui;
@@ -33,6 +33,7 @@ public class Mapa {
 		this.gui=gui;
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
+		entidadesAEliminar=new LinkedList<Entidad>();
 		fabricaDisparos=FabricaDisparo.crearFabrica(this);
 	}
 	public  static Mapa crearMapa(Juego juego, GUI gui){
@@ -63,17 +64,24 @@ public class Mapa {
 		
 		for(Entidad e : entidades) {
 			e.actualizarEntidad();
-			
+			if(e.getSerEliminado())
+				entidadesAEliminar.add(e);
+
 			
 		}
-		
+
+		for(Entidad eAEliminar : entidadesAEliminar){
+			entidades.remove(eAEliminar);
+			eliminarEntidadGrafica(eAEliminar);
+		}
 		
 		for(Entidad eAAgregar : entidadesAAgregar) {
 			entidades.add(eAAgregar);
-			gui.add(eAAgregar.getGrafico());
+			agregarEntidadGrafica(eAAgregar);
 		}
 		
 		entidadesAAgregar=new LinkedList<Entidad>();
+		entidadesAEliminar=new LinkedList<Entidad>();
 	}
 	
 	/**
@@ -86,8 +94,23 @@ public class Mapa {
 	public void agregarEntidad(Entidad entidadAAgregar) {
 		
 		entidadesAAgregar.add(entidadAAgregar);
+
 		
 		
+	}
+
+	public void eliminarEntidad(Entidad entidadAEliminar){
+		entidadesAEliminar.add(entidadAEliminar);
+	}
+
+	public void agregarEntidadGrafica(Entidad entidad){
+		gui.add(entidad.getGrafico());
+		gui.repaint();
+	}
+
+	public void eliminarEntidadGrafica(Entidad entidad){
+		gui.remove(entidad.getGrafico());
+		gui.repaint();
 	}
 	
 	public LinkedList<Entidad> getEntidades() {

@@ -21,15 +21,16 @@ public abstract class Entidad {
 	protected JLabel grafico;
 	protected int velocidad;
 	protected int damage;
-	protected Estado estado;
+	protected boolean serEliminado;
 	
 	
 	public Entidad(Point pos,int velocidad, int damage) {
-		
+
+		this.serEliminado=false;
 		this.velocidad=velocidad;
 		this.pos=pos;
 		this.damage=damage;
-		estado=new EstadoNulo(this);
+
 	
 	}
 	
@@ -94,9 +95,7 @@ public abstract class Entidad {
 	 */
 	
 	public void actualizarEntidad() {
-        if(pos.x<1700)
-            estado=new Atacando(this);
-		estado.actuar();
+      	IA.actualizarEntidad();
 	}
 
 	public void setDamage(int nuevoDamage) {
@@ -111,12 +110,14 @@ public abstract class Entidad {
 
 	}
 
-	public Estado getEstado(){
-		return estado;
+	public void setSerEliminado(boolean booleano){
+		serEliminado=booleano;
 	}
 
-	public void cambiarEstado(Estado nuevoEstado){
-		estado=nuevoEstado;
+	public boolean getSerEliminado(){
+		return serEliminado;
 	}
+
+
 	
 }

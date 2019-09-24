@@ -27,7 +27,7 @@ public abstract class Enemigo extends Personaje{
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
 		this.puntos=puntos;
-		imagen=new ImageIcon [2];
+		imagen=new ImageIcon [3];
 		estado=new Caminando(this);
 	}
 	/**
@@ -50,10 +50,6 @@ public abstract class Enemigo extends Personaje{
 	 */
 
 
-	public void actualizarEntidad() {
-		if(pos.x<1700)
-			estado=new Atacando(this);
-		estado.actuar();
-	}
+
 
 }

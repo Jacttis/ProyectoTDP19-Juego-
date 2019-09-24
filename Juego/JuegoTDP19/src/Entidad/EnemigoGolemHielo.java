@@ -13,6 +13,7 @@ public class EnemigoGolemHielo extends Enemigo {
 		super(pos, vida, damage, velocidadAtaque, velocidad, puntos);
 		imagen[0] = new ImageIcon("Sprites/Golems/GolemHieloGIF/CaminandoTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/Golems/GolemHieloGIF/AtacandoTRUE.gif");
+		imagen[2] = new ImageIcon("Sprites/Golems/GolemHieloGIF/MuriendoTRUE.gif");
 
 	}
 

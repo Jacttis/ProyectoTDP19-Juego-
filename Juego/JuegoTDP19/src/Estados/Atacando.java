@@ -5,13 +5,13 @@ import Entidad.Personaje;
 
 public class Atacando extends Estado {
 
-    public Atacando(Entidad entidad){
-        super(entidad);
+    public Atacando(Personaje personaje){
+        super(personaje);
     }
 
 
     public void actuar() {
-        entidad.cambiarGrafico(1);
+        personaje.cambiarGrafico(1);
     }
 
 

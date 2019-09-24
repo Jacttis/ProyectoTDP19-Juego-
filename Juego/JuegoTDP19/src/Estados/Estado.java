@@ -4,11 +4,13 @@ import Entidad.*;
 
 public abstract class Estado {
 
-    protected Entidad entidad;
+    protected HiloEstados hiloMuerte;
+    protected Personaje personaje;
 
-    public Estado (Entidad entidad) {
+    public Estado (Personaje personaje) {
 
-        this.entidad=entidad;
+        hiloMuerte=new HiloEstados(personaje);
+        this.personaje=personaje;
 
 
     }

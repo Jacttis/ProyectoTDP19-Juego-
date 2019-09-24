@@ -2,8 +2,7 @@ package Entidad;
 
 import java.awt.*;
 
-import Estados.Estado;
-import Estados.Quieto;
+import Estados.*;
 import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
 
@@ -11,6 +10,7 @@ public abstract class Personaje extends Entidad {
 
 	protected int vida;
 	protected float velocidadAtaque;
+	protected Estado estado;
 
 	
 
@@ -29,6 +29,7 @@ public abstract class Personaje extends Entidad {
 		super(pos,velocidad,damage);
 		this.vida = vida;
 		this.velocidadAtaque = velocidadAtaque;
+		estado=new EstadoNulo(this);
 		
 	}
 	// Getters
@@ -56,6 +57,33 @@ public abstract class Personaje extends Entidad {
 		return velocidadAtaque;
 	}
 
+	public void actualizarEntidad(){
+
+		this.checkearVida();
+
+
+		if(pos.x<1700)
+			estado=new Muerto(this);
+		estado.actuar();
+	}
+
+	public Estado getEstado(){
+		return estado;
+	}
+
+	public void cambiarEstado(Estado nuevoEstado){
+		estado=nuevoEstado;
+	}
+
+	public void checkearVida(){
+		if(vida<=0) {
+			estado=new Muerto(this);
+		}
+	}
+
+	public void setVida(int n){
+		vida=n;
+	}
 
 
 

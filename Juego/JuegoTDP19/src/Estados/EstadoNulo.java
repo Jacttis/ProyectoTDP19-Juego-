@@ -1,11 +1,11 @@
 package Estados;
 
-import Entidad.Entidad;
+import Entidad.*;
 
 public class EstadoNulo extends Estado {
 
-    public EstadoNulo(Entidad entidad){
-        super(entidad);
+    public EstadoNulo(Personaje personaje){
+        super(personaje);
     }
 
     public void actuar() {
