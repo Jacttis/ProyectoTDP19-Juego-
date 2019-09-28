@@ -17,7 +17,7 @@ public class HiloEstados extends Thread {
 
 
             System.out.println("Espera 1 segundo para eliminar grafico");
-            Thread.sleep(1000);
+            Thread.sleep(700);
 
             personaje.setSerEliminado(true);
 
