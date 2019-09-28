@@ -64,10 +64,12 @@ public class Mapa {
 		
 		for(Entidad e : entidades) {
 			e.actualizarEntidad();
+
+
 			if(e.getSerEliminado())
 				entidadesAEliminar.add(e);
 
-			
+
 		}
 
 		for(Entidad eAEliminar : entidadesAEliminar){
@@ -132,5 +134,6 @@ public class Mapa {
 	public FabricaDisparo getFabricaDisparos() {
 		return fabricaDisparos;
 	}
-	
+
+
 }

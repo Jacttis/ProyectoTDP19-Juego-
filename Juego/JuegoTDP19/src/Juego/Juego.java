@@ -14,6 +14,7 @@ public class Juego {
 	private GUI gui;
 	private Mapa mapa;
 	private Tienda tienda;
+	public ComunicadorEntidadMapa comunicadorEntidadMapa;
 
 
 
@@ -30,9 +31,12 @@ public class Juego {
 		
 		this.gui=gui;
 		mapa=Mapa.crearMapa(this,gui);
+		comunicadorEntidadMapa.getComunicadorEntidadMapa(mapa);
 		mapa.generar();
 
+
 		tienda.crearTienda(new PosicionadorDeAliado(mapa));
+
 
 
 		

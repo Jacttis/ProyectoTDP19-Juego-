@@ -8,8 +8,7 @@ import Estados.Atacando;
 import Estados.Estado;
 import Estados.EstadoNulo;
 import Inteligencia.Inteligencia;
-
-
+import Juego.ComunicadorEntidadMapa;
 
 
 public abstract class Entidad {
@@ -22,6 +21,7 @@ public abstract class Entidad {
 	protected int velocidad;
 	protected int damage;
 	protected boolean serEliminado;
+	protected ComunicadorEntidadMapa comunicadorEntidadMapa;
 	
 	
 	public Entidad(Point pos,int velocidad, int damage) {
@@ -30,6 +30,8 @@ public abstract class Entidad {
 		this.velocidad=velocidad;
 		this.pos=pos;
 		this.damage=damage;
+
+		comunicadorEntidadMapa.getComunicadorEntidadMapa(null);
 
 	
 	}
@@ -124,6 +126,10 @@ public abstract class Entidad {
 
 	public int getPuntos(){
 		return 0;
+	}
+
+	public ComunicadorEntidadMapa getComunicadorEntidadMapa(){
+		return comunicadorEntidadMapa;
 	}
 	
 }

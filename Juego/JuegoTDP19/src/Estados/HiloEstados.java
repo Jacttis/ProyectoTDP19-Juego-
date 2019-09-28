@@ -18,7 +18,10 @@ public class HiloEstados extends Thread {
 
             System.out.println("Espera 1 segundo para eliminar grafico");
             Thread.sleep(1000);
+
             personaje.setSerEliminado(true);
+
+            //personaje.getComunicadorEntidadMapa().eliminarEntidad(personaje);
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
