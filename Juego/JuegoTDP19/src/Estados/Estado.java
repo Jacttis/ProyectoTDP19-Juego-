@@ -18,6 +18,13 @@ public abstract class Estado {
 
     public abstract void actuar();
 
+    public void verificarEstado(){
+
+
+        if(personaje.estaMuerto())
+            personaje.setEstado(new Muerto(personaje));
+    }
+
 
 
 

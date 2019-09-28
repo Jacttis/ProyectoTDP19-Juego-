@@ -10,6 +10,6 @@ public class Quieto extends Estado{
 
 
     public void actuar(){
-
+        this.verificarEstado();
     }
 }

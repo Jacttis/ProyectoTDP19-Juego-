@@ -16,9 +16,9 @@ public class Caminando extends Estado {
     public void actuar(){
 
         personaje.getInteligencia().actualizarEntidad();
-
-
         personaje.cambiarGrafico(0);
+
+        this.verificarEstado();
 
     }
 

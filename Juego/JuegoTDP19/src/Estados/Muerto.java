@@ -12,10 +12,11 @@ public class Muerto extends Estado {
     }
 
     public void actuar() {
-        if(!actuo) {
-            actuo=true;
-            personaje.cambiarGrafico(2);
-            hiloMuerte.start();
-        }
+
+        personaje.cambiarGrafico(2);
+        hiloMuerte.start();
+
+        personaje.setEstado(new EstadoNulo(personaje));
+
     }
 }

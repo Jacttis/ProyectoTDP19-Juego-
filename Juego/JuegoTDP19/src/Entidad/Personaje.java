@@ -58,8 +58,6 @@ public abstract class Personaje extends Entidad {
 	}
 
 	public void actualizarEntidad() {
-
-		this.checkearVida();
 		estado.actuar();
 	}
 
@@ -71,10 +69,8 @@ public abstract class Personaje extends Entidad {
 		estado=nuevoEstado;
 	}
 
-	public void checkearVida(){
-		if(vida<=0) {
-			estado=new Muerto(this);
-		}
+	public boolean estaMuerto(){
+		return vida<=0;
 	}
 
 	public void setVida(int n){
@@ -83,6 +79,10 @@ public abstract class Personaje extends Entidad {
 
 	public void destruir(){
 		vida=0;
+	}
+
+	public void setEstado(Estado estado){
+		this.estado=estado;
 	}
 
 
