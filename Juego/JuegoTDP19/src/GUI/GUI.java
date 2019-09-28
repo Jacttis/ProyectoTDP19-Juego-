@@ -65,7 +65,9 @@ public class GUI extends JFrame {
 		botonParaAgregar();
 		contentPane.add(agregar);
 		tiempo.start();
-		
+
+		GuiTienda tienda=new GuiTienda();
+		contentPane.add(tienda.getPanel());
 		
 		
 		
@@ -73,7 +75,7 @@ public class GUI extends JFrame {
 
 	public void botonParaEliminar(){
 		botonEliminar=new JButton();
-		botonEliminar.setBounds(1200, 33, 128, 25);
+		botonEliminar.setBounds(1200, 70, 128, 25);
 		botonEliminar.setText("Eliminar CHOBI");
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -88,7 +90,7 @@ public class GUI extends JFrame {
 
 	public void botonParaAgregar(){
 		agregar=new BotonAgregar();
-		agregar.setBounds(1000, 33, 128, 25);
+		agregar.setBounds(1200, 33, 128, 25);
 		agregar.setText("Agregar CHOBI");
 		agregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
