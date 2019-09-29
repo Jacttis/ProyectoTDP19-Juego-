@@ -119,12 +119,7 @@ class GuiTienda extends JFrame{
         labelPuntos = new JLabel("Puntos: 0");
 
         btnVender = new JButton("Vender");
-        btnVender.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"El que lee es puto");
-            }
-        });
+
 
         GroupLayout gl_panel = new GroupLayout(panel);
         gl_panel.setHorizontalGroup(
