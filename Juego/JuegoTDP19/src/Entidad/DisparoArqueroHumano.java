@@ -12,10 +12,10 @@ public class DisparoArqueroHumano extends Disparo {
 		super(pos, velocidad, damage);
 		IA=new InteligenciaDisparoAliado(this);
 		
-		width=150;
-		height=50;
+		width=100;
+		height=38;
 		
-		imagen[0]=new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Arrow.png");
+		imagen[0]=new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
 	
 		
 	}

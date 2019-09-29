@@ -2,6 +2,7 @@ package GUI;
 
 import Entidad.Aliado;
 import Entidad.ArqueroHumano;
+import Entidad.MagoHielo;
 import FabricaDisparos.FabricaDisparo;
 import Juego.Juego;
 import Tienda.Tienda;
@@ -12,12 +13,12 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
-class GuiTienda {
+class GuiTienda extends JFrame{
 
     private JFrame frame;
     private JPanel panel;
     private JButton btnArqueroHumano;
-    private JButton btnNewButton2;
+    private JButton btnMagoHielo;
     private JButton btnNewButton3;
     private JButton btnNewButton4;
     private JButton btnNewButton5;
@@ -62,6 +63,7 @@ class GuiTienda {
         this.juego=juego;
 
         initialize();
+
     }
 
     /**
@@ -77,19 +79,32 @@ class GuiTienda {
         panel.setBounds(100, 0, 992, 205);
         frame.getContentPane().add(panel);
 
+
+
         btnArqueroHumano = new JButton();
         btnArqueroHumano.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\ArqueroHumano.jpeg"));
         btnArqueroHumano.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroHumano(100,100,1500,"asd",FabricaDisparo.getFabricaDisparos());
+                aliadoAAgregar=new ArqueroHumano(100,100,1500,"Dispara flechas",FabricaDisparo.getFabricaDisparos());
                 esperandoClick=true;
+                deshabilitarBotones();
+
             }
         });
 
 
 
-        btnNewButton2 = new JButton();
+        btnMagoHielo = new JButton();
+        btnMagoHielo.setIcon(new ImageIcon("Sprites\\CharacterSprites\\IceWizard\\Stand\\0.png"));
+        btnMagoHielo.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                aliadoAAgregar=new MagoHielo(100,100,1500,"Tira Hielo",FabricaDisparo.getFabricaDisparos());
+                esperandoClick=true;
+                deshabilitarBotones();
+            }
+        });
 
         btnNewButton3 = new JButton();
 
@@ -118,7 +133,7 @@ class GuiTienda {
                                 .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
                                         .addGroup(gl_panel.createSequentialGroup()
                                                 .addGap(143)
-                                                .addComponent(btnNewButton2, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(gl_panel.createSequentialGroup()
                                                 .addGap(283)
                                                 .addComponent(btnNewButton3, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
@@ -143,7 +158,7 @@ class GuiTienda {
         );
         gl_panel.setVerticalGroup(
                 gl_panel.createParallelGroup(Alignment.LEADING)
-                        .addComponent(btnNewButton2, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnNewButton3, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnArqueroHumano)
                         .addComponent(btnNewButton5_1, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
@@ -166,6 +181,14 @@ class GuiTienda {
     }
 
 
+    /**
+     * Es llamado desde la gui principal si hubo un click en el mapa
+     * Si esta esperando una posicion, se le enviara al juego comprar aliado
+     *
+     *
+     * @param pos
+     */
+
     public void seClickeoEnMapa(Point pos){
         if(esperandoClick){
 
@@ -173,10 +196,30 @@ class GuiTienda {
 
             esperandoClick=false;
 
+            habilitarBotones();
+
         }
 
     }
 
+    /**
+     * Deshabilita todos los botones
+     *
+     */
 
+    public void deshabilitarBotones(){
+        btnMagoHielo.setEnabled(false);
+        btnArqueroHumano.setEnabled(false);
+    }
+
+    /**
+     * Habilita todos los botones.
+     *
+     */
+
+    public void habilitarBotones(){
+        btnMagoHielo.setEnabled(true);
+        btnArqueroHumano.setEnabled(true);
+    }
 
 }

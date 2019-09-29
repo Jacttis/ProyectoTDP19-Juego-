@@ -16,15 +16,16 @@ public class ArqueroHumano extends Aliado {
 		width=100;
 		height=120;
 
-		imagen[0] = new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Archer1GIF/aaaH.gif");
-		imagen[1] = new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Archer1GIF/aaaH.gif");
-		imagen[2] = new ImageIcon("Sprites/craftpix-392011-2d-fantasy-elf-free-sprite-sheets/Archer1GIF/aaaH.gif");
+		imagen[0] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
+		imagen[1] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
+		imagen[2] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 
 	}
 
 	
 	/**
-	 * Genera un disparo y lo retorna
+	 * Genera un disparo y lo retorna para que fabrica de disparos
+	 * lo inserte en el mapa
 	 * 
 	 */
 	
@@ -32,15 +33,17 @@ public class ArqueroHumano extends Aliado {
 		
 		if(puedeDisparar)
 		
-			return new DisparoArqueroHumano(new Point(this.pos.x,this.pos.y+50),15,damage);
+			return new DisparoArqueroHumano(new Point(this.pos.x+30,this.pos.y+50),15,damage);
 		
 		else return null;
 	}
 
 
+
+
 	public void posicionar(Point posicionNueva){
 		this.pos=new Point(posicionNueva.x,posicionNueva.y+15);
-		this.cambiarGrafico(0);
+
 	}
 	
 	

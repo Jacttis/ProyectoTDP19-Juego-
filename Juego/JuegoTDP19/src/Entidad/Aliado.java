@@ -41,6 +41,8 @@ public abstract class Aliado extends Personaje {
         this.fabricaDisparos=fabricaDisparos;
         puedeDisparar=true;
 
+        precio=1;
+
         estado=new Atacando(this);
 
     }
@@ -60,8 +62,8 @@ public abstract class Aliado extends Personaje {
     
     
     /**
-     * actualiza la posicion de la entidad y
-     * si ocurre dependiendo del random, provoca que la entidad dispare
+     * actualiza la entidad mediante su estado.
+     *
      */
     
     public void actualizarEntidad() {
@@ -79,16 +81,25 @@ public abstract class Aliado extends Personaje {
     	return puedeDisparar;
     }
 
-    protected int getPrecio(){
+    public int getPrecio(){
         return precio;
     }
 
+
+    /**
+     * Recibe una posicion central de una celda y se ubica
+     * en esa celda.
+     *
+     * @param posicionNueva
+     */
+
     public void posicionar(Point posicionNueva){
         this.pos=posicionNueva;
-        this.cambiarGrafico(0);
+
     }
 
     public FabricaDisparo getFabricaDisparos(){
         return fabricaDisparos;
     }
+
 }

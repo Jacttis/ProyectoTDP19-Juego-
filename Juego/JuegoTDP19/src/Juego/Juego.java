@@ -5,7 +5,7 @@ import GUI.GUI;
 
 import Tienda.*;
 
-import javax.rmi.CORBA.Tie;
+
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -64,10 +64,17 @@ public class Juego {
 	}
 
 
+	/**
+	 * Este llamado se produce desde GUI TIENDA y envia a
+	 * tienda la posicion y el aliado a agregar
+	 *
+	 * @param pos
+	 * @param aliadoAAgregar
+	 */
+
 	public void comprarAliado(Point pos, Aliado aliadoAAgregar){
 
-		tienda.agregarAliado(pos,aliadoAAgregar);
-
+		tienda.comprarAliado(pos,aliadoAAgregar);
 
 	}
 	

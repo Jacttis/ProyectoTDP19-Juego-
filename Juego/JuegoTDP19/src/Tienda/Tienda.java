@@ -16,7 +16,8 @@ public class Tienda {
 	//private LinkedList<ObjetoPrecioso> objetos;
 
 	private Tienda(PosicionadorDeAliado posicionador){
-
+		puntos=0;
+		oro=4;
 		posicionadorDeAliados=posicionador;
 	}
 	public  static Tienda crearTienda(PosicionadorDeAliado posicionador){
@@ -42,8 +43,13 @@ public class Tienda {
 		return puntos;
 	}
 
-	public void agregarAliado(Point pos,Aliado aliadoAAgregar){
-		posicionadorDeAliados.posicionarAliado(pos,aliadoAAgregar);
+	public void comprarAliado(Point pos,Aliado aliadoAAgregar){
+
+		if(oro>=aliadoAAgregar.getPrecio()) {
+			posicionadorDeAliados.posicionarAliado(pos, aliadoAAgregar);
+			oro-=aliadoAAgregar.getPrecio();
+		}
+		else System.out.println("No tienes suficiente oro.");
 	}
 
 

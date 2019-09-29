@@ -68,9 +68,9 @@ public class GUI extends JFrame implements MouseListener {
 
 		guiTienda=new GuiTienda(this,juego);
 		contentPane.add(guiTienda.getPanel());
-		
-		
-		
+
+		this.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+
 	}
 
 	public void botonParaEliminar(){
@@ -103,8 +103,15 @@ public class GUI extends JFrame implements MouseListener {
 		return guiTienda;
 	}
 
-	@Override
+
+	/**
+	 * Detecta clicks en el mapa.
+	 *
+	 * @param e
+	 */
+
 	public void mouseClicked(MouseEvent e) {
+
 		System.out.println("Se clickeo en mapa");
 		guiTienda.seClickeoEnMapa(new Point(e.getX(),e.getY()));
 	}

@@ -15,10 +15,10 @@ public class DisparoMagoHielo extends Disparo {
 		super(pos, velocidad, damage);
 		IA=new InteligenciaDisparoAliado(this);
 		
-		width=60;
-		height=60;
+		width=45;
+		height=45;
 		
-		imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/DisparoMagoHielo.png");
+		imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/DisparoMagoHieloTRUE.gif");
 	
 		
 	}
