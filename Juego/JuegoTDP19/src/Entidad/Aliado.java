@@ -36,7 +36,7 @@ public abstract class Aliado extends Personaje {
     public Aliado(int vida, int damage,float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
         super(new Point(0,0), vida, damage, velocidadAtaque,0);
         IA=new InteligenciaAliados(this);
-        imagen =new ImageIcon[2];
+        imagen =new ImageIcon[3];
         descripcion=Descripcion;
         this.fabricaDisparos=fabricaDisparos;
         puedeDisparar=true;
@@ -66,22 +66,7 @@ public abstract class Aliado extends Personaje {
     
     public void actualizarEntidad() {
     	estado.actuar();
-    	
-    	/*
-    	Random r=new Random();
-		int n = r.nextInt(100);
-		
-		if(n==4) {
-			
-			//System.out.println("Se agrego disparo");
-			fabricaDisparos.generarDisparo(this);
-		}
-		*/
-    	
-    	
-    	//fabricaDisparos.generarDisparo(this);
-   
-    	
+
     }
 
     
@@ -93,6 +78,7 @@ public abstract class Aliado extends Personaje {
     public boolean puedeDisparar() {
     	return puedeDisparar;
     }
+
     protected int getPrecio(){
         return precio;
     }
