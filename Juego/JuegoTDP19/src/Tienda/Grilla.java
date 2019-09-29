@@ -26,7 +26,7 @@ public class Grilla {
 
         for(int i=0;i<grilla.length;i++)
             for(int j=0;j<grilla[0].length;j++){
-                grilla[i][j]=new ParCelda(new Point(150+i*105,300+j*170));
+                grilla[i][j]=new ParCelda(new Point(150+i*170,300+j*105));
             }
 
     }

@@ -3,6 +3,7 @@
  */
 package  Entidad;
 
+import Estados.Atacando;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaAliados;
 import Inteligencia.InteligenciaEnemigos;
@@ -24,7 +25,7 @@ public abstract class Aliado extends Personaje {
 
     /**
      * Crea un Personaje Aliado
-     * @param pos
+
      * @param vida
      * @param damage
 
@@ -40,6 +41,8 @@ public abstract class Aliado extends Personaje {
         this.fabricaDisparos=fabricaDisparos;
         puedeDisparar=true;
 
+        estado=new Atacando(this);
+
     }
     /**
      * Devuelve la descripcion del Personaje Aliado
@@ -48,7 +51,11 @@ public abstract class Aliado extends Personaje {
     public String getDescripcion(){
         return descripcion;
     }
-    
+
+    public void atacar(){
+        fabricaDisparos.generarDisparo(this);
+    }
+
     public abstract Disparo disparar();
     
     
@@ -58,7 +65,7 @@ public abstract class Aliado extends Personaje {
      */
     
     public void actualizarEntidad() {
-    	IA.actualizarEntidad();
+    	estado.actuar();
     	
     	/*
     	Random r=new Random();
@@ -72,7 +79,7 @@ public abstract class Aliado extends Personaje {
 		*/
     	
     	
-    	fabricaDisparos.generarDisparo(this);
+    	//fabricaDisparos.generarDisparo(this);
    
     	
     }
@@ -93,5 +100,9 @@ public abstract class Aliado extends Personaje {
     public void posicionar(Point posicionNueva){
         this.pos=posicionNueva;
         this.cambiarGrafico(0);
+    }
+
+    public FabricaDisparo getFabricaDisparos(){
+        return fabricaDisparos;
     }
 }

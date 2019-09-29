@@ -1,5 +1,6 @@
 package Tienda;
 
+import java.awt.*;
 import java.util.LinkedList;
 
 import Entidad.Aliado;
@@ -41,7 +42,9 @@ public class Tienda {
 		return puntos;
 	}
 
-
+	public void agregarAliado(Point pos,Aliado aliadoAAgregar){
+		posicionadorDeAliados.posicionarAliado(pos,aliadoAAgregar);
+	}
 
 
 

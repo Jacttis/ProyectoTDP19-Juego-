@@ -85,5 +85,7 @@ public abstract class Personaje extends Entidad {
 		this.estado=estado;
 	}
 
+	public abstract void atacar();
+
 
 }

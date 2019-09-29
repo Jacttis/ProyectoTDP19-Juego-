@@ -1,11 +1,12 @@
 package Juego;
 
-import Entidad.Entidad;
+import Entidad.*;
 import GUI.GUI;
 
 import Tienda.*;
 
 import javax.rmi.CORBA.Tie;
+import java.awt.*;
 import java.util.LinkedList;
 
 public class Juego {
@@ -27,15 +28,18 @@ public class Juego {
 	 */
 	
 	private Juego(GUI gui) {
-		
-		
+
+
 		this.gui=gui;
 		mapa=Mapa.crearMapa(this,gui);
 		comunicadorEntidadMapa.getComunicadorEntidadMapa(mapa);
 		mapa.generar();
 
 
-		tienda.crearTienda(new PosicionadorDeAliado(mapa));
+		tienda = tienda.crearTienda(new PosicionadorDeAliado(mapa));
+
+
+
 
 
 
@@ -57,6 +61,14 @@ public class Juego {
 
 	public LinkedList<Entidad> getListaMapa(){
 		return mapa.getEntidades();
+	}
+
+
+	public void comprarAliado(Point pos, Aliado aliadoAAgregar){
+
+		tienda.agregarAliado(pos,aliadoAAgregar);
+
+
 	}
 	
 	

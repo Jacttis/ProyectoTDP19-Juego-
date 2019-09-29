@@ -11,7 +11,12 @@ public class Atacando extends Estado {
 
 
     public void actuar() {
+
+        personaje.getInteligencia().actualizarEntidad();
+
         personaje.cambiarGrafico(1);
+
+        personaje.atacar();
 
         this.verificarEstado();
     }

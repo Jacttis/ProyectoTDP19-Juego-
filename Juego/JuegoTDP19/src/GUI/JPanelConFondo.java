@@ -3,11 +3,13 @@ package GUI;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
  
-public class JPanelConFondo extends JPanel { 
+public class JPanelConFondo extends JPanel {
  
     private Image imagen= new ImageIcon("Sprites/Mapa/Mapa2Disenio.jpg").getImage();
     public void paint(Graphics g) {
@@ -18,9 +20,7 @@ public class JPanelConFondo extends JPanel {
         setOpaque(false);
         super.paint(g);
     }
- 
-    
 
- 
+
     //...
 }

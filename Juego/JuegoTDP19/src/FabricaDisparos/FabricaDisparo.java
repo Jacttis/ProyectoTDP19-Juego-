@@ -14,6 +14,11 @@ public  class FabricaDisparo {
 		this.mapa=mapa;
 		
 	}
+
+	public static FabricaDisparo getFabricaDisparos(){
+		return instance;
+	}
+
 	public  static FabricaDisparo crearFabrica(Mapa mapa){
 		if(instance==null) {
 			instance=new FabricaDisparo(mapa);
@@ -29,7 +34,7 @@ public  class FabricaDisparo {
 	 * @param aliado
 	 */
 	
-	public  void generarDisparo(Aliado aliado){
+	public void generarDisparo(Aliado aliado){
 		Disparo disparo=aliado.disparar();
 		if(disparo!=null) {
 			mapa.agregarEntidad(disparo);

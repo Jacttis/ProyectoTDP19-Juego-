@@ -1,10 +1,7 @@
 package GUI;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.util.LinkedList;
 
 import javax.swing.*;
@@ -17,7 +14,7 @@ import Juego.Juego;
 import Splash.*;
 
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements MouseListener {
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
@@ -26,7 +23,8 @@ public class GUI extends JFrame {
 	private JButton botonEliminar;
 	private BotonAgregar agregar;
 	private JLabel puntaje;
-	
+	private GuiTienda guiTienda;
+
 
 	public GUI() {
 		addKeyListener(new KeyAdapter() {
@@ -41,7 +39,9 @@ public class GUI extends JFrame {
 			}
 		});
 		getContentPane().setLayout(null);
-		
+
+		this.addMouseListener(this);
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1980, 1040);
 		setMaximumSize(new Dimension(1980, 1040));
@@ -60,14 +60,14 @@ public class GUI extends JFrame {
 		contentPane.add(puntaje);
 		contentPane.add(botonEliminar);
 		setContentPane(contentPane);
-		 juego=Juego.crearJuego(this);
+		juego=Juego.crearJuego(this);
 		tiempo = new HiloTiempo(juego);
 		botonParaAgregar();
 		contentPane.add(agregar);
 		tiempo.start();
 
-		GuiTienda tienda=new GuiTienda();
-		contentPane.add(tienda.getPanel());
+		guiTienda=new GuiTienda(this,juego);
+		contentPane.add(guiTienda.getPanel());
 		
 		
 		
@@ -99,4 +99,33 @@ public class GUI extends JFrame {
 		});
 	}
 
+	public GuiTienda getGuiTienda(){
+		return guiTienda;
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("Se clickeo en mapa");
+		guiTienda.seClickeoEnMapa(new Point(e.getX(),e.getY()));
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+
+	}
 }

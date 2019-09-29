@@ -23,5 +23,9 @@ public class EnemigoGolemHielo extends Enemigo {
 		return 0;
 	}
 
-	
+
+	@Override
+	public void atacar() {
+
+	}
 }

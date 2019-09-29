@@ -33,10 +33,19 @@ public class PosicionadorDeAliado {
 
     public void posicionarAliado(Point pos, Aliado aliadoAAgregar){
 
-        int fila=(pos.x-65)/170;
-        int columna=(pos.y-255)/105;
+        System.out.println(pos.x+" x");
+        System.out.println(pos.y+" y");
 
-        ParCelda celda = grillaDeAliados.obtenerCelda(fila,columna);
+        int columna=(pos.x-65)/170;
+        int fila=((pos.y-255)/105)-1;
+
+        System.out.println(fila+" fila");
+        System.out.println(columna+" columna");
+
+        ParCelda celda = grillaDeAliados.obtenerCelda(columna,fila);
+
+        System.out.println(celda.getPos().x+" "+celda.getPos().y+" x y pos celda");
+
 
         if(!celda.ocupada){
             celda.ocupar();

@@ -1,8 +1,13 @@
 package GUI;
 
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import Entidad.Aliado;
+import Entidad.ArqueroHumano;
+import FabricaDisparos.FabricaDisparo;
+import Juego.Juego;
+import Tienda.Tienda;
+
+import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
@@ -21,9 +26,17 @@ class GuiTienda {
     private JLabel labelPuntos;
     private JLabel labelOro;
 
+    private GUI gui;
+    private Juego juego;
+
+    private boolean esperandoClick;
+    private Aliado aliadoAAgregar;
+
     /**
      * Launch the application.
      */
+
+    /*
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -36,11 +49,18 @@ class GuiTienda {
             }
         });
     }
+    */
 
     /**
      * Create the application.
      */
-    public GuiTienda() {
+    public GuiTienda(GUI gui, Juego juego) {
+
+        this.gui=gui;
+        esperandoClick=false;
+
+        this.juego=juego;
+
         initialize();
     }
 
@@ -59,6 +79,14 @@ class GuiTienda {
 
         btnArqueroHumano = new JButton();
         btnArqueroHumano.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\ArqueroHumano.jpeg"));
+        btnArqueroHumano.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                aliadoAAgregar=new ArqueroHumano(100,100,1500,"asd",FabricaDisparo.getFabricaDisparos());
+                esperandoClick=true;
+            }
+        });
+
 
 
         btnNewButton2 = new JButton();
@@ -136,4 +164,19 @@ class GuiTienda {
     public JPanel getPanel() {
         return panel;
     }
+
+
+    public void seClickeoEnMapa(Point pos){
+        if(esperandoClick){
+
+            juego.comprarAliado(pos,aliadoAAgregar);
+
+            esperandoClick=false;
+
+        }
+
+    }
+
+
+
 }
