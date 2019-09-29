@@ -9,6 +9,8 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 
+
+
 import Entidad.*;
 import Juego.Juego;
 import Splash.*;
@@ -21,6 +23,7 @@ public class GUI extends JFrame implements MouseListener {
 	private Juego juego;
 	private HiloTiempo tiempo;
 	private JButton botonEliminar;
+	private JButton btnMusica;
 	private BotonAgregar agregar;
 	private JLabel puntaje;
 	private GuiTienda guiTienda;
@@ -64,6 +67,10 @@ public class GUI extends JFrame implements MouseListener {
 		tiempo = new HiloTiempo(juego);
 		botonParaAgregar();
 		contentPane.add(agregar);
+
+		//Eliminar Despues
+		botonMusica();
+		contentPane.add(btnMusica);
 		tiempo.start();
 
 		guiTienda=new GuiTienda(this,juego);
@@ -71,7 +78,21 @@ public class GUI extends JFrame implements MouseListener {
 
 		this.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 
+
+
 	}
+	//Eliminar Despues
+	public void botonMusica(){
+	   btnMusica=new JButton("musica");
+	   btnMusica.setBounds(1400,70,128,25);
+	   btnMusica.addActionListener((new ActionListener() {
+		   @Override
+		   public void actionPerformed(ActionEvent e) {
+
+		   }
+	   }));
+	}
+
 
 	public void botonParaEliminar(){
 		botonEliminar=new JButton();
@@ -98,6 +119,8 @@ public class GUI extends JFrame implements MouseListener {
 			}
 		});
 	}
+
+
 
 	public GuiTienda getGuiTienda(){
 		return guiTienda;

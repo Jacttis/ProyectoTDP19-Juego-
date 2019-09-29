@@ -2,6 +2,7 @@ package GUI;
 
 import Entidad.Aliado;
 import Entidad.ArqueroHumano;
+import Entidad.CaballeroEscudo;
 import Entidad.MagoHielo;
 import FabricaDisparos.FabricaDisparo;
 import Juego.Juego;
@@ -13,16 +14,16 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
-class GuiTienda extends JFrame{
+class GuiTienda {
 
     private JFrame frame;
     private JPanel panel;
     private JButton btnArqueroHumano;
     private JButton btnMagoHielo;
-    private JButton btnNewButton3;
+    private JButton btnCaballeroEscudo;
     private JButton btnNewButton4;
     private JButton btnNewButton5;
-    private JButton btnNewButton5_1;
+
     private JButton btnVender;
     private JLabel labelPuntos;
     private JLabel labelOro;
@@ -33,24 +34,9 @@ class GuiTienda extends JFrame{
     private boolean esperandoClick;
     private Aliado aliadoAAgregar;
 
-    /**
-     * Launch the application.
-     */
 
-    /*
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    GuiTienda window = new GuiTienda();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-    */
+
+
 
     /**
      * Create the application.
@@ -76,15 +62,17 @@ class GuiTienda extends JFrame{
         frame.getContentPane().setLayout(null);
 
         panel = new JPanel();
-        panel.setBounds(100, 0, 992, 205);
+        panel.setBounds(100, 0, 992, 230);
+
         frame.getContentPane().add(panel);
 
 
 
         btnArqueroHumano = new JButton();
-        btnArqueroHumano.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\ArqueroHumano.jpeg"));
+        btnArqueroHumano.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\ArqueroHumanoChico.jpeg"));
+        btnArqueroHumano.setBackground(Color.GRAY);
+        btnArqueroHumano.setToolTipText("Tira flechas");
         btnArqueroHumano.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
                 aliadoAAgregar=new ArqueroHumano(100,100,1500,"Dispara flechas",FabricaDisparo.getFabricaDisparos());
                 esperandoClick=true;
@@ -96,7 +84,8 @@ class GuiTienda extends JFrame{
 
 
         btnMagoHielo = new JButton();
-        btnMagoHielo.setIcon(new ImageIcon("Sprites\\CharacterSprites\\IceWizard\\Stand\\0.png"));
+        btnMagoHielo.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\MagoHieloAchicado.png"));
+        btnMagoHielo.setToolTipText("Tira Hielo");
         btnMagoHielo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -106,15 +95,23 @@ class GuiTienda extends JFrame{
             }
         });
 
-        btnNewButton3 = new JButton();
+        btnCaballeroEscudo = new JButton();
+        btnCaballeroEscudo.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\CabAchicado2.png"));
+        btnCaballeroEscudo.setToolTipText("Aguanta pero no pega");
+        btnCaballeroEscudo.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                aliadoAAgregar=new CaballeroEscudo(100,100,0,"Aguanta Mucho pero no pega",FabricaDisparo.getFabricaDisparos());
+                esperandoClick=true;
+                deshabilitarBotones();
+            }
+        });
 
         btnNewButton4 = new JButton();
 
-        btnNewButton5_1 = new JButton();
-
         btnNewButton5 = new JButton();
 
-        labelOro = new JLabel("Oro :");
+        labelOro = new JLabel("Oro : 0");
 
         labelPuntos = new JLabel("Puntos: 0");
 
@@ -131,12 +128,10 @@ class GuiTienda extends JFrame{
                                                 .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(gl_panel.createSequentialGroup()
                                                 .addGap(283)
-                                                .addComponent(btnNewButton3, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(btnCaballeroEscudo, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(btnArqueroHumano, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
                                 .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-                                        .addGroup(gl_panel.createSequentialGroup()
-                                                .addGap(293)
-                                                .addComponent(btnNewButton5_1, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
+
                                         .addComponent(btnNewButton5, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(gl_panel.createSequentialGroup()
                                                 .addGap(146)
@@ -153,12 +148,11 @@ class GuiTienda extends JFrame{
         );
         gl_panel.setVerticalGroup(
                 gl_panel.createParallelGroup(Alignment.LEADING)
-                        .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNewButton3, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnArqueroHumano)
-                        .addComponent(btnNewButton5_1, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNewButton5, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNewButton4, GroupLayout.PREFERRED_SIZE, 171, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCaballeroEscudo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnArqueroHumano,GroupLayout.PREFERRED_SIZE,120,GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnNewButton5, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnNewButton4, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
                         .addGroup(gl_panel.createSequentialGroup()
                                 .addGap(22)
                                 .addComponent(labelOro, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
@@ -205,6 +199,7 @@ class GuiTienda extends JFrame{
     public void deshabilitarBotones(){
         btnMagoHielo.setEnabled(false);
         btnArqueroHumano.setEnabled(false);
+        btnCaballeroEscudo.setEnabled(false);
     }
 
     /**
@@ -215,6 +210,7 @@ class GuiTienda extends JFrame{
     public void habilitarBotones(){
         btnMagoHielo.setEnabled(true);
         btnArqueroHumano.setEnabled(true);
+        btnCaballeroEscudo.setEnabled(true);
     }
 
 }
