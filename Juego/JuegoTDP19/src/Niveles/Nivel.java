@@ -5,9 +5,11 @@ import Juego.Mapa;
 public abstract class Nivel {
 
 	protected Mapa mapa;
+	protected FabricaEnemigos fabricaEnemigos;
 	
 	public Nivel(Mapa mapa) {
 		this.mapa=mapa;
+		fabricaEnemigos=new FabricaEnemigosNormales();
 	} 
 
 

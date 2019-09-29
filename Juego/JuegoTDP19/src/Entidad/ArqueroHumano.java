@@ -20,6 +20,8 @@ public class ArqueroHumano extends Aliado {
 		imagen[1] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 		imagen[2] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 
+
+
 	}
 
 	
@@ -29,13 +31,12 @@ public class ArqueroHumano extends Aliado {
 	 * 
 	 */
 	
-	public Disparo disparar() {
+	public void disparar() {
 		
 		if(puedeDisparar)
-		
-			return new DisparoArqueroHumano(new Point(this.pos.x+30,this.pos.y+50),15,damage);
-		
-		else return null;
+
+			fabricaDisparos.generarDisparoArqueroHumano(this);
+
 	}
 
 
@@ -44,6 +45,10 @@ public class ArqueroHumano extends Aliado {
 	public void posicionar(Point posicionNueva){
 		this.pos=new Point(posicionNueva.x,posicionNueva.y+15);
 
+	}
+
+	public Entidad clone(){
+		return new ArqueroHumano(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
 	}
 	
 	

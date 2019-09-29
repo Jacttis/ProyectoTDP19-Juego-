@@ -21,6 +21,7 @@ public abstract class Aliado extends Personaje {
      protected FabricaDisparo fabricaDisparos;
      protected boolean puedeDisparar;
      protected int precio;
+     protected Entidad disparo;
     
 
     /**
@@ -55,10 +56,10 @@ public abstract class Aliado extends Personaje {
     }
 
     public void atacar(){
-        fabricaDisparos.generarDisparo(this);
+        disparar();
     }
 
-    public abstract Disparo disparar();
+    public abstract void disparar();
     
     
     /**
@@ -86,17 +87,9 @@ public abstract class Aliado extends Personaje {
     }
 
 
-    /**
-     * Recibe una posicion central de una celda y se ubica
-     * en esa celda.
-     *
-     * @param posicionNueva
-     */
 
-    public void posicionar(Point posicionNueva){
-        this.pos=posicionNueva;
 
-    }
+
 
     public FabricaDisparo getFabricaDisparos(){
         return fabricaDisparos;

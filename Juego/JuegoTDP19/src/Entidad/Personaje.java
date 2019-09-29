@@ -88,4 +88,17 @@ public abstract class Personaje extends Entidad {
 	public abstract void atacar();
 
 
+	/**
+	 * Recibe una posicion central de una celda y se ubica
+	 * en esa celda.
+	 *
+	 * @param posicionNueva
+	 */
+
+	public void posicionar(Point posicionNueva){
+		this.pos=posicionNueva;
+
+	}
+
+
 }

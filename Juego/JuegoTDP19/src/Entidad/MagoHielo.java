@@ -25,18 +25,21 @@ public class MagoHielo extends Aliado {
 	 * 
 	 */
 	
-	public Disparo disparar() {
+	public void disparar() {
 		
 		if(puedeDisparar)
 		
-			return new DisparoMagoHielo(new Point(this.pos.x+28,this.pos.y+40),12,damage);
-		
-		else return null;
+			fabricaDisparos.generarDisparoMagoHielo(this);
+
 	}
 
 	public void posicionar(Point posicionNueva){
 		this.pos=new Point(posicionNueva.x,posicionNueva.y+15);
 
+	}
+
+	public Entidad clone(){
+		return new MagoHielo(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
 	}
 	
 	

@@ -131,5 +131,7 @@ public abstract class Entidad {
 	public ComunicadorEntidadMapa getComunicadorEntidadMapa(){
 		return comunicadorEntidadMapa;
 	}
+
+	public abstract Entidad clone();
 	
 }

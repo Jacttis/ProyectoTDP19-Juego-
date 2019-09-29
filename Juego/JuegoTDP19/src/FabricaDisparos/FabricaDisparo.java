@@ -1,14 +1,13 @@
 package FabricaDisparos;
 
-import Entidad.Aliado;
-import Entidad.Disparo;
-import Entidad.Personaje;
+import Entidad.*;
 import Juego.Mapa;
-
+import java.awt.Point;
 public  class FabricaDisparo {
 	private static FabricaDisparo instance=null;
 	protected Mapa mapa;
 	protected HiloPrueba hilo;
+
 	
 	private FabricaDisparo(Mapa mapa) {
 		this.mapa=mapa;
@@ -33,15 +32,26 @@ public  class FabricaDisparo {
 	 * 
 	 * @param aliado
 	 */
-	
-	public void generarDisparo(Aliado aliado){
-		Disparo disparo=aliado.disparar();
-		if(disparo!=null) {
-			mapa.agregarEntidad(disparo);
-			hilo=new HiloPrueba(aliado);
-			hilo.start();
-		}
+
+
+	public void generarDisparoArqueroHumano(Aliado aliado){
+		Disparo disparo=new DisparoArqueroHumano(new Point(aliado.getPos().x+30,aliado.getPos().y+50),15,aliado.getDamage());
+
+		mapa.agregarEntidad(disparo);
+		hilo=new HiloPrueba(aliado);
+		hilo.start();
+
 	}
+
+	public void generarDisparoMagoHielo(Aliado aliado){
+		Disparo disparo=new DisparoMagoHielo(new Point(aliado.getPos().x+28,aliado.getPos().y+40),12,aliado.getDamage());
+		mapa.agregarEntidad(disparo);
+		hilo=new HiloPrueba(aliado);
+		hilo.start();
+
+	}
+
+
 
 
 }

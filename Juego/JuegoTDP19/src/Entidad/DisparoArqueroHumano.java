@@ -20,4 +20,8 @@ public class DisparoArqueroHumano extends Disparo {
 		
 	}
 
+	public Entidad clone(){
+		return new DisparoArqueroHumano(pos,velocidad,damage);
+	}
+
 }

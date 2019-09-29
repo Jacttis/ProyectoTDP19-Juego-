@@ -1,6 +1,7 @@
 package Entidad;
 
 
+import Estados.Quieto;
 import FabricaDisparos.FabricaDisparo;
 
 import java.awt.*;
@@ -14,14 +15,18 @@ public class CaballeroEscudo extends Aliado {
         width=100;
         height=140;
 
+        estado=new Quieto(this);
+
         imagen[0]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
         imagen[1]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
         imagen[2]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
     }
 
-    public Disparo disparar() {
+    public void disparar() {
 
-        return null;
     }
 
+    public Entidad clone(){
+        return new CaballeroEscudo(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
+    }
 }

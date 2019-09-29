@@ -36,7 +36,14 @@ public class NivelUno extends Nivel {
 	 */
 	
 	public void generarEnemigos() {
-		mapa.agregarEntidad(new EnemigoGolemHielo(new Point(1800,600),10,10,10,1,10));
+
+		Entidad enemigo1=fabricaEnemigos.generarGolemHielo();
+		enemigo1.posicionar(new Point(1800,600));
+		mapa.agregarEntidad(enemigo1);
+
+		Entidad enemigo2=fabricaEnemigos.generarGolemHielo();
+		enemigo2.posicionar(new Point(1800,495));
+		mapa.agregarEntidad(enemigo2);
 
 
 	}

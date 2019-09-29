@@ -22,6 +22,10 @@ public class DisparoMagoHielo extends Disparo {
 	
 		
 	}
+
+	public Entidad clone(){
+		return new DisparoMagoHielo(pos,velocidad,damage);
+	}
 	
 	
 	
