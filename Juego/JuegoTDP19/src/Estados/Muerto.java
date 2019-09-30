@@ -15,8 +15,9 @@ public class Muerto extends Estado {
 
         personaje.cambiarGrafico(2);
         hiloMuerte.start();
-
         personaje.setEstado(new EstadoNulo(personaje));
+
+
 
     }
 }

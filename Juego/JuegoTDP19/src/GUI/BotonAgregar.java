@@ -8,16 +8,15 @@ import javax.swing.*;
 
 public class BotonAgregar extends JButton {
 
-    private NivelUno nivel;
 
     public BotonAgregar(){
         super();
-        nivel=NivelUno.getinstance();
+
 
     }
 
     public void agregarCHOBI(){
-        nivel.generarEnemigos();
+        Mapa.getMapa().generar();
     }
 
 

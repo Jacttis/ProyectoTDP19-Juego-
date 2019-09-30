@@ -18,8 +18,7 @@ public abstract class Nivel {
 	 * 
 	 */
 	public abstract void generarEnemigos();
-	
-	public abstract void generarAliados();
+
 
 
 

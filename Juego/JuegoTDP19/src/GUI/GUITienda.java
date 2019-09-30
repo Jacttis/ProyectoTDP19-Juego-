@@ -1,12 +1,10 @@
 package GUI;
 
-import Entidad.Aliado;
-import Entidad.ArqueroHumano;
-import Entidad.CaballeroEscudo;
-import Entidad.MagoHielo;
+import Entidad.*;
 import FabricaDisparos.FabricaDisparo;
-import Juego.Juego;
+import Juego.*;
 import Tienda.Tienda;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -116,6 +114,20 @@ class GuiTienda {
         labelPuntos = new JLabel("Puntos: 0");
 
         btnVender = new JButton("Vender");
+
+        btnVender.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+
+                for(Entidad a :  Mapa.getMapa().getEntidades()){
+                    if(a  instanceof Aliado)
+                        ((Aliado) a).setVida(0);
+
+                }
+
+
+            }
+        });
 
 
         GroupLayout gl_panel = new GroupLayout(panel);

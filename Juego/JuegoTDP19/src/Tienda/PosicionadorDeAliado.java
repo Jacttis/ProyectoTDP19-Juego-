@@ -13,10 +13,8 @@ import java.awt.*;
 public class PosicionadorDeAliado {
 
     protected Grilla grillaDeAliados;
-    protected Mapa mapa;
 
-    public PosicionadorDeAliado(Mapa mapa){
-        this.mapa=mapa;
+    public PosicionadorDeAliado(){
         grillaDeAliados=new Grilla();
 
     }
@@ -49,10 +47,18 @@ public class PosicionadorDeAliado {
 
         if(!celda.ocupada){
             celda.ocupar();
-            aliadoAAgregar.posicionar(celda.getPos());
-            mapa.agregarEntidad(aliadoAAgregar);
+            aliadoAAgregar.posicionar(celda);
+            Mapa.getMapa().agregarEntidad(aliadoAAgregar);
 
         }
+
+        else System.out.println("OcupadAAAAAAAAAAAAAAAAAAAAAAAA");
+
+    }
+
+    public void desposicionarAliado(Aliado aliadoAEliminar){
+
+        aliadoAEliminar.getCelda().desocupar();
 
     }
 

@@ -14,6 +14,8 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 
 import FabricaDisparos.FabricaDisparo;
+import Juego.Mapa;
+import Tienda.*;
 
 public abstract class Aliado extends Personaje {
 
@@ -22,6 +24,7 @@ public abstract class Aliado extends Personaje {
      protected boolean puedeDisparar;
      protected int precio;
      protected Entidad disparo;
+     protected ParCelda celdaUbicado;
     
 
     /**
@@ -68,7 +71,8 @@ public abstract class Aliado extends Personaje {
      */
     
     public void actualizarEntidad() {
-    	estado.actuar();
+
+        estado.actuar();
 
     }
 
@@ -95,4 +99,18 @@ public abstract class Aliado extends Personaje {
         return fabricaDisparos;
     }
 
+    public void eliminarse(){
+
+        celdaUbicado.desocupar();
+        Mapa.getMapa().eliminarEntidad(this);
+    }
+
+    public void posicionar(ParCelda celda){
+        celdaUbicado=celda;
+        pos.setLocation(celda.getPos());
+    }
+
+    public ParCelda getCelda(){
+        return celdaUbicado;
+    }
 }

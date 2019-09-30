@@ -18,7 +18,7 @@ public  class FabricaDisparo {
 		return instance;
 	}
 
-	public  static FabricaDisparo crearFabrica(Mapa mapa){
+	public  static FabricaDisparo crearFabricaDisparos(Mapa mapa){
 		if(instance==null) {
 			instance=new FabricaDisparo(mapa);
 		}

@@ -5,6 +5,7 @@ import java.awt.*;
 import Estados.*;
 import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
+import Juego.Mapa;
 
 public abstract class Personaje extends Entidad {
 
@@ -97,6 +98,11 @@ public abstract class Personaje extends Entidad {
 
 	public void posicionar(Point posicionNueva){
 		this.pos=posicionNueva;
+
+	}
+
+	public void eliminarse(){
+		Mapa.getMapa().eliminarEntidad(this);
 
 	}
 

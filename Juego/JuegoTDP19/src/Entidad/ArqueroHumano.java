@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 
 import Estados.Atacando;
 import FabricaDisparos.FabricaDisparo;
+import Tienda.ParCelda;
 
 
 public class ArqueroHumano extends Aliado {
@@ -42,8 +43,9 @@ public class ArqueroHumano extends Aliado {
 
 
 
-	public void posicionar(Point posicionNueva){
-		this.pos=new Point(posicionNueva.x,posicionNueva.y+15);
+	public void posicionar(ParCelda celda){
+		super.posicionar(celda);
+		pos.setLocation(celda.getPos().x,celda.getPos().y+15);
 
 	}
 

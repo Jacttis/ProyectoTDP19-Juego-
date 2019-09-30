@@ -1,6 +1,7 @@
 package Estados;
 
 import Entidad.Personaje;
+import Juego.Mapa;
 
 public class HiloEstados extends Thread {
 
@@ -19,9 +20,8 @@ public class HiloEstados extends Thread {
             System.out.println("Espera 1 segundo para eliminar grafico");
             Thread.sleep(700);
 
-            personaje.setSerEliminado(true);
+            personaje.eliminarse();
 
-            //personaje.getComunicadorEntidadMapa().eliminarEntidad(personaje);
 
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block

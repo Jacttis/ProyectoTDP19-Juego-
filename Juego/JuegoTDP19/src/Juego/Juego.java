@@ -1,6 +1,7 @@
 package Juego;
 
 import Entidad.*;
+import FabricaDisparos.FabricaDisparo;
 import GUI.GUI;
 
 import Tienda.*;
@@ -13,9 +14,8 @@ public class Juego {
 
 	private static Juego instance=null;
 	private GUI gui;
-	private Mapa mapa;
-	private Tienda tienda;
-	public ComunicadorEntidadMapa comunicadorEntidadMapa;
+
+
 
 
 
@@ -31,12 +31,13 @@ public class Juego {
 
 
 		this.gui=gui;
-		mapa=Mapa.crearMapa(this,gui);
-		comunicadorEntidadMapa.getComunicadorEntidadMapa(mapa);
-		mapa.generar();
+
+		Mapa.crearMapa(this,gui);
+		Mapa.getMapa().generar();
 
 
-		tienda = tienda.crearTienda(new PosicionadorDeAliado(mapa));
+		FabricaDisparo.crearFabricaDisparos(Mapa.getMapa());
+		Tienda.crearTienda();
 
 
 
@@ -54,13 +55,13 @@ public class Juego {
 	}
 	public void mover() {
 		
-		mapa.mover();
+		Mapa.getMapa().mover();
 		
 		
 	}
 
 	public LinkedList<Entidad> getListaMapa(){
-		return mapa.getEntidades();
+		return Mapa.getMapa().getEntidades();
 	}
 
 
@@ -74,7 +75,7 @@ public class Juego {
 
 	public void comprarAliado(Point pos, Aliado aliadoAAgregar){
 
-		tienda.comprarAliado(pos,aliadoAAgregar);
+		Tienda.getTienda().comprarAliado(pos,aliadoAAgregar);
 
 	}
 	
