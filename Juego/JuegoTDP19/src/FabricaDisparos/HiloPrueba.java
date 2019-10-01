@@ -19,10 +19,10 @@ public class HiloPrueba extends Thread {
 	public void run() {
 		try {
 			
-			aliadoQueDispara.setPuedeDisparar(false);
+			aliadoQueDispara.setPuedeAtacar(false);
 			//System.out.println("Espera 1,5 segundos para disparar");
 			Thread.sleep((long) aliadoQueDispara.getVelocidadAtaque());
-			aliadoQueDispara.setPuedeDisparar(true);
+			aliadoQueDispara.setPuedeAtacar(true);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

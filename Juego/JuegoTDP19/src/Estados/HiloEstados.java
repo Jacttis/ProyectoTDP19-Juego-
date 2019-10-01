@@ -1,15 +1,15 @@
 package Estados;
 
-import Entidad.Personaje;
+import Entidad.*;
 import Juego.Mapa;
 
 public class HiloEstados extends Thread {
 
-    private Personaje personaje;
+    private Entidad entidad;
 
-    public HiloEstados(Personaje personaje){
+    public HiloEstados(Entidad entidad){
 
-        this.personaje=personaje;
+        this.entidad=entidad;
 
     }
 
@@ -20,7 +20,7 @@ public class HiloEstados extends Thread {
             System.out.println("Espera 1 segundo para eliminar grafico");
             Thread.sleep(700);
 
-            personaje.eliminarse();
+
 
 
         } catch (InterruptedException e) {

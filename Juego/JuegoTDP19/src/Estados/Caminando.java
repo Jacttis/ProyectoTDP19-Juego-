@@ -6,20 +6,26 @@ import Entidad.Personaje;
 public class Caminando extends Estado {
 
 
-    public Caminando(Personaje personaje){
+    public Caminando(Entidad entidad){
 
-        super(personaje);
+        super(entidad);
 
     }
 
 
     public void actuar(){
 
-        personaje.getInteligencia().actualizarEntidad();
-        personaje.cambiarGrafico(0);
+        entidad.getInteligencia().actualizarEntidad();
+        entidad.cambiarGrafico(0);
 
-        this.verificarEstado();
+        verificarEstado();
 
     }
 
+    public void verificarEstado(){
+
+        if(entidad.getSerEliminado())
+            entidad.setEstado(new Muerto(entidad));
+
+    }
 }

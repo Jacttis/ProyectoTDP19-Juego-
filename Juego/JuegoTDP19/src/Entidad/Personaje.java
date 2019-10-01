@@ -11,7 +11,8 @@ public abstract class Personaje extends Entidad {
 
 	protected int vida;
 	protected float velocidadAtaque;
-	protected Estado estado;
+	protected boolean puedeAtacar;
+
 
 	
 
@@ -31,6 +32,7 @@ public abstract class Personaje extends Entidad {
 		this.vida = vida;
 		this.velocidadAtaque = velocidadAtaque;
 		estado=new EstadoNulo(this);
+		puedeAtacar=true;
 		
 	}
 	// Getters
@@ -101,9 +103,22 @@ public abstract class Personaje extends Entidad {
 
 	}
 
-	public void eliminarse(){
-		Mapa.getMapa().eliminarEntidad(this);
+	public boolean getSerEliminado(){
+		if(vida<=0)
+			serEliminado=true;
+		return serEliminado;
+	}
 
+	public void afectar(int n){
+		this.vida-=n;
+	}
+
+	public void setPuedeAtacar(boolean puede) {
+		puedeAtacar=puede;
+	}
+
+	public boolean puedeAtacar() {
+		return puedeAtacar;
 	}
 
 

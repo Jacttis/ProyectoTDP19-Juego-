@@ -5,12 +5,12 @@ import Entidad.*;
 public abstract class Estado {
 
     protected HiloEstados hiloMuerte;
-    protected Personaje personaje;
+    protected Entidad entidad;
 
-    public Estado (Personaje personaje) {
+    public Estado (Entidad entidad) {
 
-        hiloMuerte=new HiloEstados(personaje);
-        this.personaje=personaje;
+        hiloMuerte=new HiloEstados(entidad);
+        this.entidad=entidad;
 
 
     }
@@ -18,12 +18,7 @@ public abstract class Estado {
 
     public abstract void actuar();
 
-    public void verificarEstado(){
-
-
-        if(personaje.estaMuerto())
-            personaje.setEstado(new Muerto(personaje));
-    }
+    public abstract void verificarEstado();
 
 
 

@@ -34,7 +34,7 @@ public class ArqueroHumano extends Aliado {
 	
 	public void disparar() {
 		
-		if(puedeDisparar)
+		if(puedeAtacar)
 
 			fabricaDisparos.generarDisparoArqueroHumano(this);
 

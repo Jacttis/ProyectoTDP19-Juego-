@@ -49,8 +49,10 @@ public abstract class Enemigo extends Personaje{
 	 */
 
 	public void atacar(){
-
+		golpear();
 	}
+
+	public abstract void golpear();
 
 
 }

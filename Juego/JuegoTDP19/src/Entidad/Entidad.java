@@ -1,10 +1,11 @@
 package Entidad;
 
 import java.awt.*;
-
+import Estados.*;
 import javax.swing.*;
 
 import Inteligencia.Inteligencia;
+import Juego.Mapa;
 
 
 public abstract class Entidad {
@@ -17,6 +18,7 @@ public abstract class Entidad {
 	protected int velocidad;
 	protected int damage;
 	protected boolean serEliminado;
+	protected Estado estado;
 
 	
 	
@@ -125,5 +127,23 @@ public abstract class Entidad {
 
 
 	public abstract Entidad clone();
-	
+
+	public abstract void afectar(int n);
+
+	public Estado getEstado(){
+		return estado;
+	}
+
+	public void setEstado(Estado estadoNuevo){
+		estado=estadoNuevo;
+	}
+
+	public void eliminarse(){
+		Mapa.getMapa().eliminarEntidad(this);
+
+	}
+
+	public void atacar(){
+
+	}
 }

@@ -5,21 +5,29 @@ import Entidad.Personaje;
 
 public class Atacando extends Estado {
 
-    public Atacando(Personaje personaje){
-        super(personaje);
+    public Atacando(Entidad entidad){
+        super(entidad);
     }
 
 
     public void actuar() {
 
-        personaje.getInteligencia().actualizarEntidad();
+        entidad.getInteligencia().actualizarEntidad();
 
-        personaje.cambiarGrafico(1);
+        entidad.cambiarGrafico(1);
 
-        personaje.atacar();
+        entidad.atacar();
 
-        this.verificarEstado();
+        verificarEstado();
     }
+
+    public void verificarEstado(){
+
+        if(entidad.getSerEliminado())
+            entidad.setEstado(new Muerto(entidad));
+
+    }
+
 
 
 }

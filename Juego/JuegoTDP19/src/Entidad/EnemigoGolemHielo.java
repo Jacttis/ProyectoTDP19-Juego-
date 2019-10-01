@@ -5,6 +5,7 @@ import java.awt.Point;
 import javax.swing.ImageIcon;
 
 import Inteligencia.Inteligencia;
+import Juego.Mapa;
 
 public class EnemigoGolemHielo extends Enemigo {
 
@@ -31,5 +32,10 @@ public class EnemigoGolemHielo extends Enemigo {
 
 	public Entidad clone(){
 		return new EnemigoGolemHielo(vida,damage,velocidadAtaque,velocidad,puntos);
+	}
+
+	public void golpear(){
+		if(puedeAtacar)
+			Mapa.getMapa().agregarEntidad(new GolpeEnemigo(pos,damage));
 	}
 }

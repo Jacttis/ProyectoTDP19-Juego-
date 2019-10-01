@@ -21,7 +21,6 @@ public abstract class Aliado extends Personaje {
 
      protected String descripcion;
      protected FabricaDisparo fabricaDisparos;
-     protected boolean puedeDisparar;
      protected int precio;
      protected Entidad disparo;
      protected ParCelda celdaUbicado;
@@ -43,7 +42,7 @@ public abstract class Aliado extends Personaje {
         imagen =new ImageIcon[3];
         descripcion=Descripcion;
         this.fabricaDisparos=fabricaDisparos;
-        puedeDisparar=true;
+
 
         precio=1;
 
@@ -76,15 +75,7 @@ public abstract class Aliado extends Personaje {
 
     }
 
-    
-    
-    public void setPuedeDisparar(boolean puede) {
-    	puedeDisparar=puede;
-    }
-    
-    public boolean puedeDisparar() {
-    	return puedeDisparar;
-    }
+
 
     public int getPrecio(){
         return precio;
