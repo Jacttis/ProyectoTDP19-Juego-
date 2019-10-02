@@ -3,6 +3,8 @@
  */
 package  Entidad;
 
+import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorAliado;
 import Estados.Atacando;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaAliados;
@@ -42,6 +44,7 @@ public abstract class Aliado extends Personaje {
         imagen =new ImageIcon[3];
         descripcion=Descripcion;
         this.fabricaDisparos=fabricaDisparos;
+        colisionador=new ColisionadorAliado(this);
 
 
         precio=1;
@@ -57,33 +60,11 @@ public abstract class Aliado extends Personaje {
         return descripcion;
     }
 
-    public void atacar(){
-        disparar();
-    }
-
-    public abstract void disparar();
-    
-    
-    /**
-     * actualiza la entidad mediante su estado.
-     *
-     */
-    
-    public void actualizarEntidad() {
-
-        estado.actuar();
-
-    }
-
 
 
     public int getPrecio(){
         return precio;
     }
-
-
-
-
 
 
     public FabricaDisparo getFabricaDisparos(){
@@ -103,5 +84,9 @@ public abstract class Aliado extends Personaje {
 
     public ParCelda getCelda(){
         return celdaUbicado;
+    }
+
+    public void serChocado(Colisionador colisionador){
+        colisionador.afectarAliado(this);
     }
 }

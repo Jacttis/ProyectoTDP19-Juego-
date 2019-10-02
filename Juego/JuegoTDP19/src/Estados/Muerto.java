@@ -6,17 +6,17 @@ public class Muerto extends Estado {
 
     protected boolean actuo;
 
-    public Muerto (Entidad entidad){
-        super(entidad);
+    public Muerto (Personaje personaje){
+        super(personaje);
         actuo=false;
     }
 
     public void actuar() {
 
-        entidad.cambiarGrafico(2);
+        personaje.cambiarGrafico(2);
         hiloMuerte.start();
-        entidad.setEstado(new EstadoNulo(entidad));
-        entidad.eliminarse();
+        personaje.setEstado(new EstadoNulo(personaje));
+        personaje.eliminarse();
 
 
 
@@ -24,6 +24,14 @@ public class Muerto extends Estado {
 
     public void verificarEstado(){
 
+    }
 
+    public void cambiarAAtacando(){
+    }
+
+    public void cambiarACaminando(){
+    }
+
+    public void cambiarAQuieto(){
     }
 }

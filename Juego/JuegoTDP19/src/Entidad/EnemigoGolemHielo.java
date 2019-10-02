@@ -4,6 +4,7 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
+import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
 import Juego.Mapa;
 
@@ -25,17 +26,13 @@ public class EnemigoGolemHielo extends Enemigo {
 	}
 
 
-	@Override
-	public void atacar() {
-
-	}
-
 	public Entidad clone(){
 		return new EnemigoGolemHielo(vida,damage,velocidadAtaque,velocidad,puntos);
 	}
 
-	public void golpear(){
+	public void atacar(){
+
 		if(puedeAtacar)
-			Mapa.getMapa().agregarEntidad(new GolpeEnemigo(pos,damage));
+			FabricaDisparo.getFabricaDisparos().generarGolpeGolemHielo(this);
 	}
 }

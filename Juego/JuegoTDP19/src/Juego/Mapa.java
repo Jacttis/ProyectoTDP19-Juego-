@@ -91,6 +91,8 @@ public class Mapa {
 		
 		entidadesAAgregar=new LinkedList<Entidad>();
 		entidadesAEliminar=new LinkedList<Entidad>();
+
+		colisionar();
 	}
 	
 	/**
@@ -106,6 +108,8 @@ public class Mapa {
 
 
 	}
+
+
 
 	public void eliminarEntidad(Entidad entidadAEliminar){
 		entidadesAEliminar.add(entidadAEliminar);
@@ -140,6 +144,45 @@ public class Mapa {
 	
 	public FabricaDisparo getFabricaDisparos() {
 		return fabricaDisparos;
+	}
+
+	/**
+	 *  Recorre la lista de entidades y toma de a dos entidades para
+	 *  verificar si colisionan entre si.
+	 *
+	 *
+	 */
+
+
+	public void colisionar() {
+		for(int i=0; i<entidades.size();i++) {
+			Entidad e1= entidades.get(i);
+			for(int j=i+1;j<entidades.size();j++) {
+				Entidad e2=entidades.get(j);
+				verificarColision(e1,e2);
+			}
+		}
+	}
+
+	/**
+	 * Utilizando Rectangle crea rectangulos con la posicion de cada entidad y el ancho y alto,
+	 * para luego mediante el comando intersects verificar si se estan chocando.
+	 *
+	 * Si se estan chocando, le manda a cada entidad el mensaje que fue chocado con el colisionador de la otra entidad.
+	 *
+	 * @param e1
+	 * @param e2
+	 */
+
+	private void verificarColision(Entidad e1, Entidad e2) {
+		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
+		Rectangle r1= new Rectangle(e1.getPos().x+2, e1.getPos().y+2, e1.getWidth()-2, e1.getHeight()-2);
+		Rectangle r2= new Rectangle(e2.getPos().x+2, e2.getPos().y+2, e2.getWidth()-2, e2.getHeight()-2);
+		if(r1.intersects(r2)) {
+			e1.serChocado(e2.getColisionador());
+			e2.serChocado(e1.getColisionador());
+
+		}
 	}
 
 

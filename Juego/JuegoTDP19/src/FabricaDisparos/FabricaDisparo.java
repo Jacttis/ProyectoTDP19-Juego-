@@ -51,6 +51,14 @@ public  class FabricaDisparo {
 
 	}
 
+	public void generarGolpeGolemHielo(Enemigo enemigo){
+		GolpeEnemigo golpe=new GolpeEnemigo(enemigo.getPos(),20,enemigo.getWidth()+10,enemigo.getHeight());
+		mapa.agregarEntidad(golpe);
+		hilo=new HiloPrueba(enemigo);
+		hilo.start();
+		System.out.println("Se creo golpe");
+	}
+
 
 
 

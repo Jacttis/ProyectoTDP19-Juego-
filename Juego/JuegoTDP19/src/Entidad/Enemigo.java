@@ -3,6 +3,8 @@ import java.awt.*;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorEnemigo;
 import Estados.Atacando;
 import Estados.Caminando;
 import Inteligencia.Inteligencia;
@@ -28,6 +30,7 @@ public abstract class Enemigo extends Personaje{
 		this.puntos=puntos;
 		imagen=new ImageIcon [3];
 		estado=new Caminando(this);
+		colisionador=new ColisionadorEnemigo(this);
 	}
 	/**
 	 * Retorna una cantidad de oro segun enemigo
@@ -43,16 +46,17 @@ public abstract class Enemigo extends Personaje{
 	public int getPuntos() {
 		return puntos;
 	}
+
+
 	/**
-	 * Devuelve la velocidad del enemigo
-	 * @return Entero con la velocidad del enemigo
+	 *  Recibe un colisionador y a este mismo le manda el mensaje
+	 *  de que choco con un enemigo.
+	 *
+	 * @param colisionador
 	 */
-
-	public void atacar(){
-		golpear();
+	public void serChocado(Colisionador colisionador){
+		colisionador.afectarEnemigo(this);
 	}
-
-	public abstract void golpear();
 
 
 }

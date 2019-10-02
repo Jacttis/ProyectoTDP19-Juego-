@@ -22,9 +22,7 @@ public class GUI extends JFrame implements MouseListener {
 	private JPanel contentPane;
 	private Juego juego;
 	private HiloTiempo tiempo;
-	private JButton botonEliminar;
 	private JButton btnMusica;
-	private BotonAgregar agregar;
 	private JLabel puntaje;
 	private GuiTienda guiTienda;
 
@@ -58,15 +56,13 @@ public class GUI extends JFrame implements MouseListener {
 		puntaje=new JLabel();
 		puntaje.setBounds(1400,33,128,25);
 		puntaje.setText("0");
-		botonParaEliminar();
+
 
 		contentPane.add(puntaje);
-		contentPane.add(botonEliminar);
 		setContentPane(contentPane);
 		juego=Juego.crearJuego(this);
 		tiempo = new HiloTiempo(juego);
-		botonParaAgregar();
-		contentPane.add(agregar);
+
 
 		//Eliminar Despues
 		botonMusica();
@@ -94,31 +90,6 @@ public class GUI extends JFrame implements MouseListener {
 	}
 
 
-	public void botonParaEliminar(){
-		botonEliminar=new JButton();
-		botonEliminar.setBounds(1200, 70, 128, 25);
-		botonEliminar.setText("Eliminar CHOBI");
-		botonEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				LinkedList<Entidad> lista=juego.getListaMapa();
-				Entidad personaje=lista.getFirst();
-				personaje.destruir();
-				int totalPuntaje=Integer.parseInt(puntaje.getText())+personaje.getPuntos();
-				puntaje.setText(""+totalPuntaje);
-			}
-		});
-	}
-
-	public void botonParaAgregar(){
-		agregar=new BotonAgregar();
-		agregar.setBounds(1200, 33, 128, 25);
-		agregar.setText("Agregar CHOBI");
-		agregar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				agregar.agregarCHOBI();
-			}
-		});
-	}
 
 
 

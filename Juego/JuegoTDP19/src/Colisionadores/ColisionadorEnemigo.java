@@ -1,35 +1,33 @@
 package Colisionadores;
 
-import Entidad.Entidad;
+import Entidad.*;
 import Estados.Atacando;
 
-public class ColisionadorEnemigo extends Colisionador {
+public class ColisionadorEnemigo implements Colisionador {
 
-    public ColisionadorEnemigo(Entidad entidad){
-        super(entidad);
+    protected Enemigo enemigo;
+
+    public ColisionadorEnemigo(Enemigo enemigo){
+        this.enemigo=enemigo;
     }
 
-    public void meChocaron(Colisionador colisionador){
-        colisionador.chocasteConEnemigo(entidad);
-    }
 
-    @Override
-    public void chocasteConAliado(Entidad chocada) {
-        entidad.setEstado(new Atacando(entidad));
-    }
 
-    @Override
-    public void chocasteConGolpeEnemigo(Entidad chocada) {
+
+    public void afectarAliado(Aliado chocada) {
 
     }
 
-    @Override
-    public void chocasteConDisparo(Entidad chocada) {
+    public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
     }
 
-    @Override
-    public void chocasteConEnemigo(Entidad chocada) {
+
+    public void afectarDisparo(Disparo chocada) {
+
+    }
+
+    public void afectarEnemigo(Enemigo chocada) {
 
     }
 }

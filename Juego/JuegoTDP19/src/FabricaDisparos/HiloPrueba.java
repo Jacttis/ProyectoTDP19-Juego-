@@ -1,13 +1,13 @@
 package FabricaDisparos;
 
-import Entidad.Aliado;
+import Entidad.*;
 
 public class HiloPrueba extends Thread {
 
-	protected Aliado aliadoQueDispara;
+	protected Personaje personajeQueDispara;
 	
-	public HiloPrueba(Aliado a) {
-		aliadoQueDispara=a;
+	public HiloPrueba(Personaje a) {
+		personajeQueDispara=a;
 	}
 	
 	/**
@@ -19,10 +19,10 @@ public class HiloPrueba extends Thread {
 	public void run() {
 		try {
 			
-			aliadoQueDispara.setPuedeAtacar(false);
+			personajeQueDispara.setPuedeAtacar(false);
 			//System.out.println("Espera 1,5 segundos para disparar");
-			Thread.sleep((long) aliadoQueDispara.getVelocidadAtaque());
-			aliadoQueDispara.setPuedeAtacar(true);
+			Thread.sleep((long) personajeQueDispara.getVelocidadAtaque());
+			personajeQueDispara.setPuedeAtacar(true);
 			
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

@@ -21,13 +21,14 @@ public class MagoHielo extends Aliado {
 
 	
 	/**
-	 * Genera un disparo y lo retorna
+	 * Utiliza la fabrica de disparos para generar un disparo y
+	 * que lo meta en el mapa.
 	 * 
 	 */
 	
-	public void disparar() {
+	public void atacar() {
 		
-		if(puedeDisparar)
+		if(puedeAtacar)
 		
 			fabricaDisparos.generarDisparoMagoHielo(this);
 

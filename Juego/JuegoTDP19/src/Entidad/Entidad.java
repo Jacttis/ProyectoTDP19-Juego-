@@ -1,6 +1,8 @@
 package Entidad;
 
 import java.awt.*;
+
+import Colisionadores.Colisionador;
 import Estados.*;
 import javax.swing.*;
 
@@ -19,6 +21,7 @@ public abstract class Entidad {
 	protected int damage;
 	protected boolean serEliminado;
 	protected Estado estado;
+	protected Colisionador colisionador;
 
 	
 	
@@ -69,8 +72,12 @@ public abstract class Entidad {
 	}
 	
 	/**
-	 * Setter de width y height
+	 * Setter y getter de width y height
 	 */
+
+	public int getWidth(){ return width; }
+
+	public int getHeight(){ return height; }
 	
 	public void setWidth(int Width) {
 		width=Width;
@@ -79,10 +86,21 @@ public abstract class Entidad {
 	public void setHeight(int Height) {
 		height=Height;
 	}
+
+	/**
+	 * Getter de colisionador
+	 *
+	 * @return colisionador
+	 */
+
+	public Colisionador getColisionador(){
+		return colisionador;
+	}
 	
 	public Point getPos() {
 		return pos;
 	}
+
 	public int getVelocidad() {
 		return velocidad;
 	}
@@ -116,19 +134,11 @@ public abstract class Entidad {
 		return serEliminado;
 	}
 
-	public void destruir(){
-
-	}
 
 	public int getPuntos(){
 		return 0;
 	}
 
-
-
-	public abstract Entidad clone();
-
-	public abstract void afectar(int n);
 
 	public Estado getEstado(){
 		return estado;
@@ -140,10 +150,10 @@ public abstract class Entidad {
 
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);
-
 	}
 
-	public void atacar(){
+	public abstract void serChocado(Colisionador colisionador);
 
-	}
+
+	public abstract Entidad clone();
 }

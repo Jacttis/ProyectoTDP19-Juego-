@@ -22,7 +22,7 @@ public class CaballeroEscudo extends Aliado {
         imagen[2]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
     }
 
-    public void disparar() {
+    public void atacar() {
 
     }
 

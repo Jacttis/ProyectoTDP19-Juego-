@@ -4,8 +4,8 @@ import Entidad.Entidad;
 import Entidad.Personaje;
 
 public class Quieto extends Estado{
-    public Quieto(Entidad entidad) {
-        super(entidad);
+    public Quieto(Personaje personaje) {
+        super(personaje);
     }
 
 
@@ -16,8 +16,12 @@ public class Quieto extends Estado{
 
     public void verificarEstado(){
 
-        if(entidad.getSerEliminado())
-            entidad.setEstado(new Muerto(entidad));
+        if(personaje.getSerEliminado())
+            personaje.setEstado(new Muerto(personaje));
+
+    }
+
+    public void cambiarAQuieto(){
 
     }
 }

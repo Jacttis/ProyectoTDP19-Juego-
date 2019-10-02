@@ -1,35 +1,35 @@
 package Colisionadores;
 
 import Entidad.*;
+import Estados.Atacando;
 
-public class ColisionadorAliado extends Colisionador {
+public class ColisionadorAliado implements Colisionador {
 
-    public ColisionadorAliado(Aliado entidad){
-        super(entidad);
+    protected Aliado aliado;
+
+    public ColisionadorAliado(Aliado aliado){
+        this.aliado=aliado;
     }
 
 
-    public void meChocaron(Colisionador colisionador){
-        colisionador.chocasteConAliado(entidad);
-    }
 
-    @Override
-    public void chocasteConAliado(Entidad chocada) {
+
+    public void afectarAliado(Aliado chocada) {
 
     }
 
-    @Override
-    public void chocasteConGolpeEnemigo(Entidad chocada) {
-        entidad.afectar(chocada.getDamage());
-    }
-
-    @Override
-    public void chocasteConDisparo(Entidad chocada) {
+    public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
     }
 
-    @Override
-    public void chocasteConEnemigo(Entidad chocada) {
+
+    public void afectarDisparo(Disparo chocada) {
+
+    }
+
+    public void afectarEnemigo(Enemigo chocada) {
+
+        chocada.getEstado().cambiarAAtacando();
 
     }
 }

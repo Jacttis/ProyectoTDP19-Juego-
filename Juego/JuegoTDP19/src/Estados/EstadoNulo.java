@@ -4,18 +4,18 @@ import Entidad.*;
 
 public class EstadoNulo extends Estado {
 
-    public EstadoNulo(Entidad entidad){
-        super(entidad);
+    public EstadoNulo(Personaje personaje){
+        super(personaje);
     }
 
     public void actuar() {
-        entidad.getInteligencia().actualizarEntidad();
-        entidad.cambiarGrafico(0);
+        personaje.getInteligencia().actualizarEntidad();
+        personaje.cambiarGrafico(0);
     }
 
     public void verificarEstado(){
-        if(entidad.getSerEliminado())
-            entidad.eliminarse();
+        if(personaje.getSerEliminado())
+            personaje.eliminarse();
     }
 
 

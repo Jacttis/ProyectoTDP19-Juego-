@@ -32,7 +32,7 @@ public class ArqueroHumano extends Aliado {
 	 * 
 	 */
 	
-	public void disparar() {
+	public void atacar() {
 		
 		if(puedeAtacar)
 
