@@ -14,13 +14,19 @@ import javax.swing.GroupLayout.Alignment;
 
 class GuiTienda {
 
-    private JFrame frame;
+
     private JPanel panel;
     private JButton btnArqueroHumano;
     private JButton btnMagoHielo;
     private JButton btnCaballeroEscudo;
     private JButton btnNewButton4;
     private JButton btnNewButton5;
+
+    private JButton btnobjeto1;
+    private JButton btnobjeto2;
+    private JButton btnobjeto3;
+    private JButton btnobjeto4;
+    private JButton btnobjeto5;
 
     private JButton btnVender;
     private JLabel labelPuntos;
@@ -54,15 +60,12 @@ class GuiTienda {
      * Initialize the contents of the frame.
      */
     private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(100, 100, 1008, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
+
 
         panel = new JPanel();
         panel.setBounds(100, 0, 992, 230);
 
-        frame.getContentPane().add(panel);
+
 
 
 
@@ -108,6 +111,31 @@ class GuiTienda {
         btnNewButton4 = new JButton();
 
         btnNewButton5 = new JButton();
+
+        btnobjeto1 = new JButton();
+        btnobjeto1.setBounds(0,120,149,120);
+        panel.add(btnobjeto1);
+
+        btnobjeto2 = new JButton();
+        btnobjeto2.setBounds(150,120,149,120);
+        panel.add(btnobjeto2);
+
+        btnobjeto3 = new JButton();
+        btnobjeto3.setBounds(300,120,149,120);
+        panel.add(btnobjeto3);
+
+        btnobjeto4 = new JButton();
+        btnobjeto4.setBounds(450,120,149,120);
+        panel.add(btnobjeto4);
+
+        btnobjeto5 = new JButton();
+        btnobjeto5.setBounds(600,120,149,120);
+        panel.add(btnobjeto5);
+
+        btnobjeto2 = new JButton();
+        btnobjeto3 = new JButton();
+        btnobjeto4 = new JButton();
+        btnobjeto5 = new JButton();
 
         labelOro = new JLabel("Oro : 0");
 
