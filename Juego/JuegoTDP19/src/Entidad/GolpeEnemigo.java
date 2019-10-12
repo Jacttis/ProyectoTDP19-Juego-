@@ -11,11 +11,10 @@ import java.awt.*;
 
 public class GolpeEnemigo extends Disparo {
 
-    public GolpeEnemigo(Point pos, int damage,int width,int height) {
-        super(pos, 0, damage);
+    public GolpeEnemigo(Point pos, int damage,int width,int height, Personaje disparador) {
+        super(pos, 0, damage,disparador);
         IA=new InteligenciaGolpeEnemigo(this);
         colisionador=new ColisionadorGolpeEnemigo(this);
-
         this.width=width;
         this.height=height;
 
@@ -25,6 +24,6 @@ public class GolpeEnemigo extends Disparo {
     }
 
     public Entidad clone() {
-        return new GolpeEnemigo(pos,damage,width,height);
+        return new GolpeEnemigo(pos,damage,width,height,disparador);
     }
 }

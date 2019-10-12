@@ -4,6 +4,7 @@ import Entidad.Aliado;
 import Entidad.Disparo;
 import Entidad.Enemigo;
 import Entidad.GolpeEnemigo;
+import Estados.Caminando;
 
 public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
 
@@ -12,25 +13,28 @@ public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
         super(golpeEnemigo);
     }
 
-    @Override
     public void afectarAliado(Aliado chocada) {
         System.out.println("Golpeando aliado");
         disparo.afectarPersonaje(chocada);
         disparo.eliminarse();
     }
 
-    @Override
+
     public void afectarEnemigo(Enemigo chocada) {
 
     }
 
-    @Override
+
     public void afectarDisparo(Disparo chocada) {
 
+        disparo.getDisparador().getEstado().cambiarACaminando();
+        disparo.eliminarse();
+        chocada.eliminarse();
     }
 
-    @Override
+
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
+
 
     }
 }

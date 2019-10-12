@@ -35,7 +35,7 @@ public  class FabricaDisparo {
 
 
 	public void generarDisparoArqueroHumano(Aliado aliado){
-		Disparo disparo=new DisparoArqueroHumano(new Point(aliado.getPos().x+30,aliado.getPos().y+50),15,aliado.getDamage());
+		Disparo disparo=new DisparoArqueroHumano(new Point(aliado.getPos().x+30,aliado.getPos().y+50),15,aliado.getDamage(),aliado);
 
 		mapa.agregarEntidad(disparo);
 		hilo=new HiloPrueba(aliado);
@@ -44,7 +44,7 @@ public  class FabricaDisparo {
 	}
 
 	public void generarDisparoMagoHielo(Aliado aliado){
-		Disparo disparo=new DisparoMagoHielo(new Point(aliado.getPos().x+28,aliado.getPos().y+40),12,aliado.getDamage());
+		Disparo disparo=new DisparoMagoHielo(new Point(aliado.getPos().x+28,aliado.getPos().y+40),12,aliado.getDamage(),aliado);
 		mapa.agregarEntidad(disparo);
 		hilo=new HiloPrueba(aliado);
 		hilo.start();
@@ -52,11 +52,10 @@ public  class FabricaDisparo {
 	}
 
 	public void generarGolpeGolemHielo(Enemigo enemigo){
-		GolpeEnemigo golpe=new GolpeEnemigo(enemigo.getPos(),20,enemigo.getWidth()+10,enemigo.getHeight());
+		GolpeEnemigo golpe=new GolpeEnemigo(enemigo.getPos(),20,enemigo.getWidth(),enemigo.getHeight(),enemigo);
 		mapa.agregarEntidad(golpe);
 		hilo=new HiloPrueba(enemigo);
 		hilo.start();
-		System.out.println("Se creo golpe");
 	}
 
 

@@ -8,8 +8,8 @@ import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoArqueroHumano extends Disparo {
 
-	public DisparoArqueroHumano(Point pos, int velocidad, int damage) {
-		super(pos, velocidad, damage);
+	public DisparoArqueroHumano(Point pos, int velocidad, int damage, Personaje disparador) {
+		super(pos, velocidad, damage, disparador);
 		IA=new InteligenciaDisparoAliado(this);
 		
 		width=100;
@@ -21,7 +21,7 @@ public class DisparoArqueroHumano extends Disparo {
 	}
 
 	public Entidad clone(){
-		return new DisparoArqueroHumano(pos,velocidad,damage);
+		return new DisparoArqueroHumano(pos,velocidad,damage,disparador);
 	}
 
 	public Rectangle getHitBox(){

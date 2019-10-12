@@ -19,7 +19,6 @@ public abstract class Entidad {
 	protected JLabel grafico;
 	protected int velocidad;
 	protected int damage;
-	protected boolean serEliminado;
 	protected Estado estado;
 	protected Colisionador colisionador;
 
@@ -27,7 +26,6 @@ public abstract class Entidad {
 	
 	public Entidad(Point pos,int velocidad, int damage) {
 
-		this.serEliminado=false;
 		this.velocidad=velocidad;
 		this.pos=pos;
 		this.damage=damage;
@@ -126,14 +124,6 @@ public abstract class Entidad {
 
 	}
 
-	public void setSerEliminado(boolean booleano){
-		serEliminado=booleano;
-	}
-
-	public boolean getSerEliminado(){
-		return serEliminado;
-	}
-
 
 	public int getPuntos(){
 		return 0;
@@ -153,10 +143,6 @@ public abstract class Entidad {
 	}
 
 	public abstract void serChocado(Colisionador colisionador);
-
-	public void noColisiona(){
-
-	}
 
 
 	public abstract Entidad clone();

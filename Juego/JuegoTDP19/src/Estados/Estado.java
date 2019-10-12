@@ -20,7 +20,7 @@ public abstract class Estado {
 
     public void verificarEstado(){
 
-        if(personaje.getSerEliminado())
+        if(personaje.estaMuerto())
             personaje.setEstado(new Muerto(personaje));
 
     }

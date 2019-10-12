@@ -76,10 +76,6 @@ public abstract class Personaje extends Entidad {
 	}
 
 
-	public boolean estaMuerto(){
-		return vida<=0;
-	}
-
 	public void setVida(int n){
 		vida=n;
 	}
@@ -120,10 +116,10 @@ public abstract class Personaje extends Entidad {
 
 
 
-	public boolean getSerEliminado(){
+	public boolean estaMuerto(){
 		if(vida<=0)
-			serEliminado=true;
-		return serEliminado;
+			vida=0;
+		return vida==0;
 	}
 
 	/**

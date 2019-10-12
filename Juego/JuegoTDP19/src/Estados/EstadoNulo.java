@@ -9,11 +9,7 @@ public class EstadoNulo extends Estado {
     }
 
     public void actuar() {
-    }
-
-    public void verificarEstado(){
-        if(personaje.getSerEliminado())
-            personaje.setEstado(new Muerto(personaje));
+        verificarEstado();
     }
 
 

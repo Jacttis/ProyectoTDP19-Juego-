@@ -14,12 +14,6 @@ public class Quieto extends Estado{
         verificarEstado();
     }
 
-    public void verificarEstado(){
-
-        if(personaje.getSerEliminado())
-            personaje.setEstado(new Muerto(personaje));
-
-    }
 
     public void cambiarAQuieto(){
 
