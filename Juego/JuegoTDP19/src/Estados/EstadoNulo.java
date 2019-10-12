@@ -9,13 +9,11 @@ public class EstadoNulo extends Estado {
     }
 
     public void actuar() {
-        personaje.getInteligencia().actualizarEntidad();
-        personaje.cambiarGrafico(0);
     }
 
     public void verificarEstado(){
         if(personaje.getSerEliminado())
-            personaje.eliminarse();
+            personaje.setEstado(new Muerto(personaje));
     }
 
 

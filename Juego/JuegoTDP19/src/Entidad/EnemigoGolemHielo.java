@@ -1,6 +1,6 @@
 package Entidad;
 
-import java.awt.Point;
+import java.awt.*;
 
 import javax.swing.ImageIcon;
 
@@ -34,5 +34,9 @@ public class EnemigoGolemHielo extends Enemigo {
 
 		if(puedeAtacar)
 			FabricaDisparo.getFabricaDisparos().generarGolpeGolemHielo(this);
+	}
+
+	public Rectangle getHitBox(){
+		return new Rectangle(pos.x+40,pos.y,width-30,height-70);
 	}
 }

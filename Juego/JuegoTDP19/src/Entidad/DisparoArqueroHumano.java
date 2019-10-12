@@ -1,6 +1,6 @@
 package Entidad;
 
-import java.awt.Point;
+import java.awt.*;
 
 import javax.swing.ImageIcon;
 
@@ -22,6 +22,10 @@ public class DisparoArqueroHumano extends Disparo {
 
 	public Entidad clone(){
 		return new DisparoArqueroHumano(pos,velocidad,damage);
+	}
+
+	public Rectangle getHitBox(){
+		return new Rectangle(pos.x,pos.y,width-30,height-20);
 	}
 
 }

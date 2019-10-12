@@ -154,6 +154,14 @@ public abstract class Entidad {
 
 	public abstract void serChocado(Colisionador colisionador);
 
+	public void noColisiona(){
+
+	}
+
 
 	public abstract Entidad clone();
+
+	public Rectangle getHitBox(){
+		return new Rectangle(pos.x,pos.y,width,height);
+	}
 }

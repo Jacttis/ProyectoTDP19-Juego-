@@ -25,6 +25,10 @@ public class Atacando extends Estado {
 
     }
 
+    public void verificarEstado(){
+
+    }
+
 
 
 }

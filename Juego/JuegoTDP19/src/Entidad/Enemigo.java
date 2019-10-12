@@ -58,5 +58,9 @@ public abstract class Enemigo extends Personaje{
 		colisionador.afectarEnemigo(this);
 	}
 
+	public void noColisiona(){
+		estado.cambiarACaminando();
+	}
+
 
 }

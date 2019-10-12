@@ -70,11 +70,6 @@ public class Mapa {
 		for(Entidad e : entidades) {
 			e.actualizarEntidad();
 
-			/*
-			if(e.getSerEliminado())
-				entidadesAEliminar.add(e);
-			*/
-
 		}
 
 		for(Entidad eAEliminar : entidadesAEliminar){
@@ -176,13 +171,13 @@ public class Mapa {
 
 	private void verificarColision(Entidad e1, Entidad e2) {
 		//el rectangulo es mas chico que el tamanio real de la entidad para que las colisiones parezcan mas reales
-		Rectangle r1= new Rectangle(e1.getPos().x+2, e1.getPos().y+2, e1.getWidth()-2, e1.getHeight()-2);
-		Rectangle r2= new Rectangle(e2.getPos().x+2, e2.getPos().y+2, e2.getWidth()-2, e2.getHeight()-2);
+		Rectangle r1= e1.getHitBox();
+		Rectangle r2= e2.getHitBox();
 		if(r1.intersects(r2)) {
 			e1.serChocado(e2.getColisionador());
 			e2.serChocado(e1.getColisionador());
-
 		}
+
 	}
 
 

@@ -14,9 +14,8 @@ public class Muerto extends Estado {
     public void actuar() {
 
         personaje.cambiarGrafico(2);
-        hiloMuerte.start();
         personaje.setEstado(new EstadoNulo(personaje));
-        personaje.eliminarse();
+        hiloMuerte.start();
 
 
 

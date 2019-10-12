@@ -29,4 +29,8 @@ public class CaballeroEscudo extends Aliado {
     public Entidad clone(){
         return new CaballeroEscudo(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
     }
+
+    public Rectangle getHitBox(){
+        return new Rectangle(pos.x,pos.y,width-20,height-70);
+    }
 }
