@@ -22,14 +22,35 @@ public abstract class Disparo extends Entidad {
 		
 	}
 
+	/**
+	 * Afecta al personaje parametrizado disminuyendole la vida
+	 * el valor del atributo damage.
+	 *
+	 * @param personajeAfectado
+	 */
+
 	public void afectarPersonaje(Personaje personajeAfectado){
 		personajeAfectado.disminuirVida(this.damage);
 
 	}
 
+	/**
+	 * Retorna el personaje que disparo a este Disparo.
+	 *
+	 * @return Personaje disparador
+	 */
+
 	public Personaje getDisparador(){
 		return disparador;
 	}
+
+	/**
+	 * Definicion del metodo abstracto serChocado mas general.
+	 * Le envia al colisionador parametrizado el mensaje afectarDisparo
+	 * con esta instancia disparo como parametro.
+	 *
+	 * @param colisionador
+	 */
 
 	public void serChocado(Colisionador colisionador){
 		colisionador.afectarDisparo(this);

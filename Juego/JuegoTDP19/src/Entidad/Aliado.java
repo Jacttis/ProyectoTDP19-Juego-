@@ -60,7 +60,12 @@ public abstract class Aliado extends Personaje {
         return descripcion;
     }
 
-
+    /**
+     * Retorna el valor del atributo precio del Aliado
+     *
+     *
+     * @return int precio
+     */
 
     public int getPrecio(){
         return precio;
@@ -71,10 +76,17 @@ public abstract class Aliado extends Personaje {
         return fabricaDisparos;
     }
 
+    /**
+     * Redefinicion del eliminarse mas general.
+     *
+     * Cuando se elimina desocupa la posicion en celda que ocupaba.
+     *
+     */
+
     public void eliminarse(){
 
         celdaUbicado.desocupar();
-        Mapa.getMapa().eliminarEntidad(this);
+        Mapa.getMapa().eliminarPersonaje(this);
     }
 
     public void posicionar(ParCelda celda){
@@ -85,6 +97,14 @@ public abstract class Aliado extends Personaje {
     public ParCelda getCelda(){
         return celdaUbicado;
     }
+
+    /**
+     * implementacion del metodo abstracto serChocado.
+     *
+     * Le envia al colisionador parametrizado el mensaje afectarAliado, con
+     * esta instancia (Aliado) como parametro.
+     * @param colisionador
+     */
 
     public void serChocado(Colisionador colisionador){
         colisionador.afectarAliado(this);

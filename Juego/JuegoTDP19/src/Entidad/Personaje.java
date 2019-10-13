@@ -56,6 +56,13 @@ public abstract class Personaje extends Entidad {
 		}
 	}
 
+	/**
+	 * Si no tiene todavia etiqueta vida la crea.
+	 *
+	 * Retorna el JLabel de la barra de vida del personaje.
+	 *
+	 * @return JLabel etiquetaVida
+	 */
 
 	public JLabel getEtiquetaVida(){
 		if(this.etiquetaVida==null){
@@ -67,6 +74,13 @@ public abstract class Personaje extends Entidad {
 
 		return etiquetaVida;
 	}
+
+	/**
+	 * Actualiza la etiquetaVida tanto como la posicion segun el personaje, como
+	 * su estado segun la vida del personaje.
+	 *
+	 * @param n
+	 */
 
 	public void actualizarEtiquetaVida(int n){
 
@@ -165,7 +179,12 @@ public abstract class Personaje extends Entidad {
 
 	}
 
-
+	/**
+	 * Devuelve verdadero si el personaje tiene 0 de vida
+	 * o falso si el personaje tiene mas que 0 de vida.
+	 *
+	 * @return boolean
+	 */
 
 	public boolean estaMuerto(){
 		if(vida<=0)
@@ -179,16 +198,37 @@ public abstract class Personaje extends Entidad {
 	 *
 	 */
 
+	/**
+	 * Setter del atributo puedeAtacar que determina si el personaje
+	 * puede atacar, el cual varia segun la velicidadDeAtaque del personaje
+	 * (en FabricaDeDisparos se hace uso mediante el hilo)
+	 *
+	 * @param puede
+	 */
+
 	public void setPuedeAtacar(boolean puede) {
 		puedeAtacar=puede;
 	}
+
+	/**
+	 * Retorna el atributo puedeAtacar
+	 *
+	 * @return boolean puedeAtacar
+	 */
 
 	public boolean puedeAtacar() {
 		return puedeAtacar;
 	}
 
+	/**
+	 * Redefinicion del eliminarse mas general
+	 * Se elimina mediante el comando elimimnarPersonaje ubicado en Mapa.
+	 *
+	 */
+
 	public void eliminarse(){
 		Mapa.getMapa().eliminarPersonaje(this);
+		System.out.println("Eliminarse personaje");
 	}
 
 

@@ -18,6 +18,12 @@ public class Quieto extends Estado{
     }
 
 
+    /**
+     * Redefiniciones de metodos generales para que cuando se este en este
+     * estado no produzcan ninguna funcion.
+     *
+     */
+
     public void cambiarAQuieto(){
 
     }

@@ -24,9 +24,26 @@ public class GolpeEnemigo extends Disparo {
 
     }
 
+    /**
+     * Definicion del metodo abstracto mas general.
+     * Clona la entidad y la retorna.
+     *
+     *
+     * @return Entidad
+     */
+
     public Entidad clone() {
         return new GolpeEnemigo(pos,damage,width,height,disparador);
     }
+
+    /**
+     * Redefinicion del serChocado en Disparo.
+     *
+     * Le envia el mensaje afectarGolpeEnemigo (con esta instancia como parametro) al
+     * colisionador parametrizado.
+     *
+     * @param colisionador
+     */
 
     public void serChocado(Colisionador colisionador){
         colisionador.afectarGolpeEnemigo(this);

@@ -9,6 +9,7 @@ import GUI.GUI;
 import Niveles.Nivel;
 import Niveles.NivelUno;
 import Tienda.PosicionadorDeAliado;
+import Tienda.Tienda;
 
 import javax.swing.*;
 
@@ -82,13 +83,13 @@ public class Mapa {
 		for(Entidad eAEliminar : entidadesAEliminar){
 			entidades.remove(eAEliminar);
 			eliminarEntidadGrafica(eAEliminar);
-			System.out.println("Entidades : "+entidades.size());
+			//System.out.println("Entidades : "+entidades.size());
 		}
 		
 		for(Entidad eAAgregar : entidadesAAgregar) {
 			entidades.add(eAAgregar);
 			agregarEntidadGrafica(eAAgregar);
-			System.out.println("Entidades : "+entidades.size());
+			//System.out.println("Entidades : "+entidades.size());
 		}
 
 		for(Personaje pAAgregar : personajesAAgregar){
@@ -109,6 +110,7 @@ public class Mapa {
 		personajesAAgregar=new LinkedList<Personaje>();
 
 		colisionar();
+
 	}
 	
 	/**
@@ -133,6 +135,14 @@ public class Mapa {
 
 	public void eliminarPersonaje(Personaje personajeAEliminar){
 		personajesAEliminar.add(personajeAEliminar);
+
+		for(Enemigo e : nivel.getEnemigosGenerados()){
+			if(e.equals(personajeAEliminar)) {
+				nivel.removerEnemigo(e);
+				break;
+			}
+
+		}
 	}
 
 
@@ -217,6 +227,25 @@ public class Mapa {
 			e2.serChocado(e1.getColisionador());
 		}
 
+	}
+
+	/**
+	 * Cuando se eliminen todos los enemigos, se generara el siguiente nivel.
+	 * Este metodo es llamado desde nivel.
+	 * @param nivelNuevo
+	 */
+	public void cambiarNivel(Nivel nivelNuevo){
+		limpiarMapa();
+		this.nivel=nivelNuevo;
+		generar();
+	}
+
+	private void limpiarMapa(){
+		for(Entidad entidad : entidades){
+			entidad.eliminarse();
+		}
+
+		Tienda.getTienda().aumentarOro(nivel.getOroPremio());
 	}
 
 }

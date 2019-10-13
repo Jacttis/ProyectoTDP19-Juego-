@@ -75,7 +75,7 @@ class GuiTienda {
         btnArqueroHumano.setToolTipText("Tira flechas");
         btnArqueroHumano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroHumano(100,10,1500,"Dispara flechas",FabricaDisparo.getFabricaDisparos());
+                aliadoAAgregar=new ArqueroHumano(100,10,750,"Dispara flechas",FabricaDisparo.getFabricaDisparos());
                 esperandoClick=true;
                 deshabilitarBotones();
 

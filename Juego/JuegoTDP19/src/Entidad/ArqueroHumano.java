@@ -25,6 +25,11 @@ public class ArqueroHumano extends Aliado {
 
 	}
 
+	/**
+	 * Redefinicion de getEtiquetaVida mas general
+	 *
+	 * @return JLabel etiquetaVida
+	 */
 
 	public JLabel getEtiquetaVida(){
 		if(this.etiquetaVida==null){
@@ -36,6 +41,12 @@ public class ArqueroHumano extends Aliado {
 
 		return etiquetaVida;
 	}
+
+	/**
+	 * Redefinicion de actualizarEtiquetaVida mas general.
+	 *
+	 * @param n
+	 */
 
 	public void actualizarEtiquetaVida(int n){
 
@@ -50,11 +61,13 @@ public class ArqueroHumano extends Aliado {
 		}
 	}
 
-	
+
 	/**
-	 * Genera un disparo y lo retorna para que fabrica de disparos
-	 * lo inserte en el mapa
-	 * 
+	 *
+	 * Implementacion del metodo abstracto atacar ubicado en Personaje.
+	 *
+	 * Si puede atacar genera un disparo mediante la fabrica de Disparos la cual lo insertara en el mapa.
+	 *
 	 */
 	
 	public void atacar() {
@@ -66,7 +79,11 @@ public class ArqueroHumano extends Aliado {
 	}
 
 
-
+	/**
+	 * Redefinicion del posicionar mas general.
+	 *
+	 * @param celda
+	 */
 
 	public void posicionar(ParCelda celda){
 		super.posicionar(celda);
@@ -74,8 +91,28 @@ public class ArqueroHumano extends Aliado {
 
 	}
 
+	/**
+	 * Implementacion del metodo abstracto clone en Entidad.
+	 *
+	 * Clona a la entidad y la devuelve.
+	 *
+	 * @return Entidad
+	 */
+
 	public Entidad clone(){
 		return new ArqueroHumano(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
+	}
+
+	/**
+	 * Redefinicion del getHitbox mas general
+	 *
+	 * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+	 *
+	 * @return Rectangle
+	 */
+
+	public Rectangle getHitBox(){
+		return new Rectangle(pos.x,pos.y,width-30,height-70);
 	}
 	
 	

@@ -140,6 +140,7 @@ public abstract class Entidad {
 
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);
+		System.out.println("Eliminarse entidad");
 	}
 
 	public abstract void serChocado(Colisionador colisionador);

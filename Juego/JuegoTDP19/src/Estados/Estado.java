@@ -15,8 +15,18 @@ public abstract class Estado {
 
     }
 
+    /**
+     * Metodo abstracto que determina que se hace en cada estado.
+     *
+     */
 
     public abstract void actuar();
+
+    /**
+     * Verifica el estado del personaje, si este esta muerto (tiene 0 de vida)
+     * le cambia el estado al estado Muerto(para despues ser eliminado).
+     *
+     */
 
     public void verificarEstado(){
 
@@ -25,13 +35,28 @@ public abstract class Estado {
 
     }
 
+    /**
+     * Le cambia el estado del personaje al estado Atacando.
+     *
+     */
+
     public void cambiarAAtacando(){
         personaje.setEstado(new Atacando(personaje));
     }
 
+    /**
+     * Le cambia el estado del personaje al estado Caminando.
+     *
+     */
+
     public void cambiarACaminando(){
         personaje.setEstado(new Caminando(personaje));
     }
+
+    /**
+     * Le cambia el estado al personaje al estado Quieto.
+     *
+     */
 
     public void cambiarAQuieto(){
         personaje.setEstado(new Quieto(personaje));

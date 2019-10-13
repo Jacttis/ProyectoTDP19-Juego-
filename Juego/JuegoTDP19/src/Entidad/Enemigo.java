@@ -64,6 +64,13 @@ public abstract class Enemigo extends Personaje{
 		colisionador.afectarEnemigo(this);
 	}
 
+	/**
+	 * Redefinicion del eliminarse mas general.
+	 *
+	 * Se agrega que al eliminarse aumente el oro de la tienda correspondientemente.
+	 *
+	 */
+
 	public void eliminarse(){
 		Mapa.getMapa().eliminarPersonaje(this);
 		Tienda.getTienda().aumentarOro(this.getOro());

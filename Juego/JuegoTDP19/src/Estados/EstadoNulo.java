@@ -8,6 +8,12 @@ public class EstadoNulo extends Estado {
         super(personaje);
     }
 
+    /**
+     * Redefiniciones de metodos generales para que cuando se este en este
+     * estado no produzcan ninguna funcion.
+     *
+     */
+
     public void actuar() {
 
     }

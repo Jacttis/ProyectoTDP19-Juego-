@@ -14,23 +14,42 @@ public class ColisionadorDisparo implements Colisionador {
     }
 
 
-    @Override
+    /**
+     * Afecta al aliado parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
+
     public void afectarAliado(Aliado chocada) {
 
     }
 
-    @Override
+    /**
+     * Afecta al Enemigo parametrizado, de la forma que corresponda.
+     * Despues de afectarlo, disparo es eliminado.
+     *
+     *
+     * @param chocada
+     */
     public void afectarEnemigo(Enemigo chocada) {
         disparo.afectarPersonaje(chocada);
         disparo.eliminarse();
     }
 
-    @Override
+    /**
+     * Afecta al Disparo parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
     public void afectarDisparo(Disparo chocada) {
 
     }
 
-    @Override
+    /**
+     * Afecta al GolpeEnemigo parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
     }

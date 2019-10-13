@@ -20,6 +20,12 @@ public class EnemigoGolemHielo extends Enemigo {
 	}
 
 
+	/**
+	 * Redefinicion de getEtiquetaVida mas general
+	 *
+	 * @return JLabel etiquetaVida
+	 */
+
 	public JLabel getEtiquetaVida(){
 		if(this.etiquetaVida==null){
 			this.etiquetaVida=new JLabel();
@@ -30,6 +36,12 @@ public class EnemigoGolemHielo extends Enemigo {
 
 		return etiquetaVida;
 	}
+
+	/**
+	 * Redefinicion de actualizarEtiquetaVida mas general.
+	 *
+	 * @param n
+	 */
 
 	public void actualizarEtiquetaVida(int n){
 
@@ -45,15 +57,38 @@ public class EnemigoGolemHielo extends Enemigo {
 	}
 
 
+	/**
+	 * Implementacion del metodo abstracto clone en Entidad.
+	 *
+	 * Clona a la entidad y la devuelve.
+	 *
+	 * @return Entidad
+	 */
+
 	public Entidad clone(){
 		return new EnemigoGolemHielo(vida,damage,velocidadAtaque,velocidad,puntos,oroPremio);
 	}
+
+	/**
+	 *
+	 * Implementacion del metodo abstracto atacar ubicado en Personaje.
+	 * Si puede atacar genera un golpe mediante la fabrica de Disparos la cual lo insertara en el mapa.
+	 *
+	 */
 
 	public void atacar(){
 
 		if(puedeAtacar)
 			FabricaDisparo.getFabricaDisparos().generarGolpeGolemHielo(this);
 	}
+
+	/**
+	 * Redefinicion del getHitbox mas general.
+	 *
+	 * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+	 *
+	 * @return Rectangle
+	 */
 
 	public Rectangle getHitBox(){
 		return new Rectangle(pos.x+40,pos.y,width-30,height-70);
