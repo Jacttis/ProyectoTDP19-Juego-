@@ -5,6 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 import FabricaDisparos.FabricaDisparo;
+import FabricaDisparos.FabricaDisparoGolpeEnemigo;
 import Inteligencia.Inteligencia;
 import Juego.Mapa;
 
@@ -13,6 +14,9 @@ public class EnemigoGolemHielo extends Enemigo {
 	public EnemigoGolemHielo(int vida, int damage, float velocidadAtaque, int velocidad, int puntos,int oro) {
 
 		super(vida, damage, velocidadAtaque, velocidad, puntos, oro);
+
+		fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
+
 		imagen[0] = new ImageIcon("Sprites/Golems/GolemHieloGIF/CaminandoTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/Golems/GolemHieloGIF/AtacandoTRUE.gif");
 		imagen[2] = new ImageIcon("Sprites/Golems/GolemHieloGIF/ASDF.gif");
@@ -79,7 +83,7 @@ public class EnemigoGolemHielo extends Enemigo {
 	public void atacar(){
 
 		if(puedeAtacar)
-			FabricaDisparo.getFabricaDisparos().generarGolpeGolemHielo(this);
+			fabricaDisparo.generarDisparo();
 	}
 
 	/**

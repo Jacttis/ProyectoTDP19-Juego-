@@ -1,23 +1,24 @@
 package Niveles;
 
 import Entidad.Enemigo;
+import FabricaEnemigo.*;
 import Juego.Mapa;
 
-import java.awt.*;
+
 import java.util.LinkedList;
 import java.util.Random;
 
 public abstract class Nivel {
 
 	protected Mapa mapa;
-	protected FabricaEnemigos fabricaEnemigos;
+	protected FabricaEnemigo fabricaEnemigos;
 	protected HiloNivel hiloNivel;
 	protected LinkedList<Enemigo> enemigosGenerados;
 	protected int oroPremio;
 	
 	public Nivel(Mapa mapa) {
 		this.mapa=mapa;
-		fabricaEnemigos=new FabricaEnemigosNormales();
+		fabricaEnemigos=new FabricaEnemigoGolemHielo();
 		enemigosGenerados=new LinkedList<Enemigo>();
 		oroPremio=5;
 	}

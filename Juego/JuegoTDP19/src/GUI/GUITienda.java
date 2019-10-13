@@ -75,7 +75,7 @@ class GuiTienda {
         btnArqueroHumano.setToolTipText("Tira flechas");
         btnArqueroHumano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroHumano(100,10,750,"Dispara flechas",FabricaDisparo.getFabricaDisparos());
+                aliadoAAgregar=new ArqueroHumano(100,10,750,"Dispara flechas");
                 esperandoClick=true;
                 deshabilitarBotones();
 
@@ -90,7 +90,7 @@ class GuiTienda {
         btnMagoHielo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new MagoHielo(100,20,1500,"Tira Hielo",FabricaDisparo.getFabricaDisparos());
+                aliadoAAgregar=new MagoHielo(100,20,1500,"Tira Hielo");
                 esperandoClick=true;
                 deshabilitarBotones();
             }
@@ -102,7 +102,7 @@ class GuiTienda {
         btnCaballeroEscudo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new CaballeroEscudo(100,0,0,"Aguanta Mucho pero no pega",FabricaDisparo.getFabricaDisparos());
+                aliadoAAgregar=new CaballeroEscudo(100,0,0,"Aguanta Mucho pero no pega");
                 esperandoClick=true;
                 deshabilitarBotones();
             }

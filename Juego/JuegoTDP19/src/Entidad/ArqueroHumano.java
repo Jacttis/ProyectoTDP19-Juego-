@@ -6,13 +6,14 @@ import javax.swing.*;
 
 import Estados.Atacando;
 import FabricaDisparos.FabricaDisparo;
+import FabricaDisparos.FabricaDisparoArquero;
 import Tienda.ParCelda;
 
 
 public class ArqueroHumano extends Aliado {
 
-	public ArqueroHumano( int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
-		super(vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
+	public ArqueroHumano( int vida, int damage, float velocidadAtaque, String Descripcion) {
+		super(vida, damage, velocidadAtaque, Descripcion);
 		
 		width=100;
 		height=120;
@@ -21,7 +22,7 @@ public class ArqueroHumano extends Aliado {
 		imagen[1] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 		imagen[2] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 
-
+		fabricaDisparo=new FabricaDisparoArquero(this);
 
 	}
 
@@ -74,7 +75,7 @@ public class ArqueroHumano extends Aliado {
 		
 		if(puedeAtacar)
 
-			fabricaDisparos.generarDisparoArqueroHumano(this);
+			fabricaDisparo.generarDisparo();
 
 	}
 
@@ -100,7 +101,7 @@ public class ArqueroHumano extends Aliado {
 	 */
 
 	public Entidad clone(){
-		return new ArqueroHumano(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
+		return new ArqueroHumano(vida,damage,velocidadAtaque,descripcion);
 	}
 
 	/**

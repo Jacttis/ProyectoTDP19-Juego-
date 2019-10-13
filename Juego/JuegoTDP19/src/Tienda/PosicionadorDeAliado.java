@@ -37,6 +37,8 @@ public class PosicionadorDeAliado {
         int columna=(pos.x-65)/170;
         int fila=((pos.y-255)/105)-1;
 
+
+
         System.out.println(fila+" fila");
         System.out.println(columna+" columna");
 
@@ -51,8 +53,6 @@ public class PosicionadorDeAliado {
             Mapa.getMapa().agregarPersonaje(aliadoAAgregar);
 
         }
-
-        else System.out.println("OcupadAAAAAAAAAAAAAAAAAAAAAAAA");
 
     }
 

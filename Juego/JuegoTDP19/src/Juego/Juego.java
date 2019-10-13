@@ -36,7 +36,6 @@ public class Juego {
 		Mapa.getMapa().generar();
 
 
-		FabricaDisparo.crearFabricaDisparos(Mapa.getMapa());
 		Tienda.getTienda();
 
 

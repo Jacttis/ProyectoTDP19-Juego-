@@ -22,7 +22,7 @@ public class Grilla {
 
     public Grilla(){
 
-        grilla=new ParCelda[6][10];
+        grilla=new ParCelda[10][6];
 
         for(int i=0;i<grilla.length;i++)
             for(int j=0;j<grilla[0].length;j++){
@@ -39,8 +39,8 @@ public class Grilla {
      * @return
      */
 
-    public ParCelda obtenerCelda(int fila, int columna){
-        return grilla[fila][columna];
+    public ParCelda obtenerCelda(int columna, int fila){
+        return grilla[columna][fila];
     }
 
 }

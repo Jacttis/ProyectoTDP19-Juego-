@@ -15,9 +15,9 @@ public abstract class Personaje extends Entidad {
 	protected float velocidadAtaque;
 	protected boolean puedeAtacar;
 	protected JLabel etiquetaVida;
+	protected FabricaDisparo fabricaDisparo;
 
 
-	// protected Premio objetos [];
 
 	/**
 	 * Crea el personaje
@@ -97,6 +97,10 @@ public abstract class Personaje extends Entidad {
 
 	// Getters
 
+	public FabricaDisparo getFabricaDisparo(){
+		return fabricaDisparo;
+	}
+
 	/**
 	 * @return Retorna la vida del personaje
 	 */
@@ -137,6 +141,7 @@ public abstract class Personaje extends Entidad {
 	 */
 
 	public void actualizarEntidad() {
+		estado.verificarEstado();
 		estado.actuar();
 	}
 

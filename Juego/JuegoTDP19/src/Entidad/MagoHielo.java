@@ -5,15 +5,18 @@ import java.awt.*;
 import javax.swing.*;
 
 import FabricaDisparos.FabricaDisparo;
+import FabricaDisparos.FabricaDisparoMagoHielo;
 
 public class MagoHielo extends Aliado {
 
-	public MagoHielo(int vida, int damage, float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
-		super(vida, damage, velocidadAtaque, Descripcion, fabricaDisparos);
+	public MagoHielo(int vida, int damage, float velocidadAtaque, String Descripcion) {
+		super(vida, damage, velocidadAtaque, Descripcion);
 		
 		width=102;
 		height=120;
-		
+
+		fabricaDisparo=new FabricaDisparoMagoHielo(this);
+
 		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/attackTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/attackTRUE.gif");
 		imagen[2] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/attackTRUE.gif");
@@ -55,7 +58,7 @@ public class MagoHielo extends Aliado {
 		
 		if(puedeAtacar)
 		
-			fabricaDisparos.generarDisparoMagoHielo(this);
+			fabricaDisparo.generarDisparo();
 
 	}
 
@@ -65,7 +68,12 @@ public class MagoHielo extends Aliado {
 	}
 
 	public Entidad clone(){
-		return new MagoHielo(vida,damage,velocidadAtaque,descripcion,fabricaDisparos);
+		return new MagoHielo(vida,damage,velocidadAtaque,descripcion);
+	}
+
+
+	public Rectangle getHitBox(){
+		return new Rectangle(pos.x,pos.y,width-30,height-70);
 	}
 	
 	

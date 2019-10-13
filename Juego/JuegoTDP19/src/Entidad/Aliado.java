@@ -22,7 +22,6 @@ import Tienda.*;
 public abstract class Aliado extends Personaje {
 
      protected String descripcion;
-     protected FabricaDisparo fabricaDisparos;
      protected int precio;
      protected Entidad disparo;
      protected ParCelda celdaUbicado;
@@ -38,12 +37,11 @@ public abstract class Aliado extends Personaje {
 
      * @param Descripcion
      */
-    public Aliado(int vida, int damage,float velocidadAtaque, String Descripcion, FabricaDisparo fabricaDisparos) {
+    public Aliado(int vida, int damage,float velocidadAtaque, String Descripcion) {
         super(new Point(0,0), vida, damage, velocidadAtaque,0);
         IA=new InteligenciaAliados(this);
         imagen =new ImageIcon[3];
         descripcion=Descripcion;
-        this.fabricaDisparos=fabricaDisparos;
         colisionador=new ColisionadorAliado(this);
 
 
@@ -71,10 +69,6 @@ public abstract class Aliado extends Personaje {
         return precio;
     }
 
-
-    public FabricaDisparo getFabricaDisparos(){
-        return fabricaDisparos;
-    }
 
     /**
      * Redefinicion del eliminarse mas general.

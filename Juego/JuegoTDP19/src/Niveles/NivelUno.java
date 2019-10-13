@@ -2,11 +2,6 @@ package Niveles;
 
 import java.awt.Point;
 
-import Entidad.ArqueroHumano;
-import Entidad.DisparoArqueroHumano;
-import Entidad.EnemigoGolemHielo;
-import Entidad.Entidad;
-import Entidad.MagoHielo;
 import Juego.Mapa;
 import Entidad.*;
 
@@ -25,23 +20,23 @@ public class NivelUno extends Nivel {
 	
 	public void generarEnemigos() {
 
-		Enemigo enemigo1=fabricaEnemigos.generarGolemHielo();
+		Enemigo enemigo1=fabricaEnemigos.crearEnemigo();
 		enemigo1.posicionar(new Point(1800,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo1);
-
-		Enemigo enemigo2=fabricaEnemigos.generarGolemHielo();
+        /*
+		Enemigo enemigo2=fabricaEnemigos.crearEnemigo();
 		enemigo2.posicionar(new Point(1970,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo2);
 
-		Enemigo enemigo3=fabricaEnemigos.generarGolemHielo();
+		Enemigo enemigo3=fabricaEnemigos.crearEnemigo();
 		enemigo3.posicionar(new Point(2140,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo3);
 
-		Enemigo enemigo4=fabricaEnemigos.generarGolemHielo();
+		Enemigo enemigo4=fabricaEnemigos.crearEnemigo();
 		enemigo4.posicionar(new Point(2310,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo4);
 
-
+        */
 
 		hiloNivel.start();
 

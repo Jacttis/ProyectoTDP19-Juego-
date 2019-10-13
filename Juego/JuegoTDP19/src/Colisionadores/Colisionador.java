@@ -9,6 +9,4 @@ public interface Colisionador {
     public void afectarDisparo(Disparo chocada);
     public void afectarGolpeEnemigo(GolpeEnemigo chocada);
 
-
-
 }

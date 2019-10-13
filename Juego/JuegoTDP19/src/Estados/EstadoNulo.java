@@ -15,8 +15,19 @@ public class EstadoNulo extends Estado {
      */
 
     public void actuar() {
+    }
+
+    public void verificarEstado() {
+    }
+
+    public void cambiarAAtacando() {
 
     }
 
+    public void cambiarAQuieto() {
 
+    }
+
+    public void cambiarACaminando() {
+    }
 }
