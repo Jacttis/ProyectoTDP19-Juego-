@@ -2,7 +2,7 @@ package Entidad;
 
 import java.awt.*;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
@@ -18,6 +18,32 @@ public class EnemigoGolemHielo extends Enemigo {
 		imagen[2] = new ImageIcon("Sprites/Golems/GolemHieloGIF/ASDF.gif");
 
 	}
+
+
+	public JLabel getEtiquetaVida(){
+		if(this.etiquetaVida==null){
+			this.etiquetaVida=new JLabel();
+			this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
+			this.etiquetaVida.setOpaque(true);
+			this.etiquetaVida.setBackground(Color.GREEN);
+		}
+
+		return etiquetaVida;
+	}
+
+	public void actualizarEtiquetaVida(int n){
+
+		if(etiquetaVida!=null) {
+			etiquetaVida.setBounds(pos.x+(this.width-90), pos.y+(this.height-10) , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
+
+			if (vida < 70) {
+				if (vida < 40)
+					etiquetaVida.setBackground(Color.RED);
+				else etiquetaVida.setBackground(Color.YELLOW);
+			}
+		}
+	}
+
 
 	@Override
 	protected int getOro() {

@@ -11,7 +11,7 @@ public abstract class FabricaEnemigos {
         GolemHielo=new EnemigoGolemHielo(100,30,1000,1,100);
     }
 
-    public abstract Entidad generarGolemHielo();
+    public abstract Personaje generarGolemHielo();
 
 
 }

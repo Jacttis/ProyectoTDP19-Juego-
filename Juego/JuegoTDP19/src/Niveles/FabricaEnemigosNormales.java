@@ -9,9 +9,9 @@ public class FabricaEnemigosNormales extends FabricaEnemigos {
     }
 
 
-    public Entidad generarGolemHielo() {
+    public Personaje generarGolemHielo() {
 
-        return GolemHielo.clone();
+        return (Personaje) GolemHielo.clone();
 
     }
 }

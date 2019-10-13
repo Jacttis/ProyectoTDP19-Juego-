@@ -7,11 +7,14 @@ import FabricaDisparos.FabricaDisparo;
 import Inteligencia.Inteligencia;
 import Juego.Mapa;
 
+import javax.swing.*;
+
 public abstract class Personaje extends Entidad {
 
 	protected int vida;
 	protected float velocidadAtaque;
 	protected boolean puedeAtacar;
+	protected JLabel etiquetaVida;
 
 
 	
@@ -35,6 +38,51 @@ public abstract class Personaje extends Entidad {
 		puedeAtacar=true;
 		
 	}
+
+	public JLabel getGrafico(){
+		if(this.grafico == null){
+			this.grafico = new JLabel(imagen[0]);
+			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+
+		}
+
+		return this.grafico;
+	}
+
+	public void cambiarGrafico(int dir) {
+		if(this.grafico!=null) {
+			this.grafico.setIcon(this.imagen[dir]);
+			this.grafico.setBounds(this.pos.x,this.pos.y,width,height);
+			actualizarEtiquetaVida(0);
+
+		}
+	}
+
+
+	public JLabel getEtiquetaVida(){
+		if(this.etiquetaVida==null){
+			this.etiquetaVida=new JLabel();
+			this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
+			this.etiquetaVida.setOpaque(true);
+			this.etiquetaVida.setBackground(Color.GREEN);
+		}
+
+		return etiquetaVida;
+	}
+
+	public void actualizarEtiquetaVida(int n){
+
+		if(etiquetaVida!=null) {
+			etiquetaVida.setBounds(pos.x+this.width, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
+
+			if (vida < 70) {
+				if (vida < 40)
+					etiquetaVida.setBackground(Color.RED);
+				else etiquetaVida.setBackground(Color.YELLOW);
+			}
+		}
+	}
+
 	// Getters
 
 	/**
@@ -61,9 +109,14 @@ public abstract class Personaje extends Entidad {
 	}
 
 	public void disminuirVida(int cantidad){
-		if((vida-cantidad)<0)
-			vida=0;
-		else vida-=cantidad;
+		if((vida-cantidad)<0) {
+			vida = 0;
+			actualizarEtiquetaVida(etiquetaVida.getWidth());
+		}
+		else {
+			vida-=cantidad;
+			this.actualizarEtiquetaVida(cantidad);
+		}
 	}
 
 	/**
@@ -134,6 +187,10 @@ public abstract class Personaje extends Entidad {
 
 	public boolean puedeAtacar() {
 		return puedeAtacar;
+	}
+
+	public void eliminarse(){
+		Mapa.getMapa().eliminarPersonaje(this);
 	}
 
 

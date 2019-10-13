@@ -10,10 +10,13 @@ import Niveles.Nivel;
 import Niveles.NivelUno;
 import Tienda.PosicionadorDeAliado;
 
+import javax.swing.*;
+
 public class Mapa {
 
 	private static Mapa instance=null;
 	protected LinkedList<Entidad> entidades,entidadesAAgregar,entidadesAEliminar;
+	protected LinkedList<Personaje> personajesAAgregar,personajesAEliminar;
 	protected Juego juego;
 	protected Nivel nivel;
 	protected GUI gui;
@@ -34,6 +37,10 @@ public class Mapa {
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
 		entidadesAEliminar=new LinkedList<Entidad>();
+
+		personajesAAgregar=new LinkedList<Personaje>();
+		personajesAEliminar=new LinkedList<Personaje>();
+
 
 	}
 	public  static Mapa crearMapa(Juego juego, GUI gui){
@@ -83,9 +90,23 @@ public class Mapa {
 			agregarEntidadGrafica(eAAgregar);
 			System.out.println("Entidades : "+entidades.size());
 		}
-		
+
+		for(Personaje pAAgregar : personajesAAgregar){
+			entidades.add(pAAgregar);
+			agregarPersonajeGrafica(pAAgregar);
+
+		}
+
+		for(Personaje pAEliminar : personajesAEliminar){
+			entidades.remove(pAEliminar);
+			eliminarPersonajeGrafica(pAEliminar);
+
+		}
+
 		entidadesAAgregar=new LinkedList<Entidad>();
 		entidadesAEliminar=new LinkedList<Entidad>();
+		personajesAEliminar=new LinkedList<Personaje>();
+		personajesAAgregar=new LinkedList<Personaje>();
 
 		colisionar();
 	}
@@ -98,23 +119,41 @@ public class Mapa {
 	 */
 	
 	public void agregarEntidad(Entidad entidadAAgregar) {
-		
 		entidadesAAgregar.add(entidadAAgregar);
-
-
 	}
-
-
 
 	public void eliminarEntidad(Entidad entidadAEliminar){
 		entidadesAEliminar.add(entidadAEliminar);
 
 	}
 
+	public void agregarPersonaje(Personaje personajeAAgregar){
+		personajesAAgregar.add(personajeAAgregar);
+	}
+
+	public void eliminarPersonaje(Personaje personajeAEliminar){
+		personajesAEliminar.add(personajeAEliminar);
+	}
+
+
+
+	public void agregarPersonajeGrafica(Personaje personaje){
+		gui.add(personaje.getGrafico());
+		gui.add(personaje.getEtiquetaVida());
+		gui.repaint();
+	}
+
+	public void eliminarPersonajeGrafica(Personaje personaje){
+		gui.remove(personaje.getGrafico());
+		gui.remove(personaje.getEtiquetaVida());
+		gui.repaint();
+	}
+
 	public void agregarEntidadGrafica(Entidad entidad){
 		gui.add(entidad.getGrafico());
 		gui.repaint();
 	}
+
 
 	public void eliminarEntidadGrafica(Entidad entidad){
 		gui.remove(entidad.getGrafico());
@@ -179,6 +218,5 @@ public class Mapa {
 		}
 
 	}
-
 
 }
