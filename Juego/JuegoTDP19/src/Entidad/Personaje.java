@@ -17,8 +17,6 @@ public abstract class Personaje extends Entidad {
 	protected JLabel etiquetaVida;
 
 
-	
-
 	// protected Premio objetos [];
 
 	/**

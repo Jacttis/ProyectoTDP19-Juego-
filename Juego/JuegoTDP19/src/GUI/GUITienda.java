@@ -137,7 +137,9 @@ class GuiTienda {
         btnobjeto4 = new JButton();
         btnobjeto5 = new JButton();
 
-        labelOro = new JLabel("Oro : 0");
+        labelOro = new JLabel("Oro : "+Tienda.getTienda().getOro());
+        labelOro.setForeground(Color.GREEN);
+        labelOro.setOpaque(true);
 
         labelPuntos = new JLabel("Puntos: 0");
 
@@ -251,6 +253,10 @@ class GuiTienda {
         btnMagoHielo.setEnabled(true);
         btnArqueroHumano.setEnabled(true);
         btnCaballeroEscudo.setEnabled(true);
+    }
+
+    public void actualizarOro(){
+        labelOro.setText("Oro : "+Tienda.getTienda().getOro());
     }
 
 }

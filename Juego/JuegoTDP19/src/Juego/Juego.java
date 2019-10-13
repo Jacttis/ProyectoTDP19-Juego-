@@ -37,7 +37,7 @@ public class Juego {
 
 
 		FabricaDisparo.crearFabricaDisparos(Mapa.getMapa());
-		Tienda.crearTienda();
+		Tienda.getTienda();
 
 
 
@@ -56,6 +56,7 @@ public class Juego {
 	public void mover() {
 		
 		Mapa.getMapa().mover();
+		gui.actualizaEtiquetas();
 		
 		
 	}

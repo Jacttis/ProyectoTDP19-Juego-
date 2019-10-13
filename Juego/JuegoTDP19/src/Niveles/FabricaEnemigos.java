@@ -8,7 +8,7 @@ public abstract class FabricaEnemigos {
     protected Enemigo GolemHielo;
 
     public FabricaEnemigos(){
-        GolemHielo=new EnemigoGolemHielo(100,30,1000,1,100);
+        GolemHielo=new EnemigoGolemHielo(100,30,1000,1,100,1);
     }
 
     public abstract Personaje generarGolemHielo();

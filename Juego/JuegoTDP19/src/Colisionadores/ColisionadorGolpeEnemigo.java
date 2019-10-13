@@ -27,14 +27,14 @@ public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
 
     public void afectarDisparo(Disparo chocada) {
 
-        disparo.getDisparador().getEstado().cambiarACaminando();
-        disparo.eliminarse();
-        chocada.eliminarse();
+
     }
 
 
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
-
+        disparo.getDisparador().getEstado().cambiarACaminando();
+        disparo.eliminarse();
+        chocada.eliminarse();
 
     }
 }

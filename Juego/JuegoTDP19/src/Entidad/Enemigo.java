@@ -9,11 +9,14 @@ import Estados.Atacando;
 import Estados.Caminando;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaEnemigos;
+import Juego.Mapa;
+import Tienda.Tienda;
 
 public abstract class Enemigo extends Personaje{
 	
 	
 	protected int puntos;
+	protected int oroPremio;
 	
 	/**
 	 * Crea un personaje enemigo
@@ -23,10 +26,11 @@ public abstract class Enemigo extends Personaje{
 	 * @param velocidad
 	 * @param puntos
 	 */
-	public Enemigo(int vida,int damage, float velocidadAtaque,int velocidad,int puntos) {
+	public Enemigo(int vida,int damage, float velocidadAtaque,int velocidad,int puntos, int oro) {
 		super(new Point(0,0),vida,damage,velocidadAtaque,velocidad);
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
+		oroPremio=oro;
 		this.puntos=puntos;
 		imagen=new ImageIcon [3];
 		estado=new Caminando(this);
@@ -35,7 +39,9 @@ public abstract class Enemigo extends Personaje{
 	/**
 	 * Retorna una cantidad de oro segun enemigo
 	 */
-	protected abstract int getOro();
+	protected int getOro(){
+		return oroPremio;
+	}
 	
 	//Getters triviales
 	
@@ -58,5 +64,9 @@ public abstract class Enemigo extends Personaje{
 		colisionador.afectarEnemigo(this);
 	}
 
+	public void eliminarse(){
+		Mapa.getMapa().eliminarPersonaje(this);
+		Tienda.getTienda().aumentarOro(this.getOro());
+	}
 
 }

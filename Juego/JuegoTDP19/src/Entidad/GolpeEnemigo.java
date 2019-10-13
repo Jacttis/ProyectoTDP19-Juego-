@@ -1,6 +1,7 @@
 package Entidad;
 
 
+import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
 import Colisionadores.ColisionadorGolpeEnemigo;
 import Inteligencia.InteligenciaDisparoAliado;
@@ -25,5 +26,9 @@ public class GolpeEnemigo extends Disparo {
 
     public Entidad clone() {
         return new GolpeEnemigo(pos,damage,width,height,disparador);
+    }
+
+    public void serChocado(Colisionador colisionador){
+        colisionador.afectarGolpeEnemigo(this);
     }
 }

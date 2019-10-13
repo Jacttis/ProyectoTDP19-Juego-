@@ -20,16 +20,11 @@ public class Tienda {
 		oro=4;
 		posicionadorDeAliados=new PosicionadorDeAliado();
 	}
-	public  static Tienda crearTienda(){
-		if (instance==null){
-			instance=new Tienda();
-		}
-		return instance;
-	}
+
 
 	public  static Tienda getTienda(){
 		if (instance==null){
-
+			instance=new Tienda();
 		}
 		return instance;
 	}
@@ -40,6 +35,9 @@ public class Tienda {
 	}
 	public void setOro(int oro){
 		this.oro=oro;
+	}
+	public void aumentarOro(int oroAdicional){
+		oro+=oroAdicional;
 	}
 
 	//getters

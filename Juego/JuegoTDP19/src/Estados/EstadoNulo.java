@@ -9,7 +9,7 @@ public class EstadoNulo extends Estado {
     }
 
     public void actuar() {
-        verificarEstado();
+
     }
 
 

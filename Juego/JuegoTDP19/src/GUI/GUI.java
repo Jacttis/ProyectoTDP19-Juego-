@@ -53,6 +53,8 @@ public class GUI extends JFrame implements MouseListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 
+
+
 		puntaje=new JLabel();
 		puntaje.setBounds(1400,33,128,25);
 		puntaje.setText("0");
@@ -60,8 +62,16 @@ public class GUI extends JFrame implements MouseListener {
 
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
+
+
+
 		juego=Juego.crearJuego(this);
 		tiempo = new HiloTiempo(juego);
+
+
+		guiTienda=new GuiTienda(this,juego);
+		contentPane.add(guiTienda.getPanel());
+
 
 
 		//Eliminar Despues
@@ -69,14 +79,19 @@ public class GUI extends JFrame implements MouseListener {
 		contentPane.add(btnMusica);
 		tiempo.start();
 
-		guiTienda=new GuiTienda(this,juego);
-		contentPane.add(guiTienda.getPanel());
+
 
 		this.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 
 
 
 	}
+
+	public void actualizaEtiquetas(){
+		guiTienda.actualizarOro();
+	}
+
+
 	//Eliminar Despues
 	public void botonMusica(){
 	   btnMusica=new JButton("musica");
@@ -129,4 +144,6 @@ public class GUI extends JFrame implements MouseListener {
 	public void mouseExited(MouseEvent e) {
 
 	}
+
+
 }
