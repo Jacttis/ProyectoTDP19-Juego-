@@ -2,6 +2,7 @@ package Niveles;
 
 import java.awt.Point;
 
+import Constantes.Constantes;
 import FabricaEnemigo.FabricaEnemigoGolemHielo;
 import FabricaEnemigo.FabricaEnemigoGolemTierra;
 import Juego.Mapa;
@@ -28,11 +29,11 @@ public class NivelUno extends Nivel {
 	public void generarEnemigos() {
 
 		Enemigo enemigo1= FabricaEnemigoGolemHielo.getFabricaGolemHielo().crearEnemigo();
-		enemigo1.posicionar(new Point(1800,obtenerPosicionAleatoriaEnY()));
+		enemigo1.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo1);
 
 		Enemigo enemigo2= FabricaEnemigoGolemTierra.getFabricaGolemTierra().crearEnemigo();
-		enemigo2.posicionar(new Point(1970,obtenerPosicionAleatoriaEnY()));
+		enemigo2.posicionar(new Point(Constantes.ENEMIGOS_PX+170,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo2);
 
 		/*

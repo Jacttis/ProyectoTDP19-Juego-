@@ -4,6 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import Constantes.Constantes;
 import Estados.Atacando;
 import FabricaDisparos.FabricaDisparo;
 import FabricaDisparos.FabricaDisparoArquero;
@@ -15,8 +16,8 @@ public class ArqueroHumano extends Aliado {
 	public ArqueroHumano( int vida, int damage, float velocidadAtaque, String Descripcion) {
 		super(vida, damage, velocidadAtaque, Descripcion);
 		
-		width=100;
-		height=120;
+		width= Constantes.ALIADOX;
+		height=Constantes.ALIADOY;
 
 		imagen[0] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 		imagen[1] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");

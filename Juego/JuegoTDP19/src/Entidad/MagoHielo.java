@@ -4,6 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import Constantes.Constantes;
 import FabricaDisparos.FabricaDisparo;
 import FabricaDisparos.FabricaDisparoMagoHielo;
 
@@ -12,8 +13,8 @@ public class MagoHielo extends Aliado {
 	public MagoHielo(int vida, int damage, float velocidadAtaque, String Descripcion) {
 		super(vida, damage, velocidadAtaque, Descripcion);
 		
-		width=102;
-		height=120;
+		width= Constantes.ALIADOX;
+		height=Constantes.ALIADOY;
 
 		fabricaDisparo=new FabricaDisparoMagoHielo(this);
 

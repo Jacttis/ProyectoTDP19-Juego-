@@ -1,5 +1,6 @@
 package Tienda;
 
+import Constantes.Constantes;
 import Entidad.Aliado;
 import Juego.Mapa;
 
@@ -34,8 +35,8 @@ public class PosicionadorDeAliado {
         System.out.println(pos.x+" x");
         System.out.println(pos.y+" y");
 
-        int columna=(pos.x-65)/170;
-        int fila=((pos.y-255)/105)-1;
+        int columna=(pos.x- Constantes.COLUMNA_1)/Constantes.COLUMNA_2;
+        int fila=((pos.y-Constantes.FILA_1)/Constantes.FILA_2)-1;
 
 
 

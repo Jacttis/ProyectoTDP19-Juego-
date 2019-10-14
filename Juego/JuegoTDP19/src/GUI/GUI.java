@@ -9,8 +9,7 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 
-
-
+import Constantes.Constantes;
 import Entidad.*;
 import Juego.Juego;
 import Splash.*;
@@ -44,7 +43,8 @@ public class GUI extends JFrame implements MouseListener {
 		this.addMouseListener(this);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1980, 1040);
+		Constantes.actualizar(1980,1040);
+			setBounds(0, 0, Constantes.GUI_BOUNDS_X, Constantes.GUI_BOUNDS_Y);
 		setMaximumSize(new Dimension(1980, 1040));
 		setResizable(false);
 
@@ -56,7 +56,7 @@ public class GUI extends JFrame implements MouseListener {
 
 
 		puntaje=new JLabel();
-		puntaje.setBounds(1400,33,128,25);
+		puntaje.setBounds(Constantes.PUNTAJE_BOUNDS_PX,Constantes.PUNTAJE_BOUNDS_PY,Constantes.PUNTAJE_BOUNDS_X,Constantes.PUNTAJE_BOUNDS_Y);
 		puntaje.setText("0");
 
 

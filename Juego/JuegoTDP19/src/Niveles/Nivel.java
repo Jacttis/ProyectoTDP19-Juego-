@@ -1,5 +1,6 @@
 package Niveles;
 
+import Constantes.Constantes;
 import Entidad.Enemigo;
 import FabricaEnemigo.*;
 import Juego.Mapa;
@@ -22,7 +23,7 @@ public abstract class Nivel {
 	protected int obtenerPosicionAleatoriaEnY(){
 		Random r=new Random();
 		int n=(r.nextInt(6));
-		return 285+(105*n);
+		return Constantes.ENEMIGO_Y1 +(Constantes.ENEMIGO_Y2*n);
 	}
 
 	/**

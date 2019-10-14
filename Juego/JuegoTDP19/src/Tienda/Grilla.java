@@ -1,6 +1,8 @@
 package Tienda;
 
 
+import Constantes.Constantes;
+
 import java.awt.*;
 
 public class Grilla {
@@ -26,7 +28,7 @@ public class Grilla {
 
         for(int i=0;i<grilla.length;i++)
             for(int j=0;j<grilla[0].length;j++){
-                grilla[i][j]=new ParCelda(new Point(150+i*170,300+j*105));
+                grilla[i][j]=new ParCelda(new Point(Constantes.GRILLA_X1 +i*Constantes.GRILLA_X2,Constantes.GRILLA_Y1+j*Constantes.GRILLA_Y2));
             }
 
     }

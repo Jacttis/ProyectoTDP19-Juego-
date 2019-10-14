@@ -1,6 +1,7 @@
 package Entidad;
 
 
+import Constantes.Constantes;
 import Estados.Quieto;
 import FabricaDisparos.FabricaDisparo;
 
@@ -12,8 +13,8 @@ public class CaballeroEscudo extends Aliado {
     public CaballeroEscudo(int vida, int damage, float velocidadAtaque, String Descripcion){
         super(vida, damage, velocidadAtaque, Descripcion);
 
-        width=100;
-        height=140;
+        width= Constantes.ALIADOX;
+        height=Constantes.ALIADOY;
 
         estado=new Quieto(this);
 
