@@ -18,9 +18,9 @@ public class CaballeroEscudo extends Aliado {
 
         estado=new Quieto(this);
 
-        imagen[0]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
-        imagen[1]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
-        imagen[2]=new ImageIcon("Sprites\\CharacterSprites\\GIFs\\StillTrueCab.gif");
+        imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
+        imagen[1]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
+        imagen[2]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
     }
 
 

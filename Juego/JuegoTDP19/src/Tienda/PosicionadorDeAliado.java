@@ -35,7 +35,7 @@ public class PosicionadorDeAliado {
         System.out.println(pos.x+" x");
         System.out.println(pos.y+" y");
 
-        int columna=(pos.x- Constantes.COLUMNA_1)/Constantes.COLUMNA_2;
+        int columna=(pos.x- Constantes.COLUMNA_1)/(Constantes.COLUMNA_2+Constantes.TREINTA);
         int fila=((pos.y-Constantes.FILA_1)/Constantes.FILA_2)-1;
 
 

@@ -15,6 +15,7 @@ public class Constantes {
     public static int ALIADOX=100,ALIADOY=120;
     public static int ENEMIGOS_PX=1800;
     public static int ENEMIGO_Y1=285,ENEMIGO_Y2=105,ENEMIGO_BOUNDS1=6;
+    public static int TREINTA=22;
 
 
     public static void actualizar(int rx, int ry){
@@ -69,6 +70,7 @@ public class Constantes {
 
         ENEMIGO_BOUNDS1=(ENEMIGO_BOUNDS1*GUI_BOUNDS_Y)/1040;
 
+        TREINTA=(TREINTA*GUI_BOUNDS_X)/1980;
     }
 
 
