@@ -70,7 +70,7 @@ class GuiTienda {
 
 
         btnArqueroHumano = new JButton();
-        btnArqueroHumano.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\ArqueroHumanoChico.jpeg"));
+        btnArqueroHumano.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroHumanoChico.jpeg"));
         btnArqueroHumano.setBackground(Color.GRAY);
         btnArqueroHumano.setToolTipText("Tira flechas");
         btnArqueroHumano.addActionListener(new ActionListener() {
@@ -85,7 +85,7 @@ class GuiTienda {
 
 
         btnMagoHielo = new JButton();
-        btnMagoHielo.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\MagoHieloAchicado.png"));
+        btnMagoHielo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/MagoHieloAchicado.png"));
         btnMagoHielo.setToolTipText("Tira Hielo");
         btnMagoHielo.addActionListener(new ActionListener() {
 
