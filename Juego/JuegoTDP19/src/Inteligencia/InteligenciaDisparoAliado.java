@@ -11,7 +11,7 @@ public class InteligenciaDisparoAliado extends Inteligencia {
 	
 	public void actualizarEntidad() {
 		
-		entidad.getPos().x=entidad.getPos().x+entidad.getVelocidad();
+		entidad.getPos().setLocation(entidad.getPos().x+entidad.getVelocidad(),entidad.getPos().y);
 		entidad.cambiarGrafico(0);
 
 		if(entidad.getPos().x>2000)

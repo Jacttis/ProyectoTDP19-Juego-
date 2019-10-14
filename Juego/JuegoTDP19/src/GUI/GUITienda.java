@@ -151,7 +151,7 @@ class GuiTienda {
 
                 for(Entidad a :  Mapa.getMapa().getEntidades()){
                     if(a  instanceof Aliado)
-                        ((Aliado) a).setVida(0);
+                        ((Aliado) a).disminuirVida(((Aliado) a).getVida());
 
                 }
 

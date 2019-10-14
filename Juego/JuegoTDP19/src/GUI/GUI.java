@@ -104,8 +104,14 @@ public class GUI extends JFrame implements MouseListener {
 	   }));
 	}
 
+	/**
+	 * getter del hilo principal.
+	 * @return HiloTiempo tiempo
+	 */
 
-
+	public HiloTiempo getTiempo(){
+		return tiempo;
+	}
 
 
 	public GuiTienda getGuiTienda(){

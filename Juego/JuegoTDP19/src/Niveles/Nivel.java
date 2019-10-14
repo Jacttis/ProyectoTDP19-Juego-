@@ -10,15 +10,11 @@ import java.util.Random;
 
 public abstract class Nivel {
 
-	protected Mapa mapa;
-	protected FabricaEnemigo fabricaEnemigos;
 	protected HiloNivel hiloNivel;
 	protected LinkedList<Enemigo> enemigosGenerados;
 	protected int oroPremio;
 	
-	public Nivel(Mapa mapa) {
-		this.mapa=mapa;
-		fabricaEnemigos=new FabricaEnemigoGolemHielo();
+	public Nivel() {
 		enemigosGenerados=new LinkedList<Enemigo>();
 		oroPremio=5;
 	}
@@ -29,6 +25,11 @@ public abstract class Nivel {
 		return 285+(105*n);
 	}
 
+	/**
+	 * Empieza la ejecucion del nivel.
+	 */
+
+	public abstract void empezarNivel();
 
 	/**
 	 * Crea los enemigos correspondientes al nivel y los agrega al mapa
@@ -38,7 +39,7 @@ public abstract class Nivel {
 
 	public void agregarEnemigo(Enemigo enemigo){
 		enemigosGenerados.add(enemigo);
-		mapa.agregarPersonaje(enemigo);
+		Mapa.getMapa().agregarPersonaje(enemigo);
 	}
 
 	public LinkedList<Enemigo> getEnemigosGenerados(){
@@ -48,9 +49,21 @@ public abstract class Nivel {
 	public void removerEnemigo(Enemigo e){
 		enemigosGenerados.remove(e);
 		if(murieronTodosLosEnemigos()){
-			mapa.cambiarNivel(new NivelUno(mapa));
+			Mapa.getMapa().cambiarNivel(new NivelDos());
 			System.out.println("CAMBIARARRRRRRRRRRRRRRR MAPAAAAAAAAAAAAAAAAAAAA");
 		}
+	}
+
+	public boolean verificarEnemigos(){
+
+		boolean enemigoGano=false;
+
+		for(Enemigo enemigo : enemigosGenerados){
+			if(enemigo.getPos().getX()<-100)
+				enemigoGano=true;
+		}
+
+		return enemigoGano;
 	}
 
 	public boolean murieronTodosLosEnemigos(){

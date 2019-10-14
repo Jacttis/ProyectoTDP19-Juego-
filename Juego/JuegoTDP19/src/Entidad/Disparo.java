@@ -12,7 +12,7 @@ public abstract class Disparo extends Entidad {
 
 	protected Personaje disparador;
 	
-	public Disparo(Point pos, int velocidad, int damage,Personaje disparador) {
+	public Disparo(Point pos, double velocidad, int damage,Personaje disparador) {
 		
 		super(pos,velocidad,damage);
 		imagen=new ImageIcon [1];
