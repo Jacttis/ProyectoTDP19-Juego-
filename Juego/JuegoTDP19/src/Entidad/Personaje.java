@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public abstract class Personaje extends Entidad {
 
-	protected int vida;
+	protected int vidaActual,vidaTotal;
 	protected float velocidadAtaque;
 	protected boolean puedeAtacar;
 	protected JLabel etiquetaVida;
@@ -28,9 +28,9 @@ public abstract class Personaje extends Entidad {
 	 * @param velocidadAtaque
 	 */
 
-	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,int velocidad) {
+	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,double velocidad) {
 		super(pos,velocidad,damage);
-		this.vida = vida;
+		vidaActual=vidaTotal=vida;
 		this.velocidadAtaque = velocidadAtaque;
 		estado=new EstadoNulo(this);
 		puedeAtacar=true;
@@ -85,10 +85,10 @@ public abstract class Personaje extends Entidad {
 	public void actualizarEtiquetaVida(int n){
 
 		if(etiquetaVida!=null) {
-			etiquetaVida.setBounds(pos.x+this.width, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
+			etiquetaVida.setBounds(pos.x+this.width, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
 
-			if (vida < 70) {
-				if (vida < 40)
+			if (vidaActual < 70) {
+				if (vidaActual < 40)
 					etiquetaVida.setBackground(Color.RED);
 				else etiquetaVida.setBackground(Color.YELLOW);
 			}
@@ -105,7 +105,7 @@ public abstract class Personaje extends Entidad {
 	 * @return Retorna la vida del personaje
 	 */
 	public int getVida() {
-		return vida;
+		return vidaActual;
 	}
 
 	/**
@@ -125,12 +125,12 @@ public abstract class Personaje extends Entidad {
 	}
 
 	public void disminuirVida(int cantidad){
-		if((vida-cantidad)<0) {
-			vida = 0;
+		if((vidaActual-cantidad)<0) {
+			vidaActual = 0;
 			actualizarEtiquetaVida(etiquetaVida.getWidth());
 		}
 		else {
-			vida-=cantidad;
+			vidaActual-=cantidad;
 			this.actualizarEtiquetaVida(cantidad);
 		}
 	}
@@ -145,10 +145,6 @@ public abstract class Personaje extends Entidad {
 		estado.actuar();
 	}
 
-
-	public void setVida(int n){
-		vida=n;
-	}
 
 	/**
 	 * setter y getter de estado.
@@ -192,9 +188,9 @@ public abstract class Personaje extends Entidad {
 	 */
 
 	public boolean estaMuerto(){
-		if(vida<=0)
-			vida=0;
-		return vida==0;
+		if(vidaActual<=0)
+			vidaActual=0;
+		return vidaActual==0;
 	}
 
 	/**

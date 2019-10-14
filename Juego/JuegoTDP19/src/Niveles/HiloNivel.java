@@ -12,6 +12,7 @@ public class HiloNivel extends Thread {
 
         try {
 
+             nivel.generarEnemigos();
              this.sleep(3000);
              nivel.generarEnemigos();
              this.sleep(5000);

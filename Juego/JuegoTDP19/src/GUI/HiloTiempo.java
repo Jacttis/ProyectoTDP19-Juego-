@@ -25,7 +25,7 @@ public class HiloTiempo extends Thread{
 				
 				
 				
-				Thread.sleep(20);
+				Thread.sleep(30);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -2,6 +2,8 @@ package Juego;
 
 import Entidad.*;
 import FabricaDisparos.FabricaDisparo;
+import FabricaEnemigo.FabricaEnemigoGolemHielo;
+import FabricaEnemigo.FabricaEnemigoGolemTierra;
 import GUI.GUI;
 
 import Tienda.*;
@@ -32,6 +34,9 @@ public class Juego {
 
 		this.gui=gui;
 
+
+		FabricaEnemigoGolemHielo.getFabricaGolemHielo();
+		FabricaEnemigoGolemTierra.getFabricaGolemTierra();
 		Mapa.crearMapa(this,gui);
 		Mapa.getMapa().generar();
 
@@ -77,6 +82,10 @@ public class Juego {
 
 		Tienda.getTienda().comprarAliado(pos,aliadoAAgregar);
 
+	}
+
+	public void gameOver(){
+		gui.getTiempo().interrupt();
 	}
 	
 	

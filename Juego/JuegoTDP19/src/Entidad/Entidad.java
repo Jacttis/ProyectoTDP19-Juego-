@@ -17,14 +17,14 @@ public abstract class Entidad {
 	protected Inteligencia IA;
 	protected Icon imagen[];
 	protected JLabel grafico;
-	protected int velocidad;
+	protected double velocidad;
 	protected int damage;
 	protected Estado estado;
 	protected Colisionador colisionador;
 
 	
 	
-	public Entidad(Point pos,int velocidad, int damage) {
+	public Entidad(Point pos,double velocidad, int damage) {
 
 		this.velocidad=velocidad;
 		this.pos=pos;
@@ -99,7 +99,7 @@ public abstract class Entidad {
 		return pos;
 	}
 
-	public int getVelocidad() {
+	public double getVelocidad() {
 		return velocidad;
 	}
 	
@@ -140,7 +140,7 @@ public abstract class Entidad {
 
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);
-		System.out.println("Eliminarse entidad");
+		//System.out.println("Eliminarse entidad");
 	}
 
 	public abstract void serChocado(Colisionador colisionador);

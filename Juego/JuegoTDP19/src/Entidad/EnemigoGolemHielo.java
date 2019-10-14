@@ -1,17 +1,13 @@
 package Entidad;
 
 import java.awt.*;
-
 import javax.swing.*;
-
-import FabricaDisparos.FabricaDisparo;
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
-import Inteligencia.Inteligencia;
-import Juego.Mapa;
+
 
 public class EnemigoGolemHielo extends Enemigo {
 
-	public EnemigoGolemHielo(int vida, int damage, float velocidadAtaque, int velocidad, int puntos,int oro) {
+	public EnemigoGolemHielo(int vida, int damage, float velocidadAtaque, double velocidad, int puntos,int oro) {
 
 		super(vida, damage, velocidadAtaque, velocidad, puntos, oro);
 
@@ -50,10 +46,10 @@ public class EnemigoGolemHielo extends Enemigo {
 	public void actualizarEtiquetaVida(int n){
 
 		if(etiquetaVida!=null) {
-			etiquetaVida.setBounds(pos.x+(this.width-90), pos.y+(this.height-10) , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
+			etiquetaVida.setBounds(pos.x+(this.width-90), pos.y+(this.height-10) , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
 
-			if (vida < 70) {
-				if (vida < 40)
+			if (vidaActual < 70) {
+				if (vidaActual < 40)
 					etiquetaVida.setBackground(Color.RED);
 				else etiquetaVida.setBackground(Color.YELLOW);
 			}
@@ -70,7 +66,7 @@ public class EnemigoGolemHielo extends Enemigo {
 	 */
 
 	public Entidad clone(){
-		return new EnemigoGolemHielo(vida,damage,velocidadAtaque,velocidad,puntos,oroPremio);
+		return new EnemigoGolemHielo(vidaTotal,damage,velocidadAtaque,velocidad,puntos,oroPremio);
 	}
 
 	/**

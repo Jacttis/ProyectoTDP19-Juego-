@@ -19,7 +19,4 @@ public class JPanelConFondo extends JPanel {
         setOpaque(false);
         super.paint(g);
     }
-
-
-    //...
 }

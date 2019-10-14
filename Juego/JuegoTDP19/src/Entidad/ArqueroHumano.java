@@ -52,10 +52,10 @@ public class ArqueroHumano extends Aliado {
 	public void actualizarEtiquetaVida(int n){
 
 		if(etiquetaVida!=null) {
-			etiquetaVida.setBounds(pos.x+10, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
+			etiquetaVida.setBounds(pos.x+10, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
 
-			if (vida < 70) {
-				if (vida < 40)
+			if (vidaActual < 70) {
+				if (vidaActual < 40)
 					etiquetaVida.setBackground(Color.RED);
 				else etiquetaVida.setBackground(Color.YELLOW);
 			}
@@ -101,7 +101,7 @@ public class ArqueroHumano extends Aliado {
 	 */
 
 	public Entidad clone(){
-		return new ArqueroHumano(vida,damage,velocidadAtaque,descripcion);
+		return new ArqueroHumano(vidaTotal,damage,velocidadAtaque,descripcion);
 	}
 
 	/**

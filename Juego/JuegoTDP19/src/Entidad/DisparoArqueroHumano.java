@@ -8,7 +8,7 @@ import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoArqueroHumano extends Disparo {
 
-	public DisparoArqueroHumano(Point pos, int velocidad, int damage, Personaje disparador) {
+	public DisparoArqueroHumano(Point pos, double velocidad, int damage, Personaje disparador) {
 		super(pos, velocidad, damage, disparador);
 		IA=new InteligenciaDisparoAliado(this);
 		

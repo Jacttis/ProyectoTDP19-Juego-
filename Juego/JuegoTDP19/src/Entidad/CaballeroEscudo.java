@@ -39,8 +39,8 @@ public class CaballeroEscudo extends Aliado {
         if(etiquetaVida!=null) {
             etiquetaVida.setBounds(pos.x+this.width-90, pos.y+this.height-5 , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
 
-            if (vida < 70) {
-                if (vida < 40)
+            if (vidaActual < 70) {
+                if (vidaActual < 40)
                     etiquetaVida.setBackground(Color.RED);
                 else etiquetaVida.setBackground(Color.YELLOW);
             }
@@ -52,7 +52,7 @@ public class CaballeroEscudo extends Aliado {
     }
 
     public Entidad clone(){
-        return new CaballeroEscudo(vida,damage,velocidadAtaque,descripcion);
+        return new CaballeroEscudo(vidaTotal,damage,velocidadAtaque,descripcion);
     }
 
     public Rectangle getHitBox(){

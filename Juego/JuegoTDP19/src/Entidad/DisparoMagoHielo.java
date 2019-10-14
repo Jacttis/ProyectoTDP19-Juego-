@@ -11,7 +11,7 @@ public class DisparoMagoHielo extends Disparo {
 	
 	
 	
-	public DisparoMagoHielo(Point pos, int velocidad, int damage, Personaje disparador) {
+	public DisparoMagoHielo(Point pos, double velocidad, int damage, Personaje disparador) {
 		super(pos, velocidad, damage, disparador);
 		IA=new InteligenciaDisparoAliado(this);
 		

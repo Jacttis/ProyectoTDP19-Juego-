@@ -7,6 +7,7 @@ import Entidad.*;
 import FabricaDisparos.FabricaDisparo;
 import GUI.GUI;
 import Niveles.Nivel;
+import Niveles.NivelDos;
 import Niveles.NivelUno;
 import Tienda.PosicionadorDeAliado;
 import Tienda.Tienda;
@@ -21,7 +22,6 @@ public class Mapa {
 	protected Juego juego;
 	protected Nivel nivel;
 	protected GUI gui;
-	protected FabricaDisparo fabricaDisparos;
 	
 	
 	/**
@@ -33,7 +33,7 @@ public class Mapa {
 	
 	private Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
-		nivel=new NivelUno(this);
+		nivel=new NivelUno();
 		this.gui=gui;
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
@@ -60,7 +60,7 @@ public class Mapa {
 	
 	
 	public void generar() {
-		nivel.generarEnemigos();
+		nivel.empezarNivel();
 
 	}
 	
@@ -110,6 +110,8 @@ public class Mapa {
 		personajesAAgregar=new LinkedList<Personaje>();
 
 		colisionar();
+
+		verificarDerrota();
 
 	}
 	
@@ -179,16 +181,7 @@ public class Mapa {
 			System.out.println(e.getPos()+"\n");
 		}
 	}
-	
-	/**
-	 * Getter de la fabrica de disparos de Aliados
-	 * 
-	 * @return fabricaDisparos
-	 */
-	
-	public FabricaDisparo getFabricaDisparos() {
-		return fabricaDisparos;
-	}
+
 
 	/**
 	 *  Recorre la lista de entidades y toma de a dos entidades para
@@ -238,6 +231,19 @@ public class Mapa {
 		limpiarMapa();
 		this.nivel=nivelNuevo;
 		generar();
+	}
+
+	//Los metodos de derrota deben pasarse a Juego despues.
+
+	public void verificarDerrota(){
+		if(nivel.verificarEnemigos())
+			perdio();
+	}
+
+	public void perdio(){
+		limpiarMapa();
+		juego.gameOver();
+		System.out.println("Perdiste pete.");
 	}
 
 	private void limpiarMapa(){
