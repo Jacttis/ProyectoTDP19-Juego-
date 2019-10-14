@@ -97,7 +97,7 @@ class GuiTienda {
         });
 
         btnCaballeroEscudo = new JButton();
-        btnCaballeroEscudo.setIcon(new ImageIcon("Sprites\\CharacterSprites\\SpriteBoton\\CabAchicado2.png"));
+        btnCaballeroEscudo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/CabAchicado2.png"));
         btnCaballeroEscudo.setToolTipText("Aguanta pero no pega");
         btnCaballeroEscudo.addActionListener(new ActionListener() {
 
