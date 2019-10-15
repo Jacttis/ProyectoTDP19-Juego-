@@ -89,6 +89,7 @@ public class GUI extends JFrame implements MouseListener {
 
 	public void actualizaEtiquetas(){
 		guiTienda.actualizarOro();
+		guiTienda.actualizarPuntaje();
 	}
 
 

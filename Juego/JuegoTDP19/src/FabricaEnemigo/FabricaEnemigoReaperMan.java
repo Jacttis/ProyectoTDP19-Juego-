@@ -9,6 +9,7 @@ public class FabricaEnemigoReaperMan extends FabricaEnemigo {
     public static FabricaEnemigoReaperMan instance=null;
 
     private FabricaEnemigoReaperMan(){
+        super();
         reaperManNormal=new ReaperMan(175,50,1500,2,150,2);
         reaperManBoosted=new ReaperMan(175,50,1500,2,150,2);
     }

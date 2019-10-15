@@ -58,12 +58,13 @@ class GuiTienda {
     }
 
     /**
-     * Initialize the contents of the frame.
+     * Se crea el panel de la tienda
      */
     private void initialize() {
 
 
         panel = new JPanel();
+        panel.setLayout(null);
         panel.setBounds(Constantes.PANEL_TIENDA_PX, 0, Constantes.PANEL_TIENDA_X, Constantes.PANEL_TIENDA_Y);
 
 
@@ -74,6 +75,7 @@ class GuiTienda {
         btnArqueroHumano.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroHumanoChico.jpeg"));
         btnArqueroHumano.setBackground(Color.GRAY);
         btnArqueroHumano.setToolTipText("Tira flechas");
+        btnArqueroHumano.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         btnArqueroHumano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 aliadoAAgregar=new ArqueroHumano(100,10,750,"Dispara flechas");
@@ -82,12 +84,13 @@ class GuiTienda {
 
             }
         });
-
+        panel.add(btnArqueroHumano);
 
 
         btnMagoHielo = new JButton();
         btnMagoHielo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/MagoHieloAchicado.png"));
         btnMagoHielo.setToolTipText("Tira Hielo");
+        btnMagoHielo.setBounds(150,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         btnMagoHielo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -96,10 +99,12 @@ class GuiTienda {
                 deshabilitarBotones();
             }
         });
+        panel.add(btnMagoHielo);
 
         btnCaballeroEscudo = new JButton();
         btnCaballeroEscudo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/CabAchicado2.png"));
         btnCaballeroEscudo.setToolTipText("Aguanta pero no pega");
+        btnCaballeroEscudo.setBounds(300,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         btnCaballeroEscudo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -108,10 +113,15 @@ class GuiTienda {
                 deshabilitarBotones();
             }
         });
+        panel.add(btnCaballeroEscudo);
 
         btnNewButton4 = new JButton();
+        btnNewButton4.setBounds(450,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(btnNewButton4);
 
         btnNewButton5 = new JButton();
+        btnNewButton5.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(btnNewButton5);
 
         btnobjeto1 = new JButton();
         btnobjeto1.setBounds(Constantes.BOTON1_PX,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
@@ -133,18 +143,21 @@ class GuiTienda {
         btnobjeto5.setBounds(Constantes.BOTON1_PX+600,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         panel.add(btnobjeto5);
 
-        btnobjeto2 = new JButton();
-        btnobjeto3 = new JButton();
-        btnobjeto4 = new JButton();
-        btnobjeto5 = new JButton();
+
 
         labelOro = new JLabel("Oro : "+Tienda.getTienda().getOro());
         labelOro.setForeground(Color.GREEN);
-        labelOro.setOpaque(true);
+        labelOro.setBounds(800,0,70,40);
+        panel.add(labelOro);
 
-        labelPuntos = new JLabel("Puntos: 0");
+        labelPuntos = new JLabel("Puntos: "+Tienda.getTienda().getPuntos());
+        labelPuntos.setForeground((Color.GREEN));
+        labelPuntos.setBounds(800,30,80,40);
+        panel.add(labelPuntos);
 
         btnVender = new JButton("Vender");
+        btnVender.setBounds(800,70,128,25);
+        panel.add(btnVender);
 
         btnVender.addActionListener(new ActionListener() {
 
@@ -161,52 +174,12 @@ class GuiTienda {
         });
 
 
-        GroupLayout gl_panel = new GroupLayout(panel);
-        gl_panel.setHorizontalGroup(
-                gl_panel.createParallelGroup(Alignment.LEADING)
-                        .addGroup(gl_panel.createSequentialGroup()
-                                .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-                                        .addGroup(gl_panel.createSequentialGroup()
-                                                .addGap(143)
-                                                .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(gl_panel.createSequentialGroup()
-                                                .addGap(283)
-                                                .addComponent(btnCaballeroEscudo, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(btnArqueroHumano, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 
-                                        .addComponent(btnNewButton5, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(gl_panel.createSequentialGroup()
-                                                .addGap(146)
-                                                .addComponent(btnNewButton4, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10)
-                                .addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-                                        .addGroup(gl_panel.createSequentialGroup()
-                                                .addGap(17)
-                                                .addComponent(labelOro, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(gl_panel.createSequentialGroup()
-                                                .addGap(16)
-                                                .addComponent(labelPuntos, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(btnVender, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)))
-        );
-        gl_panel.setVerticalGroup(
-                gl_panel.createParallelGroup(Alignment.LEADING)
-                        .addComponent(btnMagoHielo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCaballeroEscudo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnArqueroHumano,GroupLayout.PREFERRED_SIZE,120,GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNewButton5, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNewButton4, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
-                        .addGroup(gl_panel.createSequentialGroup()
-                                .addGap(22)
-                                .addComponent(labelOro, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-                                .addGap(11)
-                                .addComponent(labelPuntos)
-                                .addGap(14)
-                                .addComponent(btnVender))
-        );
-        panel.setLayout(gl_panel);
 
     }
+    /**
+     * Retorna el panel de la tienda
+     */
 
     public JPanel getPanel() {
         return panel;
@@ -259,5 +232,7 @@ class GuiTienda {
     public void actualizarOro(){
         labelOro.setText("Oro : "+Tienda.getTienda().getOro());
     }
-
+    public void actualizarPuntaje(){
+        labelPuntos.setText("Puntos : "+Tienda.getTienda().getPuntos());
+    }
 }

@@ -76,6 +76,7 @@ public abstract class Enemigo extends Personaje{
 		Mapa.getMapa().eliminarPersonaje(this);
 
 		Tienda.getTienda().aumentarOro(this.getOro());
+		Tienda.getTienda().aumentarPuntos(this.getPuntos());
 	}
 
 }

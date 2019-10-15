@@ -13,8 +13,8 @@ public class ReaperMan extends Enemigo {
         fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
 
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/walkingReaperMan2.gif");
-        imagen[1] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/slashingReaperMan2.gif");
-        imagen[2] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/dyngReaperMan2.gif");
+        imagen[1] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/slashingReaperMan3.gif");
+        imagen[2] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
 
     }
 

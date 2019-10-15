@@ -38,7 +38,7 @@ public class CaballeroEscudo extends Aliado {
     public void actualizarEtiquetaVida(int n){
 
         if(etiquetaVida!=null) {
-            etiquetaVida.setBounds(pos.x+this.width-90, pos.y+this.height-5 , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
+            etiquetaVida.setBounds(pos.x+this.width-90, pos.y+this.height+5 , (etiquetaVida.getWidth()-((n*80)/100)), etiquetaVida.getHeight());
 
             if (vidaActual < 70) {
                 if (vidaActual < 40)

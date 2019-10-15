@@ -39,6 +39,7 @@ public class Tienda {
 	public void aumentarOro(int oroAdicional){
 		oro+=oroAdicional;
 	}
+	public void aumentarPuntos(int puntosAdicionales){puntos+=puntosAdicionales;}
 
 	//getters
 	public int getOro(){
