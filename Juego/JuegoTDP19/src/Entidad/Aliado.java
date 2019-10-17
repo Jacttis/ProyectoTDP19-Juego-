@@ -5,6 +5,8 @@ package  Entidad;
 
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorAliado;
+import ColisionadoresCombate.ColCombateAliado;
+import ColisionadoresCombate.ColisionadorCombate;
 import Estados.Atacando;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaAliados;
@@ -37,13 +39,14 @@ public abstract class Aliado extends Personaje {
 
      * @param Descripcion
      */
-    public Aliado(int vida, int damage,float velocidadAtaque, String Descripcion) {
-        super(new Point(0,0), vida, damage, velocidadAtaque,0);
+    public Aliado(int vida, int damage,float velocidadAtaque,int rango, String Descripcion) {
+        super(new Point(0,0), vida, damage, velocidadAtaque, rango,0);
         IA=new InteligenciaAliados(this);
         imagen =new ImageIcon[3];
         descripcion=Descripcion;
-        colisionador=new ColisionadorAliado(this);
 
+        colisionador=new ColisionadorAliado(this);
+        colisionadorCombate=new ColCombateAliado(this);
 
         precio=1;
 
@@ -102,5 +105,9 @@ public abstract class Aliado extends Personaje {
 
     public void serChocado(Colisionador colisionador){
         colisionador.afectarAliado(this);
+    }
+
+    public void serDetectado(ColisionadorCombate colisionadorCombate){
+        colisionadorCombate.detectoAliado(this);
     }
 }

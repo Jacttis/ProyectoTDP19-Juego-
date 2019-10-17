@@ -10,8 +10,8 @@ import FabricaDisparos.FabricaDisparoMagoHielo;
 
 public class MagoHielo extends Aliado {
 
-	public MagoHielo(int vida, int damage, float velocidadAtaque, String Descripcion) {
-		super(vida, damage, velocidadAtaque, Descripcion);
+	public MagoHielo(int vida, int damage, float velocidadAtaque,int rango, String Descripcion) {
+		super(vida, damage, velocidadAtaque, rango, Descripcion);
 		
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
@@ -68,16 +68,14 @@ public class MagoHielo extends Aliado {
 	}
 
 	public Entidad clone(){
-		return new MagoHielo(vidaTotal,damage,velocidadAtaque,descripcion);
+		return new MagoHielo(vidaTotal,damage,velocidadAtaque,rango,descripcion);
 	}
 
 
 	public Rectangle getHitBox(){
 		return new Rectangle(pos.x,pos.y,width-30,height-70);
 	}
-	
-	
-	
+
 
 
 }

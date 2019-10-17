@@ -3,6 +3,8 @@ package Entidad;
 import java.awt.*;
 
 import Colisionadores.Colisionador;
+import ColisionadoresCombate.ColCombateNulo;
+import ColisionadoresCombate.ColisionadorCombate;
 import Estados.*;
 import javax.swing.*;
 
@@ -21,6 +23,7 @@ public abstract class Entidad {
 	protected int damage;
 	protected Estado estado;
 	protected Colisionador colisionador;
+	protected ColisionadorCombate colisionadorCombate;
 
 	
 	
@@ -29,6 +32,8 @@ public abstract class Entidad {
 		this.velocidad=velocidad;
 		this.pos=pos;
 		this.damage=damage;
+
+		colisionadorCombate=new ColCombateNulo();
 
 	
 	}
@@ -95,6 +100,10 @@ public abstract class Entidad {
 	public Colisionador getColisionador(){
 		return colisionador;
 	}
+
+	public ColisionadorCombate getColisionadorCombate(){
+		return colisionadorCombate;
+	}
 	
 	public Point getPos() {
 		return pos;
@@ -146,10 +155,15 @@ public abstract class Entidad {
 
 	public abstract void serChocado(Colisionador colisionador);
 
+	public abstract void serDetectado(ColisionadorCombate colisionadorCombate);
 
 	public abstract Entidad clone();
 
 	public Rectangle getHitBox(){
 		return new Rectangle(pos.x,pos.y,width,height);
+	}
+
+	public Rectangle getHitBoxCombate(){
+		return getHitBox();
 	}
 }

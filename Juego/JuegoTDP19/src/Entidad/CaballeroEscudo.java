@@ -10,8 +10,8 @@ import javax.swing.*;
 
 public class CaballeroEscudo extends Aliado {
 
-    public CaballeroEscudo(int vida, int damage, float velocidadAtaque, String Descripcion){
-        super(vida, damage, velocidadAtaque, Descripcion);
+    public CaballeroEscudo(int vida, int damage, float velocidadAtaque,int rango, String Descripcion){
+        super(vida, damage, velocidadAtaque,rango, Descripcion);
 
         width= Constantes.ALIADOX;
         height=Constantes.ALIADOY;
@@ -52,7 +52,7 @@ public class CaballeroEscudo extends Aliado {
     }
 
     public Entidad clone(){
-        return new CaballeroEscudo(vidaTotal,damage,velocidadAtaque,descripcion);
+        return new CaballeroEscudo(vidaTotal,damage,velocidadAtaque,rango,descripcion);
     }
 
     public Rectangle getHitBox(){

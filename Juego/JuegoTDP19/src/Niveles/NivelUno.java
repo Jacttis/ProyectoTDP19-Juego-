@@ -33,11 +33,16 @@ public class NivelUno extends Nivel {
 		enemigo1.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo1);
 
+		/*
 		Enemigo enemigo2= FabricaEnemigoGolemTierra.getFabricaGolemTierra().crearEnemigo();
 		enemigo2.posicionar(new Point(Constantes.ENEMIGOS_PX+170,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo2);
 
-		/*
+		Enemigo enemigo3= FabricaEnemigoGolemHielo.getFabricaGolemHielo().crearEnemigo();
+		enemigo3.posicionar(new Point(Constantes.ENEMIGOS_PX+170,obtenerPosicionAleatoriaEnY()));
+		agregarEnemigo(enemigo3);
+
+
 		Enemigo enemigo3=FabricaEnemigoGolemHielo.getFabricaGolemHielo().crearEnemigo();
 		enemigo3.posicionar(new Point(2140,obtenerPosicionAleatoriaEnY()));
 		agregarEnemigo(enemigo3);

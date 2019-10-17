@@ -20,11 +20,11 @@ public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
     }
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemHielo(100,15,1000,2,100,1);
+        return new EnemigoGolemHielo(100,15,1000,0,2,100,1);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        return new EnemigoGolemHielo(100,20,1000,2,100,1);
+        return new EnemigoGolemHielo(100,20,1000,0,2,100,1);
     }
 }

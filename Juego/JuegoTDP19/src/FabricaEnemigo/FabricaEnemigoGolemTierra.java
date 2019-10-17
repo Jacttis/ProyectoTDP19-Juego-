@@ -22,11 +22,11 @@ public class FabricaEnemigoGolemTierra extends FabricaEnemigo {
 
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemTierra(175,30,1500,2,100,1);
+        return new EnemigoGolemTierra(175,30,1500,0,2,100,1);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        return new EnemigoGolemTierra(175,40,1500,2,100,1);
+        return new EnemigoGolemTierra(175,40,1500,0,2,100,1);
     }
 }

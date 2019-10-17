@@ -2,6 +2,7 @@ package Entidad;
 
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorDisparo;
+import ColisionadoresCombate.ColisionadorCombate;
 import Estados.EstadoNulo;
 
 import java.awt.Point;
@@ -54,5 +55,9 @@ public abstract class Disparo extends Entidad {
 
 	public void serChocado(Colisionador colisionador){
 		colisionador.afectarDisparo(this);
+	}
+
+	public void serDetectado(ColisionadorCombate colisionadorCombate){
+		colisionadorCombate.detectoDisparo(this);
 	}
 }

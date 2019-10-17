@@ -7,9 +7,9 @@ import FabricaDisparos.FabricaDisparoGolpeEnemigo;
 
 public class EnemigoGolemHielo extends Enemigo {
 
-	public EnemigoGolemHielo(int vida, int damage, float velocidadAtaque, double velocidad, int puntos,int oro) {
+	public EnemigoGolemHielo(int vida, int damage, float velocidadAtaque,int rango, double velocidad, int puntos,int oro) {
 
-		super(vida, damage, velocidadAtaque, velocidad, puntos, oro);
+		super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
 
 		fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
 
@@ -65,7 +65,7 @@ public class EnemigoGolemHielo extends Enemigo {
 	 */
 
 	public Entidad clone(){
-		return new EnemigoGolemHielo(vidaTotal,damage,velocidadAtaque,velocidad,puntos,oroPremio);
+		return new EnemigoGolemHielo(vidaTotal,damage,velocidadAtaque,rango,velocidad,puntos,oroPremio);
 	}
 
 	/**

@@ -75,15 +75,15 @@ public class Mapa {
 
 		LinkedList<Entidad> entidadesAEliminarTemporal = entidadesAEliminar;
 
-		for(Entidad eAEliminar : entidadesAEliminarTemporal){
+		for(Entidad eAEliminar : entidadesAEliminar){
 			entidades.remove(eAEliminar);
 			eliminarEntidadGrafica(eAEliminar);
 			//System.out.println("Entidades : "+entidades.size());
 		}
 
 		LinkedList<Entidad> entidadesAAgregarTemporal = entidadesAAgregar;
-		
-		for(Entidad eAAgregar : entidadesAAgregarTemporal) {
+
+		for(Entidad eAAgregar : entidadesAAgregar) {
 			entidades.add(eAAgregar);
 			agregarEntidadGrafica(eAAgregar);
 			//System.out.println("Entidades : "+entidades.size());
@@ -185,6 +185,15 @@ public class Mapa {
 			e1.serChocado(e2.getColisionador());
 			e2.serChocado(e1.getColisionador());
 		}
+
+		r1= e1.getHitBoxCombate();
+		r2= e2.getHitBoxCombate();
+
+		if(r1.intersects(r2)){
+			e1.serDetectado(e2.getColisionadorCombate());
+			e2.serDetectado(e1.getColisionadorCombate());
+		}
+
 
 	}
 

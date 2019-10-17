@@ -19,7 +19,7 @@ public class FabricaEnemigoReaperMan extends FabricaEnemigo {
         return instance;
     }
 
-    public Enemigo crearEnemigo(){return new ReaperMan(175,50,1500,2,150,2);}
-    public Enemigo crearEnemigoBoosted(){return new ReaperMan(175,50,1500,2,150,2);}
+    public Enemigo crearEnemigo(){return new ReaperMan(75,50,1500,700,3,150,2);}
+    public Enemigo crearEnemigoBoosted(){return new ReaperMan(75,50,1500,700,3,150,2);}
 
 }

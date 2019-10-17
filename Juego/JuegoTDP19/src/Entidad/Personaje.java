@@ -15,6 +15,7 @@ public abstract class Personaje extends Entidad {
 	protected boolean puedeAtacar;
 	protected JLabel etiquetaVida;
 	protected FabricaDisparo fabricaDisparo;
+	protected int rango;
 
 
 
@@ -25,14 +26,16 @@ public abstract class Personaje extends Entidad {
 	 * @param vida
 	 * @param damage
 	 * @param velocidadAtaque
+	 * @param rango
 	 */
 
-	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,double velocidad) {
+	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,int rango,double velocidad) {
 		super(pos,velocidad,damage);
 		vidaActual=vidaTotal=vida;
 		this.velocidadAtaque = velocidadAtaque;
 		estado=new EstadoNulo(this);
 		puedeAtacar=true;
+		this.rango=rango;
 		
 	}
 
@@ -230,6 +233,15 @@ public abstract class Personaje extends Entidad {
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);
 		System.out.println("Eliminarse personaje");
+	}
+
+
+	public Rectangle getHitBoxCombate() {
+		Rectangle hitBox=this.getHitBox();
+		hitBox.width=hitBox.width+rango;
+		hitBox.setLocation(hitBox.x-(hitBox.width/2),hitBox.y);
+
+		return hitBox;
 	}
 
 

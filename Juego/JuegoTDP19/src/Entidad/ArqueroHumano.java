@@ -13,8 +13,8 @@ import Tienda.ParCelda;
 
 public class ArqueroHumano extends Aliado {
 
-	public ArqueroHumano( int vida, int damage, float velocidadAtaque, String Descripcion) {
-		super(vida, damage, velocidadAtaque, Descripcion);
+	public ArqueroHumano( int vida, int damage, float velocidadAtaque,int rango, String Descripcion) {
+		super(vida, damage, velocidadAtaque, rango, Descripcion);
 		
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
@@ -102,7 +102,7 @@ public class ArqueroHumano extends Aliado {
 	 */
 
 	public Entidad clone(){
-		return new ArqueroHumano(vidaTotal,damage,velocidadAtaque,descripcion);
+		return new ArqueroHumano(vidaTotal,damage,velocidadAtaque,rango,descripcion);
 	}
 
 	/**

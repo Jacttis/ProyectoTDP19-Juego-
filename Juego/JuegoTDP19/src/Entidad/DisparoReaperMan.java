@@ -1,5 +1,8 @@
 package Entidad;
 
+import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorDisparoEnemigo;
+import Colisionadores.ColisionadorGolpeEnemigo;
 import Inteligencia.InteligenciaDisparoEnemigo;
 
 import javax.swing.*;
@@ -11,10 +14,12 @@ public class DisparoReaperMan extends Disparo {
         super(pos, velocidad, damage, disparador);
         IA=new InteligenciaDisparoEnemigo(this);
 
-        width=100;
-        height=38;
+        width=60;
+        height=53;
 
-        imagen[0]=new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
+        imagen[0]=new ImageIcon("Sprites/CharacterSprites/ReaperMan/DReaper.gif");
+
+        colisionador=new ColisionadorDisparoEnemigo(this);
 
 
     }

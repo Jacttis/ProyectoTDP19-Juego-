@@ -1,16 +1,17 @@
 package Entidad;
 
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
+import FabricaDisparos.FabricaDisparoReaperMan;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class ReaperMan extends Enemigo {
 
-    public ReaperMan(int vida,int damage, float velocidadAtaque,double velocidad,int puntos,int oro){
+    public ReaperMan(int vida,int damage, float velocidadAtaque,int rango,double velocidad,int puntos,int oro){
 
-        super(vida,damage,velocidadAtaque,velocidad,puntos,oro);
-        fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
+        super(vida,damage,velocidadAtaque,rango,velocidad,puntos,oro);
+        fabricaDisparo=new FabricaDisparoReaperMan(this);
 
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/walkingReaperMan2.gif");
         imagen[1] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/slashingReaperMan3.gif");
@@ -53,7 +54,7 @@ public class ReaperMan extends Enemigo {
     }
 
     public Entidad clone(){
-        return new ReaperMan(vidaTotal,damage,velocidadAtaque,velocidad,puntos,oroPremio);
+        return new ReaperMan(vidaTotal,damage,velocidadAtaque,rango,velocidad,puntos,oroPremio);
     }
     /**
      *

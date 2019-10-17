@@ -78,7 +78,7 @@ class GuiTienda {
         btnArqueroHumano.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         btnArqueroHumano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroHumano(100,10,750,"Dispara flechas");
+                aliadoAAgregar=new ArqueroHumano(100,10,750,1700,"Dispara flechas");
                 esperandoClick=true;
                 deshabilitarBotones();
 
@@ -94,7 +94,7 @@ class GuiTienda {
         btnMagoHielo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new MagoHielo(100,20,1500,"Tira Hielo");
+                aliadoAAgregar=new MagoHielo(100,20,1500,1700,"Tira Hielo");
                 esperandoClick=true;
                 deshabilitarBotones();
             }
@@ -108,7 +108,7 @@ class GuiTienda {
         btnCaballeroEscudo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new CaballeroEscudo(100,0,0,"Aguanta Mucho pero no pega");
+                aliadoAAgregar=new CaballeroEscudo(100,0,0,0,"Aguanta Mucho pero no pega");
                 esperandoClick=true;
                 deshabilitarBotones();
             }

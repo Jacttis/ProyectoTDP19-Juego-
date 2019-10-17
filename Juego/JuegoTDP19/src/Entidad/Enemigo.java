@@ -5,6 +5,8 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
+import ColisionadoresCombate.ColCombateEnemigo;
+import ColisionadoresCombate.ColisionadorCombate;
 import Estados.Atacando;
 import Estados.Caminando;
 import Inteligencia.Inteligencia;
@@ -26,15 +28,17 @@ public abstract class Enemigo extends Personaje{
 	 * @param velocidad
 	 * @param puntos
 	 */
-	public Enemigo(int vida,int damage, float velocidadAtaque,double velocidad,int puntos, int oro) {
-		super(new Point(0,0),vida,damage,velocidadAtaque,velocidad);
+	public Enemigo(int vida,int damage, float velocidadAtaque,int rango,double velocidad,int puntos, int oro) {
+		super(new Point(0,0),vida,damage,velocidadAtaque,rango,velocidad);
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
 		oroPremio=oro;
 		this.puntos=puntos;
 		imagen=new ImageIcon [3];
 		estado=new Caminando(this);
+
 		colisionador=new ColisionadorEnemigo(this);
+		colisionadorCombate=new ColCombateEnemigo(this);
 	}
 	/**
 	 * Retorna una cantidad de oro segun enemigo
@@ -62,6 +66,10 @@ public abstract class Enemigo extends Personaje{
 	 */
 	public void serChocado(Colisionador colisionador){
 		colisionador.afectarEnemigo(this);
+	}
+
+	public void serDetectado(ColisionadorCombate colisionadorCombate){
+		colisionadorCombate.detectoEnemigo(this);
 	}
 
 	/**
