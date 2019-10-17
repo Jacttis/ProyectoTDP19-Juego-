@@ -80,7 +80,7 @@ public abstract class Aliado extends Personaje {
     public void eliminarse(){
 
         celdaUbicado.desocupar();
-        Mapa.getMapa().eliminarPersonaje(this);
+        Mapa.getMapa().eliminarEntidad(this);
     }
 
     public void posicionar(ParCelda celda){

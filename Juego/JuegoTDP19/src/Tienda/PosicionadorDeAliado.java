@@ -51,7 +51,7 @@ public class PosicionadorDeAliado {
         if(!celda.ocupada){
             celda.ocupar();
             aliadoAAgregar.posicionar(celda);
-            Mapa.getMapa().agregarPersonaje(aliadoAAgregar);
+            Mapa.getMapa().agregarEntidad(aliadoAAgregar);
 
         }
 

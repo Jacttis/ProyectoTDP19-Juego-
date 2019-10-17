@@ -4,12 +4,9 @@ import java.awt.*;
 import java.util.LinkedList;
 
 import Entidad.*;
-import FabricaDisparos.FabricaDisparo;
 import GUI.GUI;
 import Niveles.Nivel;
-import Niveles.NivelDos;
 import Niveles.NivelUno;
-import Tienda.PosicionadorDeAliado;
 import Tienda.Tienda;
 
 import javax.swing.*;
@@ -18,7 +15,6 @@ public class Mapa {
 
 	private static Mapa instance=null;
 	protected LinkedList<Entidad> entidades,entidadesAAgregar,entidadesAEliminar;
-	protected LinkedList<Personaje> personajesAAgregar,personajesAEliminar;
 	protected Juego juego;
 	protected Nivel nivel;
 	protected GUI gui;
@@ -38,9 +34,6 @@ public class Mapa {
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
 		entidadesAEliminar=new LinkedList<Entidad>();
-
-		personajesAAgregar=new LinkedList<Personaje>();
-		personajesAEliminar=new LinkedList<Personaje>();
 
 
 	}
@@ -80,34 +73,26 @@ public class Mapa {
 
 		}
 
-		for(Entidad eAEliminar : entidadesAEliminar){
+		LinkedList<Entidad> entidadesAEliminarTemporal = entidadesAEliminar;
+
+		for(Entidad eAEliminar : entidadesAEliminarTemporal){
 			entidades.remove(eAEliminar);
 			eliminarEntidadGrafica(eAEliminar);
 			//System.out.println("Entidades : "+entidades.size());
 		}
+
+		LinkedList<Entidad> entidadesAAgregarTemporal = entidadesAAgregar;
 		
-		for(Entidad eAAgregar : entidadesAAgregar) {
+		for(Entidad eAAgregar : entidadesAAgregarTemporal) {
 			entidades.add(eAAgregar);
 			agregarEntidadGrafica(eAAgregar);
 			//System.out.println("Entidades : "+entidades.size());
 		}
 
-		for(Personaje pAAgregar : personajesAAgregar){
-			entidades.add(pAAgregar);
-			agregarPersonajeGrafica(pAAgregar);
-
-		}
-
-		for(Personaje pAEliminar : personajesAEliminar){
-			entidades.remove(pAEliminar);
-			eliminarPersonajeGrafica(pAEliminar);
-
-		}
 
 		entidadesAAgregar=new LinkedList<Entidad>();
 		entidadesAEliminar=new LinkedList<Entidad>();
-		personajesAEliminar=new LinkedList<Personaje>();
-		personajesAAgregar=new LinkedList<Personaje>();
+
 
 		colisionar();
 
@@ -131,44 +116,25 @@ public class Mapa {
 
 	}
 
-	public void agregarPersonaje(Personaje personajeAAgregar){
-		personajesAAgregar.add(personajeAAgregar);
-	}
-
-	public void eliminarPersonaje(Personaje personajeAEliminar){
-		personajesAEliminar.add(personajeAEliminar);
-
-		for(Enemigo e : nivel.getEnemigosGenerados()){
-			if(e.equals(personajeAEliminar)) {
-				nivel.removerEnemigo(e);
-				break;
-			}
-
-		}
-	}
-
-
-
-	public void agregarPersonajeGrafica(Personaje personaje){
-		gui.add(personaje.getGrafico());
-		gui.add(personaje.getEtiquetaVida());
-		gui.repaint();
-	}
-
-	public void eliminarPersonajeGrafica(Personaje personaje){
-		gui.remove(personaje.getGrafico());
-		gui.remove(personaje.getEtiquetaVida());
-		gui.repaint();
-	}
 
 	public void agregarEntidadGrafica(Entidad entidad){
-		gui.add(entidad.getGrafico());
+
+		JLabel [] graficos = entidad.getGraficos();
+
+		for(int i=0 ; i<graficos.length ; i++)
+			gui.add(graficos[i]);
+
 		gui.repaint();
 	}
 
 
 	public void eliminarEntidadGrafica(Entidad entidad){
-		gui.remove(entidad.getGrafico());
+
+		JLabel [] graficos = entidad.getGraficos();
+
+		for(int i=0 ; i<graficos.length ; i++)
+			gui.remove(graficos[i]);
+
 		gui.repaint();
 	}
 	

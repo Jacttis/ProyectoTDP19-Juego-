@@ -4,7 +4,6 @@ import java.awt.*;
 
 import Estados.*;
 import FabricaDisparos.FabricaDisparo;
-import Inteligencia.Inteligencia;
 import Juego.Mapa;
 
 import javax.swing.*;
@@ -37,20 +36,22 @@ public abstract class Personaje extends Entidad {
 		
 	}
 
-	public JLabel getGrafico(){
-		if(this.grafico == null){
-			this.grafico = new JLabel(imagen[0]);
-			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+	public JLabel [] getGraficos(){
+		if(this.graficos == null){
+			this.graficos=new JLabel [2];
+			this.graficos[0] = new JLabel(imagen[0]);
+			this.graficos[0].setBounds(this.pos.x, this.pos.y, width, height);
+			iniciarEtiquetaVida();
 
 		}
 
-		return this.grafico;
+		return this.graficos;
 	}
 
 	public void cambiarGrafico(int dir) {
-		if(this.grafico!=null) {
-			this.grafico.setIcon(this.imagen[dir]);
-			this.grafico.setBounds(this.pos.x,this.pos.y,width,height);
+		if(this.graficos !=null) {
+			this.graficos[0].setIcon(this.imagen[dir]);
+			this.graficos[0].setBounds(this.pos.x,this.pos.y,width,height);
 			actualizarEtiquetaVida(0);
 
 		}
@@ -64,15 +65,14 @@ public abstract class Personaje extends Entidad {
 	 * @return JLabel etiquetaVida
 	 */
 
-	public JLabel getEtiquetaVida(){
+	public void iniciarEtiquetaVida(){
 		if(this.etiquetaVida==null){
 			this.etiquetaVida=new JLabel();
 			this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
 			this.etiquetaVida.setOpaque(true);
 			this.etiquetaVida.setBackground(Color.GREEN);
+			this.graficos[1]=etiquetaVida;
 		}
-
-		return etiquetaVida;
 	}
 
 	/**
@@ -228,7 +228,7 @@ public abstract class Personaje extends Entidad {
 	 */
 
 	public void eliminarse(){
-		Mapa.getMapa().eliminarPersonaje(this);
+		Mapa.getMapa().eliminarEntidad(this);
 		System.out.println("Eliminarse personaje");
 	}
 

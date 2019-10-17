@@ -16,7 +16,7 @@ public abstract class Entidad {
 	protected int width=140,height=159;
 	protected Inteligencia IA;
 	protected Icon imagen[];
-	protected JLabel grafico;
+	protected JLabel [] graficos;
 	protected double velocidad;
 	protected int damage;
 	protected Estado estado;
@@ -41,14 +41,15 @@ public abstract class Entidad {
 	 * @return JLabel con gif/imagen (grafico de la entidad)
 	 */
 	
-	public JLabel getGrafico(){
-		if(this.grafico == null){
-			this.grafico = new JLabel(imagen[0]);
-			this.grafico.setBounds(this.pos.x, this.pos.y, width, height);
+	public JLabel [] getGraficos(){
+		if(this.graficos == null){
+			this.graficos=new JLabel [1];
+			this.graficos[0] = new JLabel(imagen[0]);
+			this.graficos[0].setBounds(this.pos.x, this.pos.y, width, height);
 			
 		}
 		
-		return this.grafico;
+		return this.graficos;
 	}
 	
 	/**
@@ -58,9 +59,9 @@ public abstract class Entidad {
 	 */
 	
 	public void cambiarGrafico(int dir) {
-		if(this.grafico!=null) {
-			this.grafico.setIcon(this.imagen[dir]);
-			this.grafico.setBounds(this.pos.x,this.pos.y,width,height);
+		if(this.graficos !=null) {
+			this.graficos[0].setIcon(this.imagen[dir]);
+			this.graficos[0].setBounds(this.pos.x,this.pos.y,width,height);
 			
 		}
 	}

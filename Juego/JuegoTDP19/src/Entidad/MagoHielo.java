@@ -24,15 +24,14 @@ public class MagoHielo extends Aliado {
 	}
 
 
-	public JLabel getEtiquetaVida(){
+	public void iniciarEtiquetaVida(){
 		if(this.etiquetaVida==null) {
 			this.etiquetaVida=new JLabel();
 			this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
 			this.etiquetaVida.setOpaque(true);
 			this.etiquetaVida.setBackground(Color.GREEN);
+			this.graficos[1]=etiquetaVida;
 		}
-
-		return etiquetaVida;
 	}
 
 	public void actualizarEtiquetaVida(int n){

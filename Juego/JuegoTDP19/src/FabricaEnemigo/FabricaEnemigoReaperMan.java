@@ -5,13 +5,10 @@ import Entidad.ReaperMan;
 
 public class FabricaEnemigoReaperMan extends FabricaEnemigo {
 
-    protected Enemigo reaperManNormal,reaperManBoosted;
     public static FabricaEnemigoReaperMan instance=null;
 
     private FabricaEnemigoReaperMan(){
         super();
-        reaperManNormal=new ReaperMan(175,50,1500,2,150,2);
-        reaperManBoosted=new ReaperMan(175,50,1500,2,150,2);
     }
 
 
@@ -22,7 +19,7 @@ public class FabricaEnemigoReaperMan extends FabricaEnemigo {
         return instance;
     }
 
-    public Enemigo crearEnemigo(){return (Enemigo) reaperManNormal.clone();}
-    public Enemigo crearEnemigoBoosted(){return (Enemigo) reaperManBoosted.clone();}
+    public Enemigo crearEnemigo(){return new ReaperMan(175,50,1500,2,150,2);}
+    public Enemigo crearEnemigoBoosted(){return new ReaperMan(175,50,1500,2,150,2);}
 
 }

@@ -40,7 +40,7 @@ public abstract class Nivel {
 
 	public void agregarEnemigo(Enemigo enemigo){
 		enemigosGenerados.add(enemigo);
-		Mapa.getMapa().agregarPersonaje(enemigo);
+		Mapa.getMapa().agregarEntidad(enemigo);
 	}
 
 	public LinkedList<Enemigo> getEnemigosGenerados(){
