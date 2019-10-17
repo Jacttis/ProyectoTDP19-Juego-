@@ -68,6 +68,8 @@ public class ReaperMan extends Enemigo {
             fabricaDisparo.generarDisparo();
     }
 
+
+
     /**
      * Redefinicion del getHitbox mas general.
      *
