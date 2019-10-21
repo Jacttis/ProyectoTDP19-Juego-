@@ -4,6 +4,7 @@ import Entidad.Aliado;
 import Entidad.Disparo;
 import Entidad.Enemigo;
 import Entidad.GolpeEnemigo;
+import Entidad.PowerUp.PowerUp;
 import Estados.Caminando;
 
 public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
@@ -59,6 +60,10 @@ public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
         disparo.getDisparador().getEstado().cambiarACaminando();
         disparo.eliminarse();
         chocada.eliminarse();
+
+    }
+
+    public void afectarPowerUp(PowerUp chocada){
 
     }
 }

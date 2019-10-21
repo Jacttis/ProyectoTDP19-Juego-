@@ -21,7 +21,6 @@ public abstract class Entidad {
 	protected JLabel [] graficos;
 	protected double velocidad;
 	protected int damage;
-	protected Estado estado;
 	protected Colisionador colisionador;
 	protected ColisionadorCombate colisionadorCombate;
 
@@ -139,14 +138,6 @@ public abstract class Entidad {
 		return 0;
 	}
 
-
-	public Estado getEstado(){
-		return estado;
-	}
-
-	public void setEstado(Estado estadoNuevo){
-		estado=estadoNuevo;
-	}
 
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);

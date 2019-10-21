@@ -1,6 +1,7 @@
 package Colisionadores;
 
 import Entidad.*;
+import Entidad.PowerUp.PowerUp;
 import Estados.Atacando;
 
 public class ColisionadorAliado implements Colisionador {
@@ -51,6 +52,11 @@ public class ColisionadorAliado implements Colisionador {
     public void afectarEnemigo(Enemigo chocada) {
 
         chocada.getEstado().cambiarAAtacando();
+
+    }
+
+
+    public void afectarPowerUp(PowerUp chocada){
 
     }
 }

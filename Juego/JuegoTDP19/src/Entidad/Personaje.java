@@ -16,6 +16,7 @@ public abstract class Personaje extends Entidad {
 	protected JLabel etiquetaVida;
 	protected FabricaDisparo fabricaDisparo;
 	protected int rango;
+	protected Estado estado;
 
 
 
@@ -100,6 +101,7 @@ public abstract class Personaje extends Entidad {
 
 	// Getters
 
+
 	public FabricaDisparo getFabricaDisparo(){
 		return fabricaDisparo;
 	}
@@ -153,6 +155,10 @@ public abstract class Personaje extends Entidad {
 
 	public Estado getEstado(){
 		return estado;
+	}
+
+	public void setEstado(Estado estadoNuevo){
+		estado=estadoNuevo;
 	}
 
 	/**

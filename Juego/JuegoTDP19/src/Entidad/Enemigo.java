@@ -7,6 +7,9 @@ import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
 import ColisionadoresCombate.ColCombateEnemigo;
 import ColisionadoresCombate.ColisionadorCombate;
+import Entidad.PowerUp.MagiaTemporal;
+import Entidad.PowerUp.ObjetoPrecioso;
+import Entidad.PowerUp.PowerUp;
 import Estados.Atacando;
 import Estados.Caminando;
 import Inteligencia.Inteligencia;
@@ -19,6 +22,7 @@ public abstract class Enemigo extends Personaje{
 	
 	protected int puntos;
 	protected int oroPremio;
+	protected PowerUp [] premios;
 	
 	/**
 	 * Crea un personaje enemigo
@@ -39,6 +43,8 @@ public abstract class Enemigo extends Personaje{
 
 		colisionador=new ColisionadorEnemigo(this);
 		colisionadorCombate=new ColCombateEnemigo(this);
+
+		premios=new PowerUp[2];
 	}
 	/**
 	 * Retorna una cantidad de oro segun enemigo
@@ -83,8 +89,19 @@ public abstract class Enemigo extends Personaje{
 
 		Mapa.getMapa().eliminarEntidad(this);
 
+
 		Tienda.getTienda().aumentarOro(this.getOro());
 		Tienda.getTienda().aumentarPuntos(this.getPuntos());
+	}
+
+	public void agregarMagiaTemporal(MagiaTemporal magia){
+		if(premios[0]==null)
+			premios[0]=magia;
+	}
+
+	public void agregarObjetoPrecioso(ObjetoPrecioso objeto){
+		if(premios[1]==null)
+			premios[1]=objeto;
 	}
 
 
