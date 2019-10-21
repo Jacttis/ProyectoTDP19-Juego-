@@ -21,6 +21,7 @@ public class CaballeroEscudo extends Aliado {
         imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
         imagen[1]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
         imagen[2]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
+        imagen[3]=new ImageIcon("Sprites/CharacterSprites/GIFs/StillTrueCab.gif");
     }
 
 

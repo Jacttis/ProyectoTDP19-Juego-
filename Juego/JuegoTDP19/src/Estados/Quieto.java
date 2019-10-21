@@ -11,7 +11,7 @@ public class Quieto extends Estado{
 
     public void actuar(){
 
-        personaje.cambiarGrafico(0);
+        personaje.cambiarGrafico(3);
         personaje.actualizarEtiquetaVida(0);
 
         verificarEstado();

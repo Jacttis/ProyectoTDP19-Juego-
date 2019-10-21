@@ -1,6 +1,7 @@
 package Estados;
 
 import Entidad.*;
+import Juego.Mapa;
 
 public abstract class Estado {
 

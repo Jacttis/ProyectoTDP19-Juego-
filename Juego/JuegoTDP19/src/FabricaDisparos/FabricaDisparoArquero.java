@@ -9,7 +9,6 @@ import java.awt.*;
 
 public class FabricaDisparoArquero extends FabricaDisparo {
 
-    protected Disparo disparoArqueroHumano;
 
     public FabricaDisparoArquero(Personaje disparador){
         super(disparador);

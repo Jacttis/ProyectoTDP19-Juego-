@@ -186,16 +186,20 @@ public class Mapa {
 			e2.serChocado(e1.getColisionador());
 		}
 
-		r1= e1.getHitBoxCombate();
-		r2= e2.getHitBoxCombate();
+		Rectangle r3= e1.getHitBoxCombate();
 
-		if(r1.intersects(r2)){
-			e1.serDetectado(e2.getColisionadorCombate());
+		if(r3.intersects(r2)){
 			e2.serDetectado(e1.getColisionadorCombate());
 		}
 
+		Rectangle r4 = e2.getHitBoxCombate();
+
+		if(r4.intersects(r1)){
+			e1.serDetectado(e2.getColisionadorCombate());
+		}
 
 	}
+
 
 	/**
 	 * Cuando se eliminen todos los enemigos, se generara el siguiente nivel.

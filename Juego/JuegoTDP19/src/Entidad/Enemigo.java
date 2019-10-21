@@ -87,4 +87,5 @@ public abstract class Enemigo extends Personaje{
 		Tienda.getTienda().aumentarPuntos(this.getPuntos());
 	}
 
+
 }

@@ -19,9 +19,10 @@ public class ArqueroHumano extends Aliado {
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
 
-		imagen[0] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
+		imagen[0] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/atacandoTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 		imagen[2] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
+		imagen[3] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/quietoTRUE.gif");
 
 		fabricaDisparo=new FabricaDisparoArquero(this);
 

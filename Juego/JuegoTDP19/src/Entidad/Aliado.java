@@ -8,6 +8,7 @@ import Colisionadores.ColisionadorAliado;
 import ColisionadoresCombate.ColCombateAliado;
 import ColisionadoresCombate.ColisionadorCombate;
 import Estados.Atacando;
+import Estados.Quieto;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaAliados;
 import Inteligencia.InteligenciaEnemigos;
@@ -42,7 +43,7 @@ public abstract class Aliado extends Personaje {
     public Aliado(int vida, int damage,float velocidadAtaque,int rango, String Descripcion) {
         super(new Point(0,0), vida, damage, velocidadAtaque, rango,0);
         IA=new InteligenciaAliados(this);
-        imagen =new ImageIcon[3];
+        imagen =new ImageIcon[4];
         descripcion=Descripcion;
 
         colisionador=new ColisionadorAliado(this);
@@ -50,7 +51,7 @@ public abstract class Aliado extends Personaje {
 
         precio=1;
 
-        estado=new Atacando(this);
+        estado=new Quieto(this);
 
     }
     /**
@@ -110,4 +111,6 @@ public abstract class Aliado extends Personaje {
     public void serDetectado(ColisionadorCombate colisionadorCombate){
         colisionadorCombate.detectoAliado(this);
     }
+
+
 }

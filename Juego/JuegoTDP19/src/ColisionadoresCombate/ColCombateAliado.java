@@ -19,7 +19,7 @@ public class ColCombateAliado implements ColisionadorCombate {
 
 
     public void detectoEnemigo(Enemigo chocada) {
-
+        aliado.getEstado().cambiarAAtacando();
     }
 
 

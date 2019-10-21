@@ -33,6 +33,10 @@ public class ColisionadorDisparo implements Colisionador {
      */
     public void afectarEnemigo(Enemigo chocada) {
         disparo.afectarPersonaje(chocada);
+        if(chocada.estaMuerto()){
+            disparo.getDisparador().getEstado().cambiarAQuieto();
+            System.out.println("AAAASDSADA");
+        }
         disparo.eliminarse();
     }
 

@@ -149,14 +149,7 @@ public abstract class Personaje extends Entidad {
 	}
 
 
-	/**
-	 * setter y getter de estado.
-	 * @param estado
-	 */
 
-	public void setEstado(Estado estado){
-		this.estado=estado;
-	}
 
 	public Estado getEstado(){
 		return estado;
