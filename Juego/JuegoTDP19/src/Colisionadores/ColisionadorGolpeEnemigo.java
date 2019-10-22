@@ -57,7 +57,6 @@ public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
      * @param chocada
      */
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
-        disparo.getDisparador().getEstado().cambiarACaminando();
         disparo.eliminarse();
         chocada.eliminarse();
 

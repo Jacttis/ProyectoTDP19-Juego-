@@ -148,6 +148,7 @@ public abstract class Personaje extends Entidad {
 	public void actualizarEntidad() {
 		estado.verificarEstado();
 		estado.actuar();
+		colisionadorCombate.verificarColisionando();
 	}
 
 
@@ -235,7 +236,7 @@ public abstract class Personaje extends Entidad {
 	}
 
 
-	public Rectangle getHitBoxCombate() {
+	public Rectangle getRangoCombate() {
 		Rectangle hitBox=this.getHitBox();
 		hitBox.width=hitBox.width+rango;
 		hitBox.setLocation(hitBox.x-(hitBox.width/2),hitBox.y);

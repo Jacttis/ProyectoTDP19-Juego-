@@ -13,6 +13,10 @@ public class ColCombateAliado implements ColisionadorCombate {
         this.aliado=aliado;
     }
 
+    public void verificarColisionando(){
+
+    }
+
     public void detectoAliado(Aliado chocada) {
 
     }

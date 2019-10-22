@@ -104,5 +104,12 @@ public abstract class Enemigo extends Personaje{
 			premios[1]=objeto;
 	}
 
+	public Rectangle getRangoCombate() {
+		Rectangle hitBox=this.getHitBox();
+		hitBox.width=hitBox.width+rango;
+		hitBox.setLocation(hitBox.x-rango,hitBox.y);
+
+		return hitBox;
+	}
 
 }

@@ -141,7 +141,7 @@ public abstract class Entidad {
 
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);
-		//System.out.println("Eliminarse entidad");
+
 	}
 
 	public abstract void serChocado(Colisionador colisionador);
@@ -154,7 +154,7 @@ public abstract class Entidad {
 		return new Rectangle(pos.x,pos.y,width,height);
 	}
 
-	public Rectangle getHitBoxCombate(){
+	public Rectangle getRangoCombate(){
 		return getHitBox();
 	}
 }

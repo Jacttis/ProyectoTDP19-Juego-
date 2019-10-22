@@ -113,4 +113,13 @@ public abstract class Aliado extends Personaje {
     }
 
 
+    public Rectangle getRangoCombate() {
+        Rectangle hitBox=this.getHitBox();
+        hitBox.width=hitBox.width+rango;
+        hitBox.setLocation(hitBox.x,hitBox.y);
+
+        return hitBox;
+    }
+
+
 }

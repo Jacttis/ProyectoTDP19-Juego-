@@ -7,6 +7,7 @@ import Entidad.GolpeEnemigo;
 
 public interface ColisionadorCombate {
 
+    public void verificarColisionando();
     public void detectoAliado(Aliado chocada);
     public void detectoEnemigo(Enemigo chocada);
     public void detectoDisparo(Disparo chocada);
