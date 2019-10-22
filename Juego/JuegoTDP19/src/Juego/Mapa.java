@@ -73,25 +73,32 @@ public class Mapa {
 
 		}
 
-		LinkedList<Entidad> entidadesAEliminarTemporal = entidadesAEliminar;
+		LinkedList<Entidad> entidadesAEliminarTemporal = new LinkedList<Entidad>();
 
-		for(Entidad eAEliminar : entidadesAEliminar){
+		for(Entidad e : entidadesAEliminar)
+			entidadesAEliminarTemporal.add(e);
+
+		for(Entidad eAEliminar : entidadesAEliminarTemporal){
 			entidades.remove(eAEliminar);
 			eliminarEntidadGrafica(eAEliminar);
 			//System.out.println("Entidades : "+entidades.size());
 		}
 
-		LinkedList<Entidad> entidadesAAgregarTemporal = entidadesAAgregar;
+		LinkedList<Entidad> entidadesAAgregarTemporal= new LinkedList<Entidad>();
 
-		for(Entidad eAAgregar : entidadesAAgregar) {
+		for(Entidad e : entidadesAAgregar)
+			entidadesAAgregarTemporal.add(e);
+
+
+		for(Entidad eAAgregar : entidadesAAgregarTemporal) {
 			entidades.add(eAAgregar);
 			agregarEntidadGrafica(eAAgregar);
 			//System.out.println("Entidades : "+entidades.size());
 		}
 
 
-		entidadesAAgregar=new LinkedList<Entidad>();
-		entidadesAEliminar=new LinkedList<Entidad>();
+		entidadesAAgregar.removeAll(entidadesAAgregarTemporal);
+		entidadesAEliminar.removeAll(entidadesAEliminarTemporal);
 
 
 		colisionar();
@@ -186,13 +193,13 @@ public class Mapa {
 			e2.serChocado(e1.getColisionador());
 		}
 
-		Rectangle r3= e1.getHitBoxCombate();
+		Rectangle r3= e1.getRangoCombate();
 
 		if(r3.intersects(r2)){
 			e2.serDetectado(e1.getColisionadorCombate());
 		}
 
-		Rectangle r4 = e2.getHitBoxCombate();
+		Rectangle r4 = e2.getRangoCombate();
 
 		if(r4.intersects(r1)){
 			e1.serDetectado(e2.getColisionadorCombate());

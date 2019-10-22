@@ -51,7 +51,7 @@ public class ColisionadorAliado implements Colisionador {
 
     public void afectarEnemigo(Enemigo chocada) {
 
-        chocada.getEstado().cambiarAAtacando();
+       // chocada.getEstado().cambiarAAtacando();
 
     }
 

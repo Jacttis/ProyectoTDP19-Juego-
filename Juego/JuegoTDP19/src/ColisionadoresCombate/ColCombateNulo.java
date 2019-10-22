@@ -7,6 +7,10 @@ import Entidad.GolpeEnemigo;
 
 public class ColCombateNulo implements ColisionadorCombate {
 
+    public void verificarColisionando(){
+
+    }
+
     public void detectoAliado(Aliado chocada) {
 
     }
