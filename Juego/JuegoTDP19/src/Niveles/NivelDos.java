@@ -1,5 +1,6 @@
 package Niveles;
 
+import Constantes.Constantes;
 import Entidad.Enemigo;
 import FabricaDisparos.FabricaDisparoReaperMan;
 import FabricaEnemigo.FabricaEnemigoFallenAngel;
@@ -24,22 +25,27 @@ public class NivelDos extends Nivel {
         listaEnemigosSpawn.add(FabricaEnemigoGolemFuego.getFabricaGolemFuego());
     }
 
-    public void run(){
+    public void run() {
 
 
-        Random r= new Random();
+        Enemigo enemigo;
+
+        Random r = new Random();
         int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
         int tipoEnemigo = r.nextInt(10);
-        if(tipoEnemigo<2)
-            agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted());
-        else agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo());
-
+        if (tipoEnemigo < 4)
+            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+        agregarEnemigo(enemigo);
 
         enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
         tipoEnemigo = r.nextInt(10);
-        if(tipoEnemigo<2)
-            agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted());
-        else agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo());
+        if (tipoEnemigo < 4)
+            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+        agregarEnemigo(enemigo);
 
         try {
             sleep(5000);
@@ -50,17 +56,19 @@ public class NivelDos extends Nivel {
 
         enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
         tipoEnemigo = r.nextInt(10);
-        if(tipoEnemigo<2)
-            agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted());
-        else agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo());
-
+        if (tipoEnemigo < 3)
+            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+        agregarEnemigo(enemigo);
 
         enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
         tipoEnemigo = r.nextInt(10);
-        if(tipoEnemigo<2)
-            agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted());
-        else agregarEnemigo(listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo());
+        if (tipoEnemigo < 3)
+            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+        agregarEnemigo(enemigo);
     }
-
 
 }

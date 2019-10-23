@@ -45,10 +45,6 @@ public abstract class Nivel extends Thread {
 
 	public void removerEnemigo(Enemigo e){
 		enemigosGenerados.remove(e);
-		if(murieronTodosLosEnemigos()){
-			Mapa.getMapa().cambiarNivel(new NivelDos());
-			System.out.println("CAMBIARARRRRRRRRRRRRRRR MAPAAAAAAAAAAAAAAAAAAAA");
-		}
 	}
 
 	public boolean verificarEnemigos(){
@@ -56,8 +52,10 @@ public abstract class Nivel extends Thread {
 		boolean enemigoGano=false;
 
 		for(Enemigo enemigo : enemigosGenerados){
-			if(enemigo.getPos().getX()<-100)
-				enemigoGano=true;
+			if(enemigo.getPos().getX()<-100) {
+				enemigoGano = true;
+				break;
+			}
 		}
 
 		return enemigoGano;
@@ -69,6 +67,10 @@ public abstract class Nivel extends Thread {
 
 	public int getOroPremio(){
 		return oroPremio;
+	}
+
+	public Nivel getNivelSiguiente(){
+		return nivelSiguiente;
 	}
 
 

@@ -104,7 +104,7 @@ public class Mapa {
 
 		colisionar();
 
-		verificarDerrota();
+		verificarNivel();
 
 	}
 	
@@ -217,15 +217,22 @@ public class Mapa {
 	 */
 	public void cambiarNivel(Nivel nivelNuevo){
 		limpiarMapa();
-		this.nivel=nivelNuevo;
+		this.nivel=nivel.getNivelSiguiente();
 		generar();
 	}
 
 	//Los metodos de derrota deben pasarse a Juego despues.
 
-	public void verificarDerrota(){
+	public void removeEnemigoNivel(Enemigo enemigo){
+		nivel.removerEnemigo(enemigo);
+	}
+
+	public void verificarNivel(){
 		if(nivel.verificarEnemigos())
 			perdio();
+
+		if(nivel.getEnemigosGenerados().isEmpty())
+			cambiarNivel(nivel.getNivelSiguiente());
 	}
 
 	public void perdio(){

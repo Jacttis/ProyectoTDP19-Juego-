@@ -58,7 +58,7 @@ public class Juego {
 		return instance;
 	}
 	public void mover() {
-		
+
 		Mapa.getMapa().mover();
 		gui.actualizaEtiquetas();
 		

@@ -96,6 +96,7 @@ public abstract class Enemigo extends Personaje{
 	public void eliminarse(){
 
 		Mapa.getMapa().eliminarEntidad(this);
+		Mapa.getMapa().removeEnemigoNivel(this);
 
 		if(!powers.isEmpty()) {
 			powers.getFirst().getPos().setLocation(pos);
