@@ -3,6 +3,9 @@ package Entidad;
 import java.awt.*;
 import javax.swing.*;
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
+import Graficos.BarraDeVida;
+import Graficos.Grafico;
+import Graficos.SpriteEntidad;
 
 public class EnemigoFallenAngel extends  Enemigo {
 
@@ -12,47 +15,26 @@ public class EnemigoFallenAngel extends  Enemigo {
 
         fabricaDisparo = new FabricaDisparoGolpeEnemigo(this);
 
+        this.setWidth(160);
+
         imagen[0] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/caminandoTrue.gif");
         imagen[1] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/atacandoTrue.gif");
         imagen[2] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/muerteTrue.gif");
-        this.setWidth(160);
+        imagen[3] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/muerteTrue.gif");
+
+        Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+        Grafico barraVida=new BarraDeVida(this,40,-15);
+        listaGraficos.add(barraVida);
+        listaGraficos.add(sprites);
+
+
+
 
     }
 
-    /**
-     * Redefinicion de getEtiquetaVida mas general
-     *
-     * @return JLabel etiquetaVida
-     */
 
-    public void iniciarEtiquetaVida(){
-        if(this.etiquetaVida==null){
-            this.etiquetaVida=new JLabel();
-            this.etiquetaVida.setBounds(pos.x+20,pos.y+this.height,80,5);
-            this.etiquetaVida.setOpaque(true);
-            this.etiquetaVida.setBackground(Color.GREEN);
-            this.graficos[1]=etiquetaVida;
-        }
-    }
 
-    /**
-     * Redefinicion de actualizarEtiquetaVida mas general.
-     *
-     * @param n
-     */
 
-    public void actualizarEtiquetaVida(int n){
-
-        if(etiquetaVida!=null) {
-            etiquetaVida.setBounds(pos.x+(this.width-90), pos.y+(this.height-10) , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
-
-            if (vidaActual < 70) {
-                if (vidaActual < 40)
-                    etiquetaVida.setBackground(Color.RED);
-                else etiquetaVida.setBackground(Color.YELLOW);
-            }
-        }
-    }
 
 
     /**

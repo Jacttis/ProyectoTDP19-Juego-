@@ -1,11 +1,10 @@
 package Niveles;
 
 import java.awt.Point;
+import java.util.Random;
 
 import Constantes.Constantes;
-import FabricaEnemigo.FabricaEnemigoGolemHielo;
-import FabricaEnemigo.FabricaEnemigoGolemTierra;
-import FabricaEnemigo.FabricaEnemigoReaperMan;
+import FabricaEnemigo.*;
 import Juego.Mapa;
 import Entidad.*;
 
@@ -13,54 +12,72 @@ public class NivelUno extends Nivel {
 
 	public NivelUno() {
 		super();
-		hiloNivel=new HiloNivel(this);
+		nivelSiguiente=new NivelDos();
+
+	}
+
+
+	public void llenarListaEnemigosSpawn() {
+
+		listaEnemigosSpawn.add(FabricaEnemigoGolemHielo.getFabricaGolemHielo());
+		listaEnemigosSpawn.add(FabricaEnemigoGolemTierra.getFabricaGolemTierra());
 	}
 
 
-	public void empezarNivel(){
-		hiloNivel.start();
+	public void run(){
+
+		try {
+
+			Enemigo enemigo;
+
+			Random r= new Random();
+			int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
+			int tipoEnemigo = r.nextInt(10);
+			if(tipoEnemigo<2)
+				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			agregarEnemigo(enemigo);
+
+			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
+			tipoEnemigo = r.nextInt(10);
+			if(tipoEnemigo<2)
+				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			agregarEnemigo(enemigo);
+
+			sleep(5000);
+
+
+
+			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
+			tipoEnemigo = r.nextInt(10);
+			if(tipoEnemigo<2)
+				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			agregarEnemigo(enemigo);
+
+			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
+			tipoEnemigo = r.nextInt(10);
+			if(tipoEnemigo<2)
+				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			agregarEnemigo(enemigo);
+
+
+
+
+
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+
 	}
 
-	/**
-	 * Genera los enemigos y utiliza agregarEntidad de mapa
-	 * para insertarlos en el mismo
-	 * 
-	 */
-	
-	public void generarEnemigos() {
 
-		Enemigo enemigo1= FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();
-		enemigo1.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-		agregarEnemigo(enemigo1);
-
-
-		Enemigo enemigo2= FabricaEnemigoGolemTierra.getFabricaGolemTierra().crearEnemigo();
-		enemigo2.posicionar(new Point(Constantes.ENEMIGOS_PX+170,obtenerPosicionAleatoriaEnY()));
-		agregarEnemigo(enemigo2);
-
-		Enemigo enemigo3= FabricaEnemigoGolemHielo.getFabricaGolemHielo().crearEnemigoBoosted();
-		enemigo3.posicionar(new Point(Constantes.ENEMIGOS_PX+170,obtenerPosicionAleatoriaEnY()));
-		agregarEnemigo(enemigo3);
-
-		/*
-		Enemigo enemigo3=FabricaEnemigoGolemHielo.getFabricaGolemHielo().crearEnemigo();
-		enemigo3.posicionar(new Point(2140,obtenerPosicionAleatoriaEnY()));
-		agregarEnemigo(enemigo3);
-
-		Enemigo enemigo4=FabricaEnemigoGolemTierra.getFabricaGolemTierra().crearEnemigo();
-		enemigo4.posicionar(new Point(2310,obtenerPosicionAleatoriaEnY()));
-		agregarEnemigo(enemigo4);
-
-		*/
-
-
-
-	}
-	
-
-
-	
-	
-	
-	
 }

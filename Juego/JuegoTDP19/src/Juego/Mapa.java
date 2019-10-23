@@ -54,7 +54,7 @@ public class Mapa {
 	
 	
 	public void generar() {
-		nivel.empezarNivel();
+		nivel.start();
 
 	}
 	
@@ -116,6 +116,7 @@ public class Mapa {
 	 */
 	
 	public void agregarEntidad(Entidad entidadAAgregar) {
+		entidadAAgregar.actualizarGraficos();
 		entidadesAAgregar.add(entidadAAgregar);
 	}
 

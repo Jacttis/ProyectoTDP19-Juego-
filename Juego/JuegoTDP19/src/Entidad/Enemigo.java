@@ -97,8 +97,10 @@ public abstract class Enemigo extends Personaje{
 
 		Mapa.getMapa().eliminarEntidad(this);
 
-		powers.getFirst().getPos().setLocation(pos);
-		Mapa.getMapa().agregarEntidad(powers.getFirst());
+		if(!powers.isEmpty()) {
+			powers.getFirst().getPos().setLocation(pos);
+			Mapa.getMapa().agregarEntidad(powers.getFirst());
+		}
 
 		Tienda.getTienda().aumentarOro(this.getOro());
 		Tienda.getTienda().aumentarPuntos(this.getPuntos());

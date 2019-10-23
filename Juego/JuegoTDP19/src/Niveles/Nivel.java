@@ -9,16 +9,21 @@ import Juego.Mapa;
 import java.util.LinkedList;
 import java.util.Random;
 
-public abstract class Nivel {
+public abstract class Nivel extends Thread {
 
-	protected HiloNivel hiloNivel;
+	protected Nivel nivelSiguiente;
 	protected LinkedList<Enemigo> enemigosGenerados;
+	protected LinkedList<FabricaEnemigo> listaEnemigosSpawn;
 	protected int oroPremio;
 	
 	public Nivel() {
 		enemigosGenerados=new LinkedList<Enemigo>();
 		oroPremio=5;
+		listaEnemigosSpawn=new LinkedList<FabricaEnemigo>();
+		this.llenarListaEnemigosSpawn();
 	}
+
+	public abstract void run();
 
 	protected int obtenerPosicionAleatoriaEnY(){
 		Random r=new Random();
@@ -26,17 +31,8 @@ public abstract class Nivel {
 		return Constantes.ENEMIGO_Y1 +(Constantes.ENEMIGO_Y2*n);
 	}
 
-	/**
-	 * Empieza la ejecucion del nivel.
-	 */
+	public abstract void llenarListaEnemigosSpawn();
 
-	public abstract void empezarNivel();
-
-	/**
-	 * Crea los enemigos correspondientes al nivel y los agrega al mapa
-	 * 
-	 */
-	public abstract void generarEnemigos();
 
 	public void agregarEnemigo(Enemigo enemigo){
 		enemigosGenerados.add(enemigo);
