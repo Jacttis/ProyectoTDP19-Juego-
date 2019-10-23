@@ -16,6 +16,7 @@ public abstract class MagiaTemporal extends PowerUp {
         this.duracion=duracion;
     }
 
+
     public abstract void afectarPersonaje(Personaje personaje);
     public abstract void desafectarPersonaje(Personaje personaje);
 

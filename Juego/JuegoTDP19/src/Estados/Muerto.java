@@ -1,6 +1,7 @@
 package Estados;
 
 import Entidad.*;
+import Graficos.Grafico;
 
 public class Muerto extends Estado {
 
@@ -13,7 +14,9 @@ public class Muerto extends Estado {
 
     public void actuar() {
 
-        personaje.cambiarGrafico(2);
+        for( Grafico grafico : personaje.getListaGraficos()) {
+            grafico.cambiarGrafico(2);
+        }
         personaje.setEstado(new EstadoNulo(personaje));
         hiloMuerte.start();
 

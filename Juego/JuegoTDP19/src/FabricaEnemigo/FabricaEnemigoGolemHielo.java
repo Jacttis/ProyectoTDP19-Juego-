@@ -3,6 +3,9 @@ package FabricaEnemigo;
 import Entidad.Enemigo;
 import Entidad.EnemigoGolemHielo;
 import Entidad.EnemigoGolemTierra;
+import Entidad.PowerUp.BoostDamage;
+
+import java.awt.*;
 
 public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
 
@@ -25,6 +28,8 @@ public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
 
 
     public Enemigo crearEnemigoBoosted() {
-        return new EnemigoGolemHielo(100,20,1000,0,2,100,1);
+        EnemigoGolemHielo enemigo = new EnemigoGolemHielo(100,15,1000,0,2,100,1);
+        enemigo.agregarPowerUp(new BoostDamage(enemigo.getPos(),1,3000,30));
+        return enemigo;
     }
 }

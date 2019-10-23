@@ -8,6 +8,9 @@ import Constantes.Constantes;
 import Estados.Atacando;
 import FabricaDisparos.FabricaDisparo;
 import FabricaDisparos.FabricaDisparoArquero;
+import Graficos.BarraDeVida;
+import Graficos.Grafico;
+import Graficos.SpriteEntidad;
 import Tienda.ParCelda;
 
 
@@ -24,45 +27,15 @@ public class ArqueroHumano extends Aliado {
 		imagen[2] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
 		imagen[3] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/quietoTRUE.gif");
 
+		Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+		Grafico barraVida=new BarraDeVida(this,5,0);
+		listaGraficos.add(barraVida);
+		listaGraficos.add(sprites);
+
 		fabricaDisparo=new FabricaDisparoArquero(this);
 
 	}
 
-	/**
-	 * Redefinicion de getEtiquetaVida mas general
-	 *
-	 * @return JLabel etiquetaVida
-	 */
-
-	public void iniciarEtiquetaVida(){
-		if(this.etiquetaVida==null){
-			this.etiquetaVida=new JLabel();
-			this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
-			this.etiquetaVida.setOpaque(true);
-			this.etiquetaVida.setBackground(Color.GREEN);
-			this.graficos[1]=etiquetaVida;
-		}
-
-	}
-
-	/**
-	 * Redefinicion de actualizarEtiquetaVida mas general.
-	 *
-	 * @param n
-	 */
-
-	public void actualizarEtiquetaVida(int n){
-
-		if(etiquetaVida!=null) {
-			etiquetaVida.setBounds(pos.x+10, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
-
-			if (vidaActual < 70) {
-				if (vidaActual < 40)
-					etiquetaVida.setBackground(Color.RED);
-				else etiquetaVida.setBackground(Color.YELLOW);
-			}
-		}
-	}
 
 
 	/**

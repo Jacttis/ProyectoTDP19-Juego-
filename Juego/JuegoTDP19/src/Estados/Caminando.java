@@ -2,6 +2,7 @@ package Estados;
 
 import Entidad.Entidad;
 import Entidad.Personaje;
+import Graficos.Grafico;
 
 public class Caminando extends Estado {
 
@@ -16,7 +17,9 @@ public class Caminando extends Estado {
     public void actuar(){
 
         personaje.getInteligencia().actualizarEntidad();
-        personaje.cambiarGrafico(0);
+        for( Grafico grafico : personaje.getListaGraficos()) {
+            grafico.cambiarGrafico(0);
+        }
 
         verificarEstado();
 

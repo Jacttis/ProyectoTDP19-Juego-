@@ -11,5 +11,6 @@ public class InteligenciaGolpeEnemigo extends Inteligencia {
 
     public void actualizarEntidad() {
 
+        entidad.actualizarGraficos();
     }
 }

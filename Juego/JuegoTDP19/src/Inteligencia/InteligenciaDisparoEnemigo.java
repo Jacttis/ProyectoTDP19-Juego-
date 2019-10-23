@@ -1,6 +1,7 @@
 package Inteligencia;
 
 import Entidad.Entidad;
+import Graficos.Grafico;
 
 public class InteligenciaDisparoEnemigo extends Inteligencia {
 
@@ -12,7 +13,8 @@ public class InteligenciaDisparoEnemigo extends Inteligencia {
     public void actualizarEntidad() {
 
         entidad.getPos().setLocation(entidad.getPos().x-entidad.getVelocidad(),entidad.getPos().y);
-        entidad.cambiarGrafico(0);
+
+        entidad.actualizarGraficos();
 
         if(entidad.getPos().x<-200)
             entidad.eliminarse();

@@ -1,9 +1,12 @@
 package Entidad;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 import Estados.*;
 import FabricaDisparos.FabricaDisparo;
+import Graficos.BarraDeVida;
+import Graficos.Grafico;
 import Juego.Mapa;
 
 import javax.swing.*;
@@ -37,67 +40,11 @@ public abstract class Personaje extends Entidad {
 		estado=new EstadoNulo(this);
 		puedeAtacar=true;
 		this.rango=rango;
-		
+
+		imagen =new ImageIcon[4];
+
 	}
 
-	public JLabel [] getGraficos(){
-		if(this.graficos == null){
-			this.graficos=new JLabel [2];
-			this.graficos[0] = new JLabel(imagen[0]);
-			this.graficos[0].setBounds(this.pos.x, this.pos.y, width, height);
-			iniciarEtiquetaVida();
-
-		}
-
-		return this.graficos;
-	}
-
-	public void cambiarGrafico(int dir) {
-		if(this.graficos !=null) {
-			this.graficos[0].setIcon(this.imagen[dir]);
-			this.graficos[0].setBounds(this.pos.x,this.pos.y,width,height);
-			actualizarEtiquetaVida(0);
-
-		}
-	}
-
-	/**
-	 * Si no tiene todavia etiqueta vida la crea.
-	 *
-	 * Retorna el JLabel de la barra de vida del personaje.
-	 *
-	 * @return JLabel etiquetaVida
-	 */
-
-	public void iniciarEtiquetaVida(){
-		if(this.etiquetaVida==null){
-			this.etiquetaVida=new JLabel();
-			this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
-			this.etiquetaVida.setOpaque(true);
-			this.etiquetaVida.setBackground(Color.GREEN);
-			this.graficos[1]=etiquetaVida;
-		}
-	}
-
-	/**
-	 * Actualiza la etiquetaVida tanto como la posicion segun el personaje, como
-	 * su estado segun la vida del personaje.
-	 *
-	 * @param n
-	 */
-
-	public void actualizarEtiquetaVida(int n){
-
-		if(etiquetaVida!=null) {
-			etiquetaVida.setBounds(pos.x+this.width, pos.y+this.height , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
-
-			if (vidaActual < 70) {
-				if (vidaActual < 40)
-					etiquetaVida.setBackground(Color.RED);
-				else etiquetaVida.setBackground(Color.YELLOW);
-			}
-		}
-	}
 
 	// Getters
 
@@ -111,6 +58,10 @@ public abstract class Personaje extends Entidad {
 	 */
 	public int getVida() {
 		return vidaActual;
+	}
+
+	public int getVidaTotal(){
+		return vidaTotal;
 	}
 
 	/**
@@ -132,11 +83,11 @@ public abstract class Personaje extends Entidad {
 	public void disminuirVida(int cantidad){
 		if((vidaActual-cantidad)<0) {
 			vidaActual = 0;
-			actualizarEtiquetaVida(etiquetaVida.getWidth());
+			this.actualizarGraficos();
 		}
 		else {
 			vidaActual-=cantidad;
-			this.actualizarEtiquetaVida(cantidad);
+			this.actualizarGraficos();
 		}
 	}
 

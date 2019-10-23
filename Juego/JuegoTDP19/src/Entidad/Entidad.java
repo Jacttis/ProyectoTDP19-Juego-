@@ -1,6 +1,7 @@
 package Entidad;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 import Colisionadores.Colisionador;
 import ColisionadoresCombate.ColCombateNulo;
@@ -8,6 +9,7 @@ import ColisionadoresCombate.ColisionadorCombate;
 import Estados.*;
 import javax.swing.*;
 
+import Graficos.Grafico;
 import Inteligencia.Inteligencia;
 import Juego.Mapa;
 
@@ -23,6 +25,7 @@ public abstract class Entidad {
 	protected int damage;
 	protected Colisionador colisionador;
 	protected ColisionadorCombate colisionadorCombate;
+	protected LinkedList<Grafico> listaGraficos;
 
 	
 	
@@ -34,41 +37,22 @@ public abstract class Entidad {
 
 		colisionadorCombate=new ColCombateNulo();
 
+		imagen=new ImageIcon[1];
+		listaGraficos=new LinkedList<Grafico>();
 	
 	}
-	
-	/**
-	 * Si todavia no se creo el grafico de la entidad, lo inicializa como un JLabel con imagen o GIF dentro
-	 * y luego lo posiciona segun corresponda utilizando la posicion del point, y establece el ancho y alto
-	 * segun los atributos width y height. 
-	 * 
-	 * @return JLabel con gif/imagen (grafico de la entidad)
-	 */
-	
-	public JLabel [] getGraficos(){
-		if(this.graficos == null){
-			this.graficos=new JLabel [1];
-			this.graficos[0] = new JLabel(imagen[0]);
-			this.graficos[0].setBounds(this.pos.x, this.pos.y, width, height);
-			
-		}
-		
-		return this.graficos;
+
+	public LinkedList<Grafico> getListaGraficos(){
+		return listaGraficos;
 	}
-	
-	/**
-	 * Cambia la imagen/gif del grafico por otra almacenada en el arreglo de Icon
-	 * 
-	 * @param dir posicion del arreglo para elegir la imagen/gif para cambiar
-	 */
-	
-	public void cambiarGrafico(int dir) {
-		if(this.graficos !=null) {
-			this.graficos[0].setIcon(this.imagen[dir]);
-			this.graficos[0].setBounds(this.pos.x,this.pos.y,width,height);
-			
-		}
+
+	public void actualizarGraficos(){
+		for(Grafico grafico : listaGraficos)
+			grafico.actualizarGrafico();
 	}
+
+
+
 	
 	public Inteligencia getInteligencia() {
 		return IA;

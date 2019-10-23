@@ -5,6 +5,7 @@ import java.util.Random;
 import Entidad.Aliado;
 import Entidad.Disparo;
 import Entidad.Entidad;
+import Graficos.Grafico;
 
 public class InteligenciaAliados extends Inteligencia {
 
@@ -17,7 +18,8 @@ public class InteligenciaAliados extends Inteligencia {
 
 
 	public void actualizarEntidad() {
-		
+
+		entidad.actualizarGraficos();
 		
 	}
 	

@@ -2,6 +2,7 @@ package Estados;
 
 import Entidad.Entidad;
 import Entidad.Personaje;
+import Graficos.Grafico;
 
 public class Quieto extends Estado{
     public Quieto(Personaje personaje) {
@@ -11,8 +12,11 @@ public class Quieto extends Estado{
 
     public void actuar(){
 
-        personaje.cambiarGrafico(3);
-        personaje.actualizarEtiquetaVida(0);
+        for( Grafico grafico : personaje.getListaGraficos()) {
+            grafico.actualizarGrafico();
+            grafico.cambiarGrafico(3);
+
+        }
 
         verificarEstado();
     }

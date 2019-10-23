@@ -1,7 +1,8 @@
 package Entidad;
 import java.awt.*;
+import java.util.LinkedList;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
@@ -12,6 +13,8 @@ import Entidad.PowerUp.ObjetoPrecioso;
 import Entidad.PowerUp.PowerUp;
 import Estados.Atacando;
 import Estados.Caminando;
+import Graficos.Grafico;
+import Graficos.Potenciado;
 import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaEnemigos;
 import Juego.Mapa;
@@ -22,7 +25,8 @@ public abstract class Enemigo extends Personaje{
 	
 	protected int puntos;
 	protected int oroPremio;
-	protected PowerUp [] premios;
+	protected LinkedList<PowerUp> powers;
+	protected JLabel etiquetaPotenciado;
 	
 	/**
 	 * Crea un personaje enemigo
@@ -38,14 +42,18 @@ public abstract class Enemigo extends Personaje{
 		this.velocidad=velocidad;
 		oroPremio=oro;
 		this.puntos=puntos;
-		imagen=new ImageIcon [3];
+
 		estado=new Caminando(this);
+
+		powers=new LinkedList<PowerUp>();
 
 		colisionador=new ColisionadorEnemigo(this);
 		colisionadorCombate=new ColCombateEnemigo(this);
 
-		premios=new PowerUp[2];
 	}
+
+
+
 	/**
 	 * Retorna una cantidad de oro segun enemigo
 	 */
@@ -89,20 +97,14 @@ public abstract class Enemigo extends Personaje{
 
 		Mapa.getMapa().eliminarEntidad(this);
 
+		powers.getFirst().getPos().setLocation(pos);
+		Mapa.getMapa().agregarEntidad(powers.getFirst());
 
 		Tienda.getTienda().aumentarOro(this.getOro());
 		Tienda.getTienda().aumentarPuntos(this.getPuntos());
 	}
 
-	public void agregarMagiaTemporal(MagiaTemporal magia){
-		if(premios[0]==null)
-			premios[0]=magia;
-	}
 
-	public void agregarObjetoPrecioso(ObjetoPrecioso objeto){
-		if(premios[1]==null)
-			premios[1]=objeto;
-	}
 
 	public Rectangle getRangoCombate() {
 		Rectangle hitBox=this.getHitBox();
@@ -110,6 +112,16 @@ public abstract class Enemigo extends Personaje{
 		hitBox.setLocation(hitBox.x-rango,hitBox.y);
 
 		return hitBox;
+	}
+
+
+
+
+	public void agregarPowerUp(PowerUp power){
+		powers.add(power);
+		power.afectarPortador(this);
+		Grafico etiquetaPotenciado=new Potenciado(this,0,20);
+		listaGraficos.add(etiquetaPotenciado);
 	}
 
 }

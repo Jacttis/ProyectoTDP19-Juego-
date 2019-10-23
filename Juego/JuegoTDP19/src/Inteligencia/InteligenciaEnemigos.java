@@ -1,6 +1,7 @@
 package Inteligencia;
 
 import Entidad.*;
+import Graficos.Grafico;
 
 
 public class InteligenciaEnemigos extends Inteligencia {
@@ -14,6 +15,7 @@ public class InteligenciaEnemigos extends Inteligencia {
 
 		entidad.getPos().setLocation(entidad.getPos().x-entidad.getVelocidad(), entidad.getPos().y);
 
+		entidad.actualizarGraficos();
 
 		
 	}

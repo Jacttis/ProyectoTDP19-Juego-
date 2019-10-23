@@ -16,7 +16,7 @@ public class FabricaDisparoGolpeEnemigo extends FabricaDisparo {
     }
 
     public void generarDisparo() {
-        GolpeEnemigo golpeNuevo=new GolpeEnemigo(disparador.getPos(),20,disparador.getWidth(),disparador.getHeight()/2,disparador);
+        GolpeEnemigo golpeNuevo=new GolpeEnemigo(disparador.getPos(),disparador.getDamage(),disparador.getWidth(),disparador.getHeight()/2,disparador);
         Mapa.getMapa().agregarEntidad(golpeNuevo);
         hiloPuedeAtacar=new HiloPrueba(disparador);
         hiloPuedeAtacar.start();

@@ -1,6 +1,7 @@
 package Inteligencia;
 
 import Entidad.Entidad;
+import Graficos.Grafico;
 
 public class InteligenciaPowerUp extends Inteligencia {
 
@@ -9,6 +10,7 @@ public class InteligenciaPowerUp extends Inteligencia {
     }
 
     public void actualizarEntidad() {
-
+        entidad.getPos().setLocation(entidad.getPos().x-entidad.getVelocidad(),entidad.getPos().y);
+        entidad.actualizarGraficos();
     }
 }

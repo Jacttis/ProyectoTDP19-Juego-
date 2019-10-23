@@ -2,6 +2,9 @@ package Entidad;
 
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
 import FabricaDisparos.FabricaDisparoReaperMan;
+import Graficos.BarraDeVida;
+import Graficos.Grafico;
+import Graficos.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,42 +19,16 @@ public class ReaperMan extends Enemigo {
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/walkingReaperMan2.gif");
         imagen[1] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/slashingReaperMan3.gif");
         imagen[2] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
+        imagen[3] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
+
+        Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+        Grafico barraVida=new BarraDeVida(this,30,-15);
+        listaGraficos.add(barraVida);
+        listaGraficos.add(sprites);
 
     }
 
-    /**
-     * Redefinicion de getEtiquetaVida mas general
-     *
-     * @return JLabel etiquetaVida
-     */
-    public void iniciarEtiquetaVida(){
-        if(this.etiquetaVida==null){
-            this.etiquetaVida=new JLabel();
-            this.etiquetaVida.setBounds(pos.x,pos.y+this.height,80,5);
-            this.etiquetaVida.setOpaque(true);
-            this.etiquetaVida.setBackground(Color.GREEN);
-            this.graficos[1]=etiquetaVida;
-        }
-    }
 
-    /**
-     * Redefinicion de actualizarEtiquetaVida mas general.
-     *
-     * @param n
-     */
-
-    public void actualizarEtiquetaVida(int n){
-
-        if(etiquetaVida!=null) {
-            etiquetaVida.setBounds(pos.x+(this.width-110), pos.y+(this.height-10) , (etiquetaVida.getWidth()-((n*80)/vidaTotal)), etiquetaVida.getHeight());
-
-            if (vidaActual < 70) {
-                if (vidaActual < 40)
-                    etiquetaVida.setBackground(Color.RED);
-                else etiquetaVida.setBackground(Color.YELLOW);
-            }
-        }
-    }
 
     public Entidad clone(){
         return new ReaperMan(vidaTotal,damage,velocidadAtaque,rango,velocidad,puntos,oroPremio);

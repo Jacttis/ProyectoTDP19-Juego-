@@ -1,7 +1,10 @@
 package Entidad.PowerUp;
 
+import Colisionadores.Colisionador;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
+import Graficos.Grafico;
+import Graficos.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,10 +19,17 @@ public class BoostDamage extends MagiaTemporal {
 
         imagen[0]=new ImageIcon("Sprites/Golems/Golem_2/PNG/Vector Parts/Sword.png");
 
+        Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+        listaGraficos.add(sprites);
+
     }
 
-    public void serDetectado(ColisionadorCombate colisionadorCombate) {
+    public void afectarPotador(Enemigo portador){
+        portador.setDamage(portador.getDamage()+damageAumento);
+    }
 
+    public void serChocado(Colisionador colisionador) {
+        colisionador.afectarPowerUp(this);
     }
 
     public void afectarPersonaje(Personaje personaje){
@@ -32,6 +42,7 @@ public class BoostDamage extends MagiaTemporal {
     public void desafectarPersonaje(Personaje personaje){
         personaje.setDamage(personaje.getDamage()-damageAumento);
     }
+
 
 
     public Entidad clone() {

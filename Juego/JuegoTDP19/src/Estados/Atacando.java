@@ -2,6 +2,7 @@ package Estados;
 
 import Entidad.Entidad;
 import Entidad.Personaje;
+import Graficos.Grafico;
 
 public class Atacando extends Estado {
 
@@ -12,7 +13,11 @@ public class Atacando extends Estado {
 
     public void actuar() {
 
-        personaje.cambiarGrafico(1);
+        for( Grafico grafico : personaje.getListaGraficos()) {
+            grafico.cambiarGrafico(1);
+        }
+
+        personaje.actualizarGraficos();
 
         personaje.atacar();
 

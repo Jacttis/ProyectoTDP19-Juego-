@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import Entidad.*;
 import GUI.GUI;
+import Graficos.Grafico;
 import Niveles.Nivel;
 import Niveles.NivelUno;
 import Tienda.Tienda;
@@ -126,10 +127,10 @@ public class Mapa {
 
 	public void agregarEntidadGrafica(Entidad entidad){
 
-		JLabel [] graficos = entidad.getGraficos();
+		LinkedList<Grafico> listaGraficos=entidad.getListaGraficos();
 
-		for(int i=0 ; i<graficos.length ; i++)
-			gui.add(graficos[i]);
+		for(Grafico grafico : listaGraficos)
+			gui.add(grafico.getGrafico());
 
 		gui.repaint();
 	}
@@ -137,10 +138,10 @@ public class Mapa {
 
 	public void eliminarEntidadGrafica(Entidad entidad){
 
-		JLabel [] graficos = entidad.getGraficos();
+		LinkedList<Grafico> listaGraficos=entidad.getListaGraficos();
 
-		for(int i=0 ; i<graficos.length ; i++)
-			gui.remove(graficos[i]);
+		for(Grafico grafico : listaGraficos)
+			gui.remove(grafico.getGrafico());
 
 		gui.repaint();
 	}

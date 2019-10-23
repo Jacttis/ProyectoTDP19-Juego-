@@ -4,6 +4,8 @@ package Entidad;
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorEnemigo;
 import Colisionadores.ColisionadorGolpeEnemigo;
+import Graficos.Grafico;
+import Graficos.SpriteEntidad;
 import Inteligencia.InteligenciaDisparoAliado;
 import Inteligencia.InteligenciaGolpeEnemigo;
 
@@ -20,6 +22,9 @@ public class GolpeEnemigo extends Disparo {
         this.height=height;
 
         imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/DisparoMagoHieloTR.gif");
+
+        Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+        listaGraficos.add(sprites);
 
 
     }

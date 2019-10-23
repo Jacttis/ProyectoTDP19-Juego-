@@ -4,6 +4,8 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
+import Graficos.Grafico;
+import Graficos.SpriteEntidad;
 import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoMagoHielo extends Disparo {
@@ -19,6 +21,9 @@ public class DisparoMagoHielo extends Disparo {
 		height=45;
 		
 		imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/DisparoMagoHieloTRUE.gif");
+
+		Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+		listaGraficos.add(sprites);
 	
 		
 	}
