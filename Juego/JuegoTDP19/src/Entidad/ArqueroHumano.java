@@ -5,8 +5,6 @@ import java.awt.*;
 import javax.swing.*;
 
 import Constantes.Constantes;
-import Estados.Atacando;
-import FabricaDisparos.FabricaDisparo;
 import FabricaDisparos.FabricaDisparoArquero;
 import Graficos.BarraDeVida;
 import Graficos.Grafico;
@@ -22,10 +20,10 @@ public class ArqueroHumano extends Aliado {
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
 
-		imagen[0] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/atacandoTRUE.gif");
-		imagen[1] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
-		imagen[2] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/aaaH.gif");
-		imagen[3] = new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/quietoTRUE.gif");
+		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
+		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/atacandoTRUE.gif");
+		imagen[2] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/muerteTRUE.gif");
+		imagen[3] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
 
 		Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 		Grafico barraVida=new BarraDeVida(this,5,0);

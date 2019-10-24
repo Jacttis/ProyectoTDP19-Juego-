@@ -20,7 +20,7 @@ class GuiTienda {
     private JButton btnArqueroHumano;
     private JButton btnMagoHielo;
     private JButton btnCaballeroEscudo;
-    private JButton btnNewButton4;
+    private JButton btnArqueroPRO;
     private JButton btnNewButton5;
 
     private JButton btnobjeto1;
@@ -72,8 +72,7 @@ class GuiTienda {
 
 
         btnArqueroHumano = new JButton();
-        btnArqueroHumano.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroHumanoChico.jpeg"));
-        btnArqueroHumano.setBackground(Color.GRAY);
+        btnArqueroHumano.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroHumanoChico3.jpeg"));
         btnArqueroHumano.setToolTipText("Tira flechas");
         btnArqueroHumano.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         btnArqueroHumano.addActionListener(new ActionListener() {
@@ -115,9 +114,18 @@ class GuiTienda {
         });
         panel.add(btnCaballeroEscudo);
 
-        btnNewButton4 = new JButton();
-        btnNewButton4.setBounds(450,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnNewButton4);
+        btnArqueroPRO = new JButton();
+        btnArqueroPRO.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png"));
+        btnArqueroPRO.setBounds(450,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        btnArqueroPRO.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                aliadoAAgregar=new ArqueroPRO(100,10,750,1300,"Dispara flechas");
+                esperandoClick=true;
+                deshabilitarBotones();
+            }
+        });
+        panel.add(btnArqueroPRO);
 
         btnNewButton5 = new JButton();
         btnNewButton5.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
