@@ -2,6 +2,7 @@ package FabricaEnemigo;
 
 import Entidad.Enemigo;
 import Entidad.EnemigoGolemTierra;
+import Entidad.PowerUp.BoostDamage;
 
 public class FabricaEnemigoGolemTierra extends FabricaEnemigo {
 
@@ -22,11 +23,14 @@ public class FabricaEnemigoGolemTierra extends FabricaEnemigo {
 
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemTierra(175,30,1500,0,2,100,1);
+        return new EnemigoGolemTierra(275,30,1500,0,2,100,1);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        return new EnemigoGolemTierra(175,40,1500,0,2,100,1);
+        Enemigo enemigo = new EnemigoGolemTierra(275,40,1500,0,2,100,1);
+        enemigo.agregarPowerUp(new BoostDamage(enemigo.getPos(),1,3000,30));
+
+        return enemigo;
     }
 }

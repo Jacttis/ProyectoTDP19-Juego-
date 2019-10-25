@@ -16,8 +16,8 @@ public class ArqueroPRO extends Aliado {
     public ArqueroPRO(int vida,int damage, float velocidadAtaque,int rango,String Descripcion){
         super(vida, damage, velocidadAtaque, rango, Descripcion);
 
-        width=Constantes.ALIADOX+90;
-        height=Constantes.ALIADOY+30;
+        width=Constantes.ALIADOX;
+        height=Constantes.ALIADOY+20;
 
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
         imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/atacandoTRUE.gif");
@@ -25,11 +25,11 @@ public class ArqueroPRO extends Aliado {
         imagen[3] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        Grafico barraVida=new BarraDeVida(this,5,0);
+        Grafico barraVida=new BarraDeVida(this,5,10);
         listaGraficos.add(barraVida);
         listaGraficos.add(sprites);
 
-            fabricaDisparo= new FabricaDisparoArqueroPRO(this);
+        fabricaDisparo= new FabricaDisparoArqueroPRO(this);
     }
 
 

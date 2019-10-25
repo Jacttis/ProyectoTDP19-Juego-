@@ -3,6 +3,8 @@ package Estados;
 import Entidad.*;
 import Graficos.Grafico;
 
+import java.awt.*;
+
 public class Muerto extends Estado {
 
     protected boolean actuo;
@@ -17,7 +19,9 @@ public class Muerto extends Estado {
         for( Grafico grafico : personaje.getListaGraficos()) {
             grafico.cambiarGrafico(2);
         }
+
         personaje.setEstado(new EstadoNulo(personaje));
+
         hiloMuerte.start();
 
 

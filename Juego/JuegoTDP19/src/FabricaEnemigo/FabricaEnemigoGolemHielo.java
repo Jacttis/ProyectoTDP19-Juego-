@@ -23,13 +23,13 @@ public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
     }
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemHielo(100,15,1000,0,2,100,1);
+        return new EnemigoGolemHielo(200,15,1000,0,2,100,1);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        EnemigoGolemHielo enemigo = new EnemigoGolemHielo(100,15,1000,0,2,100,1);
-        enemigo.agregarPowerUp(new BoostDamage(enemigo.getPos(),1,3000,30));
+        EnemigoGolemHielo enemigo = new EnemigoGolemHielo(200,15,1000,0,2,100,1);
+        enemigo.agregarPowerUp(new BoostDamage(enemigo.getPos(),1,3000,20));
         return enemigo;
     }
 }

@@ -7,6 +7,7 @@ import Entidad.*;
 import GUI.GUI;
 import Graficos.Grafico;
 import Niveles.Nivel;
+import Niveles.NivelDos;
 import Niveles.NivelUno;
 import Tienda.Tienda;
 

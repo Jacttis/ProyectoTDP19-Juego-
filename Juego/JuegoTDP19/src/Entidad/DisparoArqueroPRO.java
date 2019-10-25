@@ -4,6 +4,7 @@ import java.awt.*;
 
 import javax.swing.ImageIcon;
 
+import Colisionadores.ColisionadorDisparoArqueroPro;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;
 import Inteligencia.InteligenciaDisparoAliado;
@@ -17,10 +18,14 @@ public class DisparoArqueroPRO extends Disparo {
         width=100;
         height=38;
 
+        imagen=new ImageIcon [2];
         imagen[0]=new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
+        imagen[1]=new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         listaGraficos.add(sprites);
+
+        colisionador=new ColisionadorDisparoArqueroPro(this);
 
 
     }

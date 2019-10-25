@@ -107,7 +107,7 @@ class GuiTienda {
         btnCaballeroEscudo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new CaballeroEscudo(100,0,0,0,"Aguanta Mucho pero no pega");
+                aliadoAAgregar=new CaballeroEscudo(250,8,1250,0,"Aguanta Mucho pero no pega");
                 esperandoClick=true;
                 deshabilitarBotones();
             }
@@ -120,7 +120,7 @@ class GuiTienda {
         btnArqueroPRO.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroPRO(100,10,750,1300,"Dispara flechas");
+                aliadoAAgregar=new ArqueroPRO(100,10,1250,1300,"Dispara flechas");
                 esperandoClick=true;
                 deshabilitarBotones();
             }

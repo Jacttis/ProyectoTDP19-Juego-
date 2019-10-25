@@ -24,7 +24,7 @@ public class BoostDamage extends MagiaTemporal {
 
     }
 
-    public void afectarPotador(Enemigo portador){
+    public void afectarPortador(Enemigo portador){
         portador.setDamage(portador.getDamage()+damageAumento);
     }
 

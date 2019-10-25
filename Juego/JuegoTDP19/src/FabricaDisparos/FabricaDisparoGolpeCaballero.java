@@ -14,10 +14,9 @@ public class FabricaDisparoGolpeCaballero extends FabricaDisparo {
         super(disparador);
     }
 
-    @Override
     public void generarDisparo() {
 
-        Disparo nuevoDisparo= new GolpeCaballeroEscudo(new Point(disparador.getPos().x+30,disparador.getPos().y+50),23,disparador.getDamage(),disparador);
+        Disparo nuevoDisparo= new GolpeCaballeroEscudo(new Point(disparador.getPos().x,disparador.getPos().y),0,disparador.getDamage(),disparador);
 
         Mapa.getMapa().agregarEntidad(nuevoDisparo);
         hiloPuedeAtacar=new HiloPrueba(disparador);
