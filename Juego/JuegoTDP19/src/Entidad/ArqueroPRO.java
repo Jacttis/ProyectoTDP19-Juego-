@@ -26,8 +26,9 @@ public class ArqueroPRO extends Aliado {
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,5,10);
-        listaGraficos.add(barraVida);
-        listaGraficos.add(sprites);
+
+        componentesGraficas.agregarNuevoGrafico(sprites);
+        componentesGraficas.agregarNuevoGrafico(barraVida);
 
         fabricaDisparo= new FabricaDisparoArqueroPRO(this);
     }

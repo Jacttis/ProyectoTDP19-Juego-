@@ -16,9 +16,7 @@ public class Muerto extends Estado {
 
     public void actuar() {
 
-        for( Grafico grafico : personaje.getListaGraficos()) {
-            grafico.cambiarGrafico(2);
-        }
+        personaje.getComponentesGraficas().cambiarGrafico(2);
 
         personaje.setEstado(new EstadoNulo(personaje));
 

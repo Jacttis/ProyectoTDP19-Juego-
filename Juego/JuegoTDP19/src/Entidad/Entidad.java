@@ -10,6 +10,7 @@ import Estados.*;
 import javax.swing.*;
 
 import Graficos.Grafico;
+import Graficos.Graficos;
 import Inteligencia.Inteligencia;
 import Juego.Mapa;
 
@@ -17,10 +18,10 @@ import Juego.Mapa;
 public abstract class Entidad {
 
 	protected Point pos;
-	protected int width=140,height=159;
+	protected int width=140,height=160,widthGrafico=300,heightGrafico=300;
 	protected Inteligencia IA;
 	protected Icon imagen[];
-	protected JLabel [] graficos;
+	protected Graficos componentesGraficas;
 	protected double velocidad;
 	protected int damage;
 	protected Colisionador colisionador;
@@ -35,6 +36,8 @@ public abstract class Entidad {
 		this.pos=pos;
 		this.damage=damage;
 
+		componentesGraficas = new Graficos();
+
 		colisionadorCombate=new ColCombateNulo();
 
 		imagen=new ImageIcon[1];
@@ -42,13 +45,12 @@ public abstract class Entidad {
 	
 	}
 
-	public LinkedList<Grafico> getListaGraficos(){
-		return listaGraficos;
+	public Graficos getComponentesGraficas(){
+		return componentesGraficas;
 	}
 
 	public void actualizarGraficos(){
-		for(Grafico grafico : listaGraficos)
-			grafico.actualizarGrafico();
+		componentesGraficas.actualizarGraficos();
 	}
 
 

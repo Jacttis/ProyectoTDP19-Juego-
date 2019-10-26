@@ -23,7 +23,7 @@ public class DisparoArqueroPRO extends Disparo {
         imagen[1]=new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        listaGraficos.add(sprites);
+        componentesGraficas.agregarNuevoGrafico(sprites);
 
         colisionador=new ColisionadorDisparoArqueroPro(this);
 

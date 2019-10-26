@@ -7,12 +7,10 @@ import javax.swing.*;
 public abstract class Grafico {
 
     protected JLabel grafico;
-    protected int modificadorX,modificadorY;
+    protected int modificadorX=0,modificadorY=0;
 
     public Grafico(){
         grafico=new JLabel();
-        modificadorX=0;
-        modificadorY=0;
     }
 
 

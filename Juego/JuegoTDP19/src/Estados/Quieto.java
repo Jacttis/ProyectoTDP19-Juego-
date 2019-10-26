@@ -12,11 +12,8 @@ public class Quieto extends Estado{
 
     public void actuar(){
 
-        for( Grafico grafico : personaje.getListaGraficos()) {
-            grafico.actualizarGrafico();
-            grafico.cambiarGrafico(3);
-
-        }
+        personaje.getComponentesGraficas().cambiarGrafico(3);
+        personaje.getComponentesGraficas().actualizarGraficos();
 
         verificarEstado();
     }

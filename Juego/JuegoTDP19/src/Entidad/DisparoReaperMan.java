@@ -22,7 +22,7 @@ public class DisparoReaperMan extends Disparo {
         imagen[0]=new ImageIcon("Sprites/CharacterSprites/ReaperMan/DReaper.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        listaGraficos.add(sprites);
+        componentesGraficas.agregarNuevoGrafico(sprites);
 
         colisionador=new ColisionadorDisparoEnemigo(this);
 

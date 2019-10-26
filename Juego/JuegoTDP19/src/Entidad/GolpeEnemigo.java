@@ -24,8 +24,7 @@ public class GolpeEnemigo extends Disparo {
         imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/DisparoMagoHieloTR.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        listaGraficos.add(sprites);
-
+        componentesGraficas.agregarNuevoGrafico(sprites);
 
     }
 

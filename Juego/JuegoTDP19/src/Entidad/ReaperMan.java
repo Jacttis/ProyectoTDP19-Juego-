@@ -23,8 +23,8 @@ public class ReaperMan extends Enemigo {
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,30,-15);
-        listaGraficos.add(barraVida);
-        listaGraficos.add(sprites);
+        componentesGraficas.agregarNuevoGrafico(sprites);
+        componentesGraficas.agregarNuevoGrafico(barraVida);
 
     }
 

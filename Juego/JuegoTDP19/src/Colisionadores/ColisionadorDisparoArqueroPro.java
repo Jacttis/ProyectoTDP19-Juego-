@@ -26,9 +26,7 @@ public class ColisionadorDisparoArqueroPro extends ColisionadorDisparo {
             if(chocada.estaMuerto()){
                 disparo.getDisparador().getEstado().cambiarAQuieto();
             }
-            for(Grafico grafico : disparo.getListaGraficos() ){
-                grafico.cambiarGrafico(1);
-            }
+            disparo.getComponentesGraficas().cambiarGrafico(1);
             primerChocado=chocada;
         }
 

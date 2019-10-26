@@ -129,7 +129,7 @@ public class Mapa {
 
 	public void agregarEntidadGrafica(Entidad entidad){
 
-		LinkedList<Grafico> listaGraficos=entidad.getListaGraficos();
+		LinkedList<Grafico> listaGraficos=entidad.getComponentesGraficas().getListaGraficos();
 
 		for(Grafico grafico : listaGraficos)
 			gui.add(grafico.getGrafico());
@@ -140,7 +140,7 @@ public class Mapa {
 
 	public void eliminarEntidadGrafica(Entidad entidad){
 
-		LinkedList<Grafico> listaGraficos=entidad.getListaGraficos();
+		LinkedList<Grafico> listaGraficos=entidad.getComponentesGraficas().getListaGraficos();
 
 		for(Grafico grafico : listaGraficos)
 			gui.remove(grafico.getGrafico());

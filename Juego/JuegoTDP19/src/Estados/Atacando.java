@@ -13,9 +13,7 @@ public class Atacando extends Estado {
 
     public void actuar() {
 
-        for( Grafico grafico : personaje.getListaGraficos()) {
-            grafico.cambiarGrafico(1);
-        }
+        personaje.getComponentesGraficas().cambiarGrafico(1);
 
         personaje.actualizarGraficos();
 
