@@ -1,8 +1,7 @@
 package FabricaDisparos;
 
-import Entidad.Disparo;
-import Entidad.DisparoArqueroHumano;
-import Entidad.DisparoMagoHielo;
+import Entidad.Disparos.Disparo;
+import Entidad.Disparos.DisparoMagoHielo;
 import Entidad.Personaje;
 import Juego.Mapa;
 

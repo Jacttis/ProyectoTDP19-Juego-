@@ -1,11 +1,6 @@
 package Inteligencia;
 
-import java.util.Random;
-
-import Entidad.Aliado;
-import Entidad.Disparo;
-import Entidad.Entidad;
-import Graficos.Grafico;
+import Entidad.Aliados.Aliado;
 
 public class InteligenciaAliados extends Inteligencia {
 

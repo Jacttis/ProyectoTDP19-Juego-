@@ -1,7 +1,7 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
-import Entidad.EnemigoGolemFuego;
+import Entidad.Enemigos.Enemigo;
+import Entidad.Enemigos.EnemigoGolemFuego;
 import Entidad.PowerUp.BoostDamage;
 
 

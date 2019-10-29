@@ -1,7 +1,7 @@
 package Tienda;
 
 import Constantes.Constantes;
-import Entidad.Aliado;
+import Entidad.Aliados.Aliado;
 import Juego.Mapa;
 
 import java.awt.*;
@@ -49,7 +49,6 @@ public class PosicionadorDeAliado {
 
 
         if(!celda.ocupada){
-            celda.ocupar();
             aliadoAAgregar.posicionar(celda);
             Mapa.getMapa().agregarEntidad(aliadoAAgregar);
 

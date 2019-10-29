@@ -4,6 +4,7 @@ import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorPowerUp;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
+import Entidad.Enemigos.Enemigo;
 import Inteligencia.InteligenciaPowerUp;
 
 import javax.swing.*;

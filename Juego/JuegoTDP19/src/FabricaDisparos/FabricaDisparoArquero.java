@@ -1,7 +1,7 @@
 package FabricaDisparos;
 
-import Entidad.Disparo;
-import Entidad.DisparoArqueroHumano;
+import Entidad.Disparos.Disparo;
+import Entidad.Disparos.DisparoArqueroHumano;
 import Entidad.Personaje;
 import Juego.Mapa;
 

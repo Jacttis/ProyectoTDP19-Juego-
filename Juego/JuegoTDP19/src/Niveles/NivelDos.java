@@ -1,11 +1,9 @@
 package Niveles;
 
 import Constantes.Constantes;
-import Entidad.Enemigo;
-import FabricaDisparos.FabricaDisparoReaperMan;
+import Entidad.Enemigos.Enemigo;
 import FabricaEnemigo.FabricaEnemigoFallenAngel;
 import FabricaEnemigo.FabricaEnemigoGolemFuego;
-import FabricaEnemigo.FabricaEnemigoGolemHielo;
 import FabricaEnemigo.FabricaEnemigoGolemTierra;
 
 import java.awt.*;

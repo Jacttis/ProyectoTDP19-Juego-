@@ -1,8 +1,10 @@
 package Colisionadores;
 
-import Entidad.*;
+import Entidad.Aliados.Aliado;
+import Entidad.Disparos.Disparo;
+import Entidad.Disparos.GolpeEnemigo;
+import Entidad.Enemigos.Enemigo;
 import Entidad.PowerUp.PowerUp;
-import Estados.Atacando;
 
 public class ColisionadorEnemigo implements Colisionador {
 

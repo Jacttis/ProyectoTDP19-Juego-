@@ -64,6 +64,14 @@ public abstract class Entidad {
 	 * Setter y getter de width y height
 	 */
 
+	public int getWidthGrafico(){
+		return widthGrafico;
+	}
+
+	public int getHeightGrafico(){
+		return heightGrafico;
+	}
+
 	public int getWidth(){ return width; }
 
 	public int getHeight(){ return height; }

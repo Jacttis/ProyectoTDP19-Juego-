@@ -17,9 +17,13 @@ public class SpriteEntidad extends Grafico {
 
         this.portador=portador;
         this.imagenes=imagenes;
-        grafico=new JLabel(imagenes[0]);
+        this.grafico=new JLabel(imagenes[0]);
 
-        this.grafico.setBounds(portador.getPos().x + modificadorX, portador.getPos().y + modificadorY ,portador.getWidth(),portador.getHeight());
+
+
+        this.grafico.setBounds(portador.getPos().x + modificadorX, portador.getPos().y + modificadorY , portador.getWidth(), portador.getHeight() );
+
+        //this.grafico.setHorizontalAlignment(JLabel.CENTER);
 
     }
 

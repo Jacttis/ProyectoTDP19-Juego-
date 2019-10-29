@@ -1,11 +1,8 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
-import Entidad.EnemigoGolemHielo;
-import Entidad.EnemigoGolemTierra;
+import Entidad.Enemigos.Enemigo;
+import Entidad.Enemigos.EnemigoGolemHielo;
 import Entidad.PowerUp.BoostDamage;
-
-import java.awt.*;
 
 public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
 

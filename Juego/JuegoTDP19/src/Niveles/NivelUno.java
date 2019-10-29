@@ -4,9 +4,8 @@ import java.awt.Point;
 import java.util.Random;
 
 import Constantes.Constantes;
+import Entidad.Enemigos.Enemigo;
 import FabricaEnemigo.*;
-import Juego.Mapa;
-import Entidad.*;
 
 public class NivelUno extends Nivel {
 
@@ -27,6 +26,7 @@ public class NivelUno extends Nivel {
 	public void run(){
 
 		try {
+
 
 			Enemigo enemigo;
 

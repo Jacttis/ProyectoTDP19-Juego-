@@ -1,7 +1,7 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
-import Entidad.ReaperMan;
+import Entidad.Enemigos.Enemigo;
+import Entidad.Enemigos.ReaperMan;
 
 public class FabricaEnemigoReaperMan extends FabricaEnemigo {
 

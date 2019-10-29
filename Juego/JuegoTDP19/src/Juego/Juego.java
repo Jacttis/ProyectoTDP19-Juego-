@@ -1,7 +1,7 @@
 package Juego;
 
 import Entidad.*;
-import FabricaDisparos.FabricaDisparo;
+import Entidad.Aliados.Aliado;
 import FabricaEnemigo.FabricaEnemigoGolemHielo;
 import FabricaEnemigo.FabricaEnemigoGolemTierra;
 import GUI.GUI;

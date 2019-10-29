@@ -1,8 +1,8 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
+import Entidad.Enemigos.Enemigo;
 
-import Entidad.EnemigoFallenAngel;
+import Entidad.Enemigos.EnemigoFallenAngel;
 
 public class FabricaEnemigoFallenAngel extends FabricaEnemigo {
 

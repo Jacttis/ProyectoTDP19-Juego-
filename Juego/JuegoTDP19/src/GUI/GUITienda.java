@@ -2,7 +2,7 @@ package GUI;
 
 import Constantes.Constantes;
 import Entidad.*;
-import FabricaDisparos.FabricaDisparo;
+import Entidad.Aliados.*;
 import Juego.*;
 import Tienda.Tienda;
 
@@ -11,7 +11,6 @@ import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.*;
-import javax.swing.GroupLayout.Alignment;
 
 class GuiTienda {
 
@@ -21,7 +20,7 @@ class GuiTienda {
     private JButton btnMagoHielo;
     private JButton btnCaballeroEscudo;
     private JButton btnArqueroPRO;
-    private JButton btnNewButton5;
+    private JButton btnGoblinExplosivo;
 
     private JButton btnobjeto1;
     private JButton btnobjeto2;
@@ -77,7 +76,7 @@ class GuiTienda {
         btnArqueroHumano.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         btnArqueroHumano.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroHumano(100,10,750,1300,"Dispara flechas");
+                aliadoAAgregar=new ArqueroHumano(100,10,750,1300,0,"Dispara flechas");
                 esperandoClick=true;
                 deshabilitarBotones();
 
@@ -93,7 +92,7 @@ class GuiTienda {
         btnMagoHielo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new MagoHielo(100,23,1500,1000,"Tira Hielo");
+                aliadoAAgregar=new MagoHielo(100,23,1500,1000,0,"Tira Hielo");
                 esperandoClick=true;
                 deshabilitarBotones();
             }
@@ -107,7 +106,7 @@ class GuiTienda {
         btnCaballeroEscudo.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new CaballeroEscudo(250,8,1250,0,"Aguanta Mucho pero no pega");
+                aliadoAAgregar=new CaballeroEscudo(250,8,1250,0,0,"Aguanta Mucho pero no pega");
                 esperandoClick=true;
                 deshabilitarBotones();
             }
@@ -120,16 +119,27 @@ class GuiTienda {
         btnArqueroPRO.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroPRO(100,10,1250,1300,"Dispara flechas");
+                aliadoAAgregar=new ArqueroPRO(100,10,1250,1300,0,"Dispara flechas");
                 esperandoClick=true;
                 deshabilitarBotones();
             }
         });
         panel.add(btnArqueroPRO);
 
-        btnNewButton5 = new JButton();
-        btnNewButton5.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnNewButton5);
+
+        btnGoblinExplosivo = new JButton();
+        btnGoblinExplosivo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png"));
+        btnGoblinExplosivo.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        btnGoblinExplosivo.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                aliadoAAgregar=new GoblinExplosivo(200,75,10000,0,4,"Explota al impactar con un enemigo");
+                esperandoClick=true;
+                deshabilitarBotones();
+            }
+        });
+        panel.add(btnGoblinExplosivo);
+
 
         btnobjeto1 = new JButton();
         btnobjeto1.setBounds(Constantes.BOTON1_PX,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);

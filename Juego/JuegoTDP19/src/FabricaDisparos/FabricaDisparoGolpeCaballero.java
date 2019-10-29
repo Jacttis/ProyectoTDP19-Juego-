@@ -1,8 +1,8 @@
 package FabricaDisparos;
 
-import Entidad.Disparo;
+import Entidad.Disparos.Disparo;
 
-import Entidad.GolpeCaballeroEscudo;
+import Entidad.Disparos.GolpeCaballeroEscudo;
 import Entidad.Personaje;
 import Juego.Mapa;
 

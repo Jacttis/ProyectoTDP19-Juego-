@@ -1,7 +1,7 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
-import Entidad.EnemigoGolemTierra;
+import Entidad.Enemigos.Enemigo;
+import Entidad.Enemigos.EnemigoGolemTierra;
 import Entidad.PowerUp.BoostDamage;
 
 public class FabricaEnemigoGolemTierra extends FabricaEnemigo {

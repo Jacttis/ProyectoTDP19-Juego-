@@ -1,8 +1,7 @@
 package Colisionadores;
 
-import Entidad.Disparo;
-import Entidad.Enemigo;
-import Graficos.Grafico;
+import Entidad.Disparos.Disparo;
+import Entidad.Enemigos.Enemigo;
 
 public class ColisionadorDisparoArqueroPro extends ColisionadorDisparo {
 

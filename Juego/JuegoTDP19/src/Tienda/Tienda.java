@@ -3,7 +3,7 @@ package Tienda;
 import java.awt.*;
 import java.util.LinkedList;
 
-import Entidad.Aliado;
+import Entidad.Aliados.Aliado;
 
 public class Tienda {
 

@@ -1,9 +1,9 @@
 package FabricaDisparos;
 
-import Entidad.Disparo;
-import Entidad.DisparoMagoHielo;
-import Entidad.DisparoReaperMan;
-import Entidad.Personaje;
+import Entidad.*;
+
+import Entidad.Disparos.DisparoReaperMan;
+import Entidad.Disparos.Disparo;
 import Juego.Mapa;
 
 import java.awt.*;

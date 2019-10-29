@@ -1,7 +1,6 @@
 package FabricaDisparos;
 
-import Entidad.Enemigo;
-import Entidad.GolpeEnemigo;
+import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Personaje;
 import Juego.Mapa;
 

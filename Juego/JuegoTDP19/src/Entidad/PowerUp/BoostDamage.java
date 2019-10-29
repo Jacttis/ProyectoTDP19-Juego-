@@ -1,8 +1,8 @@
 package Entidad.PowerUp;
 
 import Colisionadores.Colisionador;
-import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
+import Entidad.Enemigos.Enemigo;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;
 

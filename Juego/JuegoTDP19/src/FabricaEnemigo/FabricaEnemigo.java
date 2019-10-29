@@ -1,6 +1,6 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
+import Entidad.Enemigos.Enemigo;
 
 public abstract class FabricaEnemigo {
 

@@ -1,10 +1,9 @@
 package ColisionadoresCombate;
 
-import Colisionadores.ColisionadorGolpeEnemigo;
-import Entidad.Aliado;
-import Entidad.Disparo;
-import Entidad.Enemigo;
-import Entidad.GolpeEnemigo;
+import Entidad.Aliados.Aliado;
+import Entidad.Disparos.Disparo;
+import Entidad.Enemigos.Enemigo;
+import Entidad.Disparos.GolpeEnemigo;
 
 import java.util.LinkedList;
 

@@ -1,7 +1,7 @@
 package Niveles;
 
 import Constantes.Constantes;
-import Entidad.Enemigo;
+import Entidad.Enemigos.Enemigo;
 import FabricaEnemigo.*;
 import Juego.Mapa;
 

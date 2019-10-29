@@ -4,14 +4,12 @@ import java.awt.*;
 import java.util.LinkedList;
 
 import Entidad.*;
+import Entidad.Enemigos.Enemigo;
 import GUI.GUI;
 import Graficos.Grafico;
 import Niveles.Nivel;
-import Niveles.NivelDos;
 import Niveles.NivelUno;
 import Tienda.Tienda;
-
-import javax.swing.*;
 
 public class Mapa {
 
@@ -77,27 +75,32 @@ public class Mapa {
 
 		LinkedList<Entidad> entidadesAEliminarTemporal = new LinkedList<Entidad>();
 
-		for(Entidad e : entidadesAEliminar)
-			entidadesAEliminarTemporal.add(e);
+		if(!entidadesAEliminar.isEmpty()) {
+			for (Entidad e : entidadesAEliminar)
+				entidadesAEliminarTemporal.add(e);
 
-		for(Entidad eAEliminar : entidadesAEliminarTemporal){
-			entidades.remove(eAEliminar);
-			eliminarEntidadGrafica(eAEliminar);
-			//System.out.println("Entidades : "+entidades.size());
+			for (Entidad eAEliminar : entidadesAEliminarTemporal) {
+				entidades.remove(eAEliminar);
+				eliminarEntidadGrafica(eAEliminar);
+				//System.out.println("Entidades : "+entidades.size());
+			}
+
+			verificarNivel();
 		}
 
 		LinkedList<Entidad> entidadesAAgregarTemporal= new LinkedList<Entidad>();
+		if(!entidadesAAgregar.isEmpty()) {
+			for (Entidad e : entidadesAAgregar)
+				entidadesAAgregarTemporal.add(e);
 
-		for(Entidad e : entidadesAAgregar)
-			entidadesAAgregarTemporal.add(e);
 
+			for (Entidad eAAgregar : entidadesAAgregarTemporal) {
+				entidades.add(eAAgregar);
+				agregarEntidadGrafica(eAAgregar);
+				//System.out.println("Entidades : "+entidades.size());
+			}
 
-		for(Entidad eAAgregar : entidadesAAgregarTemporal) {
-			entidades.add(eAAgregar);
-			agregarEntidadGrafica(eAAgregar);
-			//System.out.println("Entidades : "+entidades.size());
 		}
-
 
 		entidadesAAgregar.removeAll(entidadesAAgregarTemporal);
 		entidadesAEliminar.removeAll(entidadesAEliminarTemporal);
@@ -105,7 +108,6 @@ public class Mapa {
 
 		colisionar();
 
-		verificarNivel();
 
 	}
 	

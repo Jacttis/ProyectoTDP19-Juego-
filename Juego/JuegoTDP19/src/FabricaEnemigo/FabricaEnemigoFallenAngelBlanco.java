@@ -1,7 +1,7 @@
 package FabricaEnemigo;
 
-import Entidad.Enemigo;
-import Entidad.EnemigoFallenAngelBlanco;
+import Entidad.Enemigos.Enemigo;
+import Entidad.Enemigos.EnemigoFallenAngelBlanco;
 import Entidad.PowerUp.BoostDamage;
 
 public class FabricaEnemigoFallenAngelBlanco extends FabricaEnemigo {
