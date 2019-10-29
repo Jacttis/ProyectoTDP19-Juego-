@@ -70,20 +70,6 @@ public class Juego {
 	}
 
 
-	/**
-	 * Este llamado se produce desde GUI TIENDA y envia a
-	 * tienda la posicion y el aliado a agregar
-	 *
-	 * @param pos
-	 * @param aliadoAAgregar
-	 */
-
-	public void comprarAliado(Point pos, Aliado aliadoAAgregar){
-
-		Tienda.getTienda().comprarAliado(pos,aliadoAAgregar);
-
-	}
-
 	public void gameOver(){
 		gui.getTiempo().interrupt();
 	}

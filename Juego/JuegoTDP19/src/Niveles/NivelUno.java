@@ -47,7 +47,7 @@ public class NivelUno extends Nivel {
 			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 			agregarEnemigo(enemigo);
 
-			sleep(5000);
+			sleep(8000);
 
 
 
@@ -81,5 +81,10 @@ public class NivelUno extends Nivel {
 
 	}
 
+
+	public String getDireccionImagenFondoNivel(){
+		String direccion="Sprites/Mapa/Mapa2Disenio.jpg";
+		return direccion;
+	}
 
 }

@@ -18,7 +18,7 @@ public class FabricaDisparoArqueroPRO extends FabricaDisparo {
 
     public void generarDisparo() {
 
-        Disparo nuevoDisparo= new DisparoArqueroPRO(new Point(disparador.getPos().x+30,disparador.getPos().y+50),23,disparador.getDamage(),disparador);
+        Disparo nuevoDisparo= new DisparoArqueroPRO(new Point(disparador.getPos().x+30,disparador.getPos().y+80),23,disparador.getDamage(),disparador);
 
         Mapa.getMapa().agregarEntidad(nuevoDisparo);
         hiloPuedeAtacar=new HiloPrueba(disparador);

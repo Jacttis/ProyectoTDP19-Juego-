@@ -30,7 +30,10 @@ public class Mapa {
 	private Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
 		nivel=new NivelUno();
+
 		this.gui=gui;
+		gui.cambiarFondo(nivel.getDireccionImagenFondoNivel());
+
 		entidades=new LinkedList<Entidad>();
 		entidadesAAgregar=new LinkedList<Entidad>();
 		entidadesAEliminar=new LinkedList<Entidad>();
@@ -107,7 +110,6 @@ public class Mapa {
 
 
 		colisionar();
-
 
 	}
 	
@@ -221,6 +223,7 @@ public class Mapa {
 	public void cambiarNivel(Nivel nivelNuevo){
 		limpiarMapa();
 		this.nivel=nivel.getNivelSiguiente();
+		gui.cambiarFondo(nivel.getDireccionImagenFondoNivel());
 		generar();
 	}
 

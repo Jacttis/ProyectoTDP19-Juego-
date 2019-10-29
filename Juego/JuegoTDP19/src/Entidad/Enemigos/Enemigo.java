@@ -126,7 +126,7 @@ public abstract class Enemigo extends Personaje {
 		powers.add(power);
 		power.afectarPortador(this);
 		Grafico etiquetaPotenciado=new Potenciado(this,0,20);
-		listaGraficos.add(etiquetaPotenciado);
+		componentesGraficas.agregarNuevoGrafico(etiquetaPotenciado);
 	}
 
 }

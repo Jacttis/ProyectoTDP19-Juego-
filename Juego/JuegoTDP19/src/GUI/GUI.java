@@ -19,6 +19,7 @@ public class GUI extends JFrame implements MouseListener {
 	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
+	private JPanelConFondo fondo;
 	private Juego juego;
 	private HiloTiempo tiempo;
 	private JButton btnMusica;
@@ -49,7 +50,8 @@ public class GUI extends JFrame implements MouseListener {
 		setResizable(false);
 
 		
-		contentPane = new JPanelConFondo();
+		this.fondo = new JPanelConFondo();
+		contentPane=fondo;
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 
@@ -62,7 +64,6 @@ public class GUI extends JFrame implements MouseListener {
 
 		contentPane.add(puntaje);
 		setContentPane(contentPane);
-
 
 
 		juego=Juego.crearJuego(this);
@@ -85,6 +86,10 @@ public class GUI extends JFrame implements MouseListener {
 
 
 
+	}
+
+	public void cambiarFondo(String direccionImagen){
+		fondo.cambiarFondo(direccionImagen);
 	}
 
 	public void actualizaEtiquetas(){

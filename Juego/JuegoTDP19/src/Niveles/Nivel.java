@@ -73,6 +73,8 @@ public abstract class Nivel extends Thread {
 		return nivelSiguiente;
 	}
 
+	public abstract String getDireccionImagenFondoNivel();
+
 
 
 

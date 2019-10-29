@@ -1,8 +1,10 @@
 package GUI;
 
+import Colisionadores.Colisionador;
 import Constantes.Constantes;
 import Entidad.*;
 import Entidad.Aliados.*;
+import FabricaBotones.*;
 import Juego.*;
 import Tienda.Tienda;
 
@@ -66,79 +68,26 @@ class GuiTienda {
         panel.setLayout(null);
         panel.setBounds(Constantes.PANEL_TIENDA_PX, 0, Constantes.PANEL_TIENDA_X, Constantes.PANEL_TIENDA_Y);
 
+        BotonAliado botonArquero = new BotonArqueroHumano();
+        botonArquero.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonArquero);
 
+        BotonAliado botonMagoHielo = new BotonMagoHielo();
+        botonMagoHielo.setBounds(150,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonMagoHielo);
 
+        BotonAliado botonCaballeroEscudo = new BotonCaballeroEscudo();
+        botonCaballeroEscudo.setBounds(300,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonCaballeroEscudo);
 
+        BotonAliado botonArqueroPRO = new BotonArqueroPro();
+        botonArqueroPRO.setBounds(450,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonArqueroPRO);
 
-        btnArqueroHumano = new JButton();
-        btnArqueroHumano.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroHumanoChico3.jpeg"));
-        btnArqueroHumano.setToolTipText("Tira flechas");
-        btnArqueroHumano.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        btnArqueroHumano.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroHumano(100,10,750,1300,0,"Dispara flechas");
-                esperandoClick=true;
-                deshabilitarBotones();
+        BotonAliado botonGoblinExplosivo = new BotonGoblinExplosivo();
+        botonGoblinExplosivo.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonGoblinExplosivo);
 
-            }
-        });
-        panel.add(btnArqueroHumano);
-
-
-        btnMagoHielo = new JButton();
-        btnMagoHielo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/MagoHieloAchicado.png"));
-        btnMagoHielo.setToolTipText("Tira Hielo");
-        btnMagoHielo.setBounds(150,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        btnMagoHielo.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new MagoHielo(100,23,1500,1000,0,"Tira Hielo");
-                esperandoClick=true;
-                deshabilitarBotones();
-            }
-        });
-        panel.add(btnMagoHielo);
-
-        btnCaballeroEscudo = new JButton();
-        btnCaballeroEscudo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/CabAchicado2.png"));
-        btnCaballeroEscudo.setToolTipText("Aguanta pero no pega");
-        btnCaballeroEscudo.setBounds(300,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        btnCaballeroEscudo.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new CaballeroEscudo(250,8,1250,0,0,"Aguanta Mucho pero no pega");
-                esperandoClick=true;
-                deshabilitarBotones();
-            }
-        });
-        panel.add(btnCaballeroEscudo);
-
-        btnArqueroPRO = new JButton();
-        btnArqueroPRO.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png"));
-        btnArqueroPRO.setBounds(450,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        btnArqueroPRO.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new ArqueroPRO(100,10,1250,1300,0,"Dispara flechas");
-                esperandoClick=true;
-                deshabilitarBotones();
-            }
-        });
-        panel.add(btnArqueroPRO);
-
-
-        btnGoblinExplosivo = new JButton();
-        btnGoblinExplosivo.setIcon(new ImageIcon("Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png"));
-        btnGoblinExplosivo.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        btnGoblinExplosivo.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-                aliadoAAgregar=new GoblinExplosivo(200,75,10000,0,4,"Explota al impactar con un enemigo");
-                esperandoClick=true;
-                deshabilitarBotones();
-            }
-        });
-        panel.add(btnGoblinExplosivo);
 
 
         btnobjeto1 = new JButton();
@@ -213,16 +162,8 @@ class GuiTienda {
      */
 
     public void seClickeoEnMapa(Point pos){
-        if(esperandoClick){
 
-            juego.comprarAliado(pos,aliadoAAgregar);
-
-            esperandoClick=false;
-
-            habilitarBotones();
-
-        }
-
+        Tienda.getTienda().intentoCompra(pos);
     }
 
     /**

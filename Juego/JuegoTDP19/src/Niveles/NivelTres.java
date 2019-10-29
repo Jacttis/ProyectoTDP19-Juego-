@@ -9,11 +9,11 @@ import FabricaEnemigo.FabricaEnemigoGolemTierra;
 import java.awt.*;
 import java.util.Random;
 
-public class NivelDos extends Nivel {
+public class NivelTres extends Nivel {
 
-    public NivelDos() {
+    public NivelTres() {
         super();
-        nivelSiguiente=new NivelTres();
+        nivelSiguiente=new NivelNulo();
     }
 
     public void llenarListaEnemigosSpawn() {
@@ -72,8 +72,7 @@ public class NivelDos extends Nivel {
 
 
     public String getDireccionImagenFondoNivel(){
-        String direccion="Sprites/Mapa/Mapa2DisenioNIVEL2.jpg";
+        String direccion="Sprites/Mapa/Mapa2DisenioNIVEL3.jpg";
         return direccion;
     }
-
 }

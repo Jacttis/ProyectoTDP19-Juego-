@@ -11,6 +11,7 @@ public class Tienda {
 	private LinkedList<Aliado> aliados;
 	private int oro;
 	private int puntos;
+	private Aliado nextToAdd = null;
 
 	private PosicionadorDeAliado posicionadorDeAliados;
 	//private LinkedList<ObjetoPrecioso> objetos;
@@ -27,6 +28,18 @@ public class Tienda {
 			instance=new Tienda();
 		}
 		return instance;
+	}
+
+	public void intentoCompra(Point posicion){
+		if(nextToAdd!=null)
+			comprarAliado(posicion);
+	}
+
+	public void setNextToAdd(Aliado nextToAdd){
+		if(oro>= nextToAdd.getPrecio()) {
+			this.nextToAdd = nextToAdd;
+		}
+		else System.out.println("No tienes suficiente oro.");
 	}
 
 	//setters
@@ -49,13 +62,10 @@ public class Tienda {
 		return puntos;
 	}
 
-	public void comprarAliado(Point pos,Aliado aliadoAAgregar){
-
-		if(oro>=aliadoAAgregar.getPrecio()) {
-			posicionadorDeAliados.posicionarAliado(pos, aliadoAAgregar);
-			oro-=aliadoAAgregar.getPrecio();
+	public void comprarAliado(Point pos){
+		if(this.nextToAdd != null) {
+			posicionadorDeAliados.posicionarAliado(pos, this.nextToAdd);
 		}
-		else System.out.println("No tienes suficiente oro.");
 	}
 
 	public void eliminarAliadoDeGrilla(Aliado aliadoAEliminar){
@@ -63,6 +73,14 @@ public class Tienda {
 		posicionadorDeAliados.desposicionarAliado(aliadoAEliminar);
 	}
 
+
+	public void disminuirOro(int costo){
+		oro-=costo;
+	}
+
+	public void borrarNextToAdd(){
+		nextToAdd=null;
+	}
 
 
 

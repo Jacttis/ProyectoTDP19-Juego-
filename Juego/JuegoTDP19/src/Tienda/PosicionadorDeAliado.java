@@ -51,7 +51,8 @@ public class PosicionadorDeAliado {
         if(!celda.ocupada){
             aliadoAAgregar.posicionar(celda);
             Mapa.getMapa().agregarEntidad(aliadoAAgregar);
-
+            Tienda.getTienda().disminuirOro(aliadoAAgregar.getPrecio());
+            Tienda.getTienda().borrarNextToAdd();
         }
 
     }
