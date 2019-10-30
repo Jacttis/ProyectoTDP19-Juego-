@@ -5,6 +5,8 @@ import Colisionadores.ColisionadorDisparo;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
 import Estados.EstadoNulo;
+import Graficos.Damage;
+import Graficos.Grafico;
 
 import java.awt.Point;
 
@@ -32,6 +34,9 @@ public abstract class Disparo extends Entidad {
 	 */
 
 	public void afectarPersonaje(Personaje personajeAfectado){
+
+		Grafico damage = new Damage(this,pos.x,pos.y);
+		this.getComponentesGraficas().agregarNuevoGrafico(damage);
 		personajeAfectado.disminuirVida(this.damage);
 
 	}

@@ -28,6 +28,10 @@ public abstract class PowerUp extends Entidad {
 
     }
 
+    public void afectarPersonaje(Personaje personaje){
+
+    }
+
     public void serChocado(Colisionador colisionador) {
         colisionador.afectarPowerUp(this);
     }

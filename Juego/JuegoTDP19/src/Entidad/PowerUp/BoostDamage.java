@@ -4,10 +4,13 @@ import Colisionadores.Colisionador;
 import Entidad.*;
 import Entidad.Enemigos.Enemigo;
 import Graficos.Grafico;
+import Graficos.Potenciado;
 import Graficos.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class BoostDamage extends MagiaTemporal {
 
@@ -20,11 +23,18 @@ public class BoostDamage extends MagiaTemporal {
         imagen[0]=new ImageIcon("Sprites/Fuego/FuegoDropTrue2.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        listaGraficos.add(sprites);
+
+        sprites.getGrafico().addMouseListener(new MouseOyentePowerUp(this));
+
+        componentesGraficas.agregarNuevoGrafico(sprites);
 
     }
 
     public void afectarPortador(Enemigo portador){
+
+        Grafico etiquetaPotenciado=new Potenciado(portador,0,20);
+        portador.getComponentesGraficas().agregarNuevoGrafico(etiquetaPotenciado);
+
         portador.setDamage(portador.getDamage()+damageAumento);
     }
 
@@ -33,7 +43,12 @@ public class BoostDamage extends MagiaTemporal {
     }
 
     public void afectarPersonaje(Personaje personaje){
+
+        Grafico etiquetaPotenciado=new Potenciado(personaje,-20,0);
+        personaje.getComponentesGraficas().agregarNuevoGrafico(etiquetaPotenciado);
+
         personaje.setDamage(personaje.getDamage()+damageAumento);
+        System.out.println("Damage aliado despues : "+personaje.getDamage());
         tiempoAfecto=new HiloPowers(this,personaje);
         tiempoAfecto.start();
 
@@ -41,6 +56,7 @@ public class BoostDamage extends MagiaTemporal {
 
     public void desafectarPersonaje(Personaje personaje){
         personaje.setDamage(personaje.getDamage()-damageAumento);
+        System.out.println("Damage aliado despues del efecto : "+personaje.getDamage());
     }
 
 

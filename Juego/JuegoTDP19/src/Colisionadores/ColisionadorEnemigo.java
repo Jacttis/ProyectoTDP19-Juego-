@@ -46,7 +46,6 @@ public class ColisionadorEnemigo implements Colisionador {
     public void afectarDisparo(Disparo chocada) {
 
 
-
     }
 
     /**

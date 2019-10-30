@@ -125,8 +125,6 @@ public abstract class Enemigo extends Personaje {
 	public void agregarPowerUp(PowerUp power){
 		powers.add(power);
 		power.afectarPortador(this);
-		Grafico etiquetaPotenciado=new Potenciado(this,0,20);
-		componentesGraficas.agregarNuevoGrafico(etiquetaPotenciado);
 	}
 
 }
