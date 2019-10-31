@@ -1,6 +1,7 @@
 package Graficos;
 
 import Entidad.Entidad;
+import Juego.Mapa;
 
 import javax.swing.*;
 import java.util.LinkedList;
@@ -16,6 +17,9 @@ public class Graficos {
     public void actualizarGraficos(){
         for(Grafico g : listaGraficos)
             g.actualizarGrafico();
+
+
+
     }
 
     public void cambiarGrafico(int dir){
@@ -23,8 +27,41 @@ public class Graficos {
             g.cambiarGrafico(dir);
     }
 
+    /**
+     * Agregar un grafico a la lista de graficos.
+     *
+     * @param grafico
+     */
+
+    public void agregarGrafico(Grafico grafico){
+        listaGraficos.add(grafico);
+    }
+
+    /**
+     * Agregar un nuevo grafico a la lista de graficos de la entidad
+     * la cual ya esta siendo mostrada, por lo tanto el nuevo grafico
+     * debe ser incluido en la gui
+     *
+     * @param nuevoGrafico
+     */
+
     public void agregarNuevoGrafico(Grafico nuevoGrafico){
+
         listaGraficos.add(nuevoGrafico);
+        LinkedList<Grafico> graficosAAgregar = new LinkedList<Grafico>();
+
+
+        Mapa.getMapa().agregarGrafico(nuevoGrafico);
+    }
+
+
+    public void eliminarGrafico(Grafico graficoAEliminar){
+        for(Grafico g : listaGraficos)
+            if(g.equals(graficoAEliminar)) {
+                listaGraficos.remove(graficoAEliminar);
+                Mapa.getMapa().removerGrafico(graficoAEliminar);
+                break;
+            }
     }
 
     public LinkedList<Grafico> getListaGraficos(){

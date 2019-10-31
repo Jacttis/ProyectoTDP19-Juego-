@@ -11,6 +11,8 @@ import Niveles.Nivel;
 import Niveles.NivelUno;
 import Tienda.Tienda;
 
+import javax.swing.*;
+
 public class Mapa {
 
 	private static Mapa instance=null;
@@ -18,6 +20,7 @@ public class Mapa {
 	protected Juego juego;
 	protected Nivel nivel;
 	protected GUI gui;
+	protected HiloDescansoCambioNivel descanso;
 	
 	
 	/**
@@ -79,8 +82,8 @@ public class Mapa {
 		LinkedList<Entidad> entidadesAEliminarTemporal = new LinkedList<Entidad>();
 
 		if(!entidadesAEliminar.isEmpty()) {
-			for (Entidad e : entidadesAEliminar)
-				entidadesAEliminarTemporal.add(e);
+			for (Entidad en : entidadesAEliminar)
+				entidadesAEliminarTemporal.add(en);
 
 			for (Entidad eAEliminar : entidadesAEliminarTemporal) {
 				entidades.remove(eAEliminar);
@@ -88,7 +91,6 @@ public class Mapa {
 				//System.out.println("Entidades : "+entidades.size());
 			}
 
-			verificarNivel();
 		}
 
 		LinkedList<Entidad> entidadesAAgregarTemporal= new LinkedList<Entidad>();
@@ -171,7 +173,7 @@ public class Mapa {
 	 */
 
 
-	public void colisionar() {
+	private void colisionar() {
 		for(int i=0; i<entidades.size();i++) {
 			Entidad e1= entidades.get(i);
 			for(int j=i+1;j<entidades.size();j++) {
@@ -233,12 +235,9 @@ public class Mapa {
 		nivel.removerEnemigo(enemigo);
 	}
 
-	public void verificarNivel(){
-		if(nivel.verificarEnemigos())
-			perdio();
-
-		if(nivel.getEnemigosGenerados().isEmpty())
-			cambiarNivel(nivel.getNivelSiguiente());
+	public void terminoNivel(){
+		descanso = new HiloDescansoCambioNivel(nivel);
+		descanso.start();
 	}
 
 	public void perdio(){
@@ -253,6 +252,14 @@ public class Mapa {
 		}
 
 		Tienda.getTienda().aumentarOro(nivel.getOroPremio());
+	}
+
+	public void removerGrafico(Grafico graficoARemover){
+		gui.remove(graficoARemover.getGrafico());
+	}
+
+	public void agregarGrafico(Grafico graficoAAgregar){
+		gui.add(graficoAAgregar.getGrafico());
 	}
 
 }

@@ -26,7 +26,6 @@ public class ControladorPowerAliado {
 
     public void aplicarPowerToAliado(Aliado aliado){
         if(nextPower!=null) {
-            System.out.println("Damage de aliado antes : "+aliado.getDamage());
             nextPower.afectarPersonaje(aliado);
             nextPower=null;
         }

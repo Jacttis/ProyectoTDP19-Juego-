@@ -6,6 +6,7 @@ import java.util.Random;
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
 import FabricaEnemigo.*;
+import Juego.Mapa;
 
 public class NivelUno extends Nivel {
 
@@ -33,11 +34,25 @@ public class NivelUno extends Nivel {
 			Random r= new Random();
 			int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
 			int tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<20)
+			if(tipoEnemigo<5)
 				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
 			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
 			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 			agregarEnemigo(enemigo);
+
+			sleep(3000);
+
+			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
+			tipoEnemigo = r.nextInt(10);
+			if(tipoEnemigo<4)
+				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
+			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
+			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			agregarEnemigo(enemigo);
+
+			sleep(5000);
+
+
 
 			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
 			tipoEnemigo = r.nextInt(10);
@@ -47,8 +62,6 @@ public class NivelUno extends Nivel {
 			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 			agregarEnemigo(enemigo);
 
-			sleep(8000);
-
 
 
 			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
@@ -59,19 +72,17 @@ public class NivelUno extends Nivel {
 			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 			agregarEnemigo(enemigo);
 
-			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-			tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<2)
-				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			agregarEnemigo(enemigo);
-
-
+			sleep(1000);
 
 			enemigo = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigoBoosted();
 			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
 			agregarEnemigo(enemigo);
+
+			while(!enemigosGenerados.isEmpty()){
+				sleep(1000);
+			}
+
+			Mapa.getMapa().terminoNivel();
 
 
 		} catch (InterruptedException e) {

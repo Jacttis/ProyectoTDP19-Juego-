@@ -31,8 +31,8 @@ public class MagoHielo extends Aliado {
 
 		sprites.getGrafico().addMouseListener(new MouseOyenteAliado(this));
 
-		componentesGraficas.agregarNuevoGrafico(sprites);
-		componentesGraficas.agregarNuevoGrafico(barraVida);
+		componentesGraficas.agregarGrafico(sprites);
+		componentesGraficas.agregarGrafico(barraVida);
 
 	}
 

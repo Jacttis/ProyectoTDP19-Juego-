@@ -5,6 +5,7 @@ import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.PowerUp.PowerUp;
+import Graficos.Grafico;
 
 public class ColisionadorDisparo implements Colisionador {
 
@@ -35,9 +36,6 @@ public class ColisionadorDisparo implements Colisionador {
     public void afectarEnemigo(Enemigo chocada) {
 
         disparo.afectarPersonaje(chocada);
-        if(chocada.estaMuerto()){
-            disparo.getDisparador().getEstado().cambiarAQuieto();
-        }
         disparo.eliminarse();
     }
 

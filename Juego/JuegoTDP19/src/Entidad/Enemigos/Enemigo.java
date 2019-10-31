@@ -28,7 +28,6 @@ public abstract class Enemigo extends Personaje {
 	protected int puntos;
 	protected int oroPremio;
 	protected LinkedList<PowerUp> powers;
-	protected JLabel etiquetaPotenciado;
 	
 	/**
 	 * Crea un personaje enemigo

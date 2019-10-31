@@ -29,7 +29,7 @@ public class FabricaEnemigoGolemTierra extends FabricaEnemigo {
 
     public Enemigo crearEnemigoBoosted() {
         Enemigo enemigo = new EnemigoGolemTierra(275,40,1500,0,2,100,1);
-        enemigo.agregarPowerUp(new BoostDamage(enemigo.getPos(),1,3000,30));
+        enemigo.agregarPowerUp(new BoostDamage(enemigo.getPos(),3000,30));
 
         return enemigo;
     }

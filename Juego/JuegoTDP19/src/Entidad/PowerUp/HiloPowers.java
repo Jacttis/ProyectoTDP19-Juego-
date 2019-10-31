@@ -1,13 +1,14 @@
 package Entidad.PowerUp;
 
+import Entidad.Aliados.Aliado;
 import Entidad.Personaje;
 
 public class HiloPowers extends Thread {
 
     protected MagiaTemporal magia;
-    protected Personaje personajeAfectado;
+    protected Aliado personajeAfectado;
 
-    public HiloPowers(MagiaTemporal magia,Personaje personaje){
+    public HiloPowers(MagiaTemporal magia,Aliado personaje){
         this.magia=magia;
         this.personajeAfectado=personaje;
     }

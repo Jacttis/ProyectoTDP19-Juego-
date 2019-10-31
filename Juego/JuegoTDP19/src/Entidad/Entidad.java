@@ -54,8 +54,6 @@ public abstract class Entidad {
 	}
 
 
-
-	
 	public Inteligencia getInteligencia() {
 		return IA;
 	}
@@ -84,6 +82,8 @@ public abstract class Entidad {
 		height=Height;
 	}
 
+
+
 	/**
 	 * Getter de colisionador
 	 *
@@ -92,6 +92,10 @@ public abstract class Entidad {
 
 	public Colisionador getColisionador(){
 		return colisionador;
+	}
+
+	public void setColisionador(Colisionador nuevoColisionador){
+		colisionador=nuevoColisionador;
 	}
 
 	public ColisionadorCombate getColisionadorCombate(){
@@ -104,6 +108,10 @@ public abstract class Entidad {
 
 	public double getVelocidad() {
 		return velocidad;
+	}
+
+	public void setVelocidad(double nuevaVelocidad){
+		velocidad=nuevaVelocidad;
 	}
 	
 	/**

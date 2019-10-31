@@ -2,10 +2,12 @@ package Entidad.PowerUp;
 
 import Colisionadores.Colisionador;
 import Entidad.*;
+import Entidad.Aliados.Aliado;
 import Entidad.Enemigos.Enemigo;
 import Graficos.Grafico;
 import Graficos.Potenciado;
 import Graficos.SpriteEntidad;
+import Juego.Mapa;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,8 +18,8 @@ public class BoostDamage extends MagiaTemporal {
 
     protected int damageAumento;
 
-    public BoostDamage(Point pos, double velocidad,int duracion, int damageAumento){
-        super(pos,velocidad,duracion);
+    public BoostDamage(Point pos,int duracion, int damageAumento){
+        super(pos,duracion);
         this.damageAumento=damageAumento;
 
         imagen[0]=new ImageIcon("Sprites/Fuego/FuegoDropTrue2.gif");
@@ -26,26 +28,25 @@ public class BoostDamage extends MagiaTemporal {
 
         sprites.getGrafico().addMouseListener(new MouseOyentePowerUp(this));
 
-        componentesGraficas.agregarNuevoGrafico(sprites);
+        componentesGraficas.agregarGrafico(sprites);
 
     }
 
     public void afectarPortador(Enemigo portador){
 
-        Grafico etiquetaPotenciado=new Potenciado(portador,0,20);
-        portador.getComponentesGraficas().agregarNuevoGrafico(etiquetaPotenciado);
+        graficoRepresentativo=new Potenciado(portador,0,20);
+        portador.getComponentesGraficas().agregarGrafico(graficoRepresentativo);
 
         portador.setDamage(portador.getDamage()+damageAumento);
     }
 
-    public void serChocado(Colisionador colisionador) {
-        colisionador.afectarPowerUp(this);
-    }
 
-    public void afectarPersonaje(Personaje personaje){
 
-        Grafico etiquetaPotenciado=new Potenciado(personaje,-20,0);
-        personaje.getComponentesGraficas().agregarNuevoGrafico(etiquetaPotenciado);
+    public void afectarPersonaje(Aliado personaje){
+
+        graficoRepresentativo=new Potenciado(personaje,-20,0);
+        personaje.getComponentesGraficas().agregarNuevoGrafico(graficoRepresentativo);
+        Mapa.getMapa().agregarEntidadGrafica(personaje);
 
         personaje.setDamage(personaje.getDamage()+damageAumento);
         System.out.println("Damage aliado despues : "+personaje.getDamage());
@@ -54,14 +55,16 @@ public class BoostDamage extends MagiaTemporal {
 
     }
 
-    public void desafectarPersonaje(Personaje personaje){
+    public void desafectarPersonaje(Aliado personaje){
         personaje.setDamage(personaje.getDamage()-damageAumento);
+        personaje.getComponentesGraficas().eliminarGrafico(graficoRepresentativo);
+
         System.out.println("Damage aliado despues del efecto : "+personaje.getDamage());
     }
 
 
 
     public Entidad clone() {
-        return new BoostDamage(pos,velocidad,duracion,damageAumento);
+        return new BoostDamage(pos,duracion,damageAumento);
     }
 }

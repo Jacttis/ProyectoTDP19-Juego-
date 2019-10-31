@@ -4,6 +4,7 @@ import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorPowerUp;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
+import Entidad.Aliados.Aliado;
 import Entidad.Enemigos.Enemigo;
 import Inteligencia.InteligenciaPowerUp;
 
@@ -28,7 +29,7 @@ public abstract class PowerUp extends Entidad {
 
     }
 
-    public void afectarPersonaje(Personaje personaje){
+    public void afectarPersonaje(Aliado personaje){
 
     }
 
