@@ -256,10 +256,12 @@ public class Mapa {
 
 	public void removerGrafico(Grafico graficoARemover){
 		gui.remove(graficoARemover.getGrafico());
+		gui.repaint();
 	}
 
 	public void agregarGrafico(Grafico graficoAAgregar){
 		gui.add(graficoAAgregar.getGrafico());
+		gui.repaint();
 	}
 
 }

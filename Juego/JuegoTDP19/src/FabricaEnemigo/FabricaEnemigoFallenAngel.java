@@ -3,6 +3,7 @@ package FabricaEnemigo;
 import Entidad.Enemigos.Enemigo;
 
 import Entidad.Enemigos.EnemigoFallenAngel;
+import Entidad.PowerUp.CampoProteccion;
 
 public class FabricaEnemigoFallenAngel extends FabricaEnemigo {
 
@@ -28,6 +29,9 @@ public class FabricaEnemigoFallenAngel extends FabricaEnemigo {
 
 
     public Enemigo crearEnemigoBoosted() {
-        return new EnemigoFallenAngel(175,40,1500,0,2,100,1);
+        Enemigo enemigo = new EnemigoFallenAngel(175,40,1500,0,2,100,1);
+        enemigo.agregarPowerUp(new CampoProteccion(enemigo.getPos(),8000));
+
+        return enemigo;
     }
 }

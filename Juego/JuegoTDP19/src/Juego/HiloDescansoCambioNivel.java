@@ -18,7 +18,7 @@ public class HiloDescansoCambioNivel extends Thread {
 
 
 
-            sleep(4500);
+            sleep(2500);
             Mapa.getMapa().cambiarNivel(nivelActual);
         } catch (InterruptedException e) {
             e.printStackTrace();
