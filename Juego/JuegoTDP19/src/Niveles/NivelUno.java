@@ -34,7 +34,7 @@ public class NivelUno extends Nivel {
 			Random r= new Random();
 			int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
 			int tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<5)
+			if(tipoEnemigo<15)
 				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
 			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
 			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));

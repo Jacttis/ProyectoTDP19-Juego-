@@ -18,7 +18,7 @@ public class DisparoReaperMan extends Disparo {
         width=60;
         height=53;
 
-        imagen[0]=new ImageIcon("Sprites/CharacterSprites/ReaperMan/DReaper.gif");
+        imagen[0]=new ImageIcon("Sprites/CharacterSprites/ReaperMan/dReaperTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         componentesGraficas.agregarNuevoGrafico(sprites);

@@ -21,7 +21,7 @@ public class CampoProteccion extends MagiaTemporal {
     public CampoProteccion(Point pos, int duracion){
         super(pos,duracion);
 
-        imagen[0]=new ImageIcon("Sprites/CampoProteccion/campoProteccionAliado.png");
+        imagen[0]=new ImageIcon("Sprites/Magia/BarreraPotenciado/barreraDrop2.png");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 
@@ -32,7 +32,7 @@ public class CampoProteccion extends MagiaTemporal {
 
     public void afectarPortador(Enemigo portador){
 
-        PotenciadoBarrera potenciadoBarrera= new PotenciadoBarrera(portador,30,0,true);
+        PotenciadoBarrera potenciadoBarrera= new PotenciadoBarrera(portador,30,5);
         portador.getComponentesGraficas().agregarGrafico(potenciadoBarrera);
         portador.setColisionador(new ColisionadorEnemigoConCampoProteccion(portador,this));
 
@@ -47,7 +47,7 @@ public class CampoProteccion extends MagiaTemporal {
 
 
 
-        graficoRepresentativo= new PotenciadoBarrera(personaje,0,0,false);
+        graficoRepresentativo= new PotenciadoBarrera(personaje,0,0);
         personaje.getComponentesGraficas().agregarNuevoGrafico(graficoRepresentativo);
 
         personaje.setColisionador(new ColisionadorAliadoConCampoProteccion(personaje,this));

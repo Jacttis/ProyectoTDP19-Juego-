@@ -50,7 +50,6 @@ public class GoblinExplosivo extends Aliado {
         if(puedeAtacar) {
             fabricaDisparo.generarDisparo();
             vidaActual=0;
-            //this.eliminarse();
         }
     }
 
