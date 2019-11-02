@@ -6,7 +6,7 @@ import Entidad.Aliados.GoblinExplosivo;
 public class BotonGoblinExplosivo extends BotonAliado {
 
     public BotonGoblinExplosivo(){
-        super("Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png");
+        super("Sprites/CharacterSprites/SpriteBoton/GoblinExplosivo.png");
     }
 
     public Aliado getAliado() {

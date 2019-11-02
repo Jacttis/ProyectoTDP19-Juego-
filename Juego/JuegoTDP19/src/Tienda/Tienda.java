@@ -82,7 +82,14 @@ public class Tienda {
 		nextToAdd=null;
 	}
 
+	public void venderAliado(Aliado aliado){
+		if(aliado.getVida()==aliado.getVidaTotal())
+			aumentarOro(aliado.getPrecio());
+		else
+			aumentarOro(aliado.getPrecio()/2);
 
+		aliado.eliminarse();
+	}
 
 	
 }

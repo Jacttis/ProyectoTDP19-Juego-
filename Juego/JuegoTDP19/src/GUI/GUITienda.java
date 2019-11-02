@@ -66,6 +66,7 @@ class GuiTienda {
 
         panel = new JPanel();
         panel.setLayout(null);
+        panel.setBackground(Color.DARK_GRAY);
         panel.setBounds(Constantes.PANEL_TIENDA_PX, 0, Constantes.PANEL_TIENDA_X, Constantes.PANEL_TIENDA_Y);
 
         BotonAliado botonArquero = new BotonArqueroHumano();
@@ -122,24 +123,9 @@ class GuiTienda {
         labelPuntos.setBounds(800,30,80,40);
         panel.add(labelPuntos);
 
-        btnVender = new JButton("Vender");
+        btnVender = BotonVender.getBotonVender();
         btnVender.setBounds(800,70,128,25);
         panel.add(btnVender);
-
-        btnVender.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent e) {
-
-                for(Entidad a :  Mapa.getMapa().getEntidades()){
-                    if(a  instanceof Aliado)
-                        ((Aliado) a).disminuirVida(((Aliado) a).getVida());
-
-                }
-
-
-            }
-        });
-
 
 
 

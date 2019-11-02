@@ -6,7 +6,7 @@ import Entidad.Aliados.ArqueroHumano;
 public class BotonArqueroHumano extends BotonAliado {
 
     public BotonArqueroHumano() {
-        super("Sprites/CharacterSprites/SpriteBoton/ArqueroHumanoChico3.jpg");
+        super("Sprites/CharacterSprites/SpriteBoton/ArqueroHumano.png");
     }
 
 
