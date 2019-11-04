@@ -113,9 +113,6 @@ public class Mapa {
 
 		colisionar();
 
-		if(nivel.verificarEnemigos()){
-			perdio();
-		}
 	}
 	
 	/**
@@ -232,11 +229,6 @@ public class Mapa {
 		generar();
 	}
 
-	//Los metodos de derrota deben pasarse a Juego despues.
-
-	public void removeEnemigoNivel(Enemigo enemigo){
-		nivel.removerEnemigo(enemigo);
-	}
 
 	public void terminoNivel(){
 		descanso = new HiloDescansoCambioNivel(nivel);

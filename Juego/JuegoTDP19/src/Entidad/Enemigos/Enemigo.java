@@ -1,6 +1,7 @@
 package Entidad.Enemigos;
 import java.awt.*;
 import java.util.LinkedList;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -97,11 +98,14 @@ public abstract class Enemigo extends Personaje {
 	public void eliminarse(){
 
 		Mapa.getMapa().eliminarEntidad(this);
-		Mapa.getMapa().removeEnemigoNivel(this);
 
 		if(!powers.isEmpty()) {
-			powers.getFirst().getPos().setLocation(pos);
-			Mapa.getMapa().agregarEntidad(powers.getFirst());
+			Random r = new Random();
+			int posibilidadCaer = r.nextInt(5);
+			if(posibilidadCaer<3) {
+				powers.getFirst().getPos().setLocation(pos);
+				Mapa.getMapa().agregarEntidad(powers.getFirst());
+			}
 		}
 
 		Tienda.getTienda().aumentarOro(this.getOro());

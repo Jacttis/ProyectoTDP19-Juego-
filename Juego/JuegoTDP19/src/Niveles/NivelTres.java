@@ -2,9 +2,7 @@ package Niveles;
 
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
-import FabricaEnemigo.FabricaEnemigoFallenAngel;
-import FabricaEnemigo.FabricaEnemigoGolemFuego;
-import FabricaEnemigo.FabricaEnemigoGolemTierra;
+import FabricaEnemigo.*;
 import Juego.Mapa;
 
 import java.awt.*;
@@ -20,64 +18,82 @@ public class NivelTres extends Nivel {
     public void llenarListaEnemigosSpawn() {
 
         listaEnemigosSpawn.add(FabricaEnemigoFallenAngel.getFabricaFallenAngel());
-        listaEnemigosSpawn.add(FabricaEnemigoGolemTierra.getFabricaGolemTierra());
+        listaEnemigosSpawn.add(FabricaEnemigoFallenAngelBlanco.getFabricaFallenAngelBlanco());
         listaEnemigosSpawn.add(FabricaEnemigoGolemFuego.getFabricaGolemFuego());
+        listaEnemigosSpawn.add(FabricaEnemigoReaperMan.getFabricaReaperMan());
 
     }
 
     public void run() {
 
 
-        Enemigo enemigo;
-
-        Random r = new Random();
-        int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        int tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 4)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
-
-        enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 4)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
-
         try {
-            sleep(5000);
 
+            oleada.setEnemigosAGenerar(7);
 
+            oleada.start();
 
-        enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 3)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
+            while (true) {
+                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
+                    oleada = oleada.getSiguiente();
 
-        enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 3)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
+                    break;
 
-        while(!enemigosGenerados.isEmpty()){
+                } else if (oleada.verificarEnemigoGano()) {
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                sleep(1000);
+
+            }
+
             sleep(1000);
+
+
+
+            oleada.setEnemigosAGenerar(8);
+
+            oleada.start();
+
+            while (true) {
+                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
+                    oleada = oleada.getSiguiente();
+
+                    break;
+
+                } else if (oleada.verificarEnemigoGano()) {
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                sleep(1000);
+
+            }
+
+            sleep(1000);
+
+
+            oleada.setEnemigosAGenerar(10);
+
+
+            oleada.start();
+
+
+            while (true) {
+                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
+                    oleada = oleada.getSiguiente();
+                    break;
+                } else if (oleada.verificarEnemigoGano()) {
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                sleep(1000);
+
+            }
+
+            Mapa.getMapa().terminoNivel();
+
         }
-
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        Mapa.getMapa().terminoNivel();
+        catch(InterruptedException e) {}
     }
 
 

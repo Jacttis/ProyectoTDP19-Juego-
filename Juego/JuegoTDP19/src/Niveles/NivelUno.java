@@ -7,15 +7,18 @@ import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.ObjetosMapa.ObjetoPiedra;
+import FabricaDisparos.FabricaDisparoReaperMan;
 import FabricaEnemigo.*;
+import Juego.Juego;
 import Juego.Mapa;
+import Niveles.Oleada.PrimerOleada;
 
 public class NivelUno extends Nivel {
 
 	public NivelUno() {
 		super();
 		nivelSiguiente=new NivelDos();
-
+		oleada = new PrimerOleada(this);
 	}
 
 
@@ -30,63 +33,99 @@ public class NivelUno extends Nivel {
 
 		try {
 
-			ObjetoMapa piedra = new ObjetoPiedra(new Point(1000,500),200);
-			Mapa.getMapa().agregarEntidad(piedra);
+			//inicializarCartelPrimerOleada();
 
-			Enemigo enemigo;
+			//sleep(5000);
+
+			//removerCartelOleada();
+
+
 
 			Random r= new Random();
-			int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-			int tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<15)
-				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			agregarEnemigo(enemigo);
+			int aparicionObjeto = r.nextInt(10);
+			if(aparicionObjeto<5) {
+				ObjetoMapa piedra = new ObjetoPiedra(new Point(1000, obtenerPosicionAleatoriaEnY()), 300);
+				Mapa.getMapa().agregarEntidad(piedra);
+			}
 
-			sleep(3000);
+			oleada.setEnemigosAGenerar(3);
 
-			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-			tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<4)
-				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			agregarEnemigo(enemigo);
+			oleada.start();
 
-			sleep(5000);
+			while(true){
+				if((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())){
+					oleada=oleada.getSiguiente();
 
+					break;
 
+				}
+				else
+					if(oleada.verificarEnemigoGano()){
+						Mapa.getMapa().perdio();
+						break;
+					}
+				sleep(1000);
 
-			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-			tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<2)
-				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			agregarEnemigo(enemigo);
-
-
-
-			enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-			tipoEnemigo = r.nextInt(10);
-			if(tipoEnemigo<2)
-				enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-			else enemigo=listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			agregarEnemigo(enemigo);
+			}
 
 			sleep(1000);
 
-			enemigo = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigoBoosted();
-			enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			agregarEnemigo(enemigo);
+			listaEnemigosSpawn.add(FabricaEnemigoGolemFuego.getFabricaGolemFuego());
 
-			while(!enemigosGenerados.isEmpty()){
+			oleada.setEnemigosAGenerar(5);
+
+			oleada.start();
+
+			while(true){
+				if((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())){
+					oleada=oleada.getSiguiente();
+
+					break;
+
+				}
+				else
+				if(oleada.verificarEnemigoGano()){
+					Mapa.getMapa().perdio();
+					break;
+				}
 				sleep(1000);
+
+			}
+
+			sleep(1000);
+
+
+			aparicionObjeto = r.nextInt(10);
+			if(aparicionObjeto<5) {
+				ObjetoMapa piedra = new ObjetoPiedra(new Point(1000, obtenerPosicionAleatoriaEnY()), 300);
+				Mapa.getMapa().agregarEntidad(piedra);
+			}
+
+			oleada.setEnemigosAGenerar(5);
+
+			Enemigo reaper = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();
+			reaper.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			oleada.agregarEnemigo(reaper);
+
+			oleada.start();
+
+
+			while(true){
+				if((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())){
+					oleada=oleada.getSiguiente();
+					break;
+				}
+				else
+				if(oleada.verificarEnemigoGano()){
+					Mapa.getMapa().perdio();
+					break;
+				}
+				sleep(1000);
+
 			}
 
 			Mapa.getMapa().terminoNivel();
+
 
 
 		} catch (InterruptedException e) {

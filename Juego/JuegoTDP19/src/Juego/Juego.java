@@ -57,6 +57,11 @@ public class Juego {
 		}
 		return instance;
 	}
+
+	public static Juego getJuego(){
+		return instance;
+	}
+
 	public void mover() {
 
 		Mapa.getMapa().mover();
@@ -65,8 +70,8 @@ public class Juego {
 		
 	}
 
-	public LinkedList<Entidad> getListaMapa(){
-		return Mapa.getMapa().getEntidades();
+	public GUI getGUI(){
+		return gui;
 	}
 
 

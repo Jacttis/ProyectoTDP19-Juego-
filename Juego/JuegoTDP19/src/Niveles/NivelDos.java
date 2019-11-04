@@ -2,9 +2,7 @@ package Niveles;
 
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
-import FabricaEnemigo.FabricaEnemigoFallenAngel;
-import FabricaEnemigo.FabricaEnemigoGolemFuego;
-import FabricaEnemigo.FabricaEnemigoGolemTierra;
+import FabricaEnemigo.*;
 import Juego.Mapa;
 
 import java.awt.*;
@@ -28,55 +26,80 @@ public class NivelDos extends Nivel {
     public void run() {
 
 
-        Enemigo enemigo;
-
-        Random r = new Random();
-        int enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        int tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 4)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
-
-        enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 4)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
-
         try {
-            sleep(5000);
 
+            oleada.setEnemigosAGenerar(5);
 
+            oleada.start();
 
-        enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 3)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
+            while (true) {
+                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
+                    oleada = oleada.getSiguiente();
 
-        enemigoAleatorio = r.nextInt(listaEnemigosSpawn.size());
-        tipoEnemigo = r.nextInt(10);
-        if (tipoEnemigo < 3)
-            enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigoBoosted();
-        else enemigo = listaEnemigosSpawn.get(enemigoAleatorio).crearEnemigo();
-        enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
-        agregarEnemigo(enemigo);
+                    break;
 
-        while(!enemigosGenerados.isEmpty()){
+                } else if (oleada.verificarEnemigoGano()) {
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                sleep(1000);
+
+            }
+
             sleep(1000);
-        }
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            listaEnemigosSpawn.add(FabricaEnemigoFallenAngelBlanco.getFabricaFallenAngelBlanco());
 
-        Mapa.getMapa().terminoNivel();
+            Enemigo reaper = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();
+            reaper.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+            oleada.agregarEnemigo(reaper);
+
+            oleada.setEnemigosAGenerar(6);
+
+            oleada.start();
+
+            while (true) {
+                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
+                    oleada = oleada.getSiguiente();
+
+                    break;
+
+                } else if (oleada.verificarEnemigoGano()) {
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                sleep(1000);
+
+            }
+
+            sleep(1000);
+
+
+            oleada.setEnemigosAGenerar(7);
+
+            Enemigo reaperBoosted = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigoBoosted();
+            reaperBoosted.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+            oleada.agregarEnemigo(reaperBoosted);
+
+            oleada.start();
+
+
+            while (true) {
+                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
+                    oleada = oleada.getSiguiente();
+                    break;
+                } else if (oleada.verificarEnemigoGano()) {
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                sleep(1000);
+
+            }
+
+            Mapa.getMapa().terminoNivel();
+
+        }
+        catch(InterruptedException e) {}
 
     }
 
