@@ -1,11 +1,13 @@
 package Entidad.PowerUp;
 
+import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorObjetoMapa;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.Entidad;
 
 import java.awt.*;
 
-public class ObjetoPrecioso extends PowerUp {
+public abstract class ObjetoPrecioso extends PowerUp {
 
     public ObjetoPrecioso(Point pos, double velocidad){
         super(pos,velocidad);
@@ -15,7 +17,8 @@ public class ObjetoPrecioso extends PowerUp {
 
     }
 
-    public Entidad clone() {
-        return null;
+    public void serChocado(Colisionador colisionador){
+
     }
+
 }

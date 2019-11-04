@@ -4,6 +4,8 @@ import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.ObjetosMapa.ObjetoMapaVida;
 
 import java.util.LinkedList;
 
@@ -57,5 +59,10 @@ public class ColCombateEnemigo implements ColisionadorCombate {
 
     public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
 
+    }
+
+    @Override
+    public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
+        chocada.getColisionadorCombate().detectoEnemigo(enemigo);
     }
 }

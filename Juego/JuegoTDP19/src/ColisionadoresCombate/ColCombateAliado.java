@@ -4,6 +4,8 @@ import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.ObjetosMapa.ObjetoMapaVida;
 
 public class ColCombateAliado implements ColisionadorCombate {
 
@@ -17,7 +19,7 @@ public class ColCombateAliado implements ColisionadorCombate {
     public void verificarColisionando(){
         if(enemigoDetectado!=null){
             if(enemigoDetectado.estaMuerto())
-                aliado.getEstado().cambiarACaminando();
+                aliado.getEstado().cambiarAQuieto();
         }
     }
 
@@ -44,6 +46,11 @@ public class ColCombateAliado implements ColisionadorCombate {
 
 
     public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
+
+    }
+
+
+    public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
 }

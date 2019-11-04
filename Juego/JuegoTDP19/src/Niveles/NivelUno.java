@@ -5,6 +5,8 @@ import java.util.Random;
 
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.ObjetosMapa.ObjetoPiedra;
 import FabricaEnemigo.*;
 import Juego.Mapa;
 
@@ -28,6 +30,8 @@ public class NivelUno extends Nivel {
 
 		try {
 
+			ObjetoMapa piedra = new ObjetoPiedra(new Point(1000,500),200);
+			Mapa.getMapa().agregarEntidad(piedra);
 
 			Enemigo enemigo;
 

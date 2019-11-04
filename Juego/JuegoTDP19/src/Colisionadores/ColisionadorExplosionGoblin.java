@@ -4,6 +4,7 @@ import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.PowerUp.PowerUp;
 
 import java.util.LinkedList;
@@ -48,7 +49,7 @@ public class ColisionadorExplosionGoblin implements Colisionador {
     }
 
 
-    public void afectarPowerUp(PowerUp chocada) {
+    public void afectarObjetoMapa(ObjetoMapa chocada) {
 
     }
 }

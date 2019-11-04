@@ -113,6 +113,9 @@ public class Mapa {
 
 		colisionar();
 
+		if(nivel.verificarEnemigos()){
+			perdio();
+		}
 	}
 	
 	/**

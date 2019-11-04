@@ -4,6 +4,7 @@ import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.PowerUp.PowerUp;
 
 public class ColisionadorEnemigo implements Colisionador {
@@ -58,7 +59,6 @@ public class ColisionadorEnemigo implements Colisionador {
 
     }
 
-    public void afectarPowerUp(PowerUp chocada){
-
+    public void afectarObjetoMapa(ObjetoMapa chocada){
     }
 }

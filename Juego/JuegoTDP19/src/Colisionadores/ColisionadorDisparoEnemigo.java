@@ -4,6 +4,7 @@ import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
 
 public class ColisionadorDisparoEnemigo extends ColisionadorDisparo{
 
@@ -55,5 +56,10 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo{
      */
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
+    }
+
+    public void afectarObjetoMapa(ObjetoMapa chocada) {
+        chocada.serAfectado(disparo);
+        disparo.eliminarse();
     }
 }

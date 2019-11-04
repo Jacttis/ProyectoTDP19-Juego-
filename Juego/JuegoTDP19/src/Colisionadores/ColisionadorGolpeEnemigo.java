@@ -4,6 +4,7 @@ import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.PowerUp.PowerUp;
 
 public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
@@ -20,7 +21,6 @@ public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
      */
 
     public void afectarAliado(Aliado chocada) {
-        System.out.println("Golpeando aliado");
         disparo.afectarPersonaje(chocada);
         disparo.eliminarse();
     }
@@ -61,7 +61,8 @@ public class ColisionadorGolpeEnemigo extends ColisionadorDisparo {
 
     }
 
-    public void afectarPowerUp(PowerUp chocada){
-
+    public void afectarObjetoMapa(ObjetoMapa chocada){
+        chocada.serAfectado(disparo);
+        disparo.eliminarse();
     }
 }

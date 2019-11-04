@@ -2,38 +2,33 @@ package Colisionadores;
 
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
-import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
-import Entidad.PowerUp.PowerUp;
+import Entidad.Enemigos.Enemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
 
-public class ColisionadorPowerUp implements Colisionador {
-
-    protected PowerUp power;
-
-    public ColisionadorPowerUp(PowerUp power){
-        this.power=power;
-    }
-
+public class ColisionadorNulo implements Colisionador {
+    @Override
     public void afectarAliado(Aliado chocada) {
 
     }
 
-
+    @Override
     public void afectarEnemigo(Enemigo chocada) {
 
     }
 
-
+    @Override
     public void afectarDisparo(Disparo chocada) {
 
     }
 
-
+    @Override
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
     }
 
-    public void afectarPowerUp(PowerUp chocada){
+    @Override
+    public void afectarObjetoMapa(ObjetoMapa chocada) {
 
     }
 }

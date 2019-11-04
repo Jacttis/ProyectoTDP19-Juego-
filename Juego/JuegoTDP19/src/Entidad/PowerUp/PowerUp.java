@@ -1,7 +1,7 @@
 package Entidad.PowerUp;
 
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorPowerUp;
+import Colisionadores.ColisionadorNulo;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
 import Entidad.Aliados.Aliado;
@@ -17,11 +17,16 @@ public abstract class PowerUp extends Entidad {
     public PowerUp(Point pos, double velocidad) {
         super(pos, velocidad, 0);
         IA=new InteligenciaPowerUp(this);
-        colisionador=new ColisionadorPowerUp(this);
+
+        colisionador= new ColisionadorNulo();
 
         imagen= new ImageIcon[1];
 
 
+
+    }
+
+    public void serChocado(Colisionador colisionador){
 
     }
 
@@ -33,9 +38,6 @@ public abstract class PowerUp extends Entidad {
 
     }
 
-    public void serChocado(Colisionador colisionador) {
-        colisionador.afectarPowerUp(this);
-    }
 
     public void serDetectado(ColisionadorCombate colisionadorCombate){
 

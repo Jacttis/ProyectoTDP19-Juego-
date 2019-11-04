@@ -5,7 +5,7 @@ import Colisionadores.ColisionadorAliadoConCampoProteccion;
 import Colisionadores.ColisionadorEnemigoConCampoProteccion;
 import Entidad.Aliados.Aliado;
 import Entidad.Enemigos.Enemigo;
-import Entidad.Entidad;
+import Entidad.*;
 import Entidad.Personaje;
 import Graficos.Grafico;
 import Graficos.Potenciado;
