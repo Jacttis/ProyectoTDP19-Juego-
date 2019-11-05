@@ -33,6 +33,11 @@ public class ObjetoPiedra extends ObjetoMapaVida {
     }
 
 
+    public void desafectar(Personaje entidad) {
+
+    }
+
+
     public void serAfectado(Entidad entidad) {
         this.vida-=entidad.getDamage();
 

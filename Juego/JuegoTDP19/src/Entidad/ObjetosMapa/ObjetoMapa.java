@@ -22,13 +22,15 @@ public abstract class ObjetoMapa extends Entidad {
     }
 
     public abstract void afectar(Personaje entidad);
+    public abstract void desafectar(Personaje entidad);
 
     public abstract void serAfectado(Entidad entidad);
-
 
     public void serDetectado(ColisionadorCombate colisionadorCombate) {
 
     }
+
+
 
 
 }

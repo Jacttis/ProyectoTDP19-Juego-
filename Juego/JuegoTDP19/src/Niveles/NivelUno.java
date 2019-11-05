@@ -5,7 +5,9 @@ import java.util.Random;
 
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
+import Entidad.ObjetosMapa.ObjetoLago;
 import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.ObjetosMapa.ObjetoMapaTiempo;
 import Entidad.ObjetosMapa.ObjetoPiedra;
 import FabricaEnemigo.*;
 import Juego.Mapa;
@@ -34,13 +36,17 @@ public class NivelUno extends Nivel {
 
 			sleep(1000);
 
+			ObjetoMapaTiempo lago = new ObjetoLago(new Point(1000,500),20000,1);
+			Mapa.getMapa().agregarEntidad(lago);
+
+			/*
 			Random r= new Random();
 			int aparicionObjeto = r.nextInt(10);
 			if(aparicionObjeto<5) {
 				ObjetoMapa piedra = new ObjetoPiedra(new Point(1000, obtenerPosicionAleatoriaEnY()), 300);
 				Mapa.getMapa().agregarEntidad(piedra);
 			}
-
+			*/
 			oleada.setEnemigosAGenerar(3);
 
 			oleada.start();
@@ -87,6 +93,7 @@ public class NivelUno extends Nivel {
 
 			sleep(1000);
 
+			/*
 
 			aparicionObjeto = r.nextInt(10);
 			if(aparicionObjeto<5) {
@@ -94,6 +101,8 @@ public class NivelUno extends Nivel {
 				Mapa.getMapa().agregarEntidad(piedra);
 			}
 
+
+			 */
 			oleada.setEnemigosAGenerar(5);
 
 
