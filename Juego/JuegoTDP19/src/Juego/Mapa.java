@@ -259,4 +259,8 @@ public class Mapa {
 		gui.repaint();
 	}
 
+	public GUI getGui(){
+		return gui;
+	}
+
 }

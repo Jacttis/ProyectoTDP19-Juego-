@@ -21,7 +21,7 @@ public abstract class Nivel extends Thread {
 	protected LinkedList<FabricaEnemigo> listaEnemigosSpawn;
 	protected int oroPremio;
 	protected Oleada oleada;
-	protected JLabel cartelOleada;
+
 	
 	public Nivel() {
 		oroPremio=5;
@@ -57,33 +57,9 @@ public abstract class Nivel extends Thread {
 
 	public abstract String getDireccionImagenFondoNivel();
 
-	public void inicializarCartelPrimerOleada(){
-		cartelOleada = new JLabel("PRIMER OLEADA!");
-		cartelOleada.setForeground(Color.RED);
-		cartelOleada.setBounds(500,300,300,300);
 
-		Juego.getJuego().getGUI().add(cartelOleada);
-	}
 
-	public void inicializarCartelSegundaOleada(){
-		cartelOleada = new JLabel("SEGUNDA OLEADA!");
-		cartelOleada.setForeground(Color.RED);
-		cartelOleada.setBounds(600,300,300,200);
 
-		Juego.getJuego().getGUI().add(cartelOleada);
-	}
-
-	public void inicializarCartelTercerOleada(){
-		cartelOleada = new JLabel("TERCER OLEADA!");
-		cartelOleada.setForeground(Color.RED);
-		cartelOleada.setBounds(600,300,300,200);
-
-		Juego.getJuego().getGUI().add(cartelOleada);
-	}
-
-	public void removerCartelOleada(){
-		Juego.getJuego().getGUI().remove(cartelOleada);
-	}
 
 
 }

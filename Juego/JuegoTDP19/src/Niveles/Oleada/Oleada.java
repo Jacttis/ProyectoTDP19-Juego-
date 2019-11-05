@@ -7,6 +7,8 @@ import Juego.Mapa;
 import Niveles.Nivel;
 import Constantes.Constantes;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -17,12 +19,16 @@ public abstract class Oleada extends Thread{
     protected int cantEnemigosDeOleada;
     protected Oleada oleadaSiguiente;
     protected LinkedList<Enemigo> enemigosGenerados;
+    protected JLabel cartelOleada1,cartelOleada2;
 
     public Oleada(Nivel nivel){
         this.cantEnemigosDeOleada=cantEnemigosDeOleada;
         enemigosGenerados = new LinkedList<Enemigo>();
         this.nivel=nivel;
         cantEnemigosDeOleada=0;
+
+        cartelOleada1 = new JLabel();
+        cartelOleada2 = new JLabel();
     }
 
     public abstract void run();
@@ -70,5 +76,24 @@ public abstract class Oleada extends Thread{
 
     public LinkedList<Enemigo> getEnemigosGenerados(){
         return enemigosGenerados;
+    }
+
+    public void inicializarCartelOleada(){
+        cartelOleada1.setForeground(Color.RED);
+        cartelOleada1.setFont(new Font("Times New Roman", 3,100));
+        cartelOleada1.setBounds(550,200,3000,400);
+
+
+        cartelOleada2.setForeground(Color.BLACK);
+        cartelOleada2.setFont(new Font("Times New Roman", 3,100));
+        cartelOleada2.setBounds(555,205,3000,400);
+
+        Mapa.getMapa().getGui().add(cartelOleada2);
+        Mapa.getMapa().getGui().add(cartelOleada1);
+    }
+
+    public void retirarCartelOleada(){
+        Mapa.getMapa().getGui().remove(cartelOleada1);
+        Mapa.getMapa().getGui().remove(cartelOleada2);
     }
 }

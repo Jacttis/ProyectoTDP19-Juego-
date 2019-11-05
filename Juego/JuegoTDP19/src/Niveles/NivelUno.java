@@ -7,9 +7,7 @@ import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.ObjetosMapa.ObjetoPiedra;
-import FabricaDisparos.FabricaDisparoReaperMan;
 import FabricaEnemigo.*;
-import Juego.Juego;
 import Juego.Mapa;
 import Niveles.Oleada.PrimerOleada;
 
@@ -33,13 +31,8 @@ public class NivelUno extends Nivel {
 
 		try {
 
-			//inicializarCartelPrimerOleada();
 
-			//sleep(5000);
-
-			//removerCartelOleada();
-
-
+			sleep(1000);
 
 			Random r= new Random();
 			int aparicionObjeto = r.nextInt(10);
@@ -103,12 +96,13 @@ public class NivelUno extends Nivel {
 
 			oleada.setEnemigosAGenerar(5);
 
-			Enemigo reaper = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();
-			reaper.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
-			oleada.agregarEnemigo(reaper);
+
 
 			oleada.start();
 
+			Enemigo reaper = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();
+			reaper.posicionar(new Point(Constantes.ENEMIGOS_PX,obtenerPosicionAleatoriaEnY()));
+			oleada.agregarEnemigo(reaper);
 
 			while(true){
 				if((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())){

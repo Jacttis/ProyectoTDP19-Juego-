@@ -12,13 +12,26 @@ public class SegundaOleada extends Oleada {
     public SegundaOleada(Nivel nivel) {
         super(nivel);
         oleadaSiguiente = new TercerOleada(nivel);
+
+        cartelOleada1.setText("SEGUNDA OLEADA!");
+        cartelOleada2.setText("SEGUNDA OLEADA!");
     }
 
     public void run() {
 
-        Enemigo enemigo;
-
         try {
+            inicializarCartelOleada();
+
+            sleep(3500);
+
+            retirarCartelOleada();
+
+            sleep(1500);
+
+
+            Enemigo enemigo;
+
+
 
             Random r = new Random();
             for (int i = 0; i < cantEnemigosDeOleada; i++) {

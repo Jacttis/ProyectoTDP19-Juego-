@@ -1,8 +1,11 @@
 package Niveles.Oleada;
 
 import Entidad.Enemigos.Enemigo;
+import Juego.Mapa;
 import Niveles.*;
 import Constantes.Constantes;
+
+import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
@@ -12,13 +15,27 @@ public class PrimerOleada extends Oleada {
         super(nivel);
         oleadaSiguiente=new SegundaOleada(nivel);
 
+        cartelOleada1.setText("PRIMER OLEADA!");
+        cartelOleada2.setText("PRIMER OLEADA!");
+
+
     }
 
     public void run() {
-
-        Enemigo enemigo;
-
         try {
+
+            inicializarCartelOleada();
+
+            sleep(3500);
+
+            retirarCartelOleada();
+
+            sleep(1500);
+
+
+            Enemigo enemigo;
+
+
 
             Random r = new Random();
             for (int i = 0; i < cantEnemigosDeOleada; i++) {
@@ -34,7 +51,9 @@ public class PrimerOleada extends Oleada {
             }
 
         }
-        catch(InterruptedException e){}
+        catch(InterruptedException e){ e.printStackTrace();}
 
     }
+
+
 }

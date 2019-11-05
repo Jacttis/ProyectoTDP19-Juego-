@@ -18,7 +18,7 @@ import Juego.Mapa;
 public abstract class Entidad {
 
 	protected Point pos;
-	protected int width=140,height=160,widthGrafico=300,heightGrafico=300;
+	protected int width=140,height=160;
 	protected Inteligencia IA;
 	protected Icon imagen[];
 	protected Graficos componentesGraficas;
@@ -45,6 +45,7 @@ public abstract class Entidad {
 	
 	}
 
+
 	public Graficos getComponentesGraficas(){
 		return componentesGraficas;
 	}
@@ -62,13 +63,6 @@ public abstract class Entidad {
 	 * Setter y getter de width y height
 	 */
 
-	public int getWidthGrafico(){
-		return widthGrafico;
-	}
-
-	public int getHeightGrafico(){
-		return heightGrafico;
-	}
 
 	public int getWidth(){ return width; }
 
@@ -150,7 +144,6 @@ public abstract class Entidad {
 
 	public abstract void serDetectado(ColisionadorCombate colisionadorCombate);
 
-	public abstract Entidad clone();
 
 	public Rectangle getHitBox(){
 		return new Rectangle(pos.x,pos.y,width,height);
@@ -159,4 +152,5 @@ public abstract class Entidad {
 	public Rectangle getRangoCombate(){
 		return getHitBox();
 	}
+
 }

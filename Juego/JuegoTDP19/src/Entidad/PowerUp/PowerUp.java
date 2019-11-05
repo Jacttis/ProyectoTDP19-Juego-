@@ -42,4 +42,6 @@ public abstract class PowerUp extends Entidad {
     public void serDetectado(ColisionadorCombate colisionadorCombate){
 
     }
+
+    public abstract Entidad clone();
 }
