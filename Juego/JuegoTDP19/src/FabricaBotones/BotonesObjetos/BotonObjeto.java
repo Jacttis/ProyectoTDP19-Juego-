@@ -1,6 +1,7 @@
-package FabricaBotones;
+package FabricaBotones.BotonesObjetos;
 
 import Entidad.Aliados.Aliado;
+import Entidad.PowerUp.ObjetoPrecioso;
 import Tienda.Tienda;
 
 import javax.swing.*;
@@ -8,25 +9,21 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public abstract class BotonAliado extends JButton {
+public abstract class BotonObjeto extends JButton {
 
-    public BotonAliado(String imagePath){
-        this.setToolTipText(getAliado().getDescripcion());
+    public BotonObjeto(String imagePath){
+
         this.setBackground(Color.DARK_GRAY);
         this.setIcon(new ImageIcon(imagePath));
-//        this.setBounds();
+        setEnabled(false);
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Tienda.getTienda().setNextToAdd(getAliado());
+                Tienda.getTienda().setNextObjectToAdd(getObjeto());
+                setEnabled(false);
             }
         });
     }
 
-    private void inicializarBoton(){
-
-    }
-
-    public abstract Aliado getAliado();
-
+    public abstract ObjetoPrecioso getObjeto();
 }

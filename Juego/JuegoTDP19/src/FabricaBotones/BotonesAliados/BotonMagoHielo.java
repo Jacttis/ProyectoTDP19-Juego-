@@ -1,7 +1,8 @@
-package FabricaBotones;
+package FabricaBotones.BotonesAliados;
 
 import Entidad.Aliados.Aliado;
 import Entidad.Aliados.MagoHielo;
+import FabricaBotones.BotonesAliados.BotonAliado;
 
 public class BotonMagoHielo extends BotonAliado {
 

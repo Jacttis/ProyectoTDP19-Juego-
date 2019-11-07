@@ -22,16 +22,6 @@ public class ColCombateEnemigo implements ColisionadorCombate {
 
     public void verificarColisionando(){
 
-        /*
-        for( Aliado a : aliadosDetectados){
-            if(a.estaMuerto())
-                aliadosDetectados.remove(a);
-        }
-
-        if(aliadosDetectados.isEmpty())
-            enemigo.getEstado().cambiarACaminando();
-
-          */
          if(aliadoDetectado!=null){
             if(aliadoDetectado.estaMuerto())
                  enemigo.getEstado().cambiarACaminando();

@@ -18,23 +18,23 @@ import java.awt.*;
 
 public class CampoProteccion extends MagiaTemporal {
 
-    public CampoProteccion(Point pos, int duracion){
-        super(pos,duracion);
+    public CampoProteccion(int duracion){
+        super(duracion);
 
         imagen[0]=new ImageIcon("Sprites/Magia/BarreraPotenciado/barreraDrop2.png");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 
-        sprites.getGrafico().addMouseListener(new MouseOyentePowerUp(this));
+        sprites.getGrafico().addMouseListener(new MouseOyenteMagiaCaida(this));
 
         componentesGraficas.agregarGrafico(sprites);
     }
 
-    public void afectarPortador(Enemigo portador){
+    public void afectarPortador(Personaje portador){
 
         PotenciadoBarrera potenciadoBarrera= new PotenciadoBarrera(portador,30,5);
         portador.getComponentesGraficas().agregarGrafico(potenciadoBarrera);
-        portador.setColisionador(new ColisionadorEnemigoConCampoProteccion(portador,this));
+        portador.setColisionador(new ColisionadorEnemigoConCampoProteccion((Enemigo) portador,this));
 
     }
 
@@ -65,6 +65,6 @@ public class CampoProteccion extends MagiaTemporal {
 
 
     public Entidad clone() {
-        return new CampoProteccion(pos,duracion);
+        return new CampoProteccion(duracion);
     }
 }

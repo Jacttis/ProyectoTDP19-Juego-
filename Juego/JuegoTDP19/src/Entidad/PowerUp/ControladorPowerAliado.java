@@ -14,20 +14,20 @@ public class ControladorPowerAliado {
         return instance;
     }
 
-    private PowerUp nextPower;
+    private MagiaTemporal nextMagia;
 
     private ControladorPowerAliado(){
 
     }
 
-    public void setNextPower(PowerUp power){
-        nextPower=power;
+    public void setNextPower(MagiaTemporal magia){
+        nextMagia=magia;
     }
 
     public void aplicarPowerToAliado(Aliado aliado){
-        if(nextPower!=null) {
-            nextPower.afectarPersonaje(aliado);
-            nextPower=null;
+        if(nextMagia!=null) {
+            nextMagia.afectarPersonaje(aliado);
+            nextMagia=null;
         }
     }
 

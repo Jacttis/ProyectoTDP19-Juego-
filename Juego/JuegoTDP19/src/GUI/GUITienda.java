@@ -1,10 +1,13 @@
 package GUI;
 
-import Colisionadores.Colisionador;
 import Constantes.Constantes;
-import Entidad.*;
 import Entidad.Aliados.*;
+import Entidad.PowerUp.AgujeroNegro;
+import Entidad.PowerUp.ObjetoPrecioso;
 import FabricaBotones.*;
+import FabricaBotones.BotonesAliados.*;
+import FabricaBotones.BotonesObjetos.BotonAgujeroNegro;
+import FabricaBotones.BotonesObjetos.BotonObjeto;
 import Juego.*;
 import Tienda.Tienda;
 
@@ -18,13 +21,7 @@ class GuiTienda {
 
 
     private JPanel panel;
-    private JButton btnArqueroHumano;
-    private JButton btnMagoHielo;
-    private JButton btnCaballeroEscudo;
-    private JButton btnArqueroPRO;
-    private JButton btnGoblinExplosivo;
 
-    private JButton btnobjeto1;
     private JButton btnobjeto2;
     private JButton btnobjeto3;
     private JButton btnobjeto4;
@@ -89,11 +86,11 @@ class GuiTienda {
         botonGoblinExplosivo.setBounds(600,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         panel.add(botonGoblinExplosivo);
 
+        BotonObjeto botonAgujeroNegro = BotonAgujeroNegro.getBotonAgujeroNegro();
+        botonAgujeroNegro.setBounds(Constantes.BOTON1_PX,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonAgujeroNegro);
 
 
-        btnobjeto1 = new JButton();
-        btnobjeto1.setBounds(Constantes.BOTON1_PX,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnobjeto1);
 
         btnobjeto2 = new JButton();
         btnobjeto2.setBounds(Constantes.BOTON1_PX+150,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
@@ -150,6 +147,7 @@ class GuiTienda {
     public void seClickeoEnMapa(Point pos){
 
         Tienda.getTienda().intentoCompra(pos);
+
     }
 
     /**
@@ -158,9 +156,7 @@ class GuiTienda {
      */
 
     public void deshabilitarBotones(){
-        btnMagoHielo.setEnabled(false);
-        btnArqueroHumano.setEnabled(false);
-        btnCaballeroEscudo.setEnabled(false);
+
     }
 
     /**
@@ -169,9 +165,7 @@ class GuiTienda {
      */
 
     public void habilitarBotones(){
-        btnMagoHielo.setEnabled(true);
-        btnArqueroHumano.setEnabled(true);
-        btnCaballeroEscudo.setEnabled(true);
+
     }
 
     public void actualizarOro(){

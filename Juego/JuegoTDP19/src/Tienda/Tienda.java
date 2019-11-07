@@ -4,6 +4,8 @@ import java.awt.*;
 import java.util.LinkedList;
 
 import Entidad.Aliados.Aliado;
+import Entidad.PowerUp.ObjetoPrecioso;
+import Juego.Mapa;
 
 public class Tienda {
 
@@ -12,6 +14,7 @@ public class Tienda {
 	private int oro;
 	private int puntos;
 	private Aliado nextToAdd = null;
+	private ObjetoPrecioso nextObjectToAdd = null;
 
 	private PosicionadorDeAliado posicionadorDeAliados;
 	//private LinkedList<ObjetoPrecioso> objetos;
@@ -33,6 +36,14 @@ public class Tienda {
 	public void intentoCompra(Point posicion){
 		if(nextToAdd!=null)
 			comprarAliado(posicion);
+		else
+			if(nextObjectToAdd!=null)
+				colocarObjeto(posicion);
+
+	}
+
+	public void setNextObjectToAdd(ObjetoPrecioso objectToAdd){
+		this.nextObjectToAdd = objectToAdd;
 	}
 
 	public void setNextToAdd(Aliado nextToAdd){
@@ -68,9 +79,10 @@ public class Tienda {
 		}
 	}
 
-	public void eliminarAliadoDeGrilla(Aliado aliadoAEliminar){
-
-		posicionadorDeAliados.desposicionarAliado(aliadoAEliminar);
+	public void colocarObjeto(Point pos){
+		nextObjectToAdd.posicionar(pos);
+		Mapa.getMapa().agregarEntidad(nextObjectToAdd);
+		nextObjectToAdd=null;
 	}
 
 

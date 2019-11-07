@@ -6,17 +6,14 @@ import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapaTiempo;
 import Entidad.ObjetosMapa.ObjetoMapaVida;
-import Entidad.Personaje;
 
 import java.util.LinkedList;
 
 public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
 
-    protected LinkedList<Enemigo> enemigosAfectados;
     protected ObjetoMapaTiempo objetoMapaTiempo;
 
     public ColCombateObjetoMapaNoDestruible(ObjetoMapaTiempo objetoMapaTiempo){
-        enemigosAfectados = new LinkedList<Enemigo>();
         this.objetoMapaTiempo=objetoMapaTiempo;
     }
 
@@ -24,7 +21,7 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
 
         LinkedList<Enemigo> enemigosARemover = new LinkedList<Enemigo>();
 
-        for( Enemigo e : enemigosAfectados ){
+        for( Enemigo e : objetoMapaTiempo.getEnemigosAfectados() ){
             if(!e.getHitBox().intersects(objetoMapaTiempo.getHitBox())) {
                 enemigosARemover.add(e);
                 objetoMapaTiempo.desafectar(e);
@@ -32,16 +29,12 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
         }
 
         for( Enemigo e : enemigosARemover )
-            enemigosAfectados.remove(e);
+            objetoMapaTiempo.getEnemigosAfectados().remove(e);
 
 
 
     }
 
-    public void desafectarTodos(){
-        for( Enemigo e : enemigosAfectados )
-            objetoMapaTiempo.desafectar(e);
-    }
 
     @Override
     public void detectoAliado(Aliado chocada) {
@@ -52,13 +45,13 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
     public void detectoEnemigo(Enemigo chocada) {
         boolean esta=false;
 
-        for(Enemigo e : enemigosAfectados)
+        for(Enemigo e : objetoMapaTiempo.getEnemigosAfectados())
             if(e.equals(chocada)){
                 esta=true;
                 break;
             }
          if(!esta) {
-             enemigosAfectados.add(chocada);
+             objetoMapaTiempo.getEnemigosAfectados().add(chocada);
              objetoMapaTiempo.afectar(chocada);
          }
     }

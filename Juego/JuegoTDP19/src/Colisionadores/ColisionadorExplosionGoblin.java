@@ -27,10 +27,11 @@ public class ColisionadorExplosionGoblin implements Colisionador {
     public void afectarEnemigo(Enemigo chocada) {
         boolean yaFueAfectado=false;
 
-        for(Enemigo e : enemigosAfectados) {
-            if (e.equals(chocada))
+        for(Enemigo e : enemigosAfectados)
+            if (e.equals(chocada)) {
                 yaFueAfectado = true;
-        }
+                break;
+            }
 
         if(!yaFueAfectado) {
             explosion.afectarPersonaje(chocada);

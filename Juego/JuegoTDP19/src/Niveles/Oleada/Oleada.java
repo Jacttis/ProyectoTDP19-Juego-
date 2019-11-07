@@ -79,14 +79,14 @@ public abstract class Oleada extends Thread{
     }
 
     public void inicializarCartelOleada(){
-        cartelOleada1.setForeground(Color.RED);
+        cartelOleada1.setForeground(Color.DARK_GRAY);
         cartelOleada1.setFont(new Font("Times New Roman", 3,100));
-        cartelOleada1.setBounds(550,200,3000,400);
+        cartelOleada1.setBounds(550,80,3000,400);
 
 
-        cartelOleada2.setForeground(Color.BLACK);
+        cartelOleada2.setForeground(Color.RED);
         cartelOleada2.setFont(new Font("Times New Roman", 3,100));
-        cartelOleada2.setBounds(555,205,3000,400);
+        cartelOleada2.setBounds(553,83,3000,400);
 
         Mapa.getMapa().getGui().add(cartelOleada2);
         Mapa.getMapa().getGui().add(cartelOleada1);

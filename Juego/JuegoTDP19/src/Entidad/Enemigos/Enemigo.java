@@ -102,9 +102,9 @@ public abstract class Enemigo extends Personaje {
 		if(!powers.isEmpty()) {
 			Random r = new Random();
 			int posibilidadCaer = r.nextInt(5);
-			if(posibilidadCaer<3) {
-				powers.getFirst().getPos().setLocation(pos);
-				Mapa.getMapa().agregarEntidad(powers.getFirst());
+			if(posibilidadCaer<7) {
+				for(PowerUp power : powers)
+					power.caerEnMapa(pos);
 			}
 		}
 

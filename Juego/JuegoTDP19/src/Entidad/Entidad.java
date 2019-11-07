@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.LinkedList;
 
 import Colisionadores.Colisionador;
+import Colisionadores.ColisionadorNulo;
 import ColisionadoresCombate.ColCombateNulo;
 import ColisionadoresCombate.ColisionadorCombate;
 import Estados.*;
@@ -38,6 +39,7 @@ public abstract class Entidad {
 
 		componentesGraficas = new Graficos();
 
+		colisionador = new ColisionadorNulo();
 		colisionadorCombate=new ColCombateNulo();
 
 		imagen=new ImageIcon[1];
@@ -126,7 +128,7 @@ public abstract class Entidad {
 	}
 	
 	public void posicionar(Point pos){
-
+		this.pos=pos;
 	}
 
 

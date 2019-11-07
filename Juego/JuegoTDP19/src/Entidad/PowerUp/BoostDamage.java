@@ -18,21 +18,21 @@ public class BoostDamage extends MagiaTemporal {
 
     protected int damageAumento;
 
-    public BoostDamage(Point pos,int duracion, int damageAumento){
-        super(pos,duracion);
+    public BoostDamage(int duracion, int damageAumento){
+        super(duracion);
         this.damageAumento=damageAumento;
 
         imagen[0]=new ImageIcon("Sprites/Fuego/FuegoDropTrue2.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 
-        sprites.getGrafico().addMouseListener(new MouseOyentePowerUp(this));
+        sprites.getGrafico().addMouseListener(new MouseOyenteMagiaCaida(this));
 
         componentesGraficas.agregarGrafico(sprites);
 
     }
 
-    public void afectarPortador(Enemigo portador){
+    public void afectarPortador(Personaje portador){
 
         graficoRepresentativo=new Potenciado(portador,0,20);
         portador.getComponentesGraficas().agregarGrafico(graficoRepresentativo);
@@ -65,6 +65,6 @@ public class BoostDamage extends MagiaTemporal {
 
 
     public Entidad clone() {
-        return new BoostDamage(pos,duracion,damageAumento);
+        return new BoostDamage(duracion,damageAumento);
     }
 }

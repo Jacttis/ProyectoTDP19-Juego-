@@ -36,8 +36,7 @@ public class NivelUno extends Nivel {
 
 			sleep(1000);
 
-			ObjetoMapaTiempo lago = new ObjetoLago(new Point(1000,500),20000,1);
-			Mapa.getMapa().agregarEntidad(lago);
+
 
 			/*
 			Random r= new Random();
@@ -50,6 +49,10 @@ public class NivelUno extends Nivel {
 			oleada.setEnemigosAGenerar(3);
 
 			oleada.start();
+			/*
+            ObjetoMapaTiempo lago = new ObjetoLago(new Point(1000,300),20000,1);
+            Mapa.getMapa().agregarEntidad(lago);
+            */
 
 			while(true){
 				if((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())){

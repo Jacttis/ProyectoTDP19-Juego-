@@ -30,7 +30,7 @@ public class FabricaEnemigoFallenAngel extends FabricaEnemigo {
 
     public Enemigo crearEnemigoBoosted() {
         Enemigo enemigo = new EnemigoFallenAngel(175,40,1500,0,2,100,1);
-        enemigo.agregarPowerUp(new CampoProteccion(enemigo.getPos(),8000));
+        enemigo.agregarPowerUp(obtenerPowerUpAlAzar());
 
         return enemigo;
     }
