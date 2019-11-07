@@ -11,6 +11,6 @@ public class BotonMagoHielo extends BotonAliado {
     }
 
     public Aliado getAliado() {
-        return new MagoHielo(100,30,1300,1000,0,"Tira Hielo");
+        return new MagoHielo(125,40,2000,1000,0,"Tira bolas de hielo lentas pero poderosas");
     }
 }

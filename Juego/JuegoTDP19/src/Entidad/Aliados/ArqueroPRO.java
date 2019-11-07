@@ -21,7 +21,7 @@ public class ArqueroPRO extends Aliado {
         width=Constantes.ALIADOX;
         height=Constantes.ALIADOY+20;
 
-        setPrecio(2);
+        precio=8;
 
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
         imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/atacandoTRUE.gif");

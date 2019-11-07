@@ -10,6 +10,7 @@ import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.ObjetosMapa.ObjetoMapaTiempo;
 import Entidad.ObjetosMapa.ObjetoPiedra;
 import FabricaEnemigo.*;
+import FabricaObjetoMapaEvento.FabricaEventoPiedra;
 import Juego.Mapa;
 import Niveles.Oleada.PrimerOleada;
 
@@ -19,6 +20,11 @@ public class NivelUno extends Nivel {
 		super();
 		nivelSiguiente=new NivelDos();
 		oleada = new PrimerOleada(this);
+
+		cartelNivel1.setText("NIVEL UNO");
+		cartelNivel2.setText("NIVEL UNO");
+
+		rangoCantidadEnemigos = new Point(4,6);
 	}
 
 
@@ -28,7 +34,15 @@ public class NivelUno extends Nivel {
 		listaEnemigosSpawn.add(FabricaEnemigoGolemTierra.getFabricaGolemTierra());
 	}
 
+	public void llenarListaEventos(){
+		listaEventos.add(FabricaEventoPiedra.getFabricaEventoPiedra());
+	}
 
+	public void comenzarNivel(){
+		oleada.start();
+	}
+
+	/**
 	public void run(){
 
 		try {
@@ -45,14 +59,14 @@ public class NivelUno extends Nivel {
 				ObjetoMapa piedra = new ObjetoPiedra(new Point(1000, obtenerPosicionAleatoriaEnY()), 300);
 				Mapa.getMapa().agregarEntidad(piedra);
 			}
-			*/
+
 			oleada.setEnemigosAGenerar(3);
 
 			oleada.start();
 			/*
             ObjetoMapaTiempo lago = new ObjetoLago(new Point(1000,300),20000,1);
             Mapa.getMapa().agregarEntidad(lago);
-            */
+
 
 			while(true){
 				if((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())){
@@ -105,7 +119,7 @@ public class NivelUno extends Nivel {
 			}
 
 
-			 */
+
 			oleada.setEnemigosAGenerar(5);
 
 
@@ -140,7 +154,7 @@ public class NivelUno extends Nivel {
 
 
 	}
-
+	**/
 
 	public String getDireccionImagenFondoNivel(){
 		String direccion="Sprites/Mapa/Mapa2Disenio.jpg";

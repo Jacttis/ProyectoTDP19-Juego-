@@ -19,7 +19,7 @@ public class FabricaDisparoReaperMan extends FabricaDisparo {
 
     public void generarDisparo() {
 
-        Disparo nuevoDisparo=new DisparoReaperMan(new Point(disparador.getPos().x+28,disparador.getPos().y+40),18,disparador.getDamage(),disparador);
+        Disparo nuevoDisparo=new DisparoReaperMan(new Point(disparador.getPos().x+28,disparador.getPos().y+40),20,disparador.getDamage(),disparador);
 
         Mapa.getMapa().agregarEntidad(nuevoDisparo);
         hiloPuedeAtacar=new HiloPrueba(disparador);

@@ -20,7 +20,7 @@ public class CaballeroEscudo extends Aliado {
         width= Constantes.ALIADOX;
         height=Constantes.ALIADOY;
 
-
+        precio = 3;
 
 
         imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/CaballeroEscudo/StillTrueCab.gif");

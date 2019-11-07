@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public abstract class BotonAliado extends JButton {
 
     public BotonAliado(String imagePath){
-        this.setToolTipText(getAliado().getDescripcion());
+        this.setToolTipText("Valor : "+getAliado().getPrecio()+" de Oro | "+getAliado().getDescripcion()+" |");
         this.setBackground(Color.DARK_GRAY);
         this.setIcon(new ImageIcon(imagePath));
 //        this.setBounds();
@@ -21,10 +21,6 @@ public abstract class BotonAliado extends JButton {
                 Tienda.getTienda().setNextToAdd(getAliado());
             }
         });
-    }
-
-    private void inicializarBoton(){
-
     }
 
     public abstract Aliado getAliado();

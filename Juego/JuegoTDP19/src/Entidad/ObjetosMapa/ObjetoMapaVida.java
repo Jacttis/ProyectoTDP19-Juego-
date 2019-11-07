@@ -8,11 +8,11 @@ import java.awt.*;
 
 public abstract class ObjetoMapaVida extends ObjetoMapa {
 
-    protected int vida,vidaInicial;
+    protected int vidaActual,vidaInicial;
 
     public ObjetoMapaVida(Point pos, int vida) {
         super(pos);
-        this.vida=vida;
+        this.vidaActual=vida;
         this.vidaInicial=vida;
         colisionadorCombate = new ColCombateObjetoMapaDestruible(this);
     }
@@ -22,11 +22,11 @@ public abstract class ObjetoMapaVida extends ObjetoMapa {
     }
 
     public boolean fueDestruido(){
-        return vida<=0;
+        return vidaActual<=0;
     }
 
     public void serAfectado(Entidad entidad) {
-        this.vida-=entidad.getDamage();
+        this.vidaActual-=entidad.getDamage();
 
         if(fueDestruido())
             this.eliminarse();

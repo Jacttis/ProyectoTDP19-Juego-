@@ -41,7 +41,6 @@ public abstract class Aliado extends Personaje {
         colisionador=new ColisionadorAliado(this);
         colisionadorCombate=new ColCombateAliado(this);
 
-        precio=1;
 
         estado=new Quieto(this);
 

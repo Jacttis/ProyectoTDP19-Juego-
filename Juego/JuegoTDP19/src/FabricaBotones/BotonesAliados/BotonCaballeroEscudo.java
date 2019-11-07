@@ -12,6 +12,6 @@ public class BotonCaballeroEscudo extends BotonAliado {
 
 
     public Aliado getAliado() {
-        return new CaballeroEscudo(250,12,1250,0,0,"Aguanta Mucho pero no pega");
+        return new CaballeroEscudo(250,15,1000,0,0,"Caballero melee que aguanta mucho pero pega poco");
     }
 }

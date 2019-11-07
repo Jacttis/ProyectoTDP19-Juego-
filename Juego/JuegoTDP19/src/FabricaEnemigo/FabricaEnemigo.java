@@ -10,11 +10,8 @@ import java.util.Random;
 
 public abstract class FabricaEnemigo {
 
-    public FabricaEnemigo(){
 
-    }
-
-    public PowerUp obtenerPowerUpAlAzar(){
+    protected PowerUp obtenerPowerUpAlAzar(){
         Random r = new Random();
         int aleatorio = r.nextInt(20);
 

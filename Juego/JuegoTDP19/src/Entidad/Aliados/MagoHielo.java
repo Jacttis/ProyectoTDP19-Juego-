@@ -19,6 +19,8 @@ public class MagoHielo extends Aliado {
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
 
+		precio = 6;
+
 		fabricaDisparo=new FabricaDisparoMagoHielo(this);
 
 		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/stillTRUE.gif");

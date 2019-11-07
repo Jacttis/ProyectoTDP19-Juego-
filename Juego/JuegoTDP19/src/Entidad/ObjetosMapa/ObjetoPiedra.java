@@ -37,25 +37,25 @@ public class ObjetoPiedra extends ObjetoMapaVida {
 
     }
 
+    public void posicionar(Point posicion){
+        this.pos.setLocation(posicion.x , posicion.y -20);
+    }
+
 
     public void serAfectado(Entidad entidad) {
-        this.vida-=entidad.getDamage();
+        this.vidaActual-=entidad.getDamage();
 
-        if((vida<100)&&(vida>50))
+        int porcentaje = (vidaActual * 100) / vidaInicial;
+
+        if((porcentaje<70)&&(porcentaje>40))
             componentesGraficas.cambiarGrafico(1);
         else
-            if(vida<50)
+            if(porcentaje<40)
                 componentesGraficas.cambiarGrafico(2);
 
         if(fueDestruido())
             this.eliminarse();
 
-    }
-
-
-
-    public Entidad clone() {
-        return new ObjetoPiedra(pos,vida);
     }
 
 

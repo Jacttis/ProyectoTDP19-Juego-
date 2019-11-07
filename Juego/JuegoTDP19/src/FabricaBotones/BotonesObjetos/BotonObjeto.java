@@ -14,6 +14,7 @@ public abstract class BotonObjeto extends JButton {
     public BotonObjeto(String imagePath){
 
         this.setBackground(Color.DARK_GRAY);
+        this.setToolTipText(getObjeto().getDescripcion());
         this.setIcon(new ImageIcon(imagePath));
         setEnabled(false);
         this.addActionListener(new ActionListener() {

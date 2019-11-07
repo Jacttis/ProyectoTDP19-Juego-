@@ -12,6 +12,6 @@ public class BotonArqueroHumano extends BotonAliado {
 
 
     public Aliado getAliado() {
-        return new ArqueroHumano(100,20,750,1300,0,"Dispara flechas");
+        return new ArqueroHumano(100,20,1300,1300,0,"Dispara flechas a un gran rango y con mucha velocidad");
     }
 }

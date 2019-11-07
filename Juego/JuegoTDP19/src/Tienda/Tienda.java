@@ -21,7 +21,7 @@ public class Tienda {
 
 	private Tienda(){
 		puntos=0;
-		oro=4;
+		oro=18;
 		posicionadorDeAliados=new PosicionadorDeAliado();
 	}
 
@@ -100,7 +100,10 @@ public class Tienda {
 		else
 			aumentarOro(aliado.getPrecio()/2);
 
+
 		aliado.eliminarse();
+
+		aliado.getPos().setLocation(0,0);
 	}
 
 	

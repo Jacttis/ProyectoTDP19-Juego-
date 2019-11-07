@@ -11,6 +11,6 @@ public class BotonGoblinExplosivo extends BotonAliado {
     }
 
     public Aliado getAliado() {
-        return new GoblinExplosivo(200,125,10000,0,4,"Explota al impactar con un enemigo");
+        return new GoblinExplosivo(50,150,0,0,4,"Corre hacia adelante y explota al impactar con un enemigo");
     }
 }

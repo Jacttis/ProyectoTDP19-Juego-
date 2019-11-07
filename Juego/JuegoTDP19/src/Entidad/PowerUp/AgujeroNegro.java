@@ -12,7 +12,7 @@ public class AgujeroNegro extends ObjetoPrecioso {
 
 
     public AgujeroNegro() {
-        super(1750);
+        super(1750, "Agujero negro que al cabo de unos segundos teletransporta hacia atras a los enemigos que lo toquen");
 
         this.width=120;
         this.height=103;

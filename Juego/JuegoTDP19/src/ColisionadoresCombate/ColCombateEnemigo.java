@@ -23,9 +23,11 @@ public class ColCombateEnemigo implements ColisionadorCombate {
     public void verificarColisionando(){
 
          if(aliadoDetectado!=null){
-            if(aliadoDetectado.estaMuerto())
-                 enemigo.getEstado().cambiarACaminando();
+            if((!aliadoDetectado.getHitBox().intersects(enemigo.getRangoCombate()) || (aliadoDetectado.estaMuerto()))) {
+                enemigo.getEstado().cambiarACaminando();
+                aliadoDetectado = null;
             }
+         }
     }
 
     public void detectoAliado(Aliado chocada) {

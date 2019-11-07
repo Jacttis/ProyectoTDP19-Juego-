@@ -2,9 +2,14 @@ package Niveles.Oleada;
 
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
+import Entidad.ObjetosMapa.ObjetoMapa;
+import FabricaEnemigo.FabricaEnemigoReaperMan;
+import FabricaObjetoMapaEvento.FabricaMapaEvento;
+import Juego.Mapa;
 import Niveles.Nivel;
 
 import java.awt.*;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class TercerOleada extends Oleada {
@@ -23,19 +28,27 @@ public class TercerOleada extends Oleada {
 
             inicializarCartelOleada();
 
-            sleep(3500);
+            sleep(1700);
 
             retirarCartelOleada();
 
-            sleep(1500);
-
-
-            Enemigo enemigo;
-
+            sleep(700);
 
 
             Random r = new Random();
-            for (int i = 0; i < cantEnemigosDeOleada; i++) {
+            //Mediante un numero aleatorio decido si agregar o no un evento aleatorio, el cual se obtendra tambien
+            // de forma aleatoria sacandolo de la lista de eventos que tiene la clase Nivel como atributo.
+            int posibilidadEventoAleatorio = r.nextInt(10);
+            if(posibilidadEventoAleatorio<5) {
+                LinkedList<FabricaMapaEvento> listaEventos = nivel.getListaEventos();
+                ObjetoMapa evento = listaEventos.get(r.nextInt(listaEventos.size())).getEvento();
+                Mapa.getMapa().agregarEntidad(evento);
+            }
+
+            Enemigo enemigo;
+            int cantEnemigos = getCantidadEnemigosAleatoria()+2;
+
+            for (int i = 0; i < cantEnemigos ; i++) {
                 int enemigoAleatorio = r.nextInt(nivel.getListaEnemigosSpawn().size());
                 int tipoEnemigo = r.nextInt(10);
                 if (tipoEnemigo < 6)
@@ -44,8 +57,28 @@ public class TercerOleada extends Oleada {
                 enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
                 agregarEnemigo(enemigo);
 
-                sleep(3000);
+                sleep(1000);
             }
+
+            Enemigo reaper = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();
+            reaper.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
+            agregarEnemigo(reaper);
+
+            while(true){
+
+                if(verificarEnemigoGano()){
+                    Mapa.getMapa().perdio();
+                    break;
+                }
+                else
+                if((!enemigosGenerados.isEmpty()) && (verificarMuerteDeOleada())){
+                    sleep(3000);
+                    nivel.cambiarNivel();
+                    break;
+                }
+                sleep(1000);
+            }
+
 
         }
         catch(InterruptedException e){}

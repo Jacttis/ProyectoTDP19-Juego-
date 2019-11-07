@@ -23,12 +23,12 @@ public class FabricaEnemigoGolemTierra extends FabricaEnemigo {
 
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemTierra(275,30,1500,0,2,100,1);
+        return new EnemigoGolemTierra(300,30,1750,0,2,100,2);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        Enemigo enemigo = new EnemigoGolemTierra(275,40,1500,0,2,100,1);
+        Enemigo enemigo = new EnemigoGolemTierra(300,30,1750,0,2,100,2);
         enemigo.agregarPowerUp(obtenerPowerUpAlAzar());
 
         return enemigo;

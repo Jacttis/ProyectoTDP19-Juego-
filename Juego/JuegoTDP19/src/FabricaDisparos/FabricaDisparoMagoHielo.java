@@ -19,7 +19,7 @@ public class FabricaDisparoMagoHielo extends FabricaDisparo{
 
     public void generarDisparo() {
 
-        Disparo nuevoDisparo=new DisparoMagoHielo(new Point(disparador.getPos().x+28,disparador.getPos().y+40),18,disparador.getDamage(),disparador);
+        Disparo nuevoDisparo=new DisparoMagoHielo(new Point(disparador.getPos().x+28,disparador.getPos().y+40),15,disparador.getDamage(),disparador);
 
         Mapa.getMapa().agregarEntidad(nuevoDisparo);
         hiloPuedeAtacar=new HiloPrueba(disparador);

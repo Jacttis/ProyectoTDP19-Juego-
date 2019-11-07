@@ -15,10 +15,12 @@ public abstract class ObjetoPrecioso extends PowerUp {
 
     protected LinkedList<Personaje> alcanzados;
     protected HiloObjetoPrecioso hilo;
+    protected String descripcion;
 
-    public ObjetoPrecioso(int duracion){
+    public ObjetoPrecioso(int duracion , String descripcion){
         super(0,duracion);
 
+        this.descripcion = descripcion;
         alcanzados = new LinkedList<Personaje>();
 
         colisionadorCombate = new ColisionadorObjetoPrecioso(this);
@@ -27,6 +29,10 @@ public abstract class ObjetoPrecioso extends PowerUp {
 
     public LinkedList<Personaje> getAlcanzados(){
         return alcanzados;
+    }
+
+    public String getDescripcion(){
+        return descripcion;
     }
 
     public void actualizarEntidad(){

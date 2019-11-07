@@ -36,12 +36,12 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
     }
 
 
-    @Override
+
     public void detectoAliado(Aliado chocada) {
 
     }
 
-    @Override
+
     public void detectoEnemigo(Enemigo chocada) {
         boolean esta=false;
 
@@ -56,17 +56,17 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
          }
     }
 
-    @Override
+
     public void detectoDisparo(Disparo chocada) {
 
     }
 
-    @Override
+
     public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
 
     }
 
-    @Override
+
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }

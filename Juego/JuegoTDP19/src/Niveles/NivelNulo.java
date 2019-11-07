@@ -16,14 +16,21 @@ public class NivelNulo extends Nivel {
         nivelSiguiente=null;
     }
 
+    @Override
+    public void comenzarNivel() {
+
+    }
+
     public void llenarListaEnemigosSpawn() {
 
 
     }
 
-    public void run() {
+    @Override
+    public void llenarListaEventos() {
 
     }
+
 
     public String getDireccionImagenFondoNivel(){
         String direccion="Sprites/Mapa/Mapa2DisenioNIVEL2.jpg";

@@ -17,9 +17,13 @@ public class ColCombateAliado implements ColisionadorCombate {
     }
 
     public void verificarColisionando(){
+
         if(enemigoDetectado!=null){
-            if(enemigoDetectado.estaMuerto())
+            if((!enemigoDetectado.getHitBox().intersects(aliado.getRangoCombate()) || (enemigoDetectado.estaMuerto()))) {
                 aliado.getEstado().cambiarAQuieto();
+                enemigoDetectado = null;
+            }
+
         }
     }
 

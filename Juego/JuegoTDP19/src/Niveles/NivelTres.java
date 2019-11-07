@@ -3,6 +3,8 @@ package Niveles;
 import Constantes.Constantes;
 import Entidad.Enemigos.Enemigo;
 import FabricaEnemigo.*;
+import FabricaObjetoMapaEvento.FabricaEventoLago;
+import FabricaObjetoMapaEvento.FabricaEventoPiedra;
 import Juego.Mapa;
 
 import java.awt.*;
@@ -13,6 +15,16 @@ public class NivelTres extends Nivel {
     public NivelTres() {
         super();
         nivelSiguiente=new NivelNulo();
+
+        cartelNivel1.setText("NIVEL TRES");
+        cartelNivel2.setText("NIVEL TRES");
+
+        rangoCantidadEnemigos = new Point(7,10);
+    }
+
+
+    public void comenzarNivel() {
+        oleada.start();
     }
 
     public void llenarListaEnemigosSpawn() {
@@ -24,77 +36,11 @@ public class NivelTres extends Nivel {
 
     }
 
-    public void run() {
-
-
-        try {
-
-            oleada.setEnemigosAGenerar(7);
-
-            oleada.start();
-
-            while (true) {
-                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
-                    oleada = oleada.getSiguiente();
-
-                    break;
-
-                } else if (oleada.verificarEnemigoGano()) {
-                    Mapa.getMapa().perdio();
-                    break;
-                }
-                sleep(1000);
-
-            }
-
-            sleep(1000);
-
-
-
-            oleada.setEnemigosAGenerar(8);
-
-            oleada.start();
-
-            while (true) {
-                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
-                    oleada = oleada.getSiguiente();
-
-                    break;
-
-                } else if (oleada.verificarEnemigoGano()) {
-                    Mapa.getMapa().perdio();
-                    break;
-                }
-                sleep(1000);
-
-            }
-
-            sleep(1000);
-
-
-            oleada.setEnemigosAGenerar(10);
-
-
-            oleada.start();
-
-
-            while (true) {
-                if ((!oleada.getEnemigosGenerados().isEmpty()) && (oleada.verificarMuerteDeOleada())) {
-                    oleada = oleada.getSiguiente();
-                    break;
-                } else if (oleada.verificarEnemigoGano()) {
-                    Mapa.getMapa().perdio();
-                    break;
-                }
-                sleep(1000);
-
-            }
-
-            Mapa.getMapa().terminoNivel();
-
-        }
-        catch(InterruptedException e) {}
+    public void llenarListaEventos(){
+        listaEventos.add(FabricaEventoPiedra.getFabricaEventoPiedra());
+        listaEventos.add(FabricaEventoLago.getFabricaEventoLago());
     }
+
 
 
     public String getDireccionImagenFondoNivel(){

@@ -27,8 +27,11 @@ public class BarraDeVida extends Grafico {
 
         this.grafico.setBounds(portador.getPos().x+modificadorX, portador.getPos().y+portador.getHeight()+modificadorY , portador.getVida()*80/portador.getVidaTotal(),5);
 
-            if (portador.getVida() < 70) {
-                if (portador.getVida() < 40)
+        //Determina en que porcentaje de vida esta el personaje
+        int porcentaje = (portador.getVida() * 100) / portador.getVidaTotal();
+
+            if (porcentaje < 70) {
+                if (porcentaje < 40)
                     grafico.setBackground(Color.RED);
                 else grafico.setBackground(Color.YELLOW);
             }

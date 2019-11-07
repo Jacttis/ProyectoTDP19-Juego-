@@ -11,27 +11,39 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public abstract class Oleada extends Thread{
 
 
     protected Nivel nivel;
-    protected int cantEnemigosDeOleada;
     protected Oleada oleadaSiguiente;
     protected LinkedList<Enemigo> enemigosGenerados;
     protected JLabel cartelOleada1,cartelOleada2;
 
     public Oleada(Nivel nivel){
-        this.cantEnemigosDeOleada=cantEnemigosDeOleada;
+
         enemigosGenerados = new LinkedList<Enemigo>();
         this.nivel=nivel;
-        cantEnemigosDeOleada=0;
 
         cartelOleada1 = new JLabel();
         cartelOleada2 = new JLabel();
     }
 
     public abstract void run();
+
+    public int getCantidadEnemigosAleatoria(){
+
+        //obtiene el rango del nivel en cuestion
+        Point rango = nivel.getRangoCantidadEnemigos();
+
+        //mediante un random calculo un valor aleatorio desde el minimo valor del rango hasta el valor maximo del rango.
+        Random r = new Random();
+        IntStream intStream = r.ints(1 , rango.x , rango.y+1);
+        int cantEnemigosAGenerar = intStream.sum();
+
+        return cantEnemigosAGenerar;
+    }
 
     public boolean verificarMuerteDeOleada(){
         boolean murieronTodos=true;
@@ -70,9 +82,6 @@ public abstract class Oleada extends Thread{
         Mapa.getMapa().agregarEntidad(enemigo);
     }
 
-    public void setEnemigosAGenerar(int cantEnemigosDeOleada){
-        this.cantEnemigosDeOleada=cantEnemigosDeOleada;
-    }
 
     public LinkedList<Enemigo> getEnemigosGenerados(){
         return enemigosGenerados;
@@ -81,19 +90,23 @@ public abstract class Oleada extends Thread{
     public void inicializarCartelOleada(){
         cartelOleada1.setForeground(Color.DARK_GRAY);
         cartelOleada1.setFont(new Font("Times New Roman", 3,100));
-        cartelOleada1.setBounds(550,80,3000,400);
+        cartelOleada1.setBounds(500,80,3000,400);
 
 
         cartelOleada2.setForeground(Color.RED);
         cartelOleada2.setFont(new Font("Times New Roman", 3,100));
-        cartelOleada2.setBounds(553,83,3000,400);
+        cartelOleada2.setBounds(503,83,3000,400);
 
         Mapa.getMapa().getGui().add(cartelOleada2);
         Mapa.getMapa().getGui().add(cartelOleada1);
+
+        Mapa.getMapa().getGui().repaint();
     }
 
     public void retirarCartelOleada(){
         Mapa.getMapa().getGui().remove(cartelOleada1);
         Mapa.getMapa().getGui().remove(cartelOleada2);
+
+        Mapa.getMapa().getGui().repaint();
     }
 }

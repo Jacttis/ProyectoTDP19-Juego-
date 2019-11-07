@@ -20,9 +20,7 @@ public class Mapa {
 	protected Juego juego;
 	protected Nivel nivel;
 	protected GUI gui;
-	protected HiloDescansoCambioNivel descanso;
-	
-	
+
 	/**
 	 * Crea lista de entidades y entidadesAAgregar
 	 * Inicializa el nivel
@@ -59,7 +57,7 @@ public class Mapa {
 	
 	
 	public void generar() {
-		nivel.start();
+		nivel.comenzarNivel();
 
 	}
 	
@@ -88,7 +86,6 @@ public class Mapa {
 			for (Entidad eAEliminar : entidadesAEliminarTemporal) {
 				entidades.remove(eAEliminar);
 				eliminarEntidadGrafica(eAEliminar);
-				//System.out.println("Entidades : "+entidades.size());
 			}
 
 		}
@@ -153,16 +150,7 @@ public class Mapa {
 
 		gui.repaint();
 	}
-	
-	public LinkedList<Entidad> getEntidades() {
-		return entidades;
-	}
-	
-	public void showEntidades() {
-		for(Entidad e :this.getEntidades()) {
-			System.out.println(e.getPos()+"\n");
-		}
-	}
+
 
 
 	/**
@@ -230,10 +218,6 @@ public class Mapa {
 	}
 
 
-	public void terminoNivel(){
-		descanso = new HiloDescansoCambioNivel(nivel);
-		descanso.start();
-	}
 
 	public void perdio(){
 		limpiarMapa();
@@ -245,8 +229,6 @@ public class Mapa {
 		for(Entidad entidad : entidades){
 			entidad.eliminarse();
 		}
-
-		Tienda.getTienda().aumentarOro(nivel.getOroPremio());
 	}
 
 	public void removerGrafico(Grafico graficoARemover){

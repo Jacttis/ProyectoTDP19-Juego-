@@ -21,6 +21,8 @@ public class ArqueroHumano extends Aliado {
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
 
+		precio=4;
+
 		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/atacandoTRUE.gif");
 		imagen[2] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/muerteTRUE.gif");
