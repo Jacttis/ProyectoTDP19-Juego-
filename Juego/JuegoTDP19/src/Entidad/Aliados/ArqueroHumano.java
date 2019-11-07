@@ -21,7 +21,7 @@ public class ArqueroHumano extends Aliado {
 		width= Constantes.ALIADOX;
 		height=Constantes.ALIADOY;
 
-		precio=4;
+		precio=5;
 
 		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/atacandoTRUE.gif");
@@ -92,7 +92,7 @@ public class ArqueroHumano extends Aliado {
 	 */
 
 	public Rectangle getHitBox(){
-		return new Rectangle(pos.x,pos.y,width-30,height-70);
+		return new Rectangle(pos.x,pos.y,width-30,height-50);
 	}
 	
 	

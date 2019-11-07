@@ -3,29 +3,25 @@ package ColisionadoresCombate;
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
-import Entidad.Disparos.GolpeEnemigo;
-import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.Entidad;
 import Entidad.ObjetosMapa.ObjetoMapaVida;
-
-import java.util.LinkedList;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColCombateEnemigo implements ColisionadorCombate {
 
     protected Enemigo enemigo;
-    protected LinkedList<Aliado> aliadosDetectados;
-    protected Aliado aliadoDetectado;
+    protected Entidad entidadDetectada;
 
     public ColCombateEnemigo(Enemigo enemigo){
         this.enemigo=enemigo;
-        aliadosDetectados=new LinkedList<Aliado>();
     }
 
     public void verificarColisionando(){
 
-         if(aliadoDetectado!=null){
-            if((!aliadoDetectado.getHitBox().intersects(enemigo.getRangoCombate()) || (aliadoDetectado.estaMuerto()))) {
+         if(entidadDetectada!=null){
+            if((!entidadDetectada.getHitBox().intersects(enemigo.getRangoCombate()))) {
                 enemigo.getEstado().cambiarACaminando();
-                aliadoDetectado = null;
+                entidadDetectada = null;
             }
          }
     }
@@ -33,11 +29,11 @@ public class ColCombateEnemigo implements ColisionadorCombate {
     public void detectoAliado(Aliado chocada) {
         enemigo.getEstado().cambiarAAtacando();
 
-        if(aliadoDetectado!=null) {
-            if (!aliadoDetectado.equals(chocada))
-                aliadoDetectado = chocada;
+        if(entidadDetectada!=null) {
+            if (!entidadDetectada.equals(chocada))
+                entidadDetectada = chocada;
         }
-        else aliadoDetectado=chocada;
+        else entidadDetectada=chocada;
     }
 
 
@@ -49,12 +45,29 @@ public class ColCombateEnemigo implements ColisionadorCombate {
 
     }
 
-    public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
 
+
+    public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
+        enemigo.getEstado().cambiarAAtacando();
+
+        if (entidadDetectada != null){
+            if (!entidadDetectada.equals(chocada))
+                entidadDetectada = chocada;
+        }
+        else
+            entidadDetectada=chocada;
     }
 
-    @Override
-    public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
-        chocada.getColisionadorCombate().detectoEnemigo(enemigo);
+
+    public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
+        enemigo.getEstado().cambiarAAtacando();
+
+        if(entidadDetectada!=null) {
+            if (!entidadDetectada.equals(chocada))
+                entidadDetectada = chocada;
+        }
+        else
+            entidadDetectada = chocada;
+
     }
 }

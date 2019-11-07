@@ -1,5 +1,7 @@
 package Entidad.PowerUp;
 
+import Entidad.PowerUp.MagiasTemporales.MagiaTemporal;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 

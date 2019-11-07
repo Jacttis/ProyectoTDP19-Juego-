@@ -19,7 +19,7 @@ public class NivelDos extends Nivel {
         cartelNivel1.setText("NIVEL DOS");
         cartelNivel2.setText("NIVEL DOS");
 
-        rangoCantidadEnemigos = new Point(5,8);
+        rangoCantidadEnemigos = new Point(9,12);
     }
 
     public void llenarListaEnemigosSpawn() {

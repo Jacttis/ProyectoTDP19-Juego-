@@ -2,18 +2,16 @@ package GUI;
 
 import Constantes.Constantes;
 import Entidad.Aliados.*;
-import Entidad.PowerUp.AgujeroNegro;
-import Entidad.PowerUp.ObjetoPrecioso;
 import FabricaBotones.*;
 import FabricaBotones.BotonesAliados.*;
 import FabricaBotones.BotonesObjetos.BotonAgujeroNegro;
 import FabricaBotones.BotonesObjetos.BotonObjeto;
+import FabricaBotones.BotonesObjetos.BotonTronco;
 import Juego.*;
 import Tienda.Tienda;
 
 
 import java.awt.*;
-import java.awt.event.*;
 
 import javax.swing.*;
 
@@ -22,7 +20,6 @@ class GuiTienda {
 
     private JPanel panel;
 
-    private JButton btnobjeto2;
     private JButton btnobjeto3;
     private JButton btnobjeto4;
     private JButton btnobjeto5;
@@ -90,23 +87,22 @@ class GuiTienda {
         botonAgujeroNegro.setBounds(Constantes.BOTON1_PX,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
         panel.add(botonAgujeroNegro);
 
+        BotonObjeto botonTronco = BotonTronco.getBotonTronco();
+        botonTronco.setBounds(Constantes.BOTON1_PX+150,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
+        panel.add(botonTronco);
 
-
-        btnobjeto2 = new JButton();
-        btnobjeto2.setBounds(Constantes.BOTON1_PX+150,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnobjeto2);
 
         btnobjeto3 = new JButton();
         btnobjeto3.setBounds(Constantes.BOTON1_PX+300,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnobjeto3);
+        //panel.add(btnobjeto3);
 
         btnobjeto4 = new JButton();
         btnobjeto4.setBounds(Constantes.BOTON1_PX+450,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnobjeto4);
+        //panel.add(btnobjeto4);
 
         btnobjeto5 = new JButton();
         btnobjeto5.setBounds(Constantes.BOTON1_PX+600,Constantes.BOTONES_PY,Constantes.BOTONES_X,Constantes.BOTONES_Y);
-        panel.add(btnobjeto5);
+        //panel.add(btnobjeto5);
 
 
 

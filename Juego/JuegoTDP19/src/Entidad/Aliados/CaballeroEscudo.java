@@ -48,7 +48,7 @@ public class CaballeroEscudo extends Aliado {
     }
     public void posicionar(ParCelda celda){
         super.posicionar(celda);
-        pos.setLocation(celda.getPos().x,celda.getPos().y);
+        pos.setLocation(celda.getPos().x,celda.getPos().y+20);
 
     }
 
@@ -57,6 +57,6 @@ public class CaballeroEscudo extends Aliado {
     }
 
     public Rectangle getHitBox(){
-        return new Rectangle(pos.x,pos.y,width-20,height-70);
+        return new Rectangle(pos.x,pos.y,width-20,height-50);
     }
 }

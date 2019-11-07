@@ -1,6 +1,6 @@
 package Entidad.Disparos;
 
-import Colisionadores.ColisionadorExplosionGoblin;
+import Colisionadores.ColisionadoresDisparos.ColisionadorExplosionGoblin;
 import Entidad.Aliados.HiloExplosion;
 import Entidad.*;
 import Graficos.Grafico;

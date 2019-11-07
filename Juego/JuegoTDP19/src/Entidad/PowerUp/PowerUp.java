@@ -17,7 +17,7 @@ public abstract class PowerUp extends Entidad {
     protected int duracion;
 
     public PowerUp(double velocidad, int duracion) {
-        super(new Point(-300,-300) ,velocidad, 0);
+        super(new Point(0,0) ,velocidad, 0);
         IA=new InteligenciaPowerUp(this);
 
         this.duracion=duracion;
@@ -38,15 +38,17 @@ public abstract class PowerUp extends Entidad {
 
     }
 
+    public void serDetectado(ColisionadorCombate colisionadorCombate){
+
+    }
+
+
     public abstract void afectarPortador(Personaje portador);
 
     public abstract void caerEnMapa(Point pos);
 
 
 
-    public void serDetectado(ColisionadorCombate colisionadorCombate){
-
-    }
 
     public abstract Entidad clone();
 }

@@ -1,7 +1,6 @@
 package Entidad.ObjetosMapa;
 
 import Entidad.*;
-import Entidad.PowerUp.ObjetoPrecioso;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;
 
@@ -29,7 +28,7 @@ public class ObjetoPiedra extends ObjetoMapaVida {
     }
 
     public void afectar(Personaje entidad) {
-        entidad.getEstado().cambiarAAtacando();
+
     }
 
 
@@ -37,15 +36,20 @@ public class ObjetoPiedra extends ObjetoMapaVida {
 
     }
 
-    public void posicionar(Point posicion){
-        this.pos.setLocation(posicion.x , posicion.y -20);
+    public Rectangle getHitBox(){
+        return new Rectangle(pos.x,pos.y-20,width,height-40);
     }
+
+    public Rectangle getRangoCombate(){
+        return getHitBox();
+    }
+
 
 
     public void serAfectado(Entidad entidad) {
         this.vidaActual-=entidad.getDamage();
 
-        int porcentaje = (vidaActual * 100) / vidaInicial;
+        int porcentaje = (vidaActual * 100) / vidaTotal;
 
         if((porcentaje<70)&&(porcentaje>40))
             componentesGraficas.cambiarGrafico(1);

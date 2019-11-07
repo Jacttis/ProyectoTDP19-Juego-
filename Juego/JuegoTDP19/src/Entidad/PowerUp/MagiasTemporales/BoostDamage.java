@@ -1,18 +1,14 @@
-package Entidad.PowerUp;
+package Entidad.PowerUp.MagiasTemporales;
 
-import Colisionadores.Colisionador;
 import Entidad.*;
 import Entidad.Aliados.Aliado;
-import Entidad.Enemigos.Enemigo;
+import Entidad.PowerUp.MouseOyenteMagiaCaida;
 import Graficos.Grafico;
 import Graficos.Potenciado;
 import Graficos.SpriteEntidad;
 import Juego.Mapa;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class BoostDamage extends MagiaTemporal {
 

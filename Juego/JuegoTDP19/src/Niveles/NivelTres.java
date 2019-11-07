@@ -19,7 +19,7 @@ public class NivelTres extends Nivel {
         cartelNivel1.setText("NIVEL TRES");
         cartelNivel2.setText("NIVEL TRES");
 
-        rangoCantidadEnemigos = new Point(7,10);
+        rangoCantidadEnemigos = new Point(10,15);
     }
 
 

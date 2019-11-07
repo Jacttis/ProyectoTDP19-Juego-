@@ -4,7 +4,7 @@ import java.awt.*;
 
 import javax.swing.ImageIcon;
 
-import Colisionadores.ColisionadorDisparoArqueroPro;
+import Colisionadores.ColisionadoresDisparos.ColisionadorDisparoArqueroPro;
 import Entidad.*;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;

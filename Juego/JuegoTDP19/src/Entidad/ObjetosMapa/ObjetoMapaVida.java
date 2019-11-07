@@ -8,12 +8,12 @@ import java.awt.*;
 
 public abstract class ObjetoMapaVida extends ObjetoMapa {
 
-    protected int vidaActual,vidaInicial;
+    protected int vidaActual, vidaTotal;
 
     public ObjetoMapaVida(Point pos, int vida) {
         super(pos);
         this.vidaActual=vida;
-        this.vidaInicial=vida;
+        this.vidaTotal =vida;
         colisionadorCombate = new ColCombateObjetoMapaDestruible(this);
     }
 

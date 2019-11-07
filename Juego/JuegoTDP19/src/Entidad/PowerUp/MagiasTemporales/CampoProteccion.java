@@ -1,20 +1,18 @@
-package Entidad.PowerUp;
+package Entidad.PowerUp.MagiasTemporales;
 
-import Colisionadores.ColisionadorAliado;
-import Colisionadores.ColisionadorAliadoConCampoProteccion;
-import Colisionadores.ColisionadorEnemigoConCampoProteccion;
+import Colisionadores.ColisionadoresAliados.ColisionadorAliado;
+import Colisionadores.ColisionadoresAliados.ColisionadorAliadoConCampoProteccion;
+import Colisionadores.ColisionadoresEnemigos.ColisionadorEnemigoConCampoProteccion;
 import Entidad.Aliados.Aliado;
 import Entidad.Enemigos.Enemigo;
 import Entidad.*;
 import Entidad.Personaje;
+import Entidad.PowerUp.MouseOyenteMagiaCaida;
 import Graficos.Grafico;
-import Graficos.Potenciado;
 import Graficos.PotenciadoBarrera;
 import Graficos.SpriteEntidad;
-import Juego.Mapa;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class CampoProteccion extends MagiaTemporal {
 

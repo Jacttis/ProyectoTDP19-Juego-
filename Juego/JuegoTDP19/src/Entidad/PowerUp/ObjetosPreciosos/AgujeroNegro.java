@@ -1,6 +1,7 @@
-package Entidad.PowerUp;
+package Entidad.PowerUp.ObjetosPreciosos;
 
 import Entidad.*;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoTiempo;
 import FabricaBotones.BotonesObjetos.BotonAgujeroNegro;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;
@@ -8,7 +9,7 @@ import Graficos.SpriteEntidad;
 import javax.swing.*;
 import java.awt.*;
 
-public class AgujeroNegro extends ObjetoPrecioso {
+public class AgujeroNegro extends ObjetoPreciosoTiempo {
 
 
     public AgujeroNegro() {

@@ -4,7 +4,7 @@
 package Entidad.Aliados;
 
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorAliado;
+import Colisionadores.ColisionadoresAliados.ColisionadorAliado;
 import ColisionadoresCombate.ColCombateAliado;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
@@ -76,9 +76,12 @@ public abstract class Aliado extends Personaje {
      */
 
     public void eliminarse(){
-
         celdaUbicado.desocupar();
         Mapa.getMapa().eliminarEntidad(this);
+
+        if(!this.estaMuerto())
+            Tienda.getTienda().venderAliado(this);
+
     }
 
     public void posicionar(ParCelda celda){

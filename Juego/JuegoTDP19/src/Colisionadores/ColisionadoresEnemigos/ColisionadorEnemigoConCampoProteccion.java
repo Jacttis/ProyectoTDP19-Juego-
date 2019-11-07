@@ -1,9 +1,8 @@
-package Colisionadores;
+package Colisionadores.ColisionadoresEnemigos;
 
 import Entidad.Aliados.Aliado;
 import Entidad.Enemigos.Enemigo;
-import Entidad.PowerUp.CampoProteccion;
-import Entidad.PowerUp.MagiaTemporal;
+import Entidad.PowerUp.MagiasTemporales.CampoProteccion;
 
 public class ColisionadorEnemigoConCampoProteccion extends ColisionadorEnemigo {
 

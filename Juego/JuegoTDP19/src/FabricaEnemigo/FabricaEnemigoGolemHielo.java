@@ -2,9 +2,6 @@ package FabricaEnemigo;
 
 import Entidad.Enemigos.Enemigo;
 import Entidad.Enemigos.EnemigoGolemHielo;
-import Entidad.PowerUp.AgujeroNegro;
-import Entidad.PowerUp.BoostDamage;
-import Entidad.PowerUp.CampoProteccion;
 
 public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
 

@@ -142,6 +142,10 @@ public abstract class Entidad {
 
 	}
 
+	public void desposicionarDelMapa(){
+		this.pos = new Point(0,0);
+	}
+
 	public abstract void serChocado(Colisionador colisionador);
 
 	public abstract void serDetectado(ColisionadorCombate colisionadorCombate);

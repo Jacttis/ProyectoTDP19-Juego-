@@ -1,7 +1,6 @@
-package Entidad.PowerUp;
+package Entidad.PowerUp.MagiasTemporales;
 
 import Entidad.Aliados.Aliado;
-import Entidad.Personaje;
 
 public class HiloPowers extends Thread {
 

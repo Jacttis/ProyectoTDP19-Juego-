@@ -1,7 +1,6 @@
 package FabricaBotones.BotonesObjetos;
 
-import Entidad.Aliados.Aliado;
-import Entidad.PowerUp.ObjetoPrecioso;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPrecioso;
 import Tienda.Tienda;
 
 import javax.swing.*;

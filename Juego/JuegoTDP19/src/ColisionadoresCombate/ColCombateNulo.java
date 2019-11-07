@@ -3,9 +3,8 @@ package ColisionadoresCombate;
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
-import Entidad.Disparos.GolpeEnemigo;
-import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.ObjetosMapa.ObjetoMapaVida;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColCombateNulo implements ColisionadorCombate {
 
@@ -27,12 +26,16 @@ public class ColCombateNulo implements ColisionadorCombate {
 
     }
 
-    public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
+
+
+
+    public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
 
     @Override
-    public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
+    public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }
+
 }

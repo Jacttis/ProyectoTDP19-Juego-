@@ -2,10 +2,10 @@ package ColisionadoresCombate;
 
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
-import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapaTiempo;
 import Entidad.ObjetosMapa.ObjetoMapaVida;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 import java.util.LinkedList;
 
@@ -24,7 +24,7 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
         for( Enemigo e : objetoMapaTiempo.getEnemigosAfectados() ){
             if(!e.getHitBox().intersects(objetoMapaTiempo.getHitBox())) {
                 enemigosARemover.add(e);
-                objetoMapaTiempo.desafectar(e);
+                objetoMapaTiempo.yaNoAfecta(e);
             }
         }
 
@@ -62,12 +62,15 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
     }
 
 
-    public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
-
-    }
 
 
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
+
+
+    public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
+
+    }
+
 }

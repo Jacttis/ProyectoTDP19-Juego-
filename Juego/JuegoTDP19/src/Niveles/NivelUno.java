@@ -24,7 +24,7 @@ public class NivelUno extends Nivel {
 		cartelNivel1.setText("NIVEL UNO");
 		cartelNivel2.setText("NIVEL UNO");
 
-		rangoCantidadEnemigos = new Point(4,6);
+		rangoCantidadEnemigos = new Point(5,8);
 	}
 
 

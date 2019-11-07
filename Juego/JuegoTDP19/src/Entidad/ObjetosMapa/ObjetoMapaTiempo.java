@@ -33,6 +33,11 @@ public abstract class ObjetoMapaTiempo extends ObjetoMapa {
         return duracion;
     }
 
+    public void yaNoAfecta(Enemigo enemigo){
+        enemigosAfectados.remove(enemigo);
+        this.desafectar(enemigo);
+    }
+
     public LinkedList<Enemigo> getEnemigosAfectados(){
         return enemigosAfectados;
     }

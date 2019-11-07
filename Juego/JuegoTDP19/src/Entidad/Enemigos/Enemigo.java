@@ -3,22 +3,13 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.Random;
 
-import javax.swing.*;
-
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorEnemigo;
+import Colisionadores.ColisionadoresEnemigos.ColisionadorEnemigo;
 import ColisionadoresCombate.ColCombateEnemigo;
 import ColisionadoresCombate.ColisionadorCombate;
-import Entidad.Entidad;
-import Entidad.PowerUp.MagiaTemporal;
-import Entidad.PowerUp.ObjetoPrecioso;
 import Entidad.*;
 import Entidad.PowerUp.PowerUp;
-import Estados.Atacando;
 import Estados.Caminando;
-import Graficos.Grafico;
-import Graficos.Potenciado;
-import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaEnemigos;
 import Juego.Mapa;
 import Tienda.Tienda;
@@ -99,20 +90,38 @@ public abstract class Enemigo extends Personaje {
 
 		Mapa.getMapa().eliminarEntidad(this);
 
+		Random r = new Random();
+		int posibilidadCaer = r.nextInt(8);
+
 		if(!powers.isEmpty()) {
-			Random r = new Random();
-			int posibilidadCaer = r.nextInt(5);
-			if(posibilidadCaer<7) {
-				for(PowerUp power : powers)
-					power.caerEnMapa(pos);
-			}
+			for(PowerUp power : powers)
+				power.caerEnMapa(pos);
+
 		}
 
-		Tienda.getTienda().aumentarOro(this.getOro());
+		if(posibilidadCaer<=2)
+			Tienda.getTienda().aumentarOro(1);
+		else
+			if(posibilidadCaer<=5)
+				Tienda.getTienda().aumentarOro(this.getOro()/2);
+			else
+				Tienda.getTienda().aumentarOro(this.getOro());
+
 		Tienda.getTienda().aumentarPuntos(this.getPuntos());
 	}
 
 
+	/**
+	 * Redefinicion del getHitbox mas general.
+	 *
+	 * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+	 *
+	 * @return Rectangle
+	 */
+
+	public Rectangle getHitBox(){
+		return new Rectangle(pos.x+40,pos.y+10,width-30,height-70);
+	}
 
 	public Rectangle getRangoCombate() {
 		Rectangle hitBox=this.getHitBox();

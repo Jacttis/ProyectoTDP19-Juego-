@@ -3,9 +3,8 @@ package ColisionadoresCombate;
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
-import Entidad.Disparos.GolpeEnemigo;
-import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.ObjetosMapa.ObjetoMapaVida;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColCombateAliado implements ColisionadorCombate {
 
@@ -19,7 +18,7 @@ public class ColCombateAliado implements ColisionadorCombate {
     public void verificarColisionando(){
 
         if(enemigoDetectado!=null){
-            if((!enemigoDetectado.getHitBox().intersects(aliado.getRangoCombate()) || (enemigoDetectado.estaMuerto()))) {
+            if((!enemigoDetectado.getHitBox().intersects(aliado.getRangoCombate()))) {
                 aliado.getEstado().cambiarAQuieto();
                 enemigoDetectado = null;
             }
@@ -49,12 +48,14 @@ public class ColCombateAliado implements ColisionadorCombate {
     }
 
 
-    public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
-
-    }
-
 
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
+
+    @Override
+    public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
+
+    }
+
 }

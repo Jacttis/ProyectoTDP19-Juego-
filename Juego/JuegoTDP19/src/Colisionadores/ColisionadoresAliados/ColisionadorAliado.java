@@ -1,11 +1,12 @@
-package Colisionadores;
+package Colisionadores.ColisionadoresAliados;
 
+import Colisionadores.Colisionador;
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
-import Entidad.PowerUp.PowerUp;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColisionadorAliado implements Colisionador {
 
@@ -54,12 +55,15 @@ public class ColisionadorAliado implements Colisionador {
 
     public void afectarEnemigo(Enemigo chocada) {
 
-
-
     }
 
 
-    public void afectarObjetoMapa(ObjetoMapa chocada){
+    public void afectarObjetoMapaDestruible(ObjetoMapa chocada){
+
+    }
+
+    @Override
+    public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }
 }

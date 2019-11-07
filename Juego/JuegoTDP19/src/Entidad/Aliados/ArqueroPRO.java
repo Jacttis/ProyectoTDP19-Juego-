@@ -21,7 +21,7 @@ public class ArqueroPRO extends Aliado {
         width=Constantes.ALIADOX;
         height=Constantes.ALIADOY+20;
 
-        precio=8;
+        precio=7;
 
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
         imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/atacandoTRUE.gif");
@@ -58,17 +58,6 @@ public class ArqueroPRO extends Aliado {
     }
 
 
-    /**
-     * Redefinicion del posicionar mas general.
-     *
-     * @param celda
-     */
-
-    public void posicionar(ParCelda celda){
-        super.posicionar(celda);
-        pos.setLocation(celda.getPos().x,celda.getPos().y-20);
-
-    }
 
     /**
      * Implementacion del metodo abstracto clone en Entidad.
@@ -91,7 +80,7 @@ public class ArqueroPRO extends Aliado {
      */
 
     public Rectangle getHitBox(){
-        return new Rectangle(pos.x,pos.y,width-30,height-70);
+        return new Rectangle(pos.x,pos.y,width-30,height-50);
     }
 
 }

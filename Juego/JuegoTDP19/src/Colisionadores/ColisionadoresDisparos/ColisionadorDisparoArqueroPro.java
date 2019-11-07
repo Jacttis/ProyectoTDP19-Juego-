@@ -1,5 +1,6 @@
-package Colisionadores;
+package Colisionadores.ColisionadoresDisparos;
 
+import Colisionadores.ColisionadoresDisparos.ColisionadorDisparo;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 

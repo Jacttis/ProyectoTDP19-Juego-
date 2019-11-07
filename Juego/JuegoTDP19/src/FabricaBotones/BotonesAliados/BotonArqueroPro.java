@@ -11,6 +11,6 @@ public class BotonArqueroPro extends BotonAliado {
     }
 
     public Aliado getAliado() {
-        return new ArqueroPRO(75,30,1800,1000,0,"Arquero avanzado que dispara flechas que golpean hasta dos enemigos");
+        return new ArqueroPRO(75,25,1400,1200,0,"Arquero avanzado que dispara flechas que golpean hasta dos enemigos");
     }
 }

@@ -2,7 +2,7 @@ package Entidad.Disparos;
 
 
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorGolpeEnemigo;
+import Colisionadores.ColisionadoresDisparos.ColisionadorDisparoEnemigo;
 import Entidad.*;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;
@@ -16,7 +16,7 @@ public class GolpeEnemigo extends Disparo {
     public GolpeEnemigo(Point pos, int damage,int width,int height, Personaje disparador) {
         super(pos, 0, damage,disparador);
         IA=new InteligenciaGolpeEnemigo(this);
-        colisionador=new ColisionadorGolpeEnemigo(this);
+        colisionador=new ColisionadorDisparoEnemigo(this);
         this.width=width;
         this.height=height;
 

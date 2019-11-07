@@ -19,6 +19,6 @@ public class FabricaEventoLago extends FabricaMapaEvento {
     }
 
     public ObjetoMapa getEvento() {
-        return new ObjetoLago(getPosicionAleatoria(),10000,1);
+        return new ObjetoLago(getPosicionAleatoria(),20000,1);
     }
 }

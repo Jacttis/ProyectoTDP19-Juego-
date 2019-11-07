@@ -2,11 +2,10 @@ package ColisionadoresCombate;
 
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
-import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
-import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.ObjetosMapa.ObjetoMapaVida;
 import Entidad.Personaje;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 import java.util.LinkedList;
 
@@ -44,12 +43,13 @@ public class ColCombateObjetoMapaDestruible implements ColisionadorCombate {
     }
 
 
-    public void detectoGolpeEnemigo(GolpeEnemigo chocada) {
-
-    }
-
-    @Override
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
+
+
+    public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
+
+    }
+
 }

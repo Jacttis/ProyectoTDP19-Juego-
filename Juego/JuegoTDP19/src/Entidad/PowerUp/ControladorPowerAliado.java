@@ -1,7 +1,7 @@
 package Entidad.PowerUp;
 
-import Constantes.Constantes;
 import Entidad.Aliados.Aliado;
+import Entidad.PowerUp.MagiasTemporales.MagiaTemporal;
 
 public class ControladorPowerAliado {
 

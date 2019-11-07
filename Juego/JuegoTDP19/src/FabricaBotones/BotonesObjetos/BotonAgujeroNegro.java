@@ -1,9 +1,7 @@
 package FabricaBotones.BotonesObjetos;
 
-import Entidad.PowerUp.AgujeroNegro;
-import Entidad.PowerUp.ObjetoPrecioso;
-
-import java.awt.*;
+import Entidad.PowerUp.ObjetosPreciosos.AgujeroNegro;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPrecioso;
 
 public class BotonAgujeroNegro extends BotonObjeto {
 
@@ -17,7 +15,7 @@ public class BotonAgujeroNegro extends BotonObjeto {
     }
 
     private BotonAgujeroNegro(){
-        super("Sprites/Objetos/PotenciadoObjeto.png");
+        super("Sprites/Objetos/Aguajero/SpriteBoton.png");
     }
 
     public ObjetoPrecioso getObjeto() {

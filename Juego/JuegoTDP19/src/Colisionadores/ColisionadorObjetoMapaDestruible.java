@@ -5,15 +5,13 @@ import Entidad.Disparos.Disparo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
-import Entidad.Personaje;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
-import java.util.LinkedList;
-
-public class ColisionadorObjetoMapa implements Colisionador {
+public class ColisionadorObjetoMapaDestruible implements Colisionador {
 
     protected ObjetoMapa objeto;
 
-    public ColisionadorObjetoMapa(ObjetoMapa objeto){
+    public ColisionadorObjetoMapaDestruible(ObjetoMapa objeto){
         this.objeto=objeto;
     }
 
@@ -23,7 +21,7 @@ public class ColisionadorObjetoMapa implements Colisionador {
 
 
     public void afectarEnemigo(Enemigo chocada) {
-       // objeto.afectar(chocada);
+
     }
 
 
@@ -37,7 +35,12 @@ public class ColisionadorObjetoMapa implements Colisionador {
     }
 
 
-    public void afectarObjetoMapa(ObjetoMapa chocada) {
+    public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
+
+    }
+
+
+    public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }
 }

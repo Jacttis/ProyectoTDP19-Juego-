@@ -80,8 +80,10 @@ public class Mapa {
 		LinkedList<Entidad> entidadesAEliminarTemporal = new LinkedList<Entidad>();
 
 		if(!entidadesAEliminar.isEmpty()) {
+
 			for (Entidad en : entidadesAEliminar)
 				entidadesAEliminarTemporal.add(en);
+
 
 			for (Entidad eAEliminar : entidadesAEliminarTemporal) {
 				entidades.remove(eAEliminar);
@@ -90,7 +92,10 @@ public class Mapa {
 
 		}
 
+		entidadesAEliminar.removeAll(entidadesAEliminarTemporal);
+
 		LinkedList<Entidad> entidadesAAgregarTemporal= new LinkedList<Entidad>();
+
 		if(!entidadesAAgregar.isEmpty()) {
 			for (Entidad e : entidadesAAgregar)
 				entidadesAAgregarTemporal.add(e);
@@ -99,13 +104,12 @@ public class Mapa {
 			for (Entidad eAAgregar : entidadesAAgregarTemporal) {
 				entidades.add(eAAgregar);
 				agregarEntidadGrafica(eAAgregar);
-				//System.out.println("Entidades : "+entidades.size());
 			}
 
 		}
 
 		entidadesAAgregar.removeAll(entidadesAAgregarTemporal);
-		entidadesAEliminar.removeAll(entidadesAEliminarTemporal);
+
 
 
 		colisionar();
@@ -147,6 +151,8 @@ public class Mapa {
 
 		for(Grafico grafico : listaGraficos)
 			gui.remove(grafico.getGrafico());
+
+		entidad.desposicionarDelMapa();
 
 		gui.repaint();
 	}
@@ -230,6 +236,7 @@ public class Mapa {
 			entidad.eliminarse();
 		}
 	}
+
 
 	public void removerGrafico(Grafico graficoARemover){
 		gui.remove(graficoARemover.getGrafico());

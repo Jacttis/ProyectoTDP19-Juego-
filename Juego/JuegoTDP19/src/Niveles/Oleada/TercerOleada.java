@@ -51,13 +51,13 @@ public class TercerOleada extends Oleada {
             for (int i = 0; i < cantEnemigos ; i++) {
                 int enemigoAleatorio = r.nextInt(nivel.getListaEnemigosSpawn().size());
                 int tipoEnemigo = r.nextInt(10);
-                if (tipoEnemigo < 6)
+                if (tipoEnemigo < 5)
                     enemigo = nivel.getListaEnemigosSpawn().get(enemigoAleatorio).crearEnemigoBoosted();
                 else enemigo = nivel.getListaEnemigosSpawn().get(enemigoAleatorio).crearEnemigo();
                 enemigo.posicionar(new Point(Constantes.ENEMIGOS_PX, obtenerPosicionAleatoriaEnY()));
                 agregarEnemigo(enemigo);
 
-                sleep(1000);
+                sleep(2000);
             }
 
             Enemigo reaper = FabricaEnemigoReaperMan.getFabricaReaperMan().crearEnemigo();

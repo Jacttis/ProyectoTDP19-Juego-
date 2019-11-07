@@ -3,6 +3,7 @@ package Graficos;
 import Entidad.Entidad;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class SpriteEntidad extends Grafico {
 
@@ -18,8 +19,6 @@ public class SpriteEntidad extends Grafico {
         this.portador=portador;
         this.imagenes=imagenes;
         this.grafico=new JLabel(imagenes[0]);
-
-
 
         this.grafico.setBounds(portador.getPos().x + modificadorX, portador.getPos().y + modificadorY , portador.getWidth(), portador.getHeight() );
 

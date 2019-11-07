@@ -65,7 +65,7 @@ public class MagoHielo extends Aliado {
 
 
 	public Rectangle getHitBox(){
-		return new Rectangle(pos.x,pos.y,width-30,height-70);
+		return new Rectangle(pos.x,pos.y,width-30,height-50);
 	}
 
 

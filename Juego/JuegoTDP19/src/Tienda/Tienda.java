@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.LinkedList;
 
 import Entidad.Aliados.Aliado;
-import Entidad.PowerUp.ObjetoPrecioso;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPrecioso;
 import Juego.Mapa;
 
 public class Tienda {
@@ -21,7 +21,7 @@ public class Tienda {
 
 	private Tienda(){
 		puntos=0;
-		oro=18;
+		oro=20;
 		posicionadorDeAliados=new PosicionadorDeAliado();
 	}
 
@@ -100,8 +100,6 @@ public class Tienda {
 		else
 			aumentarOro(aliado.getPrecio()/2);
 
-
-		aliado.eliminarse();
 
 		aliado.getPos().setLocation(0,0);
 	}

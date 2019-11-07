@@ -3,7 +3,6 @@ package FabricaEnemigo;
 import Entidad.Enemigos.Enemigo;
 
 import Entidad.Enemigos.EnemigoFallenAngel;
-import Entidad.PowerUp.CampoProteccion;
 
 public class FabricaEnemigoFallenAngel extends FabricaEnemigo {
 

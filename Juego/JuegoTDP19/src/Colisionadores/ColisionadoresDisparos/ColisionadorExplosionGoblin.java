@@ -1,11 +1,12 @@
-package Colisionadores;
+package Colisionadores.ColisionadoresDisparos;
 
+import Colisionadores.Colisionador;
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
-import Entidad.PowerUp.PowerUp;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 import java.util.LinkedList;
 
@@ -50,7 +51,12 @@ public class ColisionadorExplosionGoblin implements Colisionador {
     }
 
 
-    public void afectarObjetoMapa(ObjetoMapa chocada) {
+    public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
+
+    }
+
+    @Override
+    public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }
 }

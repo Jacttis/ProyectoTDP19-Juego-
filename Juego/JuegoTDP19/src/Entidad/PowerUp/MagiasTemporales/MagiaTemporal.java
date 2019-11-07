@@ -1,9 +1,8 @@
-package Entidad.PowerUp;
+package Entidad.PowerUp.MagiasTemporales;
 
-import Colisionadores.Colisionador;
-import ColisionadoresCombate.ColisionadorCombate;
-import Entidad.*;
 import Entidad.Aliados.Aliado;
+import Entidad.PowerUp.MagiasTemporales.HiloPowers;
+import Entidad.PowerUp.PowerUp;
 import Graficos.Grafico;
 import Juego.Mapa;
 

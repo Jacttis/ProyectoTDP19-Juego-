@@ -1,6 +1,6 @@
 package Entidad.Disparos;
 
-import Colisionadores.ColisionadorDisparoEnemigo;
+import Colisionadores.ColisionadoresDisparos.ColisionadorDisparoEnemigo;
 import Entidad.*;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;

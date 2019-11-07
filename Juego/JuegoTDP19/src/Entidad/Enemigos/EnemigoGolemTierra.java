@@ -58,16 +58,5 @@ public class EnemigoGolemTierra extends Enemigo {
             fabricaDisparo.generarDisparo();
     }
 
-    /**
-     * Redefinicion del getHitbox mas general.
-     *
-     * Devuelve un rectangulo que reprensenta el hitbox del personaje.
-     *
-     * @return Rectangle
-     */
-
-    public Rectangle getHitBox(){
-        return new Rectangle(pos.x+40,pos.y,width-30,height-70);
-    }
 }
 

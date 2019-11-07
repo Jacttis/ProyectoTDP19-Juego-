@@ -1,7 +1,7 @@
 package Entidad.Disparos;
 
 import Colisionadores.Colisionador;
-import Colisionadores.ColisionadorDisparo;
+import Colisionadores.ColisionadoresDisparos.ColisionadorDisparo;
 import ColisionadoresCombate.ColisionadorCombate;
 import Entidad.*;
 

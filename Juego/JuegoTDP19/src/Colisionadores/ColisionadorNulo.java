@@ -5,6 +5,7 @@ import Entidad.Disparos.Disparo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColisionadorNulo implements Colisionador {
     @Override
@@ -28,7 +29,12 @@ public class ColisionadorNulo implements Colisionador {
     }
 
     @Override
-    public void afectarObjetoMapa(ObjetoMapa chocada) {
+    public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
+
+    }
+
+    @Override
+    public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }
 }

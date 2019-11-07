@@ -23,7 +23,7 @@ public class GoblinExplosivo extends Aliado {
         width= Constantes.ALIADOX;
         height=Constantes.ALIADOY;
 
-        precio = 5;
+        precio = 8;
 
         imagen[0]=new ImageIcon("Sprites/GoblinExplosivo/corriendoChico.gif");
         imagen[1]=new ImageIcon("Sprites/GoblinExplosivo/corriendoChico.gif");
@@ -67,7 +67,7 @@ public class GoblinExplosivo extends Aliado {
     }
 
     public Rectangle getHitBox(){
-        return new Rectangle(pos.x,pos.y,width-20,height-70);
+        return new Rectangle(pos.x,pos.y,width-20,height-50);
     }
 
 

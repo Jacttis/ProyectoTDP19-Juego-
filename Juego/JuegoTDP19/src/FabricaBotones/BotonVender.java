@@ -37,7 +37,8 @@ public class BotonVender extends JButton {
 
     public void intentoVenderAliado(Aliado aliado){
         if(esperandoAliado){
-            Tienda.getTienda().venderAliado(aliado);
+            aliado.eliminarse();
+            //Tienda.getTienda().venderAliado(aliado);
             esperandoAliado=false;
             this.setEnabled(true);
         }

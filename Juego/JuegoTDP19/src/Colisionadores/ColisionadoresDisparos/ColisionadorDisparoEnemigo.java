@@ -1,12 +1,13 @@
-package Colisionadores;
+package Colisionadores.ColisionadoresDisparos;
 
 import Entidad.Aliados.Aliado;
 import Entidad.Disparos.Disparo;
 import Entidad.Enemigos.Enemigo;
 import Entidad.Disparos.GolpeEnemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
+import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
-public class ColisionadorDisparoEnemigo extends ColisionadorDisparo{
+public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
 
     public ColisionadorDisparoEnemigo(Disparo disparo){
         super(disparo);
@@ -58,7 +59,12 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo{
 
     }
 
-    public void afectarObjetoMapa(ObjetoMapa chocada) {
+    public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
+        chocada.serAfectado(disparo);
+        disparo.eliminarse();
+    }
+
+    public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
         chocada.serAfectado(disparo);
         disparo.eliminarse();
     }
