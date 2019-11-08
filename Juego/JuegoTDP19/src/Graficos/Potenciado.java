@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class Potenciado extends Grafico {
 
-    private Personaje portador;
+
 
     public Potenciado (Personaje portador, int modificadorX, int modificadorY){
         this.portador=portador;

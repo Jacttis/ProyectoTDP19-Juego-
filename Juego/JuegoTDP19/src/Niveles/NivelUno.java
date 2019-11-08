@@ -42,7 +42,7 @@ public class NivelUno extends Nivel {
 		oleada.start();
 	}
 
-	/**
+	/*
 	public void run(){
 
 		try {
@@ -154,7 +154,7 @@ public class NivelUno extends Nivel {
 
 
 	}
-	**/
+	*/
 
 	public String getDireccionImagenFondoNivel(){
 		String direccion="Sprites/Mapa/Mapa2Disenio.jpg";

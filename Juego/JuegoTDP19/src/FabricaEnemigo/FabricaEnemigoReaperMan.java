@@ -5,7 +5,7 @@ import Entidad.Enemigos.ReaperMan;
 
 public class FabricaEnemigoReaperMan extends FabricaEnemigo {
 
-    public static FabricaEnemigoReaperMan instance=null;
+    private static FabricaEnemigoReaperMan instance=null;
 
     private FabricaEnemigoReaperMan(){
         super();

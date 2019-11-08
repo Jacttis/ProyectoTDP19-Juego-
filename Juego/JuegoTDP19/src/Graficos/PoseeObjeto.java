@@ -7,7 +7,6 @@ import javax.swing.*;
 
 public class PoseeObjeto extends Grafico {
 
-    private Personaje portador;
 
     public PoseeObjeto(Personaje portador, int modificadorX, int modificadorY){
         this.portador=portador;

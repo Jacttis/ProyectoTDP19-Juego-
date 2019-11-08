@@ -8,7 +8,6 @@ import java.awt.*;
 public class SpriteEntidad extends Grafico {
 
     private Icon[] imagenes;
-    private Entidad portador;
 
     public SpriteEntidad(Entidad portador, Icon[] imagenes, int modificadorX, int modificadorY){
         super();

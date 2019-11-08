@@ -5,7 +5,7 @@ import Entidad.Enemigos.EnemigoGolemTierra;
 
 public class FabricaEnemigoGolemTierra extends FabricaEnemigo {
 
-    public static FabricaEnemigoGolemTierra instance=null;
+    private static FabricaEnemigoGolemTierra instance=null;
 
 
     public  static FabricaEnemigoGolemTierra getFabricaGolemTierra(){
