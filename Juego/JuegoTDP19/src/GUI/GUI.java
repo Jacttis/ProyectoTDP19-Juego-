@@ -12,7 +12,6 @@ import javax.swing.border.EmptyBorder;
 import Constantes.Constantes;
 import Entidad.*;
 import Juego.Juego;
-import Splash.*;
 
 
 public class GUI extends JFrame implements MouseListener {
@@ -75,9 +74,6 @@ public class GUI extends JFrame implements MouseListener {
 
 
 
-		//Eliminar Despues
-		botonMusica();
-		contentPane.add(btnMusica);
 		tiempo.start();
 
 
@@ -98,17 +94,6 @@ public class GUI extends JFrame implements MouseListener {
 	}
 
 
-	//Eliminar Despues
-	public void botonMusica(){
-	   btnMusica=new JButton("musica");
-	   btnMusica.setBounds(1400,70,128,25);
-	   btnMusica.addActionListener((new ActionListener() {
-		   @Override
-		   public void actionPerformed(ActionEvent e) {
-
-		   }
-	   }));
-	}
 
 	/**
 	 * getter del hilo principal.
@@ -155,6 +140,9 @@ public class GUI extends JFrame implements MouseListener {
 	@Override
 	public void mouseExited(MouseEvent e) {
 
+	}
+	public void terminar(){
+		tiempo.terminate();
 	}
 
 

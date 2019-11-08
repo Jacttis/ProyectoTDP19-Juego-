@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Relantizado extends Grafico {
 
-    private Personaje portador;
+
 
     public Relantizado(Personaje portador,int modificadorX, int modificadorY){
         this.portador=portador;

@@ -10,6 +10,7 @@ import Graficos.Grafico;
 import Niveles.Nivel;
 import Niveles.NivelUno;
 import Tienda.Tienda;
+import Menu.Menu;
 
 import javax.swing.*;
 
@@ -224,11 +225,28 @@ public class Mapa {
 	}
 
 
-
+	/**
+	 * Termina el Juego indicando que pediste la partida y volviendo al menu principal.
+	 */
 	public void perdio(){
+		JLabel Perder;
 		limpiarMapa();
-		juego.gameOver();
-		System.out.println("Perdiste pete.");
+		Perder=new JLabel("Game Over!!");
+		Perder.setBounds(750,80,3000,400);
+		Perder.setForeground(Color.red);
+		Mapa.getMapa().getGui().add(Perder);
+		Perder.setFont(new Font("Times New Roman", 4,100));
+		try{
+			Thread.sleep(2000);
+		}
+		catch (InterruptedException e){
+			e.printStackTrace();
+		}
+		Mapa.getMapa().getGui().dispose();
+		Tienda.getTienda().gameOver();
+		Juego.getJuego().gameOver();
+		Mapa.getMapa().gameOver();
+		Menu.getMenu();
 	}
 
 	private void limpiarMapa(){
@@ -252,4 +270,7 @@ public class Mapa {
 		return gui;
 	}
 
+	public void gameOver(){
+		instance=null;
+	}
 }
