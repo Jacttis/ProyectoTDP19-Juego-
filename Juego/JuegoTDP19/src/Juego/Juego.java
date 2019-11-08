@@ -5,10 +5,12 @@ import Entidad.Aliados.Aliado;
 import FabricaEnemigo.FabricaEnemigoGolemHielo;
 import FabricaEnemigo.FabricaEnemigoGolemTierra;
 import GUI.GUI;
+import Menu.Menu;
 
 import Tienda.*;
 
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -63,10 +65,10 @@ public class Juego {
 	}
 
 	public void mover() {
+			Mapa.getMapa().mover();
+			gui.actualizaEtiquetas();
 
-		Mapa.getMapa().mover();
-		gui.actualizaEtiquetas();
-		
+
 		
 	}
 
@@ -75,8 +77,25 @@ public class Juego {
 	}
 
 
-	public void gameOver(){
+	public void gameOver(JLabel gameOver){
 		instance=null;
+
+		gameOver.setBounds(850,80,3000,400);
+		gameOver.setForeground(Color.red);
+		Mapa.getMapa().getGui().add(gameOver);
+		gameOver.setFont(new Font("Times New Roman", 4,100));
+		try{
+			Thread.sleep(2000);
+		}
+		catch (InterruptedException e){
+			e.printStackTrace();
+		}
+		Mapa.getMapa().getGui().getTiempo().terminate();
+		Mapa.getMapa().getGui().dispose();
+		Tienda.getTienda().gameOver();
+		Mapa.getMapa().gameOver();
+		Menu.getMenu();
+
 	}
 	
 	

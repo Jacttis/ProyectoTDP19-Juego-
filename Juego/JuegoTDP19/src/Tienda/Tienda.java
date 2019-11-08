@@ -25,7 +25,10 @@ public class Tienda {
 		posicionadorDeAliados=new PosicionadorDeAliado();
 	}
 
-
+	/**
+	 * Crea la tienda si esta no esta creado ,caso contrario devuelve la tienda creada
+	 * @return Tienda creada
+	 */
 	public  static Tienda getTienda(){
 		if (instance==null){
 			instance=new Tienda();
