@@ -9,11 +9,28 @@ import java.awt.*;
 
 public class FabricaExplosionGoblin extends FabricaDisparo {
 
-    public FabricaExplosionGoblin(Personaje disparador){
-        super(disparador);
+    private static FabricaExplosionGoblin instance = null;
+
+    public static FabricaExplosionGoblin getFabricaExplosionGoblin(){
+        if(instance == null)
+            instance = new FabricaExplosionGoblin();
+
+        return instance;
     }
 
-    public void generarDisparo() {
+    private FabricaExplosionGoblin(){
+        super();
+    }
+
+    /**
+     * Genera un disparo ExplosionGoblin con las caracteristicas necesarias de disparador
+     * luego lo agrega al Mapa y inicia el hilo para controlar que el personaje no pueda
+     * disparar en base a su velocidad de Ataque
+     *
+     * @param disparador
+     */
+
+    public void generarDisparo(Personaje disparador) {
         Disparo nuevoDisparo=new ExplosionGoblin(new Point(disparador.getPos().x,disparador.getPos().y),0,disparador.getDamage(),disparador);
 
         Mapa.getMapa().agregarEntidad(nuevoDisparo);

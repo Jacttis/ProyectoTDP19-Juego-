@@ -17,6 +17,15 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
         this.objetoMapaTiempo=objetoMapaTiempo;
     }
 
+    /**
+     * Metodo que se ejecutara constantemente (en actualizarEntidad()) que verificara
+     * si los enemigos que haya detectado el ObjetoMapaTiempo siguen colisionando con el mismo (los enemigos detectados
+     * pertenecen a una lista que es atributo de ObjetoMapaTiempo).
+     * Si no es el caso, realiza determinada accion, en este caso, remueve el enemigo de la lista
+     * y le envia el mensaje YaNoAfecta al atributo objetoMapaTiempo con el enemigo parametrizado.
+     *
+     */
+
     public void verificarColisionando() {
 
         LinkedList<Enemigo> enemigosARemover = new LinkedList<Enemigo>();
@@ -35,12 +44,25 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
 
     }
 
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un Aliado
+     *
+     * @param chocada
+     */
 
 
     public void detectoAliado(Aliado chocada) {
 
     }
 
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un Aliado
+     *
+     * En este caso si chocada no se encuentra en la lista de los enemigos afectados del objetoMapaTiempo,
+     * agrega a chocada a la lista y envia el mensaje afectarPersonaje a objetoMapaTiempo con chocada parametrizado.
+     *
+     * @param chocada
+     */
 
     public void detectoEnemigo(Enemigo chocada) {
         boolean esta=false;
@@ -52,22 +74,37 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
             }
          if(!esta) {
              objetoMapaTiempo.getEnemigosAfectados().add(chocada);
-             objetoMapaTiempo.afectar(chocada);
+             objetoMapaTiempo.afectarPersonaje(chocada);
          }
     }
 
+
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un Disparo
+     *
+     * @param chocada
+     */
 
     public void detectoDisparo(Disparo chocada) {
 
     }
 
 
-
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un ObjetoMapaVida
+     *
+     * @param chocada
+     */
 
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
 
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un ObjetoPreciosoVida
+     *
+     * @param chocada
+     */
 
     public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 

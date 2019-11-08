@@ -27,9 +27,21 @@ public abstract class Entidad {
 	protected int damage;
 	protected Colisionador colisionador;
 	protected ColisionadorCombate colisionadorCombate;
-	protected LinkedList<Grafico> listaGraficos;
 
-	
+	/**
+	 * Inicializa la entidad asignandole la posicion, velocidad y damage parametrizados
+	 * a sus atributos correspondientes.
+	 *
+	 * Inicializa la el atributo componentesGraficas el cual es de clase Graficos (lista de Graficos)
+	 * Inicializa parcialmente a la entidad con ColisionadorNulo y ColCombateNulo
+	 * Por ultimo inicializa parcialmente el arreglo de imagenes (la cantidad de sprites distintos que tendra) como un
+	 * arreglo de 1 componente.
+	 *
+	 *
+	 * @param pos
+	 * @param velocidad
+	 * @param damage
+	 */
 	
 	public Entidad(Point pos,double velocidad, int damage) {
 
@@ -43,10 +55,13 @@ public abstract class Entidad {
 		colisionadorCombate=new ColCombateNulo();
 
 		imagen=new ImageIcon[1];
-		listaGraficos=new LinkedList<Grafico>();
-	
+
 	}
 
+	/**
+	 * Setters y getters de atributos.
+	 *
+	 */
 
 	public Graficos getComponentesGraficas(){
 		return componentesGraficas;
@@ -60,10 +75,6 @@ public abstract class Entidad {
 	public Inteligencia getInteligencia() {
 		return IA;
 	}
-	
-	/**
-	 * Setter y getter de width y height
-	 */
 
 
 	public int getWidth(){ return width; }
@@ -78,13 +89,6 @@ public abstract class Entidad {
 		height=Height;
 	}
 
-
-
-	/**
-	 * Getter de colisionador
-	 *
-	 * @return colisionador
-	 */
 
 	public Colisionador getColisionador(){
 		return colisionador;
@@ -109,9 +113,19 @@ public abstract class Entidad {
 	public void setVelocidad(double nuevaVelocidad){
 		velocidad=nuevaVelocidad;
 	}
-	
+
+	public void setDamage(int nuevoDamage) {
+		damage=nuevoDamage;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+
 	/**
-	 * Actualiza la posicion de la entidad 
+	 * Actualiza la entidad.
+	 * En este caso enviandole el mensaje actualizarEntidad a la Inteligencia
 	 *
 	 */
 	
@@ -119,41 +133,76 @@ public abstract class Entidad {
       	IA.actualizarEntidad();
 	}
 
-	public void setDamage(int nuevoDamage) {
-		damage=nuevoDamage;
-	}
-	
-	public int getDamage() {
-		return damage;
-	}
+	/**
+	 * Posiciona a la entidad en el mapa
+	 * Le asigna la posicion parametrizada al atributo pos.
+	 *
+	 * @param pos
+	 */
 	
 	public void posicionar(Point pos){
 		this.pos=pos;
 	}
 
+	/**
+	 *	Desposiciona a la entidad del mapa.
+	 *	Cambia su posicion por una nuevo posicion ubicada fuera del
+	 *	mapa (0,0)
+	 *
+	 */
 
-	public int getPuntos(){
-		return 0;
+	public void desposicionarDelMapa(){
+		this.pos = new Point(0,0);
 	}
 
+	/**
+	 * La entidad se elimina del mapa llamando al eliminarEntidad de Mapa con esta misma
+	 * entidad parametrizada.
+	 */
 
 	public void eliminarse(){
 		Mapa.getMapa().eliminarEntidad(this);
 
 	}
 
-	public void desposicionarDelMapa(){
-		this.pos = new Point(0,0);
-	}
+	/**
+	 * Metodo abstracto que recibe un colisionador como parametro
+	 * para luego enviarle un mensaje dependiendo de que entidad se trate
+	 * (VISITOR)
+	 *
+	 * @param colisionador
+	 */
 
 	public abstract void serChocado(Colisionador colisionador);
+
+	/**
+	 * Metodo abstracto que recibe un colisionadorCombate como parametro
+	 * para luego enviarle un mensaje dependiendo de que entidad se trate
+	 * (VISITOR)
+	 *
+	 * @param colisionadorCombate
+	 */
 
 	public abstract void serDetectado(ColisionadorCombate colisionadorCombate);
 
 
+	/**
+	 * Retorna un Rectangle con las dimensiones (x,y,width,height)
+	 * de la entidad.
+	 *
+	 * @return
+	 */
+
 	public Rectangle getHitBox(){
 		return new Rectangle(pos.x,pos.y,width,height);
 	}
+
+	/**
+	 * Retorna un Rectangle con las dimensiones del Rango de Combate
+	 * de la entidad (En este caso como Entidad no tiene rango devuelve el hitbox normal)
+	 *
+	 * @return
+	 */
 
 	public Rectangle getRangoCombate(){
 		return getHitBox();

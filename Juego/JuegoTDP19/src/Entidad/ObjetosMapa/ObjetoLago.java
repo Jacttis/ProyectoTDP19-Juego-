@@ -25,12 +25,12 @@ public class ObjetoLago extends ObjetoMapaTiempo {
         hilo.start();
     }
 
-    public void afectar(Personaje entidad) {
+    public void afectarPersonaje(Personaje entidad) {
         entidad.setVelocidad(entidad.getVelocidad()-relantizacion);
 
     }
 
-    public void desafectar(Personaje entidad){
+    public void desafectarPersonaje(Personaje entidad){
         entidad.setVelocidad(entidad.getVelocidad()+relantizacion);
     }
 

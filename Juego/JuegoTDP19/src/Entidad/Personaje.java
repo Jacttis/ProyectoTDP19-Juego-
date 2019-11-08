@@ -16,8 +16,6 @@ public abstract class Personaje extends Entidad {
 	protected int vidaActual,vidaTotal;
 	protected float velocidadAtaque;
 	protected boolean puedeAtacar;
-	protected JLabel etiquetaVida;
-	protected FabricaDisparo fabricaDisparo;
 	protected int rango;
 	protected Estado estado;
 
@@ -25,6 +23,15 @@ public abstract class Personaje extends Entidad {
 
 	/**
 	 * Crea el personaje
+	 *
+	 * Inicializa el Personaje asignandole los datos parametrizados
+	 * a sus atributos correspondientes y utilizando el contructo de Entidad (super)
+	 * para los atributos pos, velocidad y damage.
+	 *
+	 * Inicializa el atributo estado como un nuevo estado Nulo con el mismo Personaje parametrizado.
+	 *
+	 * Inicializa el arreglo de imagenes (la cantidad de sprites distintos que tendra) como un
+	 * arreglo de 4 componentes.
 	 * 
 	 * @param pos
 	 * @param vida
@@ -35,8 +42,10 @@ public abstract class Personaje extends Entidad {
 
 	public Personaje(Point pos, int vida, int damage, float velocidadAtaque,int rango,double velocidad) {
 		super(pos,velocidad,damage);
+
 		vidaActual=vidaTotal=vida;
 		this.velocidadAtaque = velocidadAtaque;
+
 		estado=new EstadoNulo(this);
 		puedeAtacar=true;
 		this.rango=rango;
@@ -46,13 +55,10 @@ public abstract class Personaje extends Entidad {
 	}
 
 
+	/**
+	 * Setters y Getters de los atributos.
+	 */
 
-	// Getters
-
-
-	public FabricaDisparo getFabricaDisparo(){
-		return fabricaDisparo;
-	}
 
 	/**
 	 * @return Retorna la vida del personaje
@@ -81,30 +87,6 @@ public abstract class Personaje extends Entidad {
 		return velocidadAtaque;
 	}
 
-	public void disminuirVida(int cantidad){
-		if((vidaActual-cantidad)<0) {
-			vidaActual = 0;
-			this.actualizarGraficos();
-		}
-		else {
-			vidaActual-=cantidad;
-			this.actualizarGraficos();
-		}
-	}
-
-	/**
-	 * Actualiza la entidad mediante el estado.
-	 *
-	 */
-
-	public void actualizarEntidad() {
-		estado.verificarEstado();
-		estado.actuar();
-		colisionadorCombate.verificarColisionando();
-	}
-
-
-
 
 	public Estado getEstado(){
 		return estado;
@@ -114,45 +96,6 @@ public abstract class Personaje extends Entidad {
 		estado=estadoNuevo;
 	}
 
-	/**
-	 * Utiliza la fabrica de disparos para generar un disparo y
-	 * que lo meta en el mapa.
-	 *
-	 */
-
-	public abstract void atacar();
-
-
-	/**
-	 * Recibe una posicion central de una celda y se ubica
-	 * en esa celda.
-	 *
-	 * @param posicionNueva
-	 */
-
-	public void posicionar(Point posicionNueva){
-		this.pos=posicionNueva;
-
-	}
-
-	/**
-	 * Devuelve verdadero si el personaje tiene 0 de vida
-	 * o falso si el personaje tiene mas que 0 de vida.
-	 *
-	 * @return boolean
-	 */
-
-	public boolean estaMuerto(){
-		if(vidaActual<=0)
-			vidaActual=0;
-		return vidaActual==0;
-	}
-
-	/**
-	 * setters y getter de Puede atacar, el cual determina si
-	 * el personaje puede atacar en ese momento.
-	 *
-	 */
 
 	/**
 	 * Setter del atributo puedeAtacar que determina si el personaje
@@ -177,20 +120,85 @@ public abstract class Personaje extends Entidad {
 	}
 
 	/**
-	 * Redefinicion del eliminarse mas general
-	 * Se elimina mediante el comando elimimnarPersonaje ubicado en Mapa.
+	 * Fin de setters y Getters
 	 *
 	 */
 
-	public void eliminarse(){
-		Mapa.getMapa().eliminarEntidad(this);
-		System.out.println("Eliminarse personaje");
+
+	/**
+	 * Disminuye la vida del personaje el valor del entero parametrizado
+	 * "cantidad".
+	 *
+	 * Si la vidaActual resultante es menor que 0, se le asigna el valor 0 a vidaActual sino se le resta
+	 * el valor cantidad al atributo vidaActual.
+	 * En cualquier caso se actualizan los graficos del Personaje.
+	 *
+	 * @param cantidad
+	 */
+
+	public void disminuirVida(int cantidad){
+		if((vidaActual-cantidad)<0) {
+			vidaActual = 0;
+			this.actualizarGraficos();
+		}
+		else {
+			vidaActual-=cantidad;
+			this.actualizarGraficos();
+		}
 	}
 
+	/**
+	 * Devuelve verdadero si el personaje tiene 0 de vida
+	 * o falso si el personaje tiene mas que 0 de vida.
+	 *
+	 * @return boolean
+	 */
+
+	public boolean estaMuerto(){
+		if(vidaActual<=0)
+			vidaActual=0;
+		return vidaActual==0;
+	}
+
+
+
+	/**
+	 * Actualiza el Personaje
+	 *
+	 * En este caso, se envia el mensaje verificarEstado a 'estado'
+	 * luego se envia el mensaje actuar a 'estado'
+	 * y por ultimo se envia el mensaje verificarColisionando a 'colisionadorCombate'.
+	 *
+	 */
+
+	public void actualizarEntidad() {
+		estado.verificarEstado();
+		estado.actuar();
+		colisionadorCombate.verificarColisionando();
+	}
+
+
+
+	/**
+	 * Metodo abstracto atacar que cada tipo de personaje definira.
+	 *
+	 */
+
+	public abstract void atacar();
+
+	/**
+	 * Redefinicion de getRangoCombate de Entidad
+	 * Retorna un rectangle con las dimensiones (x,y,width + rango ,height) del Personaje
+	 * y corrido para que este centrado en el Personaje.
+	 *
+	 * @return hitbox : Rectangle
+	 */
 
 	public Rectangle getRangoCombate() {
 		Rectangle hitBox=this.getHitBox();
 		hitBox.width=hitBox.width+rango;
+
+		//Corrimiento para centrarlo
 		hitBox.setLocation(hitBox.x-(hitBox.width/2),hitBox.y);
 
 		return hitBox;

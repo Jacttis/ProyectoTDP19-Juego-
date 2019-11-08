@@ -17,8 +17,6 @@ public class EnemigoGolemHielo extends Enemigo {
 
 		super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
 
-		fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
-
 		imagen[0] = new ImageIcon("Sprites/Golems/GolemHieloGIF/CaminandoTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/Golems/GolemHieloGIF/AtacandoTRUE.gif");
 		imagen[2] = new ImageIcon("Sprites/Golems/GolemHieloGIF/ASDF.gif");
@@ -56,7 +54,7 @@ public class EnemigoGolemHielo extends Enemigo {
 	public void atacar(){
 
 		if(puedeAtacar)
-			fabricaDisparo.generarDisparo();
+			FabricaDisparoGolpeEnemigo.getFabricaDisparoGolpeEnemigo().generarDisparo(this);
 	}
 
 

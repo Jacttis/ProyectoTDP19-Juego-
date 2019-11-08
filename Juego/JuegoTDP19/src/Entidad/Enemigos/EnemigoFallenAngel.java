@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 
 import Entidad.Entidad;
+import FabricaDisparos.FabricaDisparo;
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
 import Graficos.BarraDeVida;
 import Graficos.Grafico;
@@ -15,7 +16,6 @@ public class EnemigoFallenAngel extends Enemigo {
 
         super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
 
-        fabricaDisparo = new FabricaDisparoGolpeEnemigo(this);
 
         this.setWidth(160);
 
@@ -61,7 +61,7 @@ public class EnemigoFallenAngel extends Enemigo {
     public void atacar(){
 
         if(puedeAtacar)
-            fabricaDisparo.generarDisparo();
+            FabricaDisparoGolpeEnemigo.getFabricaDisparoGolpeEnemigo().generarDisparo(this);
     }
 
 

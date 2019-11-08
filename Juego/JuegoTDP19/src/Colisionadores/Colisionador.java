@@ -7,6 +7,11 @@ import Entidad.Enemigos.Enemigo;
 import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
+/**
+ * Este colisionador esta destinado para las colisiones simples (hitbox con hitbox) de entidad con entidad sin tener en cuenta el rango (por ejemplo disparo con enemigo)
+ *
+ */
+
 public interface Colisionador {
 
     public void afectarAliado(Aliado chocada);

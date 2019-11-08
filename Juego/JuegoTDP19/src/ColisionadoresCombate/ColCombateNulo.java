@@ -8,6 +8,12 @@ import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColCombateNulo implements ColisionadorCombate {
 
+    /**
+     * Redefiniciones de metodos generales para que cuando se este en este
+     * ColisionadorCombate no produzcan ninguna funcion.
+     *
+     */
+
     public void verificarColisionando(){
 
     }
@@ -15,7 +21,6 @@ public class ColCombateNulo implements ColisionadorCombate {
     public void detectoAliado(Aliado chocada) {
 
     }
-
 
     public void detectoEnemigo(Enemigo chocada) {
 
@@ -27,13 +32,11 @@ public class ColCombateNulo implements ColisionadorCombate {
     }
 
 
-
-
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
 
-    @Override
+
     public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }

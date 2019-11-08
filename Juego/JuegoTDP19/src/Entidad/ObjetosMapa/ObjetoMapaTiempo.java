@@ -25,7 +25,7 @@ public abstract class ObjetoMapaTiempo extends ObjetoMapa {
 
     public void eliminarse(){
         for( Enemigo e : enemigosAfectados )
-            this.desafectar(e);
+            this.desafectarPersonaje(e);
         super.eliminarse();
     }
 
@@ -35,7 +35,7 @@ public abstract class ObjetoMapaTiempo extends ObjetoMapa {
 
     public void yaNoAfecta(Enemigo enemigo){
         enemigosAfectados.remove(enemigo);
-        this.desafectar(enemigo);
+        this.desafectarPersonaje(enemigo);
     }
 
     public LinkedList<Enemigo> getEnemigosAfectados(){

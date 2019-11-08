@@ -20,7 +20,6 @@ public class HiloPrueba extends Thread {
 		try {
 			
 			personajeQueDispara.setPuedeAtacar(false);
-			//System.out.println("Espera 1,5 segundos para disparar");
 			Thread.sleep((long) personajeQueDispara.getVelocidadAtaque());
 			personajeQueDispara.setPuedeAtacar(true);
 			

@@ -14,7 +14,8 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
     }
 
     /**
-     * Afecta al aliado parametrizado, de la forma que corresponda.
+     * Redefinicion del afectarAliado en ColisionadorDisparo
+     *
      *
      * @param chocada
      */
@@ -26,6 +27,7 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
     }
 
     /**
+     * Redefinicion de afectarEnemigo en ColisionadorDisparo
      * Afecta al Enemigo parametrizado, de la forma que corresponda.
      *
      * @param chocada
@@ -36,6 +38,7 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
     }
 
     /**
+     * Redefinicion de afectarDisparo en ColisionadorDisparo
      * Afecta al Disparo parametrizado, de la forma que corresponda.
      *
      * @param chocada
@@ -49,9 +52,8 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
 
 
     /**
+     * Redefinicion de afectarGolpeEnemigo en ColisionadorDisparo
      * Afecta al GolpeEnemigo parametrizado, de la forma que corresponda.
-     * En este caso, se elimina chocada y el atributo disparo, y se le cambia
-     * el estado a caminando al disparador de chocada.
      *
      * @param chocada
      */
@@ -59,10 +61,29 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
 
     }
 
+    /**
+     *
+     * Redefinicion de afectarObjetoPreciosoDestruible en ColisionadorDisparo
+     * Afecta al ObjetoPreciosoVida parametrizado, de la forma que corresponda.
+     * en este caso mandandole al objeto su mensaje serAfectado parametrizando el atributo disparo
+     * y luego se elimina
+     *
+     * @param chocada
+     */
+
     public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
         chocada.serAfectado(disparo);
         disparo.eliminarse();
     }
+
+    /**
+     * Redefinicion de afectarObjetoMapaDestruible en ColisionadorDisparo
+     * Afecta al ObjetoMapaVida parametrizado, de la forma que corresponda.
+     * en este caso mandandole al objeto su mensaje serAfectado parametrizando el atributo disparo
+     * y luego se elimina
+     *
+     * @param chocada
+     */
 
     public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
         chocada.serAfectado(disparo);

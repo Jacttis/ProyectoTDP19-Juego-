@@ -12,6 +12,23 @@ import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoArqueroPRO extends Disparo {
 
+    /**
+     * Crea un DisparoArqueroPRO.
+     *
+     * Asigna los atributos correspondientes.
+     *
+     * Inicializa el atributo IA como una nueva Inteligencia InteligenciaDisparoAliado
+     * con este mismo DisparoArqueroPRO parametrizado.
+     *
+     * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad para
+     * luego agregarlo a la lista de graficos componentesGraficas.
+     *
+     * @param pos
+     * @param velocidad
+     * @param damage
+     * @param disparador
+     */
+
     public DisparoArqueroPRO(Point pos, double velocidad, int damage, Personaje disparador) {
         super(pos, velocidad, damage, disparador);
         IA=new InteligenciaDisparoAliado(this);
@@ -31,9 +48,13 @@ public class DisparoArqueroPRO extends Disparo {
 
     }
 
-    public Entidad clone(){
-        return new DisparoArqueroPRO(pos,velocidad,damage,disparador);
-    }
+    /**
+     * Redefinicion del getHitbox mas general
+     *
+     * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+     *
+     * @return Rectangle
+     */
 
     public Rectangle getHitBox(){
         return new Rectangle(pos.x,pos.y,width-30,height-20);

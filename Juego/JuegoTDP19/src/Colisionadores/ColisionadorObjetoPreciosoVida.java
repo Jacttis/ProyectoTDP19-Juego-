@@ -15,30 +15,61 @@ public class ColisionadorObjetoPreciosoVida implements Colisionador {
         this.objetoPreciosoVida=objetoPreciosoVida;
     }
 
+    /**
+     * Afecta al Aliado parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
+
     public void afectarAliado(Aliado chocada) {
 
     }
 
+    /**
+     * Afecta al Enemigo parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarEnemigo(Enemigo chocada) {
 
     }
 
+    /**
+     * Afecta al Disparo parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarDisparo(Disparo chocada) {
 
     }
 
+    /**
+     * Afecta al GolpeEnemigo parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
     }
 
+    /**
+     * Afecta al objetoMapaVida parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
 
     }
 
+    /**
+     * Afecta al objetoPreciosoVida parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 

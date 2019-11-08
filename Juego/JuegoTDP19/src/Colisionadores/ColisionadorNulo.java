@@ -8,32 +8,38 @@ import Entidad.ObjetosMapa.ObjetoMapa;
 import Entidad.PowerUp.ObjetosPreciosos.ObjetoPreciosoVida;
 
 public class ColisionadorNulo implements Colisionador {
-    @Override
+
+    /**
+     * Redefiniciones de metodos generales para que cuando se este en este
+     * Colisionador no produzcan ninguna funcion.
+     *
+     */
+
     public void afectarAliado(Aliado chocada) {
 
     }
 
-    @Override
+
     public void afectarEnemigo(Enemigo chocada) {
 
     }
 
-    @Override
+
     public void afectarDisparo(Disparo chocada) {
 
     }
 
-    @Override
+
     public void afectarGolpeEnemigo(GolpeEnemigo chocada) {
 
     }
 
-    @Override
+
     public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
 
     }
 
-    @Override
+
     public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }

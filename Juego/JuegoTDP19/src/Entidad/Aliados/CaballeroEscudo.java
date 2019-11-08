@@ -14,6 +14,23 @@ import javax.swing.*;
 
 public class CaballeroEscudo extends Aliado {
 
+    /**
+     * Inicializa un CaballeroEscudo con sus correspondientes atributos y utilizando el constructor mas general
+     * de Personaje.
+     *
+     * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad y BarraDeVida para
+     * luego agregarlos a la lista de graficos componentesGraficas.
+     *
+     * Tambien le asigna un mouseListener al Grafico Sprites.
+     *
+     * @param vida
+     * @param damage
+     * @param velocidadAtaque
+     * @param rango
+     * @param velocidad
+     * @param Descripcion
+     */
+
     public CaballeroEscudo(int vida, int damage, float velocidadAtaque, int rango, double velocidad, String Descripcion){
         super(vida, damage, velocidadAtaque,rango, velocidad, Descripcion);
 
@@ -36,25 +53,42 @@ public class CaballeroEscudo extends Aliado {
         componentesGraficas.agregarGrafico(sprites);
         componentesGraficas.agregarGrafico(barraVida);
 
-        fabricaDisparo=new FabricaDisparoGolpeCaballero((this));
+
     }
 
+    /**
+     *
+     * Implementacion del metodo abstracto atacar ubicado en Personaje.
+     *
+     * Si puede atacar genera un disparo mediante la fabrica de Disparos la cual lo insertara en el mapa.
+     *
+     */
 
     public void atacar() {
 
         if(puedeAtacar)
-            fabricaDisparo.generarDisparo();
-
+            FabricaDisparoGolpeCaballero.getFabricaDisparoGolpeCaballero().generarDisparo(this);
     }
+
+    /**
+     * Redefinicion del posicionar mas general.
+     * Lo posicion mas exactamente en base al sprite del Aliado.
+     * @param celda
+     */
+
     public void posicionar(ParCelda celda){
         super.posicionar(celda);
         pos.setLocation(celda.getPos().x,celda.getPos().y+20);
 
     }
 
-    public Entidad clone(){
-        return new CaballeroEscudo(vidaTotal,damage,velocidadAtaque,rango,velocidad,descripcion);
-    }
+    /**
+     * Redefinicion del getHitbox mas general
+     *
+     * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+     *
+     * @return Rectangle
+     */
 
     public Rectangle getHitBox(){
         return new Rectangle(pos.x,pos.y,width-20,height-50);

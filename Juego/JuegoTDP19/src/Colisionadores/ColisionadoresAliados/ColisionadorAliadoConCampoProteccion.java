@@ -13,6 +13,13 @@ public class ColisionadorAliadoConCampoProteccion extends ColisionadorAliado {
         this.campoProteccion=campoProteccion;
     }
 
+    /**
+     * Redefinicion del afectarEnemigo de colisionador aliado.
+     * En este caso, al tener el campo de proteccion, al chocar con un enemigo el campo lo matara instantaneamente.
+     *
+     * @param chocada
+     */
+
     public void afectarEnemigo(Enemigo chocada) {
         campoProteccion.aplicarEfecto(chocada);
         campoProteccion.getTiempoAfecto().interrupt();

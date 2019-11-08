@@ -15,6 +15,23 @@ import Tienda.ParCelda;
 
 public class ArqueroHumano extends Aliado {
 
+	/**
+	 * Inicializa un ArqueroHumano con sus correspondientes atributos y utilizando el constructor mas general
+	 * de Personaje.
+	 *
+	 * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad y BarraDeVida para
+	 * luego agregarlos a la lista de graficos componentesGraficas.
+	 *
+	 * Tambien le asigna un mouseListener al Grafico Sprites.
+	 *
+	 * @param vida
+	 * @param damage
+	 * @param velocidadAtaque
+	 * @param rango
+	 * @param velocidad
+	 * @param Descripcion
+	 */
+
 	public ArqueroHumano( int vida, int damage, float velocidadAtaque,int rango, double velocidad, String Descripcion) {
 		super(vida, damage, velocidadAtaque, rango, velocidad, Descripcion);
 		
@@ -36,8 +53,6 @@ public class ArqueroHumano extends Aliado {
 		componentesGraficas.agregarGrafico(sprites);
 		componentesGraficas.agregarGrafico(barraVida);
 
-		fabricaDisparo=new FabricaDisparoArquero(this);
-
 	}
 
 
@@ -53,15 +68,14 @@ public class ArqueroHumano extends Aliado {
 	public void atacar() {
 		
 		if(puedeAtacar)
-
-			fabricaDisparo.generarDisparo();
+			FabricaDisparoArquero.getFabricaDisparoArquero().generarDisparo(this);
 
 	}
 
 
 	/**
 	 * Redefinicion del posicionar mas general.
-	 *
+	 * Lo posicion mas exactamente en base al sprite del Aliado.
 	 * @param celda
 	 */
 
@@ -72,21 +86,9 @@ public class ArqueroHumano extends Aliado {
 	}
 
 	/**
-	 * Implementacion del metodo abstracto clone en Entidad.
-	 *
-	 * Clona a la entidad y la devuelve.
-	 *
-	 * @return Entidad
-	 */
-
-	public Entidad clone(){
-		return new ArqueroHumano(vidaTotal,damage,velocidadAtaque,rango, velocidad,descripcion);
-	}
-
-	/**
 	 * Redefinicion del getHitbox mas general
 	 *
-	 * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+	 * Devuelve un rectangulo que reprensenta el hitbox del Aliado.
 	 *
 	 * @return Rectangle
 	 */

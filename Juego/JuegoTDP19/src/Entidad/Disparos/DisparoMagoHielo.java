@@ -11,14 +11,27 @@ import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoMagoHielo extends Disparo {
 
-	protected double relantizacion;
-	
+
+	/**
+	 * Crea un DisparoMagoHielo.
+	 *
+	 * Asigna los atributos correspondientes.
+	 *
+	 * Inicializa el atributo IA como una nueva Inteligencia InteligenciaDisparoAliado
+	 * con este mismo DisparoMagoHielo parametrizado.
+	 *
+	 * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad para
+	 * luego agregarlo a la lista de graficos componentesGraficas.
+	 *
+	 * @param pos
+	 * @param velocidad
+	 * @param damage
+	 * @param disparador
+	 */
 	
 	public DisparoMagoHielo(Point pos, double velocidad, int damage, Personaje disparador) {
 		super(pos, velocidad, damage, disparador);
 		IA=new InteligenciaDisparoAliado(this);
-
-		relantizacion=1;
 
 		width=60;
 		height=50;
@@ -29,17 +42,6 @@ public class DisparoMagoHielo extends Disparo {
 		componentesGraficas.agregarNuevoGrafico(sprites);
 		
 	}
-
-	public void afectarPersonaje(Personaje personajeAfectado){
-
-		personajeAfectado.disminuirVida(this.damage);
-
-	}
-
-	public Entidad clone(){
-		return new DisparoMagoHielo(pos,velocidad,damage,disparador);
-	}
-	
 	
 	
 }

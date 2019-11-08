@@ -19,6 +19,14 @@ public class ColisionadorObjetoPreciosoTiempo implements ColisionadorCombate {
         this.objetoPreciosoTiempo=objetoPrecioso;
     }
 
+    /**
+     * Metodo que se ejecutara constantemente (en actualizarEntidad()) que verificara
+     * si los Personajes que haya detectado el ObjetoMapaTiempo siguen colisionando con el mismo (los Personajes
+     * detectados pertenecen a una lista que es atributo de ObjetoPreciosoTiempo).
+     * Si no es el caso, realiza determinada accion, en este caso, remueve el Personaje de la lista de afectados.
+     *
+     */
+
     public void verificarColisionando(){
 
         LinkedList<Personaje> yaNoAfectados = new LinkedList<Personaje>();
@@ -33,12 +41,24 @@ public class ColisionadorObjetoPreciosoTiempo implements ColisionadorCombate {
     }
 
 
-
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un Aliado
+     *
+     * @param chocada
+     */
 
     public void detectoAliado(Aliado chocada) {
 
     }
 
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un Aliado
+     *
+     * En este caso si chocada no se encuentra en la lista de los Personajes afectados del objetoPreciosoTiempo,
+     * agrega a chocada a la lista.
+     *
+     * @param chocada
+     */
 
     public void detectoEnemigo(Enemigo chocada) {
 
@@ -55,17 +75,32 @@ public class ColisionadorObjetoPreciosoTiempo implements ColisionadorCombate {
 
     }
 
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un Disparo
+     *
+     * @param chocada
+     */
 
     public void detectoDisparo(Disparo chocada) {
 
     }
 
-
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un ObjetoMapaVida
+     *
+     * @param chocada
+     */
 
     public void detectoObjetoMapaDestruible(ObjetoMapaVida chocada) {
 
     }
 
+
+    /**
+     * Realiza la accion correspondiente frente al hecho de haber detectado un ObjetoPreciosoVida
+     *
+     * @param chocada
+     */
 
     public void detectoObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 

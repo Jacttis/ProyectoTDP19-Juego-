@@ -12,6 +12,20 @@ import javax.swing.ImageIcon;
 public abstract class Disparo extends Entidad {
 
 	protected Personaje disparador;
+
+	/**
+	 * Crea un Disparo.
+	 *
+	 * Inicializa el atributo colisionador como un nuevo ColisionadorDisparo con este
+	 * mismo Disparo parametrizado.
+	 *
+	 * Asigna los atributos correspondientes.
+	 *
+	 * @param pos
+	 * @param velocidad
+	 * @param damage
+	 * @param disparador
+	 */
 	
 	public Disparo(Point pos, double velocidad, int damage, Personaje disparador) {
 		
@@ -47,7 +61,7 @@ public abstract class Disparo extends Entidad {
 	}
 
 	/**
-	 * Definicion del metodo abstracto serChocado mas general.
+	 * Definicion del metodo abstracto serChocado.
 	 * Le envia al colisionador parametrizado el mensaje afectarDisparo
 	 * con esta instancia disparo como parametro.
 	 *
@@ -57,6 +71,14 @@ public abstract class Disparo extends Entidad {
 	public void serChocado(Colisionador colisionador){
 		colisionador.afectarDisparo(this);
 	}
+
+	/**
+	 * Definicion del metodo abstracto serDetectado.
+	 * Le envia al colisionadorCombate parametrizado el mensaje detectoDisparo
+	 * con esta instancia disparo como parametro.
+	 *
+	 * @param colisionadorCombate
+	 */
 
 	public void serDetectado(ColisionadorCombate colisionadorCombate){
 		colisionadorCombate.detectoDisparo(this);

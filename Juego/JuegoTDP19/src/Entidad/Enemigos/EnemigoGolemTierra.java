@@ -16,8 +16,6 @@ public class EnemigoGolemTierra extends Enemigo {
 
         super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
 
-        fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
-
         imagen[0] = new ImageIcon("Sprites/Golems/GolemTierraGIF/caminandoTRUE.gif");
         imagen[1] = new ImageIcon("Sprites/Golems/GolemTierraGIF/atacandoTRUE.gif");
         imagen[2] = new ImageIcon("Sprites/Golems/GolemTierraGIF/muriendoTRUE.gif");
@@ -55,7 +53,7 @@ public class EnemigoGolemTierra extends Enemigo {
     public void atacar(){
 
         if(puedeAtacar)
-            fabricaDisparo.generarDisparo();
+            FabricaDisparoGolpeEnemigo.getFabricaDisparoGolpeEnemigo().generarDisparo(this);
     }
 
 }

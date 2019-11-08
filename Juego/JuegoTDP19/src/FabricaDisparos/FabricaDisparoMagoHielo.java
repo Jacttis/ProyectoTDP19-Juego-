@@ -9,15 +9,29 @@ import java.awt.*;
 
 public class FabricaDisparoMagoHielo extends FabricaDisparo{
 
-    protected Disparo disparoMagoHielo;
+    private static FabricaDisparoMagoHielo instance = null;
 
-    public FabricaDisparoMagoHielo(Personaje disparador){
-        super(disparador);
+    public static FabricaDisparoMagoHielo getFabricaDisparoMagoHielo(){
+        if(instance == null)
+            instance = new FabricaDisparoMagoHielo();
 
+        return instance;
+    }
+
+    private FabricaDisparoMagoHielo(){
+        super();
     }
 
 
-    public void generarDisparo() {
+    /**
+     * Genera un disparo DisparoMagoHielo con las caracteristicas necesarias de disparador
+     * luego lo agrega al Mapa y inicia el hilo para controlar que el personaje no pueda
+     * disparar en base a su velocidad de Ataque
+     *
+     * @param disparador
+     */
+
+    public void generarDisparo(Personaje disparador) {
 
         Disparo nuevoDisparo=new DisparoMagoHielo(new Point(disparador.getPos().x+28,disparador.getPos().y+40),15,disparador.getDamage(),disparador);
 

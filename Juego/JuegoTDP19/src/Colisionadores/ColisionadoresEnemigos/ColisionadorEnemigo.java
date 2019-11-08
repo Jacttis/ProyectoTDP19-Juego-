@@ -60,9 +60,20 @@ public class ColisionadorEnemigo implements Colisionador {
 
     }
 
+    /**
+     * Afecta al objetoMapaVida parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
+
     public void afectarObjetoMapaDestruible(ObjetoMapa chocada){
     }
 
+    /**
+     * Afecta al objetoPreciosoVida parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 

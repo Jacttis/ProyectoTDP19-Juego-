@@ -7,6 +7,20 @@ import java.awt.*;
 
 public class GolpeCaballeroEscudo extends Disparo {
 
+    /**
+     * Crea un GolpeCaballeroEscudo.
+     *
+     * Asigna los atributos correspondientes.
+     *
+     * Inicializa el atributo IA como una nueva Inteligencia InteligenciaDisparoAliado
+     * con este mismo DisparoArqueroHumano parametrizado.
+     *
+     * @param pos
+     * @param velocidad
+     * @param damage
+     * @param disparador
+     */
+
     public GolpeCaballeroEscudo(Point pos, double velocidad, int damage, Personaje disparador){
         super(pos, velocidad, damage, disparador);
 
@@ -17,6 +31,5 @@ public class GolpeCaballeroEscudo extends Disparo {
 
     }
 
-    public Entidad clone(){return new GolpeCaballeroEscudo(pos,velocidad,damage,disparador);}
 
 }

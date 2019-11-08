@@ -14,6 +14,25 @@ public class ExplosionGoblin extends Disparo {
 
     private HiloExplosion hilo;
 
+    /**
+     * Crea un ExplosionGoblin.
+     *
+     * Asigna los atributos correspondientes.
+     *
+     * Inicializa el atributo IA como una nueva Inteligencia InteligenciaDisparoAliado
+     * con este mismo ExplosionGoblin parametrizado.
+     *
+     * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad para
+     * luego agregarlo a la lista de graficos componentesGraficas.
+     *
+     * Inicializa el HiloExplosion con este mismo ExplosionGoblin parametrizado y lo comienza.
+     *
+     * @param pos
+     * @param velocidad
+     * @param damage
+     * @param disparador
+     */
+
     public ExplosionGoblin(Point pos, double velocidad, int damage, Personaje disparador){
         super(pos, velocidad, damage, disparador);
 
@@ -36,5 +55,4 @@ public class ExplosionGoblin extends Disparo {
         hilo.start();
     }
 
-    public Entidad clone(){return new ExplosionGoblin(pos,velocidad,damage,disparador);}
 }

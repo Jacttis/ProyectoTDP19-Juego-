@@ -13,31 +13,34 @@ import java.awt.*;
 
 public class GolpeEnemigo extends Disparo {
 
-    public GolpeEnemigo(Point pos, int damage,int width,int height, Personaje disparador) {
-        super(pos, 0, damage,disparador);
-        IA=new InteligenciaGolpeEnemigo(this);
-        colisionador=new ColisionadorDisparoEnemigo(this);
-        this.width=width;
-        this.height=height;
-
-        imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/DisparoMagoHieloTR.gif");
-
-        Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        componentesGraficas.agregarNuevoGrafico(sprites);
-
-    }
-
     /**
-     * Definicion del metodo abstracto mas general.
-     * Clona la entidad y la retorna.
+     * Crea un DisparoArqueroHumano.
      *
+     * Asigna los atributos correspondientes.
      *
-     * @return Entidad
+     * Inicializa el atributo IA como una nueva Inteligencia InteligenciaGolpeEnemigo
+     * con este mismo GolpeEnemigo parametrizado.
+     *
+     * Inicializa el atributo colisionador como un nuevo Colisionador ColisionadorDisparoEnemigo
+     * con este mismo GolpeEnemigo parametrizado.
+     *
+     * @param pos
+     * @param velocidad
+     * @param damage
+     * @param disparador
      */
 
-    public Entidad clone() {
-        return new GolpeEnemigo(pos,damage,width,height,disparador);
+    public GolpeEnemigo(Point pos, double velocidad, int damage, Personaje disparador) {
+        super(pos, velocidad, damage,disparador);
+        IA=new InteligenciaGolpeEnemigo(this);
+        colisionador=new ColisionadorDisparoEnemigo(this);
+
+        this.width=disparador.getWidth();
+        this.height=disparador.getHeight()/2;
+
+
     }
+
 
     /**
      * Redefinicion del serChocado en Disparo.

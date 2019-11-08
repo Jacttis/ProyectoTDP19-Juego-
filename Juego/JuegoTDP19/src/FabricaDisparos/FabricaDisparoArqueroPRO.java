@@ -10,13 +10,29 @@ import java.awt.*;
 public class FabricaDisparoArqueroPRO extends FabricaDisparo {
 
 
-    public FabricaDisparoArqueroPRO(Personaje disparador){
-        super(disparador);
+    private static FabricaDisparoArqueroPRO instance = null;
 
+    public static FabricaDisparoArqueroPRO getFabricaDisparoArqueroPRO(){
+        if(instance == null)
+            instance = new FabricaDisparoArqueroPRO();
+
+        return instance;
+    }
+
+    private FabricaDisparoArqueroPRO(){
+        super();
     }
 
 
-    public void generarDisparo() {
+    /**
+     * Genera un disparo DisparoArqueroPRO con las caracteristicas necesarias de disparador
+     * luego lo agrega al Mapa y inicia el hilo para controlar que el personaje no pueda
+     * disparar en base a su velocidad de Ataque
+     *
+     * @param disparador
+     */
+
+    public void generarDisparo(Personaje disparador) {
 
         Disparo nuevoDisparo= new DisparoArqueroPRO(new Point(disparador.getPos().x+30,disparador.getPos().y+80),20,disparador.getDamage(),disparador);
 

@@ -58,12 +58,21 @@ public class ColisionadorDisparo implements Colisionador {
 
     }
 
+    /**
+     * Afecta al objetoMapaVida del mapa parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
 
     public void afectarObjetoMapaDestruible(ObjetoMapa chocada) {
 
     }
 
-    @Override
+    /**
+     * Afecta al objetoPreciosoVida parametrizado, de la forma que corresponda.
+     *
+     * @param chocada
+     */
     public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }

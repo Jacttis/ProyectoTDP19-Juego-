@@ -16,7 +16,6 @@ public class EnemigoGolemFuego extends Enemigo {
 
         super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
 
-        fabricaDisparo=new FabricaDisparoGolpeEnemigo(this);
 
         this.setWidth(165);
 
@@ -60,7 +59,7 @@ public class EnemigoGolemFuego extends Enemigo {
     public void atacar(){
 
         if(puedeAtacar)
-            fabricaDisparo.generarDisparo();
+            FabricaDisparoGolpeEnemigo.getFabricaDisparoGolpeEnemigo().generarDisparo(this);
     }
 
 

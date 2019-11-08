@@ -27,12 +27,12 @@ public class ObjetoPiedra extends ObjetoMapaVida {
 
     }
 
-    public void afectar(Personaje entidad) {
+    public void afectarPersonaje(Personaje entidad) {
 
     }
 
 
-    public void desafectar(Personaje entidad) {
+    public void desafectarPersonaje(Personaje entidad) {
 
     }
 

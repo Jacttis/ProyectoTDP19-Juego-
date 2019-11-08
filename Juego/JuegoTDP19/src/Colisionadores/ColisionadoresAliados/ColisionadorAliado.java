@@ -48,7 +48,7 @@ public class ColisionadorAliado implements Colisionador {
 
     /**
      * Afecta al Enemigo parametrizado, de la forma que corresponda.
-     * En este caso, cambiandole el estado a Atacando.
+     *
      *
      * @param chocada
      */
@@ -57,12 +57,21 @@ public class ColisionadorAliado implements Colisionador {
 
     }
 
-
+    /**
+     * Afecta al objetoMapaVida de la manera que corresponda
+     *
+     * @param chocada
+     */
     public void afectarObjetoMapaDestruible(ObjetoMapa chocada){
 
     }
 
-    @Override
+    /**
+     * Afecta al objetoPreciosoVida de la manera que corresponda
+     *
+     * @param chocada
+     */
+
     public void afectarObjetoPreciosoDestruible(ObjetoPreciosoVida chocada) {
 
     }

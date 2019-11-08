@@ -14,7 +14,14 @@ public class MouseOyenteAliado implements MouseListener {
         this.aliado=aliado;
     }
 
-    @Override
+    /**
+     * Si se clickea sobre el JLabel del sprite del aliado se envia el mensaje
+     * al BotonVender intentoVenderAliado y tambien se envia el mensaje aplicarPowerToAliado
+     * de ControladorPowerAliado.
+     *
+     * @param e
+     */
+
     public void mouseClicked(MouseEvent e) {
 
         BotonVender.getBotonVender().intentoVenderAliado(aliado);

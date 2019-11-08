@@ -11,6 +11,23 @@ import java.awt.*;
 
 public class DisparoReaperMan extends Disparo {
 
+    /**
+     * Crea un DisparoReaperMan.
+     *
+     * Asigna los atributos correspondientes.
+     *
+     * Inicializa el atributo IA como una nueva Inteligencia InteligenciaDisparoEnemigo
+     * con este mismo DisparoReaperMan parametrizado.
+     *
+     * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad para
+     * luego agregarlo a la lista de graficos componentesGraficas.
+     *
+     * @param pos
+     * @param velocidad
+     * @param damage
+     * @param disparador
+     */
+
     public DisparoReaperMan(Point pos, double velocidad, int damage, Personaje disparador) {
         super(pos, velocidad, damage, disparador);
         IA=new InteligenciaDisparoEnemigo(this);
@@ -28,9 +45,14 @@ public class DisparoReaperMan extends Disparo {
 
     }
 
-    public Entidad clone(){
-        return new DisparoReaperMan(pos,velocidad,damage,disparador);
-    }
+    /**
+     * Redefinicion del getHitbox mas general
+     *
+     * Devuelve un rectangulo que reprensenta el hitbox del Disparo.
+     *
+     * @return Rectangle
+     */
+
 
     public Rectangle getHitBox(){
         return new Rectangle(pos.x,pos.y,width-30,height-20);

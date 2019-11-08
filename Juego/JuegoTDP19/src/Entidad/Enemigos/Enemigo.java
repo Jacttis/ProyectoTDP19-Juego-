@@ -53,8 +53,7 @@ public abstract class Enemigo extends Personaje {
 	protected int getOro(){
 		return oroPremio;
 	}
-	
-	//Getters triviales
+
 	
 	/**
 	 * Devuelve la cantidad de puntos del enemigo
@@ -83,6 +82,7 @@ public abstract class Enemigo extends Personaje {
 	 * Redefinicion del eliminarse mas general.
 	 *
 	 * Se agrega que al eliminarse aumente el oro de la tienda correspondientemente.
+	 * Si tiene un powerUp le envia el mensaje caerEnMapa con el atributo pos parametrizado.
 	 *
 	 */
 
@@ -91,7 +91,7 @@ public abstract class Enemigo extends Personaje {
 		Mapa.getMapa().eliminarEntidad(this);
 
 		Random r = new Random();
-		int posibilidadCaer = r.nextInt(8);
+		int posibilidadOroACaer = r.nextInt(8);
 
 		if(!powers.isEmpty()) {
 			for(PowerUp power : powers)
@@ -99,10 +99,10 @@ public abstract class Enemigo extends Personaje {
 
 		}
 
-		if(posibilidadCaer<=2)
+		if(posibilidadOroACaer<=2)
 			Tienda.getTienda().aumentarOro(1);
 		else
-			if(posibilidadCaer<=5)
+			if(posibilidadOroACaer<=5)
 				Tienda.getTienda().aumentarOro(this.getOro()/2);
 			else
 				Tienda.getTienda().aumentarOro(this.getOro());
@@ -131,7 +131,13 @@ public abstract class Enemigo extends Personaje {
 		return hitBox;
 	}
 
-
+	/**
+	 * Agrega el PowerUp parametrizado a la lista de powers
+	 * y envia al mismo el mensaje afectarPortador con este mismo Enemigo
+	 * parametrizado.
+	 *
+	 * @param power
+	 */
 
 
 	public void agregarPowerUp(PowerUp power){

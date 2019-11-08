@@ -15,8 +15,6 @@ public class EnemigoFallenAngelBlanco extends Enemigo {
 
         super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
 
-        fabricaDisparo = new FabricaDisparoGolpeEnemigo(this);
-
         this.setWidth(165);
 
         imagen[0] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/caminandoTrue.gif");
@@ -57,7 +55,7 @@ public class EnemigoFallenAngelBlanco extends Enemigo {
     public void atacar(){
 
         if(puedeAtacar)
-            fabricaDisparo.generarDisparo();
+            FabricaDisparoGolpeEnemigo.getFabricaDisparoGolpeEnemigo().generarDisparo(this);
     }
 
 }

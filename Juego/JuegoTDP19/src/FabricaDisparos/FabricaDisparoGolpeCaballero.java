@@ -10,11 +10,28 @@ import java.awt.*;
 
 public class FabricaDisparoGolpeCaballero extends FabricaDisparo {
 
-    public FabricaDisparoGolpeCaballero(Personaje disparador) {
-        super(disparador);
+    private static FabricaDisparoGolpeCaballero instance = null;
+
+    public static FabricaDisparoGolpeCaballero getFabricaDisparoGolpeCaballero(){
+        if(instance == null)
+            instance = new FabricaDisparoGolpeCaballero();
+
+        return instance;
     }
 
-    public void generarDisparo() {
+    private FabricaDisparoGolpeCaballero(){
+        super();
+    }
+
+    /**
+     * Genera un disparo GolpeCaballeroEscudo con las caracteristicas necesarias de disparador
+     * luego lo agrega al Mapa y inicia el hilo para controlar que el personaje no pueda
+     * disparar en base a su velocidad de Ataque
+     *
+     * @param disparador
+     */
+
+    public void generarDisparo(Personaje disparador) {
 
         Disparo nuevoDisparo= new GolpeCaballeroEscudo(new Point(disparador.getPos().x,disparador.getPos().y),0,disparador.getDamage(),disparador);
 

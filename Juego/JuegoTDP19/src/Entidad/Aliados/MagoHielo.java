@@ -10,8 +10,26 @@ import FabricaDisparos.FabricaDisparoMagoHielo;
 import Graficos.BarraDeVida;
 import Graficos.Grafico;
 import Graficos.SpriteEntidad;
+import Tienda.ParCelda;
 
 public class MagoHielo extends Aliado {
+
+	/**
+	 * Inicializa un MagoHielo con sus correspondientes atributos y utilizando el constructor mas general
+	 * de Personaje.
+	 *
+	 * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad y BarraDeVida para
+	 * luego agregarlos a la lista de graficos componentesGraficas.
+	 *
+	 * Tambien le asigna un mouseListener al Grafico Sprites.
+	 *
+	 * @param vida
+	 * @param damage
+	 * @param velocidadAtaque
+	 * @param rango
+	 * @param velocidad
+	 * @param Descripcion
+	 */
 
 	public MagoHielo(int vida, int damage, float velocidadAtaque,int rango, double velocidad, String Descripcion) {
 		super(vida, damage, velocidadAtaque, rango, velocidad, Descripcion);
@@ -20,8 +38,6 @@ public class MagoHielo extends Aliado {
 		height=Constantes.ALIADOY;
 
 		precio = 6;
-
-		fabricaDisparo=new FabricaDisparoMagoHielo(this);
 
 		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/stillTRUE.gif");
 		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/attackTRUE.gif");
@@ -41,27 +57,40 @@ public class MagoHielo extends Aliado {
 
 
 	/**
-	 * Utiliza la fabrica de disparos para generar un disparo y
-	 * que lo meta en el mapa.
-	 * 
+	 *
+	 * Implementacion del metodo abstracto atacar ubicado en Personaje.
+	 *
+	 * Si puede atacar genera un disparo mediante la fabrica de Disparos la cual lo insertara en el mapa.
+	 *
 	 */
 	
 	public void atacar() {
 		
 		if(puedeAtacar)
 		
-			fabricaDisparo.generarDisparo();
+			FabricaDisparoMagoHielo.getFabricaDisparoMagoHielo().generarDisparo(this);
 
 	}
 
-	public void posicionar(Point posicionNueva){
-		this.pos=new Point(posicionNueva.x,posicionNueva.y+15);
+	/**
+	 * Redefinicion del posicionar mas general.
+	 * Lo posicion mas exactamente en base al sprite del Aliado.
+	 * @param celda
+	 */
+
+	public void posicionar(ParCelda celda){
+		super.posicionar(celda);
+		pos.setLocation(celda.getPos().x,celda.getPos().y+15);
 
 	}
 
-	public Entidad clone(){
-		return new MagoHielo(vidaTotal,damage,velocidadAtaque,rango,velocidad,descripcion);
-	}
+	/**
+	 * Redefinicion del getHitbox mas general
+	 *
+	 * Devuelve un rectangulo que reprensenta el hitbox del personaje.
+	 *
+	 * @return Rectangle
+	 */
 
 
 	public Rectangle getHitBox(){

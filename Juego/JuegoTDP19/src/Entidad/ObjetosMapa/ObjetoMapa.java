@@ -13,7 +13,6 @@ public abstract class ObjetoMapa extends Entidad {
 
     public ObjetoMapa(Point pos) {
         super(pos, 0, 0);
-        colisionador=new ColisionadorObjetoMapaDestruible(this);
         IA = new InteligenciaObjetoMapa(this);
     }
 
@@ -21,8 +20,8 @@ public abstract class ObjetoMapa extends Entidad {
         colisionador.afectarObjetoMapaDestruible(this);
     }
 
-    public abstract void afectar(Personaje entidad);
-    public abstract void desafectar(Personaje entidad);
+    public abstract void afectarPersonaje(Personaje entidad);
+    public abstract void desafectarPersonaje(Personaje entidad);
 
     public abstract void serAfectado(Entidad entidad);
 
