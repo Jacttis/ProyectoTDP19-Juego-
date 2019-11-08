@@ -12,7 +12,6 @@ import javax.swing.border.EmptyBorder;
 import Constantes.Constantes;
 import Entidad.*;
 import Juego.Juego;
-import Splash.*;
 
 
 public class GUI extends JFrame implements MouseListener {

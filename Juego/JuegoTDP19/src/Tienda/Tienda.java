@@ -103,6 +103,8 @@ public class Tienda {
 
 		aliado.getPos().setLocation(0,0);
 	}
-
+	public void gameOver(){
+		instance=null;
+	}
 	
 }

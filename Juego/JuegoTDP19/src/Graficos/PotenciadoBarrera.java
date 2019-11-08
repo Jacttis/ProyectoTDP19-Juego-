@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class PotenciadoBarrera extends Grafico {
 
-    private Personaje portador;
+
 
     public PotenciadoBarrera(Personaje portador,int modificadorX, int modificadorY){
         this.portador=portador;

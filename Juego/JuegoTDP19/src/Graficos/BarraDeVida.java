@@ -7,7 +7,6 @@ import java.awt.*;
 
 public class BarraDeVida extends Grafico {
 
-    protected Personaje portador;
 
     public BarraDeVida(Personaje portador,int modificadorX, int modificadorY){
         super();
@@ -24,11 +23,11 @@ public class BarraDeVida extends Grafico {
     }
 
     public void actualizarGrafico() {
-
-        this.grafico.setBounds(portador.getPos().x+modificadorX, portador.getPos().y+portador.getHeight()+modificadorY , portador.getVida()*80/portador.getVidaTotal(),5);
+        Personaje port=(Personaje) portador;
+        this.grafico.setBounds(portador.getPos().x+modificadorX, portador.getPos().y+portador.getHeight()+modificadorY , port.getVida()*80/port.getVidaTotal(),5);
 
         //Determina en que porcentaje de vida esta el personaje
-        int porcentaje = (portador.getVida() * 100) / portador.getVidaTotal();
+        int porcentaje = (port.getVida() * 100) / port.getVidaTotal();
 
             if (porcentaje < 70) {
                 if (porcentaje < 40)
