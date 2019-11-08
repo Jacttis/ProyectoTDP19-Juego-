@@ -12,6 +12,22 @@ import Graficos.SpriteEntidad;
 
 public class EnemigoGolemFuego extends Enemigo {
 
+    /**
+     * Inicializa un EnemigoGolemFuego con sus correspondientes atributos y utilizando el constructor mas general
+     * de Enemigo.
+     *
+     * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad y BarraDeVida para
+     * luego agregarlos a la lista de graficos componentesGraficas.
+     *
+     * @param vida
+     * @param damage
+     * @param velocidadAtaque
+     * @param rango
+     * @param velocidad
+     * @param oro
+     * @param puntos
+     */
+
     public EnemigoGolemFuego(int vida, int damage, float velocidadAtaque,int rango, double velocidad, int puntos, int oro) {
 
         super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
@@ -33,21 +49,6 @@ public class EnemigoGolemFuego extends Enemigo {
     }
 
 
-
-
-
-
-    /**
-     * Implementacion del metodo abstracto clone en Entidad.
-     *
-     * Clona a la entidad y la devuelve.
-     *
-     * @return Entidad
-     */
-
-    public Entidad clone(){
-        return new EnemigoGolemFuego(vidaTotal,damage,velocidadAtaque,rango,velocidad,puntos,oroPremio);
-    }
 
     /**
      *

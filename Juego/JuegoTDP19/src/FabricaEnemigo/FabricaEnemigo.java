@@ -14,7 +14,7 @@ public abstract class FabricaEnemigo {
 
     protected PowerUp obtenerPowerUpAlAzar(){
         Random r = new Random();
-        int aleatorio = r.nextInt(300);
+        int aleatorio = r.nextInt(20);
 
         PowerUp power=null;
 

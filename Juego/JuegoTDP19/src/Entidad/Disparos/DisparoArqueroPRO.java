@@ -37,13 +37,13 @@ public class DisparoArqueroPRO extends Disparo {
         height=26;
 
         imagen=new ImageIcon [2];
-        imagen[0]=new ImageIcon("Sprites/CharacterSprites/Archer/gifs/FlechaPrimerGolpeTRUE.gif");
-        imagen[1]=new ImageIcon("Sprites/CharacterSprites/Archer/gifs/FlechaSegundoGolpeTRUE.gif");
+        imagen[0]=new ImageIcon("Sprites/CharacterSprites/Archer/gifs/FlechaPROPrimer.gif");
+        imagen[1]=new ImageIcon("Sprites/CharacterSprites/Archer/gifs/FlechaPROSegundo.gif");
 
-        Grafico sprites=new SpriteEntidad(this,imagen,0,0);
+        Grafico sprites=new SpriteEntidad(this,imagen,0,80);
         componentesGraficas.agregarNuevoGrafico(sprites);
 
-        colisionador=new ColisionadorDisparoArqueroPro(this);
+        colisionador = new ColisionadorDisparoArqueroPro(this);
 
 
     }

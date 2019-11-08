@@ -8,6 +8,12 @@ public class HiloDuracionObjetoMapa extends Thread {
         this.objeto=objeto;
     }
 
+    /**
+     * El hilo "espera" el tiempo que dure el objetoMapaTiempo
+     * y al cabo de ese tiempo le envia el mensaje eliminarse al atributo objeto.
+     *
+     */
+
     public void run(){
 
         try {

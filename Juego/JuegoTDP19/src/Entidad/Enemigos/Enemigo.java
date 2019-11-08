@@ -23,6 +23,15 @@ public abstract class Enemigo extends Personaje {
 	
 	/**
 	 * Crea un personaje enemigo
+	 *
+	 * Al atributo colisionador lo instancia como un nuevo ColisionadorEnemigo con
+	 * este mismo enemigo parametrizado.
+	 *
+	 * Al atributo colisionadorCombate lo instancia como un nuevo ColCombateEnemigo con
+	 * este mismo enemigo parametrizado.
+	 *
+	 * Al atributo IA lo instancia como un nuevo InteligenciaEnemigos con este mismo
+	 * enemigo parametrizado.
 	 * @param vida 
 	 * @param damage 
 	 * @param velocidadAtaque
@@ -66,13 +75,20 @@ public abstract class Enemigo extends Personaje {
 
 	/**
 	 *  Recibe un colisionador y a este mismo le manda el mensaje
-	 *  de que choco con un enemigo.
+	 *  afectarEnemigo con este mismo enemigo parametrizado.
 	 *
 	 * @param colisionador
 	 */
 	public void serChocado(Colisionador colisionador){
 		colisionador.afectarEnemigo(this);
 	}
+
+	/**
+	 *  Recibe un colisionadorCombate y a este mismo le manda el mensaje
+	 *  detectoEnemigo con este mismo Enemigo parametrizado.
+	 *
+	 * @param colisionadorCombate
+	 */
 
 	public void serDetectado(ColisionadorCombate colisionadorCombate){
 		colisionadorCombate.detectoEnemigo(this);
@@ -99,14 +115,7 @@ public abstract class Enemigo extends Personaje {
 
 		}
 
-		if(posibilidadOroACaer<=2)
-			Tienda.getTienda().aumentarOro(1);
-		else
-			if(posibilidadOroACaer<=5)
-				Tienda.getTienda().aumentarOro(this.getOro()/2);
-			else
-				Tienda.getTienda().aumentarOro(this.getOro());
-
+		Tienda.getTienda().aumentarOro(this.getOro());
 		Tienda.getTienda().aumentarPuntos(this.getPuntos());
 	}
 
