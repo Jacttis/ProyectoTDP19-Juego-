@@ -13,6 +13,11 @@ public class Menu  extends JFrame{
     private JButton Jugar,Help,Quit;
     private JPanel contentPane;
 
+    /**
+     * Metodo que devuelve el menu ya que es unico en el juego.
+     * Si este no esta creado lo crea sino devuelve el creado
+     * @return Menu creado o existente
+     */
     public static Menu getMenu(){
         if(instance==null){
             instance = new Menu();

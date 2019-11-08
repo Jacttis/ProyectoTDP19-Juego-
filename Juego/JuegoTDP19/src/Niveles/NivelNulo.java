@@ -16,12 +16,19 @@ import java.util.Random;
 
 public class NivelNulo extends Nivel {
     JLabel ganar;
+
+    /**
+     * Crea un Nuivel Nulo el cual este funciona para dar Fin al juego
+     */
     public NivelNulo() {
         super();
         nivelSiguiente=null;
     }
 
     @Override
+    /**
+     * comenzarNivel en este Nivel Nulo finaliza el juego y te lleva al menu de opciones.
+     */
     public void comenzarNivel() {
         ganar=new JLabel("Ganaste!!");
         ganar.setBounds(850,80,3000,400);
@@ -47,7 +54,6 @@ public class NivelNulo extends Nivel {
 
     }
 
-    @Override
     public void llenarListaEventos() {
 
     }
