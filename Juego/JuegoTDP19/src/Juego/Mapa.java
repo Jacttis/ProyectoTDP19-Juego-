@@ -8,6 +8,8 @@ import Entidad.Enemigos.Enemigo;
 import GUI.GUI;
 import Graficos.Grafico;
 import Niveles.Nivel;
+import Niveles.NivelNulo;
+import Niveles.NivelTres;
 import Niveles.NivelUno;
 import Tienda.Tienda;
 
@@ -30,7 +32,7 @@ public class Mapa {
 	
 	private Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
-		nivel=new NivelUno();
+		nivel=new NivelTres();
 
 		this.gui=gui;
 		gui.cambiarFondo(nivel.getDireccionImagenFondoNivel());
@@ -252,4 +254,7 @@ public class Mapa {
 		return gui;
 	}
 
+	public void gameOver(){
+		instance=null;
+	}
 }

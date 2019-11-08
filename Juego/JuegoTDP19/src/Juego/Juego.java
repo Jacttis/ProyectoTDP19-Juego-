@@ -76,7 +76,7 @@ public class Juego {
 
 
 	public void gameOver(){
-		gui.getTiempo().interrupt();
+		instance=null;
 	}
 	
 	
