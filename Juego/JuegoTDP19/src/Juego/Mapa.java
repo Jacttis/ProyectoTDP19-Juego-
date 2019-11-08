@@ -228,24 +228,7 @@ public class Mapa {
 	 * Termina el Juego indicando que pediste la partida y volviendo al menu principal.
 	 */
 	public void perdio(){
-		JLabel Perder;
-		limpiarMapa();
-		Perder=new JLabel("Game Over!!");
-		Perder.setBounds(750,80,3000,400);
-		Perder.setForeground(Color.red);
-		Mapa.getMapa().getGui().add(Perder);
-		Perder.setFont(new Font("Times New Roman", 4,100));
-		try{
-			Thread.sleep(2000);
-		}
-		catch (InterruptedException e){
-			e.printStackTrace();
-		}
-		Juego.getJuego().gameOver();
-		Mapa.getMapa().getGui().dispose();
-		Tienda.getTienda().gameOver();
-		Mapa.getMapa().gameOver();
-		Menu.getMenu();
+		Juego.getJuego().gameOver(new JLabel("Game Over"));
 	}
 
 	private void limpiarMapa(){
