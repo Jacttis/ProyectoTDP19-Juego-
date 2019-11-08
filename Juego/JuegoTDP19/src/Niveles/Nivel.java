@@ -25,6 +25,18 @@ public abstract class Nivel {
 	protected JLabel cartelNivel1,cartelNivel2;
 	protected Point rangoCantidadEnemigos;
 
+	/**
+	 * Crea un Nivel
+	 *
+	 * Inicializa la listaEnemigosSpawn y listaEventos y las llena mediante
+	 * los metodos llenarListaEventos y llenarListaEnemigosSpawn
+	 *
+	 * Inicializa el atributo oleada como una nueva Oleada PrimerOleada parametrizando
+	 * este mismo Nivel
+	 *
+	 * Inicializa los JLabel cartelNivel1 y cartelNivel2
+	 *
+	 */
 	
 	public Nivel() {
 
@@ -38,36 +50,96 @@ public abstract class Nivel {
 
 	}
 
+	/**
+	 * Metodos abstractos que seran implementados dependiendo del tipo de
+	 * Nivel que se trate
+	 *
+	 */
+
+	/**
+	 * Comienza el nivel iniciando la oleada
+	 */
+
 	public abstract void comenzarNivel();
+
+	/**
+	 *	Llena la listaEnemigosSpawn con los enemigos a spawnear en el determinado nivel.
+	 */
 	public abstract void llenarListaEnemigosSpawn();
+
+	/**
+	 * Llena la listaEventos con los eventos que podrian aparecer en el determinado nivel.
+	 *
+	 */
 	public abstract void llenarListaEventos();
+
+	/**
+	 * Devuelve el atributo rangoCantidadEnemigos que es un Point
+	 * que determina el minimo y maximo de enemigos a spawnear.
+	 *
+	 * @return
+	 */
 
 	public Point getRangoCantidadEnemigos(){
 		return rangoCantidadEnemigos;
 	}
 
+	/**
+	 * Getter de listaEnemigosSpawn
+	 * @return LinkedList
+	 */
+
 	public LinkedList<FabricaEnemigo> getListaEnemigosSpawn(){
 		return listaEnemigosSpawn;
 	}
+
+	/**
+	 * Getter de listaEventos
+	 *
+	 * @return LinkedList
+	 */
 
 	public LinkedList<FabricaMapaEvento> getListaEventos(){
 		return listaEventos;
 	}
 
+	/**
+	 * Getter del atributo nivelSiguiente
+	 *
+	 * @return
+	 */
+
 	public Nivel getNivelSiguiente(){
 		return nivelSiguiente;
 	}
+
+	/**
+	 * Setter del atributo oleada
+	 *
+	 * @param oleada
+	 */
 
 	public void setOleada(Oleada oleada){
 		this.oleada=oleada;
 	}
 
 
+	/**
+	 * Envia el mensaje cambiarNivel al Mapa
+	 * con este mismo Nivel parametrizado
+	 *
+	 */
+
 	public void cambiarNivel(){
 		Mapa.getMapa().cambiarNivel(this);
 	}
 
 	public abstract String getDireccionImagenFondoNivel();
+
+	/**
+	 * Inicializa el cartel de comienzo de nivel
+	 *
+	 */
 
 	public void inicializarCartelNivel(){
 		cartelNivel1.setForeground(Color.BLACK);
@@ -84,6 +156,11 @@ public abstract class Nivel {
 
 		Mapa.getMapa().getGui().repaint();
 	}
+
+	/**
+	 * Retira el cartel de comienzo de nivel
+	 *
+	 */
 
 	public void retirarCartelNivel(){
 		Mapa.getMapa().getGui().remove(cartelNivel1);

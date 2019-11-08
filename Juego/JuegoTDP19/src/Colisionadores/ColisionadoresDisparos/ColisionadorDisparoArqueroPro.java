@@ -10,6 +10,7 @@ public class ColisionadorDisparoArqueroPro extends ColisionadorDisparo {
 
     public ColisionadorDisparoArqueroPro(Disparo disparo) {
         super(disparo);
+        primerChocado=null;
     }
 
     /**

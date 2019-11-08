@@ -1,6 +1,8 @@
-package Graficos;
+package Graficos.TiposGrafico;
 
 import Entidad.Personaje;
+import Graficos.Graficos;
+import Graficos.TiposGrafico.Grafico;
 
 import javax.swing.*;
 

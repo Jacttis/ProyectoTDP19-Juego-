@@ -1,16 +1,30 @@
 package Entidad.Enemigos;
 
-import java.awt.*;
 import javax.swing.*;
 
-import Entidad.Entidad;
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 
 public class EnemigoGolemTierra extends Enemigo {
+
+    /**
+     * Inicializa un EnemigoGolemTierra con sus correspondientes atributos y utilizando el constructor mas general
+     * de Enemigo.
+     *
+     * Inicializa cada componente de arreglo de imagenes y crea un Grafico SpriteEntidad y BarraDeVida para
+     * luego agregarlos a la lista de graficos componentesGraficas.
+     *
+     * @param vida
+     * @param damage
+     * @param velocidadAtaque
+     * @param rango
+     * @param velocidad
+     * @param oro
+     * @param puntos
+     */
 
     public EnemigoGolemTierra(int vida, int damage, float velocidadAtaque,int rango, double velocidad, int puntos, int oro) {
 
@@ -29,19 +43,6 @@ public class EnemigoGolemTierra extends Enemigo {
     }
 
 
-
-
-    /**
-     * Implementacion del metodo abstracto clone en Entidad.
-     *
-     * Clona a la entidad y la devuelve.
-     *
-     * @return Entidad
-     */
-
-    public Entidad clone(){
-        return new EnemigoGolemTierra(vidaTotal,damage,velocidadAtaque,rango,velocidad,puntos,oroPremio);
-    }
 
     /**
      *

@@ -1,13 +1,8 @@
 package Entidad;
 
 import java.awt.*;
-import java.util.LinkedList;
 
 import Estados.*;
-import FabricaDisparos.FabricaDisparo;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Juego.Mapa;
 
 import javax.swing.*;
 

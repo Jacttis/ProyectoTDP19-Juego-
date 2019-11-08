@@ -1,9 +1,8 @@
 package Graficos;
 
-import Entidad.Entidad;
+import Graficos.TiposGrafico.Grafico;
 import Juego.Mapa;
 
-import javax.swing.*;
 import java.util.LinkedList;
 
 public class Graficos {

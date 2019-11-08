@@ -21,7 +21,6 @@ public class ColisionadorDisparoEnemigo extends ColisionadorDisparo {
      */
 
     public void afectarAliado(Aliado chocada) {
-        System.out.println("Golpeando aliado");
         disparo.afectarPersonaje(chocada);
         disparo.eliminarse();
     }

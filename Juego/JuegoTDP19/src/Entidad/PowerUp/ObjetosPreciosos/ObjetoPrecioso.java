@@ -1,14 +1,9 @@
 package Entidad.PowerUp.ObjetosPreciosos;
 
-import Colisionadores.Colisionador;
-import ColisionadoresCombate.ColisionadorCombate;
-import ColisionadoresCombate.ColisionadorObjetoPreciosoTiempo;
 import Entidad.*;
 import Entidad.PowerUp.PowerUp;
-import Graficos.Grafico;
-import Graficos.PoseeObjeto;
-
-import java.util.LinkedList;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.PoseeObjeto;
 
 public abstract class ObjetoPrecioso extends PowerUp {
 

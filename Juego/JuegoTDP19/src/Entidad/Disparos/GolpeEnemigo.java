@@ -4,11 +4,8 @@ package Entidad.Disparos;
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadoresDisparos.ColisionadorDisparoEnemigo;
 import Entidad.*;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
 import Inteligencia.InteligenciaGolpeEnemigo;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class GolpeEnemigo extends Disparo {

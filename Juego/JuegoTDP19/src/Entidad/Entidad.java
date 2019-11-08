@@ -1,16 +1,14 @@
 package Entidad;
 
 import java.awt.*;
-import java.util.LinkedList;
 
 import Colisionadores.Colisionador;
 import Colisionadores.ColisionadorNulo;
 import ColisionadoresCombate.ColCombateNulo;
 import ColisionadoresCombate.ColisionadorCombate;
-import Estados.*;
+
 import javax.swing.*;
 
-import Graficos.Grafico;
 import Graficos.Graficos;
 import Inteligencia.Inteligencia;
 import Juego.Mapa;

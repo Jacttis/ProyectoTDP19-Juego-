@@ -1,14 +1,10 @@
 package Entidad.Aliados;
 
 import Constantes.Constantes;
-import Entidad.Aliados.Aliado;
-import Entidad.Aliados.ArqueroHumano;
-import Entidad.Entidad;
 import FabricaDisparos.FabricaDisparoArqueroPRO;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
-import Tienda.ParCelda;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,7 +42,7 @@ public class ArqueroPRO extends Aliado {
         imagen[3] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        Grafico barraVida=new BarraDeVida(this,5,10);
+        Grafico barraVida=new BarraDeVida(this,7,0);
 
         sprites.getGrafico().addMouseListener(new MouseOyenteAliado(this));
 
@@ -69,18 +65,6 @@ public class ArqueroPRO extends Aliado {
 
         if(puedeAtacar)
             FabricaDisparoArqueroPRO.getFabricaDisparoArqueroPRO().generarDisparo(this);
-
-    }
-
-    /**
-     * Redefinicion del posicionar mas general.
-     * Lo posicion mas exactamente en base al sprite del Aliado.
-     * @param celda
-     */
-
-    public void posicionar(ParCelda celda){
-        super.posicionar(celda);
-        pos.setLocation(celda.getPos().x,celda.getPos().y+5);
 
     }
 

@@ -1,16 +1,17 @@
-package Graficos;
+package Graficos.TiposGrafico;
 
 import Entidad.Personaje;
+import Graficos.Graficos;
+import Graficos.TiposGrafico.Grafico;
 
 import javax.swing.*;
 
-public class Relantizado extends Grafico {
+public class PoseeObjeto extends Grafico {
 
 
-
-    public Relantizado(Personaje portador,int modificadorX, int modificadorY){
+    public PoseeObjeto(Personaje portador, int modificadorX, int modificadorY){
         this.portador=portador;
-        this.grafico=new JLabel(new ImageIcon("Sprites/Objetos/Rio/efecto.gif"));
+        this.grafico=new JLabel(new ImageIcon("Sprites/Objetos/PotenciadoObjeto1.png"));
 
         this.modificadorX=modificadorX;
         this.modificadorY=modificadorY;
@@ -26,5 +27,4 @@ public class Relantizado extends Grafico {
     public void cambiarGrafico(int dir) {
 
     }
-
 }

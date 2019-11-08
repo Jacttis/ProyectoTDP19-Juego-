@@ -3,9 +3,9 @@ package Entidad.PowerUp.MagiasTemporales;
 import Entidad.*;
 import Entidad.Aliados.Aliado;
 import Entidad.PowerUp.MouseOyenteMagiaCaida;
-import Graficos.Grafico;
-import Graficos.Potenciado;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.Potenciado;
+import Graficos.TiposGrafico.SpriteEntidad;
 import Juego.Mapa;
 
 import javax.swing.*;

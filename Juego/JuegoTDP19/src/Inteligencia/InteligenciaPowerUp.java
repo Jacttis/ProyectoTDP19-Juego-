@@ -1,7 +1,6 @@
 package Inteligencia;
 
 import Entidad.Entidad;
-import Graficos.Grafico;
 
 public class InteligenciaPowerUp extends Inteligencia {
 

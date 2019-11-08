@@ -1,14 +1,11 @@
 package Entidad.Aliados;
 
 import Constantes.Constantes;
-import Entidad.Entidad;
 import Estados.Caminando;
-import FabricaDisparos.FabricaDisparo;
-import FabricaDisparos.FabricaDisparoGolpeEnemigo;
 import FabricaDisparos.FabricaExplosionGoblin;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 import Inteligencia.InteligenciaAliadoMovil;
 import Juego.Mapa;
 import Tienda.ParCelda;

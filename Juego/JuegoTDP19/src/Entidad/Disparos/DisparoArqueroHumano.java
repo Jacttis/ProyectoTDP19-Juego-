@@ -5,8 +5,8 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 
 import Entidad.*;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoArqueroHumano extends Disparo {

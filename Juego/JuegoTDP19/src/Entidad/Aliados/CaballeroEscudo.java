@@ -2,11 +2,10 @@ package Entidad.Aliados;
 
 
 import Constantes.Constantes;
-import Entidad.Entidad;
 import FabricaDisparos.FabricaDisparoGolpeCaballero;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 import Tienda.ParCelda;
 
 import java.awt.*;
