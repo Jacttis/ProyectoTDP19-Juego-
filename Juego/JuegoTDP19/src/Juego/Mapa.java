@@ -242,9 +242,9 @@ public class Mapa {
 		catch (InterruptedException e){
 			e.printStackTrace();
 		}
+		Juego.getJuego().gameOver();
 		Mapa.getMapa().getGui().dispose();
 		Tienda.getTienda().gameOver();
-		Juego.getJuego().gameOver();
 		Mapa.getMapa().gameOver();
 		Menu.getMenu();
 	}

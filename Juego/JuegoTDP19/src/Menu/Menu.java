@@ -60,6 +60,13 @@ public class Menu  extends JFrame{
                 System.exit(0);
             }
         });
+
+        Help.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Help ayuda=new Help();
+            }
+        });
         JLabel lblNewLabel = new JLabel("");
         lblNewLabel.setIcon(new ImageIcon("Menu/FondoLejos.png"));
         lblNewLabel.setBounds(-48, 0, 900, 506);
