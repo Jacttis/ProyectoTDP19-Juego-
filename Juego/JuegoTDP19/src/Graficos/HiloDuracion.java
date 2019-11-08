@@ -1,6 +1,7 @@
 package Graficos;
 
 import Entidad.Entidad;
+import Graficos.TiposGrafico.Grafico;
 
 public class HiloDuracion extends Thread {
 

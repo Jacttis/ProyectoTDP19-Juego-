@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 
 import Colisionadores.ColisionadoresDisparos.ColisionadorDisparoArqueroPro;
 import Entidad.*;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 import Inteligencia.InteligenciaDisparoAliado;
 
 public class DisparoArqueroPRO extends Disparo {

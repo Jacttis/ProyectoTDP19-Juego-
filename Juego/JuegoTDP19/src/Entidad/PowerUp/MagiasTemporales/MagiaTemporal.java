@@ -1,9 +1,8 @@
 package Entidad.PowerUp.MagiasTemporales;
 
 import Entidad.Aliados.Aliado;
-import Entidad.PowerUp.MagiasTemporales.HiloPowers;
 import Entidad.PowerUp.PowerUp;
-import Graficos.Grafico;
+import Graficos.TiposGrafico.Grafico;
 import Juego.Mapa;
 
 import java.awt.*;

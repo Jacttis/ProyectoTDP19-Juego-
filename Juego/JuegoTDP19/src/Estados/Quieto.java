@@ -1,8 +1,6 @@
 package Estados;
 
-import Entidad.Entidad;
 import Entidad.Personaje;
-import Graficos.Grafico;
 
 public class Quieto extends Estado{
     public Quieto(Personaje personaje) {

@@ -8,9 +8,9 @@ import Entidad.Enemigos.Enemigo;
 import Entidad.*;
 import Entidad.Personaje;
 import Entidad.PowerUp.MouseOyenteMagiaCaida;
-import Graficos.Grafico;
-import Graficos.PotenciadoBarrera;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.PotenciadoBarrera;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 import javax.swing.*;
 

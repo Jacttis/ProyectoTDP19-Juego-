@@ -1,10 +1,9 @@
 package Entidad.PowerUp.ObjetosPreciosos;
 
 import Entidad.Entidad;
-import Entidad.Personaje;
 import FabricaBotones.BotonesObjetos.BotonTronco;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;

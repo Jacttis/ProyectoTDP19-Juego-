@@ -4,9 +4,8 @@ import java.awt.*;
 import java.util.LinkedList;
 
 import Entidad.*;
-import Entidad.Enemigos.Enemigo;
 import GUI.GUI;
-import Graficos.Grafico;
+import Graficos.TiposGrafico.Grafico;
 import Niveles.Nivel;
 import Niveles.NivelUno;
 import Tienda.Tienda;

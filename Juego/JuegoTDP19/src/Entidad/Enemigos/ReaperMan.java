@@ -1,13 +1,11 @@
 package Entidad.Enemigos;
 
-import Entidad.*;
 import FabricaDisparos.*;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class ReaperMan extends Enemigo {
 

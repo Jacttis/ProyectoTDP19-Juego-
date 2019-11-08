@@ -1,13 +1,11 @@
 package Entidad.Enemigos;
 
-import java.awt.*;
 import javax.swing.*;
 
-import Entidad.Entidad;
 import FabricaDisparos.FabricaDisparoGolpeEnemigo;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 
 public class EnemigoGolemFuego extends Enemigo {

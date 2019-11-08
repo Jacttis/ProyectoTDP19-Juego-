@@ -1,9 +1,6 @@
 package Estados;
 
 import Entidad.*;
-import Graficos.Grafico;
-
-import java.awt.*;
 
 public class Muerto extends Estado {
 

@@ -1,14 +1,10 @@
 package Entidad.Aliados;
 
 import Constantes.Constantes;
-import Entidad.Aliados.Aliado;
-import Entidad.Aliados.ArqueroHumano;
-import Entidad.Entidad;
 import FabricaDisparos.FabricaDisparoArqueroPRO;
-import Graficos.BarraDeVida;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
-import Tienda.ParCelda;
+import Graficos.TiposGrafico.BarraDeVida;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;

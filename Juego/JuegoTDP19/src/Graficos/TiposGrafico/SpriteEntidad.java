@@ -1,9 +1,10 @@
-package Graficos;
+package Graficos.TiposGrafico;
 
 import Entidad.Entidad;
+import Graficos.Graficos;
+import Graficos.TiposGrafico.Grafico;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class SpriteEntidad extends Grafico {
 

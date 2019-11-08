@@ -2,9 +2,8 @@ package Entidad.ObjetosMapa;
 
 import Entidad.Entidad;
 import Entidad.Personaje;
-import Graficos.Grafico;
-import Graficos.Relantizado;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 
 import javax.swing.*;
 import java.awt.*;

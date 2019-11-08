@@ -3,8 +3,8 @@ package Entidad.Disparos;
 import Colisionadores.ColisionadoresDisparos.ColisionadorExplosionGoblin;
 import Entidad.Aliados.HiloExplosion;
 import Entidad.*;
-import Graficos.Grafico;
-import Graficos.SpriteEntidad;
+import Graficos.TiposGrafico.Grafico;
+import Graficos.TiposGrafico.SpriteEntidad;
 import Inteligencia.InteligenciaDisparoAliado;
 
 import javax.swing.*;

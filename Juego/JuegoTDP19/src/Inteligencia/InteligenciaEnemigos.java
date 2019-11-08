@@ -1,7 +1,6 @@
 package Inteligencia;
 
 import Entidad.*;
-import Graficos.Grafico;
 
 
 public class InteligenciaEnemigos extends Inteligencia {
