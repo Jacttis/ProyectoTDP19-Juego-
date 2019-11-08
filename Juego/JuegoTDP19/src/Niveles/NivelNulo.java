@@ -8,6 +8,7 @@ import FabricaEnemigo.FabricaEnemigoGolemTierra;
 import Juego.Juego;
 import Juego.Mapa;
 import Menu.Menu;
+import Tienda.Tienda;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,6 +34,7 @@ public class NivelNulo extends Nivel {
         catch (InterruptedException e){
             e.printStackTrace();
         }
+        Tienda.getTienda().gameOver();
         Mapa.getMapa().getGui().dispose();
         Juego.getJuego().gameOver();
         Mapa.getMapa().gameOver();

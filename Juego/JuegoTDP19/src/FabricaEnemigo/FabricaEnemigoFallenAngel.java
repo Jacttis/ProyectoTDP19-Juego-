@@ -6,7 +6,7 @@ import Entidad.Enemigos.EnemigoFallenAngel;
 
 public class FabricaEnemigoFallenAngel extends FabricaEnemigo {
 
-    public static FabricaEnemigoFallenAngel instance=null;
+    private static FabricaEnemigoFallenAngel instance=null;
 
 
     public  static FabricaEnemigoFallenAngel getFabricaFallenAngel(){
