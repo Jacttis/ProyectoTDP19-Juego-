@@ -1,0 +1,1 @@
+Hay un error en ejecucion (null pointer) que pasa a veces cuando la bomba goblin mata a 3 o mas enemigos
