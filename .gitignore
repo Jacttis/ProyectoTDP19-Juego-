@@ -1,5 +1,6 @@
 Juego\JuegoTDP19\src\out
 out
+.idea
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -76,3 +77,5 @@ Juego/JuegoTDP19/src/Juego/.classpath
 Juego/JuegoTDP19/src/Juego/.project
 Juego/JuegoTDP19/src/Niveles/.classpath
 Juego/JuegoTDP19/src/Niveles/.project
+Juego/JuegoTDP19/.idea/$PRODUCT_WORKSPACE_FILE$
+Juego/JuegoTDP19/.idea/$PRODUCT_WORKSPACE_FILE$
