@@ -11,7 +11,7 @@ public class PoseeObjeto extends Grafico {
 
     public PoseeObjeto(Personaje portador, int modificadorX, int modificadorY){
         this.portador=portador;
-        this.grafico=new JLabel(new ImageIcon("Sprites/Objetos/PotenciadoObjeto1.png"));
+        this.grafico=new JLabel(new ImageIcon("src/Sprites/Objetos/PotenciadoObjeto1.png"));
 
         this.modificadorX=modificadorX;
         this.modificadorY=modificadorY;

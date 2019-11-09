@@ -36,7 +36,7 @@ public class DisparoMagoHielo extends Disparo {
 		width=60;
 		height=50;
 		
-		imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/dMagoHielo.gif");
+		imagen[0]=new ImageIcon("src/Sprites/CharacterSprites/GIFs/MagoHielo/dMagoHielo.gif");
 
 		Grafico sprites=new SpriteEntidad(this,imagen,0,-3);
 		componentesGraficas.agregarNuevoGrafico(sprites);

@@ -32,10 +32,10 @@ public class EnemigoFallenAngelBlanco extends Enemigo {
 
         this.setWidth(165);
 
-        imagen[0] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/caminandoTrue.gif");
-        imagen[1] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/atacandoTrue.gif");
-        imagen[2] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/muerteTrue.gif");
-        imagen[3] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/muerteTrue.gif");
+        imagen[0] = new ImageIcon("src/Sprites/EnemiesSprites/FallenAngelBlanco/caminandoTrue.gif");
+        imagen[1] = new ImageIcon("src/Sprites/EnemiesSprites/FallenAngelBlanco/atacandoTrue.gif");
+        imagen[2] = new ImageIcon("src/Sprites/EnemiesSprites/FallenAngelBlanco/muerteTrue.gif");
+        imagen[3] = new ImageIcon("src/Sprites/EnemiesSprites/FallenAngelBlanco/muerteTrue.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,35,-15);

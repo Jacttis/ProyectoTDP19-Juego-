@@ -27,7 +27,7 @@ public class ObjetoLago extends ObjetoMapaTiempo {
         super(pos,duracion);
         this.relantizacion=relantizacion;
 
-        imagen[0] = new ImageIcon("Sprites/Objetos/Rio/lago.gif");
+        imagen[0] = new ImageIcon("src/Sprites/Objetos/Rio/lago.gif");
 
         Grafico sprite = new SpriteEntidad(this,imagen,0,0);
         componentesGraficas.agregarGrafico(sprite);

@@ -12,7 +12,7 @@ public class Potenciado extends Grafico {
 
     public Potenciado (Personaje portador, int modificadorX, int modificadorY){
         this.portador=portador;
-        this.grafico=new JLabel(new ImageIcon("Sprites/Fuego/fuegoTRUE.gif"));
+        this.grafico=new JLabel(new ImageIcon("src/Sprites/Fuego/fuegoTRUE.gif"));
 
         this.modificadorX=modificadorX;
         this.modificadorY=modificadorY;

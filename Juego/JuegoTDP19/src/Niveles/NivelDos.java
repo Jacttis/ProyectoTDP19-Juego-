@@ -42,7 +42,7 @@ public class NivelDos extends Nivel {
 
 
     public String getDireccionImagenFondoNivel(){
-        String direccion="Sprites/Mapa/Mapa2DisenioNIVEL2.jpg";
+        String direccion="src/Sprites/Mapa/Mapa2DisenioNIVEL2.jpg";
         return direccion;
     }
 

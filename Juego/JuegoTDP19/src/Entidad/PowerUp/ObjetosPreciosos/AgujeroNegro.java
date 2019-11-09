@@ -17,7 +17,7 @@ public class AgujeroNegro extends ObjetoPreciosoTiempo {
         this.width=120;
         this.height=103;
 
-        imagen[0] = new ImageIcon("Sprites/Objetos/Aguajero/augNegro.gif");
+        imagen[0] = new ImageIcon("src/Sprites/Objetos/Aguajero/augNegro.gif");
 
         Grafico sprite = new SpriteEntidad(this,imagen,0,0);
         componentesGraficas.agregarGrafico(sprite);

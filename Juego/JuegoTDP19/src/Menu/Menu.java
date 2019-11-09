@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class Menu  extends JFrame{
 
     private static Menu instance=null;
-    private JButton Jugar,Help,Quit;
+    private JButton Jugar,Quit;
     private JPanel contentPane;
 
     /**
@@ -35,14 +35,12 @@ public class Menu  extends JFrame{
 
         Jugar =new JButton("Play");
         Quit=new JButton("Quit");
-        Help=new JButton("Help");
 
         Jugar.setBounds(330,140,100,50);
-        Help.setBounds(330,210,100,50);
         Quit.setBounds(330,280,100,50);
         contentPane.add(Jugar);
         contentPane.add(Quit);
-        contentPane.add(Help);
+
 
         Jugar.addActionListener(new ActionListener() {
             @Override
@@ -61,14 +59,9 @@ public class Menu  extends JFrame{
             }
         });
 
-        Help.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Help ayuda=new Help();
-            }
-        });
+
         JLabel lblNewLabel = new JLabel("");
-        lblNewLabel.setIcon(new ImageIcon("Menu/FondoLejos.png"));
+        lblNewLabel.setIcon(new ImageIcon("src/Menu/FondoLejos.png"));
         lblNewLabel.setBounds(-48, 0, 900, 506);
         contentPane.add(lblNewLabel);
 

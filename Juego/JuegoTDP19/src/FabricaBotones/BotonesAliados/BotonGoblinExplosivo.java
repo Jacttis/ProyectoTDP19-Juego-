@@ -7,7 +7,7 @@ import FabricaBotones.BotonesAliados.BotonAliado;
 public class BotonGoblinExplosivo extends BotonAliado {
 
     public BotonGoblinExplosivo(){
-        super("Sprites/CharacterSprites/SpriteBoton/GoblinExplosivo.png");
+        super("src/Sprites/CharacterSprites/SpriteBoton/GoblinExplosivo.png");
     }
 
     public Aliado getAliado() {

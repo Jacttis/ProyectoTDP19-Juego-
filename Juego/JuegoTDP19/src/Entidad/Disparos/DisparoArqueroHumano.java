@@ -35,7 +35,7 @@ public class DisparoArqueroHumano extends Disparo {
 		width=100;
 		height=38;
 		
-		imagen[0]=new ImageIcon("Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
+		imagen[0]=new ImageIcon("src/Sprites/ArqueroHumano/Archer1GIF/DisparoArqueroTRUE.gif");
 
 		Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 		componentesGraficas.agregarNuevoGrafico(sprites);

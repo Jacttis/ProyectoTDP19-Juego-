@@ -18,9 +18,9 @@ public class ObjetoTronco extends ObjetoPreciosoVida {
 
         imagen = new ImageIcon [3];
 
-        imagen[0] = new ImageIcon("Sprites/Objetos/ObjetoTronco/troncovich.png");
-        imagen[1] = new ImageIcon("Sprites/Objetos/ObjetoTronco/troncovich.png");
-        imagen[2] = new ImageIcon("Sprites/Objetos/ObjetoTronco/troncovich.png");
+        imagen[0] = new ImageIcon("src/Sprites/Objetos/ObjetoTronco/troncovich.png");
+        imagen[1] = new ImageIcon("src/Sprites/Objetos/ObjetoTronco/troncovich.png");
+        imagen[2] = new ImageIcon("src/Sprites/Objetos/ObjetoTronco/troncovich.png");
 
         Grafico sprite = new SpriteEntidad(this, imagen, 0, 0);
         componentesGraficas.agregarGrafico(sprite);

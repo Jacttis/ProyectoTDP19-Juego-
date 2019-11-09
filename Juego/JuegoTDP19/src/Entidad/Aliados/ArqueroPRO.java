@@ -36,10 +36,10 @@ public class ArqueroPRO extends Aliado {
 
         precio=7;
 
-        imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
-        imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/atacandoTRUE.gif");
-        imagen[2] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/muerteTRUE.gif");
-        imagen[3] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
+        imagen[0] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
+        imagen[1] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroPRO/atacandoTRUE.gif");
+        imagen[2] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroPRO/muerteTRUE.gif");
+        imagen[3] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroPRO/quietoTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,7,0);

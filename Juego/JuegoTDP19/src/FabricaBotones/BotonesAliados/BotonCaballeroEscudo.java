@@ -7,7 +7,7 @@ import FabricaBotones.BotonesAliados.BotonAliado;
 public class BotonCaballeroEscudo extends BotonAliado {
 
     public BotonCaballeroEscudo(){
-        super("Sprites/CharacterSprites/SpriteBoton/CabAchicado2.png");
+        super("src/Sprites/CharacterSprites/SpriteBoton/CabAchicado2.png");
     }
 
 

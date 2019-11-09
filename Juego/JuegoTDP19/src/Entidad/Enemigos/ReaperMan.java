@@ -30,10 +30,10 @@ public class ReaperMan extends Enemigo {
 
         this.oroPremio = 3;
 
-        imagen[0] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/walkingReaperMan2.gif");
-        imagen[1] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/slashingReaperMan3.gif");
-        imagen[2] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
-        imagen[3] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
+        imagen[0] = new ImageIcon("src/Sprites/CharacterSprites/ReaperMan/walkingReaperMan2.gif");
+        imagen[1] = new ImageIcon("src/Sprites/CharacterSprites/ReaperMan/slashingReaperMan3.gif");
+        imagen[2] = new ImageIcon("src/Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
+        imagen[3] = new ImageIcon("src/Sprites/CharacterSprites/ReaperMan/dyingReaperMan3.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,30,-15);

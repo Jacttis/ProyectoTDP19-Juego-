@@ -42,7 +42,7 @@ public class ExplosionGoblin extends Disparo {
 
         IA=new InteligenciaDisparoAliado(this);
 
-        imagen[0]=new ImageIcon("Sprites/Explosion/explosionGIF.gif");
+        imagen[0]=new ImageIcon("src/Sprites/Explosion/explosionGIF.gif");
 
         this.pos.y=pos.y-50;
 

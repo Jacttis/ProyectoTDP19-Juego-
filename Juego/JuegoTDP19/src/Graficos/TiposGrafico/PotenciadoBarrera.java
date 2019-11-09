@@ -12,7 +12,7 @@ public class PotenciadoBarrera extends Grafico {
 
     public PotenciadoBarrera(Personaje portador,int modificadorX, int modificadorY){
         this.portador=portador;
-        this.grafico=new JLabel(new ImageIcon("Sprites/Magia/BarreraPotenciado/Escudo2.png"));
+        this.grafico=new JLabel(new ImageIcon("src/Sprites/Magia/BarreraPotenciado/Escudo2.png"));
 
         this.modificadorX=modificadorX;
         this.modificadorY=modificadorY;

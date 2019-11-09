@@ -39,10 +39,10 @@ public class ArqueroHumano extends Aliado {
 
 		precio=5;
 
-		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
-		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/atacandoTRUE.gif");
-		imagen[2] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/muerteTRUE.gif");
-		imagen[3] = new ImageIcon("Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
+		imagen[0] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
+		imagen[1] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroHumano/atacandoTRUE.gif");
+		imagen[2] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroHumano/muerteTRUE.gif");
+		imagen[3] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/ArqueroHumano/quietoTRUE.gif");
 
 		Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 		Grafico barraVida=new BarraDeVida(this,5,0);

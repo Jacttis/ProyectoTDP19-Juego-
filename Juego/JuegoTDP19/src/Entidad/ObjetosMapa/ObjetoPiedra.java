@@ -26,9 +26,9 @@ public class ObjetoPiedra extends ObjetoMapaVida {
         width=190;
         height=200;
 
-        imagen[0] = new ImageIcon("Sprites/Objetos/piedraCompleta.png");
-        imagen[1] = new ImageIcon("Sprites/Objetos/piedraMediana.png");
-        imagen[2] = new ImageIcon("Sprites/Objetos/piedraCasiRota.png");
+        imagen[0] = new ImageIcon("src/Sprites/Objetos/piedraCompleta.png");
+        imagen[1] = new ImageIcon("src/Sprites/Objetos/piedraMediana.png");
+        imagen[2] = new ImageIcon("src/Sprites/Objetos/piedraCasiRota.png");
 
         Grafico sprite = new SpriteEntidad(this, imagen, 0, 0);
         componentesGraficas.agregarNuevoGrafico(sprite);

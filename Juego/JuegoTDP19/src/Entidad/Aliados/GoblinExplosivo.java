@@ -44,10 +44,10 @@ public class GoblinExplosivo extends Aliado {
 
         precio = 8;
 
-        imagen[0]=new ImageIcon("Sprites/GoblinExplosivo/corriendoChico.gif");
-        imagen[1]=new ImageIcon("Sprites/GoblinExplosivo/corriendoChico.gif");
+        imagen[0]=new ImageIcon("src/Sprites/GoblinExplosivo/corriendoChico.gif");
+        imagen[1]=new ImageIcon("src/Sprites/GoblinExplosivo/corriendoChico.gif");
         imagen[2]=new ImageIcon("");
-        imagen[3]=new ImageIcon("Sprites/GoblinExplosivo/corriendoChico.gif");
+        imagen[3]=new ImageIcon("src/Sprites/GoblinExplosivo/corriendoChico.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,20);
         Grafico barraVida=new BarraDeVida(this,10,10);

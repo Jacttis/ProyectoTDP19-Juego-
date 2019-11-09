@@ -7,7 +7,7 @@ import FabricaBotones.BotonesAliados.BotonAliado;
 public class BotonMagoHielo extends BotonAliado {
 
     public BotonMagoHielo(){
-        super("Sprites/CharacterSprites/SpriteBoton/MagoHieloAchicado.png");
+        super("src/Sprites/CharacterSprites/SpriteBoton/MagoHieloAchicado.png");
     }
 
     public Aliado getAliado() {

@@ -15,7 +15,7 @@ public class BotonTronco extends BotonObjeto {
     }
 
     private BotonTronco(){
-        super("Sprites/Objetos/ObjetoTronco/SpriteBoton.png");
+        super("src/Sprites/Objetos/ObjetoTronco/SpriteBoton.png");
     }
 
     public ObjetoPrecioso getObjeto() {

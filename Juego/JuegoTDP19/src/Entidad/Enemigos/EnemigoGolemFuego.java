@@ -33,10 +33,10 @@ public class EnemigoGolemFuego extends Enemigo {
 
         this.setWidth(165);
 
-        imagen[0] = new ImageIcon("Sprites/Golems/GolemFuegoGIF/caminandoTRUEN2.gif");
-        imagen[1] = new ImageIcon("Sprites/Golems/GolemFuegoGIF/atacandoTRUE3.gif");
-        imagen[2] = new ImageIcon("Sprites/Golems/GolemFuegoGIF/GolemFuegoMuerte5.gif");
-        imagen[3] = new ImageIcon("Sprites/Golems/GolemFuegoGIF/GolemFuegoMuerte5.gif");
+        imagen[0] = new ImageIcon("src/Sprites/Golems/GolemFuegoGIF/caminandoTRUEN2.gif");
+        imagen[1] = new ImageIcon("src/Sprites/Golems/GolemFuegoGIF/atacandoTRUE3.gif");
+        imagen[2] = new ImageIcon("src/Sprites/Golems/GolemFuegoGIF/GolemFuegoMuerte5.gif");
+        imagen[3] = new ImageIcon("src/Sprites/Golems/GolemFuegoGIF/GolemFuegoMuerte5.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,45,-10);

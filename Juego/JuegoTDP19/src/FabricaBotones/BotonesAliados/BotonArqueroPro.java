@@ -7,7 +7,7 @@ import FabricaBotones.BotonesAliados.BotonAliado;
 public class BotonArqueroPro extends BotonAliado {
 
     public BotonArqueroPro(){
-        super("Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png");
+        super("src/Sprites/CharacterSprites/SpriteBoton/ArqueroPROchico.png");
     }
 
     public Aliado getAliado() {

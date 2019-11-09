@@ -19,7 +19,7 @@ public class CampoProteccion extends MagiaTemporal {
     public CampoProteccion(int duracion){
         super(duracion);
 
-        imagen[0]=new ImageIcon("Sprites/Magia/BarreraPotenciado/barreraDrop2.png");
+        imagen[0]=new ImageIcon("src/Sprites/Magia/BarreraPotenciado/barreraDrop2.png");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 

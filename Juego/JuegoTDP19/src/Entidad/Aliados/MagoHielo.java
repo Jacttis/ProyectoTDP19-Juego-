@@ -38,10 +38,10 @@ public class MagoHielo extends Aliado {
 
 		precio = 6;
 
-		imagen[0] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/stillTRUE.gif");
-		imagen[1] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/attackTRUE.gif");
-		imagen[2] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/muerteTRUE.gif");
-		imagen[3] = new ImageIcon("Sprites/CharacterSprites/GIFs/MagoHielo/stillTRUE.gif");
+		imagen[0] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/MagoHielo/stillTRUE.gif");
+		imagen[1] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/MagoHielo/attackTRUE.gif");
+		imagen[2] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/MagoHielo/muerteTRUE.gif");
+		imagen[3] = new ImageIcon("src/Sprites/CharacterSprites/GIFs/MagoHielo/stillTRUE.gif");
 
 		Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 		Grafico barraVida=new BarraDeVida(this,8,0);

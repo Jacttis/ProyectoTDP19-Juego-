@@ -31,10 +31,10 @@ public class EnemigoGolemTierra extends Enemigo {
 
         this.oroPremio = 2;
 
-        imagen[0] = new ImageIcon("Sprites/Golems/GolemTierraGIF/caminandoTRUE.gif");
-        imagen[1] = new ImageIcon("Sprites/Golems/GolemTierraGIF/atacandoTRUE.gif");
-        imagen[2] = new ImageIcon("Sprites/Golems/GolemTierraGIF/muriendoTRUE.gif");
-        imagen[3] = new ImageIcon("Sprites/Golems/GolemTierraGIF/muriendoTRUE.gif");
+        imagen[0] = new ImageIcon("src/Sprites/Golems/GolemTierraGIF/caminandoTRUE.gif");
+        imagen[1] = new ImageIcon("src/Sprites/Golems/GolemTierraGIF/atacandoTRUE.gif");
+        imagen[2] = new ImageIcon("src/Sprites/Golems/GolemTierraGIF/muriendoTRUE.gif");
+        imagen[3] = new ImageIcon("src/Sprites/Golems/GolemTierraGIF/muriendoTRUE.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,50,-10);

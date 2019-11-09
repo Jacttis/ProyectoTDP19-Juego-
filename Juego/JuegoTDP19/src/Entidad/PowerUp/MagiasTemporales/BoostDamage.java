@@ -18,7 +18,7 @@ public class BoostDamage extends MagiaTemporal {
         super(duracion);
         this.damageAumento=damageAumento;
 
-        imagen[0]=new ImageIcon("Sprites/Fuego/FuegoDropTrue2.gif");
+        imagen[0]=new ImageIcon("src/Sprites/Fuego/FuegoDropTrue2.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
 

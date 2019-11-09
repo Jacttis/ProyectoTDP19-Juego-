@@ -39,10 +39,10 @@ public class CaballeroEscudo extends Aliado {
         precio = 3;
 
 
-        imagen[0]=new ImageIcon("Sprites/CharacterSprites/GIFs/CaballeroEscudo/StillTrueCab.gif");
-        imagen[1]=new ImageIcon("Sprites/CharacterSprites/GIFs/CaballeroEscudo/atacandoTrue.gif");
-        imagen[2]=new ImageIcon("Sprites/CharacterSprites/GIFs/CaballeroEscudo/muerteTRUE.gif");
-        imagen[3]=new ImageIcon("Sprites/CharacterSprites/GIFs/CaballeroEscudo/StillTrueCab.gif");
+        imagen[0]=new ImageIcon("src/Sprites/CharacterSprites/GIFs/CaballeroEscudo/StillTrueCab.gif");
+        imagen[1]=new ImageIcon("src/Sprites/CharacterSprites/GIFs/CaballeroEscudo/atacandoTrue.gif");
+        imagen[2]=new ImageIcon("src/Sprites/CharacterSprites/GIFs/CaballeroEscudo/muerteTRUE.gif");
+        imagen[3]=new ImageIcon("src/Sprites/CharacterSprites/GIFs/CaballeroEscudo/StillTrueCab.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
         Grafico barraVida=new BarraDeVida(this,10,5);

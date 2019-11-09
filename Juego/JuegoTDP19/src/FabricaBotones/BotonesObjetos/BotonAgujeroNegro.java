@@ -15,7 +15,7 @@ public class BotonAgujeroNegro extends BotonObjeto {
     }
 
     private BotonAgujeroNegro(){
-        super("Sprites/Objetos/Aguajero/SpriteBoton.png");
+        super("src/Sprites/Objetos/Aguajero/SpriteBoton.png");
     }
 
     public ObjetoPrecioso getObjeto() {
