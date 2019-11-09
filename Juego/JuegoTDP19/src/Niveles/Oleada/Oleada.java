@@ -88,12 +88,12 @@ public abstract class Oleada extends Thread{
     }
 
     public void inicializarCartelOleada(){
-        cartelOleada1.setForeground(Color.DARK_GRAY);
+        cartelOleada1.setForeground(Color.WHITE);
         cartelOleada1.setFont(new Font("Times New Roman", 3,100));
         cartelOleada1.setBounds(500,80,3000,400);
 
 
-        cartelOleada2.setForeground(Color.RED);
+        cartelOleada2.setForeground(Color.PINK);
         cartelOleada2.setFont(new Font("Times New Roman", 3,100));
         cartelOleada2.setBounds(503,83,3000,400);
 

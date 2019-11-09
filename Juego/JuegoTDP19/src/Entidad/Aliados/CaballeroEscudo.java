@@ -77,7 +77,7 @@ public class CaballeroEscudo extends Aliado {
 
     public void posicionar(ParCelda celda){
         super.posicionar(celda);
-        pos.setLocation(celda.getPos().x,celda.getPos().y+20);
+        pos.setLocation(celda.getPos().x,celda.getPos().y+8);
 
     }
 

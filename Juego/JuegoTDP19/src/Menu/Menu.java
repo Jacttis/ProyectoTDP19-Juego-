@@ -72,5 +72,6 @@ public class Menu  extends JFrame{
         lblNewLabel.setBounds(-48, 0, 900, 506);
         contentPane.add(lblNewLabel);
 
+        this.repaint();
     }
 }

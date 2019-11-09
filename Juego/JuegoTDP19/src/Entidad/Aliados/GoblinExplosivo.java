@@ -87,7 +87,6 @@ public class GoblinExplosivo extends Aliado {
      */
 
     public void eliminarse(){
-
         Mapa.getMapa().eliminarEntidad(this);
     }
 

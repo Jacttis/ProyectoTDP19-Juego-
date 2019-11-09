@@ -10,6 +10,12 @@ public abstract class Inteligencia {
 		entidad=e;
 		
 	}
-	
+
+	/**
+	 * Metodo abstracto que determina como se actualizara la entidad dependiendo
+	 * cada Inteligencia.
+	 *
+	 */
+
 	public abstract void actualizarEntidad();
 }

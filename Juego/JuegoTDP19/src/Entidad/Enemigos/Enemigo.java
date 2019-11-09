@@ -38,11 +38,10 @@ public abstract class Enemigo extends Personaje {
 	 * @param velocidad
 	 * @param puntos
 	 */
-	public Enemigo(int vida,int damage, float velocidadAtaque,int rango,double velocidad,int puntos, int oro) {
+	public Enemigo(int vida,int damage, float velocidadAtaque,int rango,double velocidad,int puntos) {
 		super(new Point(0,0),vida,damage,velocidadAtaque,rango,velocidad);
 		IA=new InteligenciaEnemigos(this);
 		this.velocidad=velocidad;
-		oroPremio=oro;
 		this.puntos=puntos;
 
 		estado=new Caminando(this);
@@ -106,13 +105,9 @@ public abstract class Enemigo extends Personaje {
 
 		Mapa.getMapa().eliminarEntidad(this);
 
-		Random r = new Random();
-		int posibilidadOroACaer = r.nextInt(8);
-
 		if(!powers.isEmpty()) {
 			for(PowerUp power : powers)
 				power.caerEnMapa(pos);
-
 		}
 
 		Tienda.getTienda().aumentarOro(this.getOro());

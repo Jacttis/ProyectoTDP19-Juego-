@@ -22,13 +22,14 @@ public class EnemigoGolemTierra extends Enemigo {
      * @param velocidadAtaque
      * @param rango
      * @param velocidad
-     * @param oro
      * @param puntos
      */
 
-    public EnemigoGolemTierra(int vida, int damage, float velocidadAtaque,int rango, double velocidad, int puntos, int oro) {
+    public EnemigoGolemTierra(int vida, int damage, float velocidadAtaque,int rango, double velocidad, int puntos) {
 
-        super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
+        super(vida, damage, velocidadAtaque, rango, velocidad, puntos);
+
+        this.oroPremio = 2;
 
         imagen[0] = new ImageIcon("Sprites/Golems/GolemTierraGIF/caminandoTRUE.gif");
         imagen[1] = new ImageIcon("Sprites/Golems/GolemTierraGIF/atacandoTRUE.gif");

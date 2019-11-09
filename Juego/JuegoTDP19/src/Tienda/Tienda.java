@@ -50,7 +50,6 @@ public class Tienda {
 		if(oro>= nextToAdd.getPrecio()) {
 			this.nextToAdd = nextToAdd;
 		}
-		else System.out.println("No tienes suficiente oro.");
 	}
 
 	//setters

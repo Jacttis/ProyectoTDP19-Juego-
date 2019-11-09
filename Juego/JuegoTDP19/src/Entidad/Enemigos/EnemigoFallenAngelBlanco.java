@@ -21,23 +21,24 @@ public class EnemigoFallenAngelBlanco extends Enemigo {
      * @param velocidadAtaque
      * @param rango
      * @param velocidad
-     * @param oro
      * @param puntos
      */
 
-    public EnemigoFallenAngelBlanco(int vida, int damage, float velocidadAtaque, int rango, double velocidad, int puntos, int oro){
+    public EnemigoFallenAngelBlanco(int vida, int damage, float velocidadAtaque, int rango, double velocidad, int puntos){
 
-        super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
+        super(vida, damage, velocidadAtaque, rango, velocidad, puntos);
+
+        this.oroPremio = 4;
 
         this.setWidth(165);
 
-        imagen[0] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/caminandoTrue.gif");
-        imagen[1] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/atacandoTrue.gif");
-        imagen[2] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/muerteTrue.gif");
-        imagen[3] = new ImageIcon("Sprites/EnemiesSprites/FallenAngel/muerteTrue.gif");
+        imagen[0] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/caminandoTrue.gif");
+        imagen[1] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/atacandoTrue.gif");
+        imagen[2] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/muerteTrue.gif");
+        imagen[3] = new ImageIcon("Sprites/EnemiesSprites/FallenAngelBlanco/muerteTrue.gif");
 
         Grafico sprites=new SpriteEntidad(this,imagen,0,0);
-        Grafico barraVida=new BarraDeVida(this,10,5);
+        Grafico barraVida=new BarraDeVida(this,35,-15);
         componentesGraficas.agregarGrafico(sprites);
         componentesGraficas.agregarGrafico(barraVida);
 

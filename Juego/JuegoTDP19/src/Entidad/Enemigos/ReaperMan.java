@@ -21,13 +21,14 @@ public class ReaperMan extends Enemigo {
      * @param velocidadAtaque
      * @param rango
      * @param velocidad
-     * @param oro
      * @param puntos
      */
 
-    public ReaperMan(int vida,int damage, float velocidadAtaque,int rango,double velocidad,int puntos,int oro){
+    public ReaperMan(int vida,int damage, float velocidadAtaque,int rango,double velocidad,int puntos){
 
-        super(vida,damage,velocidadAtaque,rango,velocidad,puntos,oro);
+        super(vida,damage,velocidadAtaque,rango,velocidad,puntos);
+
+        this.oroPremio = 3;
 
         imagen[0] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/walkingReaperMan2.gif");
         imagen[1] = new ImageIcon("Sprites/CharacterSprites/ReaperMan/slashingReaperMan3.gif");

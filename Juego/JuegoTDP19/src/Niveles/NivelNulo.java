@@ -30,7 +30,7 @@ public class NivelNulo extends Nivel {
      * comenzarNivel en este Nivel Nulo finaliza el juego y te lleva al menu de opciones.
      */
     public void comenzarNivel() {
-        Juego.getJuego().gameOver(new JLabel("Ganaste!!"));
+        Juego.getJuego().gameOver("GANASTE!");
 
     }
 
@@ -45,7 +45,7 @@ public class NivelNulo extends Nivel {
 
 
     public String getDireccionImagenFondoNivel(){
-        String direccion="Sprites/Mapa/Mapa2DisenioNIVEL2.jpg";
+        String direccion="Sprites/Mapa/Mapa2DisenioFIN.jpg";
         return direccion;
     }
 }

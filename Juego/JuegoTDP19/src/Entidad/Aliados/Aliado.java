@@ -101,9 +101,6 @@ public abstract class Aliado extends Personaje {
         celdaUbicado.desocupar();
         Mapa.getMapa().eliminarEntidad(this);
 
-        if(!this.estaMuerto())
-            Tienda.getTienda().venderAliado(this);
-
     }
 
     /**

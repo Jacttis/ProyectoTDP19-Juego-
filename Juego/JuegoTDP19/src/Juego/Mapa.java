@@ -7,6 +7,7 @@ import Entidad.*;
 import GUI.GUI;
 import Graficos.TiposGrafico.Grafico;
 import Niveles.Nivel;
+import Niveles.NivelNulo;
 import Niveles.NivelUno;
 import Tienda.Tienda;
 import Menu.Menu;
@@ -24,6 +25,7 @@ public class Mapa {
 	/**
 	 * Crea lista de entidades y entidadesAAgregar
 	 * Inicializa el nivel
+	 * Inicializa las listas entidades, entidadesAAgregar y entidadesAEliminar
 	 * @param juego 
 	 * @param gui pantalla prinpal del juego
 	 */
@@ -48,7 +50,7 @@ public class Mapa {
 		return instance;
 	}
 
-	public  static Mapa getMapa(){
+	public static Mapa getMapa(){
 		if(instance==null){
 			System.out.println("Mapa nulo.");
 		}
@@ -63,11 +65,11 @@ public class Mapa {
 	
 	
 	/**
-	 * Recorre la lista de entidades para actualizarlas
-	 * 
-	 * Luego de terminar de recorrer entidades, recorre entidadesAAgregar
-	 * para agregarlas a la lista de entidades
-	 * 
+	 * Actualiza todas las entidades dentro de la lista entidades.
+	 *
+	 * Mediante listas auxiliares elimina o agrega nuevas entidades.
+	 *
+	 * Ejecuta el metodo colisionar
 	 */
 	
 	public void mover() {
@@ -81,8 +83,7 @@ public class Mapa {
 
 		if(!entidadesAEliminar.isEmpty()) {
 
-			for (Entidad en : entidadesAEliminar)
-				entidadesAEliminarTemporal.add(en);
+			entidadesAEliminarTemporal.addAll(entidadesAEliminar);
 
 
 			for (Entidad eAEliminar : entidadesAEliminarTemporal) {
@@ -97,8 +98,7 @@ public class Mapa {
 		LinkedList<Entidad> entidadesAAgregarTemporal= new LinkedList<Entidad>();
 
 		if(!entidadesAAgregar.isEmpty()) {
-			for (Entidad e : entidadesAAgregar)
-				entidadesAAgregarTemporal.add(e);
+			entidadesAAgregarTemporal.addAll(entidadesAAgregar);
 
 
 			for (Entidad eAAgregar : entidadesAAgregarTemporal) {
@@ -128,21 +128,43 @@ public class Mapa {
 		entidadesAAgregar.add(entidadAAgregar);
 	}
 
+	/**
+	 * Inserta la Entidad parametrizada a la lista entidadesAEliminar para
+	 * despues ser agregado al mapa.
+	 *
+	 * @param entidadAEliminar
+	 */
+
 	public void eliminarEntidad(Entidad entidadAEliminar){
 		entidadesAEliminar.add(entidadAEliminar);
 
 	}
 
+	/**
+	 *
+	 * Agrega los graficos de la entidad parametrizada
+	 *
+	 * @param entidad
+	 */
 
 	public void agregarEntidadGrafica(Entidad entidad){
 
-		LinkedList<Grafico> listaGraficos=entidad.getComponentesGraficas().getListaGraficos();
+		if(entidad!=null) {
+			LinkedList<Grafico> listaGraficos = entidad.getComponentesGraficas().getListaGraficos();
 
-		for(Grafico grafico : listaGraficos)
-			gui.add(grafico.getGrafico());
+			for (Grafico grafico : listaGraficos)
+				gui.add(grafico.getGrafico());
 
-		gui.repaint();
+			gui.repaint();
+		}
+
 	}
+
+	/**
+	 * Elimina los graficos de la entidad parametrizada
+	 *
+	 * @param entidad
+	 */
 
 
 	public void eliminarEntidadGrafica(Entidad entidad){
@@ -212,8 +234,12 @@ public class Mapa {
 
 
 	/**
-	 * Cuando se eliminen todos los enemigos, se generara el siguiente nivel.
-	 * Este metodo es llamado desde nivel.
+	 * Ejecuta el metodo limpiarMapa, luego le asigna al atributo nivel
+	 * el nivel siguiente (resultado del mensaje getNivelSiguiente a nivel)
+	 * Cambia el fondo de la gui mediante el metodo cambiarFondo y parametrizando la imagen del nivel
+	 * correspondiente
+	 * Ejecuta el metodo generar de Mapa.
+	 *
 	 * @param nivelNuevo
 	 */
 	public void cambiarNivel(Nivel nivelNuevo){
@@ -228,8 +254,15 @@ public class Mapa {
 	 * Termina el Juego indicando que pediste la partida y volviendo al menu principal.
 	 */
 	public void perdio(){
-		Juego.getJuego().gameOver(new JLabel("Game Over"));
+		this.nivel = new NivelNulo();
+		gui.cambiarFondo(nivel.getDireccionImagenFondoNivel());
+		Juego.getJuego().gameOver("GAME OVER");
 	}
+
+	/**
+	 * Elimina todas las entidades
+	 *
+	 */
 
 	private void limpiarMapa(){
 		for(Entidad entidad : entidades){
@@ -237,20 +270,42 @@ public class Mapa {
 		}
 	}
 
+	/**
+	 * Remueve un Grafico parametrizado de la gui
+	 *
+	 * @param graficoARemover
+	 */
 
 	public void removerGrafico(Grafico graficoARemover){
 		gui.remove(graficoARemover.getGrafico());
 		gui.repaint();
 	}
 
+	/**
+	 * Agrega un Grafico parametrizado a la gui
+	 *
+	 * @param graficoAAgregar
+	 */
+
 	public void agregarGrafico(Grafico graficoAAgregar){
 		gui.add(graficoAAgregar.getGrafico());
 		gui.repaint();
 	}
 
+	/**
+	 * Retorna la gui
+	 * @return  GUI
+	 */
+
 	public GUI getGui(){
 		return gui;
 	}
+
+	/**
+	 * Vuelve la instancia null asi al ejecutarse el juego devuelta
+	 * se inicializa la instancia denuevo.
+	 *
+	 */
 
 	public void gameOver(){
 		instance=null;

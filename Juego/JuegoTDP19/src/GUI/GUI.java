@@ -117,8 +117,6 @@ public class GUI extends JFrame implements MouseListener {
 	 */
 
 	public void mouseClicked(MouseEvent e) {
-
-		System.out.println("Se clickeo en mapa");
 		guiTienda.seClickeoEnMapa(new Point(e.getX(),e.getY()));
 	}
 

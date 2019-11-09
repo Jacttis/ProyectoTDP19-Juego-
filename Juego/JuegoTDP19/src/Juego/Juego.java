@@ -74,13 +74,24 @@ public class Juego {
 	}
 
 
-	public void gameOver(JLabel gameOver){  // Juego
+	public void gameOver(String motivo){  // Juego
 		instance=null;
 
-		gameOver.setBounds(850,80,3000,400);
+		JLabel gameOver = new JLabel(motivo);
+		JLabel gameOver2 = new JLabel(motivo);
+
+		gameOver.setBounds(650,280,3000,400);
 		gameOver.setForeground(Color.red);
+
+		gameOver2.setBounds(654,284,3000,400);
+		gameOver2.setForeground(Color.WHITE);
+
 		Mapa.getMapa().getGui().add(gameOver);
-		gameOver.setFont(new Font("Times New Roman", 4,100));
+		Mapa.getMapa().getGui().add(gameOver2);
+
+		gameOver.setFont(new Font("Times New Roman", 2,100));
+		gameOver2.setFont(new Font("Times New Roman", 2,100));
+
 		try{
 			Thread.sleep(2000);
 		}

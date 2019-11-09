@@ -19,12 +19,12 @@ public class FabricaEnemigoGolemHielo extends FabricaEnemigo {
     }
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemHielo(200,20,1000,0,2,100,2);
+        return new EnemigoGolemHielo(200,20,1000,0,2,100);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        EnemigoGolemHielo enemigo = new EnemigoGolemHielo(200,20,1000,0,2,100,2);
+        EnemigoGolemHielo enemigo = new EnemigoGolemHielo(200,20,1000,0,2,100);
         enemigo.agregarPowerUp(obtenerPowerUpAlAzar());
         return enemigo;
     }

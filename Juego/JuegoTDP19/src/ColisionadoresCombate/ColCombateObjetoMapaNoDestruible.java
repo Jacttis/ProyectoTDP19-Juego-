@@ -30,7 +30,11 @@ public class ColCombateObjetoMapaNoDestruible implements ColisionadorCombate {
 
         LinkedList<Enemigo> enemigosARemover = new LinkedList<Enemigo>();
 
-        for( Enemigo e : objetoMapaTiempo.getEnemigosAfectados() ){
+        LinkedList<Enemigo> auxiliar = new LinkedList<Enemigo>();
+        if(!objetoMapaTiempo.getEnemigosAfectados().isEmpty())
+            auxiliar.addAll(objetoMapaTiempo.getEnemigosAfectados());
+
+        for( Enemigo e : auxiliar ){
             if(!e.getHitBox().intersects(objetoMapaTiempo.getHitBox())) {
                 enemigosARemover.add(e);
                 objetoMapaTiempo.yaNoAfecta(e);

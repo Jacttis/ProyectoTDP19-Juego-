@@ -142,14 +142,14 @@ public abstract class Nivel {
 	 */
 
 	public void inicializarCartelNivel(){
-		cartelNivel1.setForeground(Color.BLACK);
+		cartelNivel1.setForeground(Color.WHITE);
 		cartelNivel1.setFont(new Font("Times New Roman", 4,100));
 		cartelNivel1.setBounds(650,80,3000,400);
 
 
-		cartelNivel2.setForeground(Color.WHITE);
+		cartelNivel2.setForeground(Color.BLACK);
 		cartelNivel2.setFont(new Font("Times New Roman", 4,100));
-		cartelNivel2.setBounds(654,84,3000,400);
+		cartelNivel2.setBounds(653,83,3000,400);
 
 		Mapa.getMapa().getGui().add(cartelNivel2);
 		Mapa.getMapa().getGui().add(cartelNivel1);

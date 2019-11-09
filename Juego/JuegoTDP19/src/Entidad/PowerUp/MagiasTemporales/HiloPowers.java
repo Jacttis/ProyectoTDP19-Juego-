@@ -18,7 +18,6 @@ public class HiloPowers extends Thread {
             sleep(magia.getDuracion());
             magia.desafectarPersonaje(personajeAfectado);
         } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

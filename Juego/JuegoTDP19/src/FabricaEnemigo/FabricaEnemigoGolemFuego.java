@@ -23,12 +23,12 @@ public class FabricaEnemigoGolemFuego extends FabricaEnemigo {
 
 
     public Enemigo crearEnemigo() {
-        return new EnemigoGolemFuego(150,60,2000,0,2,100,5);
+        return new EnemigoGolemFuego(150,60,2000,0,3,100);
     }
 
 
     public Enemigo crearEnemigoBoosted() {
-        Enemigo enemigo = new EnemigoGolemFuego(150,60,2000,0,2,100,5);
+        Enemigo enemigo = new EnemigoGolemFuego(150,60,2000,0,3,100);
         enemigo.agregarPowerUp(obtenerPowerUpAlAzar());
         return enemigo;
     }

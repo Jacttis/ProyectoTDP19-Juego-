@@ -21,14 +21,14 @@ public class EnemigoFallenAngel extends Enemigo {
      * @param velocidadAtaque
      * @param rango
      * @param velocidad
-     * @param oro
      * @param puntos
      */
 
-    public EnemigoFallenAngel(int vida, int damage, float velocidadAtaque, int rango, double velocidad, int puntos, int oro){
+    public EnemigoFallenAngel(int vida, int damage, float velocidadAtaque, int rango, double velocidad, int puntos){
 
-        super(vida, damage, velocidadAtaque, rango, velocidad, puntos, oro);
+        super(vida, damage, velocidadAtaque, rango, velocidad, puntos);
 
+        this.oroPremio = 3;
 
         this.setWidth(160);
 
