@@ -21,7 +21,7 @@ public class Tienda {
 
 	private Tienda(){
 		puntos=0;
-		oro=30;
+		oro=12000;
 		posicionadorDeAliados=new PosicionadorDeAliado();
 	}
 

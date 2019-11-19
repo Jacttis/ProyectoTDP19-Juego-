@@ -26,10 +26,10 @@ public class Mapa {
 	 * Crea lista de entidades y entidadesAAgregar
 	 * Inicializa el nivel
 	 * Inicializa las listas entidades, entidadesAAgregar y entidadesAEliminar
-	 * @param juego 
+	 * @param juego
 	 * @param gui pantalla prinpal del juego
 	 */
-	
+
 	private Mapa(Juego juego, GUI gui) {
 		this.juego=juego;
 		nivel=new NivelUno();
@@ -56,14 +56,14 @@ public class Mapa {
 		}
 		return instance;
 	}
-	
-	
+
+
 	public void generar() {
 		nivel.comenzarNivel();
 
 	}
-	
-	
+
+
 	/**
 	 * Actualiza todas las entidades dentro de la lista entidades.
 	 *
@@ -71,9 +71,9 @@ public class Mapa {
 	 *
 	 * Ejecuta el metodo colisionar
 	 */
-	
+
 	public void mover() {
-		
+
 		for(Entidad e : entidades) {
 			e.actualizarEntidad();
 
@@ -83,12 +83,15 @@ public class Mapa {
 
 		if(!entidadesAEliminar.isEmpty()) {
 
-			entidadesAEliminarTemporal.addAll(entidadesAEliminar);
-
+			//entidadesAEliminarTemporal.addAll(entidadesAEliminar); anterior linea de abajo es la nueva
+			for(Entidad e:entidadesAEliminar){
+				if(e!=null)
+					entidadesAEliminarTemporal.add(e);
+			}
 
 			for (Entidad eAEliminar : entidadesAEliminarTemporal) {
-				entidades.remove(eAEliminar);
 				eliminarEntidadGrafica(eAEliminar);
+				entidades.remove(eAEliminar);
 			}
 
 		}
@@ -115,14 +118,14 @@ public class Mapa {
 		colisionar();
 
 	}
-	
+
 	/**
 	 * Agrega una entidad a la lista de entidades A agregar para que despues se agregue
 	 * a la lista de entidades en la funcion mover()
-	 * 
+	 *
 	 * @param entidadAAgregar entidad que se agregara al mapa
 	 */
-	
+
 	public void agregarEntidad(Entidad entidadAAgregar) {
 		entidadAAgregar.actualizarGraficos();
 		entidadesAAgregar.add(entidadAAgregar);
@@ -136,6 +139,7 @@ public class Mapa {
 	 */
 
 	public void eliminarEntidad(Entidad entidadAEliminar){
+		System.out.println(entidadAEliminar);
 		entidadesAEliminar.add(entidadAEliminar);
 
 	}
