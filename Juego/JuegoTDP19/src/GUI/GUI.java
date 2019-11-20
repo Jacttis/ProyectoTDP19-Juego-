@@ -56,12 +56,6 @@ public class GUI extends JFrame implements MouseListener {
 
 
 
-		puntaje=new JLabel();
-		puntaje.setBounds(Constantes.PUNTAJE_BOUNDS_PX,Constantes.PUNTAJE_BOUNDS_PY,Constantes.PUNTAJE_BOUNDS_X,Constantes.PUNTAJE_BOUNDS_Y);
-		puntaje.setText("0");
-
-
-		contentPane.add(puntaje);
 		setContentPane(contentPane);
 
 
