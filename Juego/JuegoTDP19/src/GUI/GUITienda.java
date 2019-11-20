@@ -1,5 +1,6 @@
 package GUI;
 
+import BotonMusica.JButtonMusic;
 import Constantes.Constantes;
 import Entidad.Aliados.*;
 import FabricaBotones.*;
@@ -23,6 +24,7 @@ class GuiTienda {
     private JButton btnobjeto3;
     private JButton btnobjeto4;
     private JButton btnobjeto5;
+    private JButton musica;
 
     private JButton btnVender;
     private JLabel labelPuntos;
@@ -61,7 +63,7 @@ class GuiTienda {
         panel = new JPanel();
         panel.setLayout(null);
         panel.setBackground(Color.DARK_GRAY);
-        panel.setBounds(Constantes.PANEL_TIENDA_PX, 0, Constantes.PANEL_TIENDA_X, Constantes.PANEL_TIENDA_Y);
+        panel.setBounds(Constantes.PANEL_TIENDA_PX, 0, Constantes.PANEL_TIENDA_X+1400, Constantes.PANEL_TIENDA_Y);
 
         BotonAliado botonArquero = new BotonArqueroHumano();
         botonArquero.setBounds(0,0,Constantes.BOTONES_X,Constantes.BOTONES_Y);
@@ -105,7 +107,6 @@ class GuiTienda {
         //panel.add(btnobjeto5);
 
 
-
         labelOro = new JLabel("Oro : "+Tienda.getTienda().getOro());
         labelOro.setForeground(Color.GREEN);
         labelOro.setBounds(800,0,70,40);
@@ -120,7 +121,8 @@ class GuiTienda {
         btnVender.setBounds(800,70,128,25);
         panel.add(btnVender);
 
-
+        musica=new JButtonMusic("");
+        panel.add(musica);
 
     }
     /**
